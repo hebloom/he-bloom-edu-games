@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sudoku | HE Bloom Edu Games</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff 0%,
+            #f8fbff 48%,
+            #fff3f9 100%
+        );
+
+    padding:30px;
+    min-height:100vh;
+    position:relative;
+    overflow-x:hidden;
+}
+
+/* TIADA bulatan besar di penjuru */
+body::before,
+body::after{
+    content:none;
+}
+
+.container{
+    max-width:380px;
+    margin:auto;
+}
+
+
+/* =========================
+   TAJUK
+========================= */
+
+h1{
+    color:#d92f87;
+    text-align:center;
+    font-size:48px;
+    font-weight:900;
+    white-space:nowrap;
+
+    width:100%;
+    margin:60px auto 0 auto;
+
+    text-shadow:
+        3px 3px 0 #ffffff,
+        -2px -2px 0 #ffffff,
+        0 5px 8px rgba(217,47,135,0.45),
+        0 8px 14px rgba(255,120,190,0.25);
+}
+
+
+/* =========================
+   SUBTITLE
+========================= */
+
+.subtitle{
+    text-align:center;
+    color:#5b32d6;
+    font-size:25px;
+    font-weight:800;
+    white-space:nowrap;
+
+    margin-top:70px;
+    margin-bottom:30px;
+
+    text-shadow:
+        2px 2px 0 #ffffff,
+        -2px -2px 0 #ffffff,
+        0 4px 7px rgba(91,50,214,0.40),
+        0 7px 12px rgba(120,90,230,0.20);
+}
+
+
+/* =========================
+   MENU CARD
+========================= */
+
+.card{
+    background:rgba(255,255,255,.96);
+
+    padding:20px;
+    margin-bottom:8px;
+
+    border-radius:20px;
+    border:3px solid #ff9dcc;
+
+    box-shadow:
+        0 5px 15px rgba(120,160,210,.15),
+        0 0 12px rgba(255,130,190,.20);
+
+    font-size:21px;
+    font-weight:bold;
+
+    cursor:pointer;
+    transition:.2s;
+
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+
+    gap:12px;
+    white-space:nowrap;
+}
+
+.card:hover{
+    transform:scale(1.02);
+}
+
+
+/* =========================
+   ICON
+========================= */
+
+.card .icon{
+    width:45px;
+
+    text-align:center;
+
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+
+    flex-shrink:0;
+}
+
+/* =========================
+   PLAYER NAME
+========================= */
+
+.player-name-box{
+    display:none;
+
+    background:rgba(255,255,255,.96);
+
+    padding:18px;
+
+    margin:15px 0;
+
+    border-radius:20px;
+
+    border:3px solid #ff9dcc;
+
+    box-shadow:
+        0 5px 15px rgba(120,160,210,.15),
+        0 0 12px rgba(255,130,190,.20);
+
+    text-align:center;
+}
+
+.player-name-box input{
+    width:100%;
+    padding:14px;
+
+    border:2px solid #e2e2e2;
+    border-radius:14px;
+
+    font-size:18px;
+    outline:none;
+
+    margin-bottom:12px;
+}
+
+.player-name-box input:focus{
+    border-color:#ff9dcc;
+}
+
+.save-name-btn{
+    width:70%;
+    margin:auto;
+
+    padding:12px;
+
+    border-radius:16px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffb6dc 0%,
+            #ff79b8 50%,
+            #ff5ca8 100%
+        );
+
+    color:white;
+
+    font-size:19px;
+    font-weight:bold;
+
+    border:3px solid #ffffff;
+
+    cursor:pointer;
+}
+
+.player-name-display{
+    text-align:center;
+
+    color:#5b32d6;
+
+    font-size:18px;
+    font-weight:bold;
+
+    margin:10px 0;
+}
+
+/* =========================
+   SET PLAYER NAME LINK
+========================= */
+
+.set-player-name {
+    width: max-content;
+    margin: 50px auto -20px auto;
+    
+    color: #000000;
+    
+    font-size: 20px;
+    font-weight: bold;
+    
+    text-decoration: underline;
+    text-decoration-color: #ff4f9a;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 5px;
+    
+    cursor: pointer;
+    
+    transition: .2s;
+}
+
+.set-player-name:active {
+    transform: scale(.95);
+}
+
+/* =========================
+   LEVEL BUTTON
+========================= */
+
+.level-btn{
+    width:60%;
+    mapxrgin:12px auto;
+
+    padding:14px 0;
+
+    justify-content:center;
+}
+
+
+/* =========================
+   BACK BUTTON
+========================= */
+
+.back{
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff 0%,
+            #ffd6eb 25%,
+            #ff8fc7 55%,
+            #8fd3ff 100%
+        );
+
+    color:white;
+
+    text-align:center;
+
+    width:50%;
+
+    margin:25px auto 20px auto;
+
+    border:3px solid #ffffff;
+    border-radius:20px;
+
+    box-shadow:
+        0 6px 16px rgba(255,120,190,.30),
+        0 0 18px rgba(120,190,255,.35);
+
+    font-size:25px;
+    font-weight:bold;
+
+    text-shadow:
+        1px 1px 2px rgba(80,100,180,.35);
+
+    transition:.2s;
+
+    justify-content:center;
+}
+
+.back:active{
+    transform:scale(.95);
+
+    box-shadow:
+        0 3px 8px rgba(255,100,180,.25),
+        0 0 12px rgba(255,140,200,.35);
+}
+
+
+/* =========================
+   HE BLOOM LOGO
+========================= */
+
+.he-bloom-logo{
+    position:fixed;
+    width:100px;
+    height:100px;
+    z-index:9999;
+    opacity:.95;
+    pointer-events:none;
+}
+
+.bottom-logo{
+    bottom:18px;
+    right:18px;
+}
+/* Sembunyikan logo semasa masukkan nama */
+body.keyboard-open .he-bloom-logo {
+    display: none;
+}
+</style>
+</head>
+
+
+<body>
+
+<div class="container">
+
+    <h1>Sudoku</h1>
+
+  
+<!-- PLAYER NAME -->
+
+<div class="set-player-name"
+     onclick="togglePlayerName()">
+
+    👤 Set Player Name
+
+</div>
+<div class="set-player-name"
+     onclick="location.href='sudoku_leaderboard.html'">
+
+    🏆 Sudoku Leaderboard
+
+</div>
+  <p class="subtitle">Choose Sudoku Type</p>
+  
+<div id="playerNameBox"
+     class="player-name-box">
+
+    <input
+        type="text"
+        id="playerNameInput"
+        placeholder="Enter your player name"
+        maxlength="20">
+
+    <button
+        class="save-name-btn"
+        onclick="savePlayerName()">
+
+        Save
+
+    </button>
+
+    <p id="playerNameMessage"
+       class="player-name-display"></p>
+
+</div>
+
+    <!-- NUMBERS SUDOKU -->
+
+    <div class="card"
+         onclick="toggleNumbersSudokuMenu()">
+
+        <span class="icon">🔢</span>
+        <span>Numbers Sudoku</span>
+
+    </div>
+
+
+    <!-- NUMBERS SUDOKU MENU -->
+
+    <div id="numbersSudokuMenu"
+         style="display:none; margin-top:10px;">
+
+        <div class="card level-btn"
+             onclick="location.href='numberssudoku_easy.html'">
+
+            🟢 Easy
+
+        </div>
+
+        <div class="card level-btn"
+             onclick="location.href='numberssudoku_medium.html'">
+
+            🟡 Medium
+
+        </div>
+
+        <div class="card level-btn"
+             onclick="location.href='numberssudoku_hard.html'">
+
+            🔴 Hard
+
+        </div>
+
+    </div>
+
+
+    <!-- COLOURS SUDOKU -->
+
+    <div class="card"
+         onclick="toggleColoursSudokuMenu()">
+
+        <span class="icon">🎨</span>
+        <span>Colours Sudoku</span>
+
+    </div>
+
+
+    <!-- COLOURS SUDOKU MENU -->
+
+    <div id="coloursSudokuMenu"
+         style="display:none; margin-top:10px;">
+
+        <div class="card level-btn"
+             onclick="location.href='colourssudoku_easy.html'">
+
+            🟢 Easy
+
+        </div>
+
+        <div class="card level-btn"
+             onclick="location.href='colourssudoku_medium.html'">
+
+            🟡 Medium
+
+        </div>
+
+        <div class="card level-btn"
+             onclick="location.href='colourssudoku_hard.html'">
+
+            🔴 Hard
+
+        </div>
+
+    </div>
+
+
+    <!-- BACK -->
+
+    <div class="card back"
+         onclick="location.href='dashboard.html'">
+
+        ⬅️ Back
+
+    </div>
+
+</div>
+
+
+<!-- HE BLOOM LOGO -->
+
+<img src="HE_Bloom.png"
+     alt="HE Bloom"
+     class="he-bloom-logo bottom-logo">
+
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+import {
+    getAuth,
+    onAuthStateChanged
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+import {
+    getFirestore,
+    doc,
+    getDoc,
+    setDoc
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+
+const firebaseConfig = {
+    apiKey: "AIzaSyB0crUiSYBTxye5nHDOYJ8I7dNAv-mLO7g",
+    authDomain: "he-bloom-edu-games.firebaseapp.com",
+    projectId: "he-bloom-edu-games",
+    storageBucket: "he-bloom-edu-games.firebasestorage.app",
+    messagingSenderId: "629319143905",
+    appId: "1:629319143905:web:2a989f47e473c4ad7302a0",
+    measurementId: "G-JDLS6LDLEW"
+};
+
+
+const app = initializeApp(firebaseConfig);
+
+const auth = getAuth(app);
+
+const db = getFirestore(app);
+
+window.sudokuDB = db;
+window.sudokuDoc = doc;
+window.sudokuGetDoc = getDoc;
+window.sudokuSetDoc = setDoc;
+
+
+window.sudokuCurrentUser = null;
+
+
+window.sudokuAuthReady = new Promise((resolve) => {
+
+    onAuthStateChanged(auth, (user) => {
+
+        window.sudokuCurrentUser = user;
+
+        resolve(user);
+
+    });
+
+});
+
+</script>
+<script>
+
+function toggleNumbersSudokuMenu(){
+
+    const menu =
+        document.getElementById("numbersSudokuMenu");
+
+    menu.style.display =
+        (menu.style.display === "none" ||
+         menu.style.display === "")
+        ? "block"
+        : "none";
+}
+
+
+function toggleColoursSudokuMenu(){
+
+    const menu =
+        document.getElementById("coloursSudokuMenu");
+
+    menu.style.display =
+        (menu.style.display === "none" ||
+         menu.style.display === "")
+        ? "block"
+        : "none";
+}
+
+async function togglePlayerName() {
+    
+    const box =
+        document.getElementById("playerNameBox");
+    
+    if (!box) return;
+    
+    
+    // Tunggu Firebase kenal pasti account
+    const user =
+        await window.sudokuAuthReady;
+    
+    
+    // Belum login
+    if (!user) {
+        
+        alert("Please login first.");
+        
+        return;
+    }
+    
+    
+    try {
+        
+        const playerRef =
+            window.sudokuDoc(
+                window.sudokuDB,
+                "sudokuPlayers",
+                user.uid
+            );
+        
+        
+        const playerSnap =
+            await window.sudokuGetDoc(playerRef);
+        
+        
+        // =========================
+        // SUDAH ADA PLAYER NAME
+        // =========================
+        
+        if (playerSnap.exists()) {
+            
+            const savedName =
+                playerSnap.data().name;
+            
+            alert(
+                "Your Player Name is already set:\n\n" +
+                savedName +
+                "\n\nThis account can only use one Player Name."
+            );
+            
+            return;
+        }
+        
+        
+        // =========================
+        // BELUM ADA NAMA
+        // =========================
+        
+        if (box.style.display === "block") {
+            
+            box.style.display = "none";
+            
+        } else {
+            
+            box.style.display = "block";
+            
+            document
+                .getElementById("playerNameInput")
+                .value = "";
+            
+            document
+                .getElementById("playerNameInput")
+                .focus();
+        }
+        
+        
+    } catch (error) {
+        
+        console.error(error);
+        
+        alert(
+            "Unable to check Player Name.\n\n" +
+            error.message
+        );
+        
+    }
+}
+async function savePlayerName() {
+    
+    const input =
+        document.getElementById("playerNameInput");
+    
+    if (!input) return;
+    
+    const name = input.value.trim();
+    
+    if (name === "") {
+        alert("Please enter your player name.");
+        return;
+    }
+    
+    // Tunggu Firebase kenal pasti account yang sedang login
+    const user = await window.sudokuAuthReady;
+    
+    if (!user) {
+        alert("Please login first.");
+        return;
+    }
+    
+    const uid = user.uid;
+    
+    try {
+        
+        // Semak sama ada account ini sudah mempunyai nama
+        const playerRef =
+    window.sudokuDoc(
+        window.sudokuDB,
+        "sudokuPlayers",
+        uid
+    );
+
+const playerSnap =
+    await window.sudokuGetDoc(playerRef);
+        
+        
+        // =========================
+        // ACCOUNT SUDAH ADA NAMA
+        // =========================
+        
+        if (playerSnap.exists()) {
+            
+            const savedName =
+                playerSnap.data().name;
+            
+            alert(
+                "This account already has a Player Name:\n\n" +
+                savedName
+            );
+            
+            input.value = "";
+            
+            return;
+        }
+        
+        
+        // =========================
+        // SIMPAN NAMA PERTAMA
+        // =========================
+        
+        await window.sudokuSetDoc(playerRef, {
+            
+            uid: uid,
+            
+            name: name,
+            
+            createdAt: new Date().toISOString()
+            
+        });
+        
+        
+        // Simpan juga untuk kegunaan Sudoku
+        localStorage.setItem(
+            "sudokuPlayerName",
+            name
+        );
+        
+        
+        input.value = "";
+        
+        document
+            .getElementById("playerNameBox")
+            .style.display = "none";
+        
+        
+        alert(
+            "Player name saved!\n\n" +
+            "Your Player Name is: " +
+            name
+        );
+        
+        
+    } catch (error) {
+        
+        console.error(error);
+        
+        alert(
+            "Unable to save Player Name.\n\n" +
+            error.message
+        );
+        
+    }
+}
+</script>
+
+</body>
+</html>

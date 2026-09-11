@@ -1,0 +1,1042 @@
+<!doctype html>
+<html lang="ms">
+ <head><script>window["__codeletBootstrap__"]=JSON.parse('{"A":"A","B":"20260730-05-6814160","C":{"Abril Fatface":"YACgEZbkUVE,0","Alfa Slab One":"YACgEYS9sJU,0","Anton":"YACgEcYqQ-A,0","Archivo":"YAHO2-t-jNE,0","Arial":"YAGyDvJ_4Ts,0","Bebas Neue":"YACgESME5ew,0","Broken Glyph":"YADZ-exUkv0,0","Canva Sans":"YAFdJjTk5UU,0","Caveat":"YALBs2ploWQ,0","Comic Sans MS":"YAHO2VMiyZo,0","Cormorant Garamond":"YAFdJhX-538,0","Courier New":"YAGzXiGs0_8,0","DM Sans":"YAD1aU3sLnI,0","DM Serif Display":"YAD1aYG82rc,0","Forum":"YACgEcnnqB4,0","Fraunces":"YAEul-FRQw4,0","Georgia":"YAGzXkO0pEM,0","Ghost Mono":"YAHO2EIdDP0,0","Helvetica Neue":"YAFcf6CtJfI,0","Impact":"YAFcfnjI7Vk,0","Inter":"YAFdJvSyp_k,3","Iowan Old Style":"YAGNIFa8j9o,0","Jacques Francois":"YAHO2a5g66Q,0","JetBrains Mono":"YADy3sAhvXQ,0","Oleo Script":"YACgEQQ14jI,0","Playfair Display":"YAFdJhem5V8,1","Poppins":"YAE5fPSY9qM,0","Press Start 2P":"YAFyGr-8pmQ,0","Source Sans 3":"YAG4lO1Mj10,0","Space Grotesk":"YAHO2sjPCSM,0","Times New Roman":"YAGzXW3gftg,0","Times":"YAGzXW3gftg,0","Trebuchet MS":"YAFcfrglpVA,0","Verdana":"YAGzXTctYtQ,0","Work Sans":"YAGXhLOKv44,0","Yellowtail":"YACgEYG4kG4,0"}}');</script><script src="/_sdk/a27874207e105461.telemetry_sdk.js" integrity="sha512-wgI5N9F7oA2h3vH+benMYIv4wGqTct4nKWakqgvfgRyBLmfYq8q/fi6gkfWKd2hMsyN+VQ/qOAOpxybwkcoxlA=="></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lawan Kata (Antonim)</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <script src="/_sdk/b23f1f6ec78e9bd4.editing_sdk.js" integrity="sha512-WFdQutvUZzxrmcHkL8cbfuFDTeF8Cn8Bt3yqX/a/OdiqPz/t9UcjsIsZK7D+tMTmC2JTwhwRJNyfcHmIWhG8Wg=="></script>
+  <style>
+body {
+    background: url("malay.png") no-repeat center center fixed;
+    background-size: cover;
+}
+        * { font-family: 'Fredoka', sans-serif; }
+        
+        @keyframes float { 0%,100%{ transform: translateY(0) } 50%{ transform: translateY(-10px) } }
+        @keyframes floatSlow { 0%,100%{ transform: translateY(0) rotate(0deg) } 50%{ transform: translateY(-6px) rotate(2deg) } }
+ @keyframes birdFly {
+    0% {
+        transform: translateX(-120px) translateY(0px) rotate(-6deg);
+    }
+    15% {
+        transform: translateX(15vw) translateY(-18px) rotate(4deg);
+    }
+    30% {
+        transform: translateX(30vw) translateY(8px) rotate(-3deg);
+    }
+    45% {
+        transform: translateX(45vw) translateY(-22px) rotate(5deg);
+    }
+    60% {
+        transform: translateX(60vw) translateY(12px) rotate(-4deg);
+    }
+    75% {
+        transform: translateX(80vw) translateY(-15px) rotate(3deg);
+    }
+    90% {
+        transform: translateX(95vw) translateY(6px) rotate(-2deg);
+    }
+    100% {
+        transform: translateX(110vw) translateY(-10px) rotate(2deg);
+    }
+}
+        @keyframes beeFly { 0%,100%{ transform: translate(0,0) } 25%{ transform: translate(30px,-20px) } 50%{ transform: translate(-10px,-30px) } 75%{ transform: translate(20px,10px) } }
+        @keyframes sway { 0%,100%{ transform: rotate(-2deg) } 50%{ transform: rotate(2deg) } }
+        @keyframes sunPulse { 0%,100%{ transform: scale(1) } 50%{ transform: scale(1.05) } }
+        @keyframes zoomIn { 0%{ transform: scale(0.5); opacity:0 } 100%{ transform: scale(1); opacity:1 } }
+        @keyframes shake { 0%,100%{ transform: translateX(0) } 20%{ transform: translateX(-8px) } 40%{ transform: translateX(8px) } 60%{ transform: translateX(-5px) } 80%{ transform: translateX(5px) } }
+        @keyframes fadeIn { from{ opacity:0; transform:translateY(10px) } to{ opacity:1; transform:translateY(0) } }
+        
+        .float { animation: float 3s ease-in-out infinite; }
+        .float-slow { animation: floatSlow 4s ease-in-out infinite; }
+        .bird { animation: birdFly 30s linear infinite; }
+        .bird2 { animation: birdFly 40s linear infinite; animation-delay: 10s; }
+        .bee { animation: beeFly 5s ease-in-out infinite; }
+        .sway { animation: sway 3s ease-in-out infinite; }
+        .sun-pulse { animation: sunPulse 4s ease-in-out infinite; }
+        .zoom-in { animation: zoomIn 0.3s ease-out; }
+        .shake { animation: shake 0.4s ease-out; }
+        .fade-in { animation: fadeIn 0.4s ease-out; }
+        
+        .btn-answer { transition: transform 0.15s, box-shadow 0.15s; }
+        .btn-answer:hover { transform: scale(1.05); }
+        .btn-answer:active { transform: scale(0.95); }
+#game-card {
+    width: 90%;
+    height: 90%;
+    max-width: 800px;
+    min-height: 80vh;
+    padding: 40px 70px;
+    
+    background: rgba(220, 245, 255, 0.25);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    border-radius: 35px;
+    overflow: hidden;
+    
+    box-shadow:
+        0 0 0 2px rgba(255, 255, 255, 0.25),
+        0 10px 30px rgba(255, 255, 255, 0.20);
+}
+
+.question-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+#game-card{
+    width:90%;
+    max-width:700px;
+    height:70px;      /* Ubah nilai ini ikut kehendak */
+    margin:0 auto;
+}
+.he-bloom-logo {
+    position: fixed;
+    width: 80px;
+    height: 80px;
+    z-index: 9999;
+    opacity: .95;
+    pointer-events: none;
+}
+
+.bottom-logo {
+    bottom: 18px;
+    right: 18px;
+}
+/* =========================================================
+   RESPONSIVE TAMBAHAN - ALL DEVICES
+   HP KECIL + HP BESAR
+   TABLET
+   LAPTOP + DESKTOP
+   PORTRAIT + LANDSCAPE
+
+   DESIGN ASAL DIKEKALKAN
+   RESPONSIVE HANYA MENYESUAIKAN SAIZ/PAPARAN
+   SCROLL AKTIF JIKA RUANG MENEGAK TIDAK CUKUP
+   ========================================================= */
+
+
+/* =========================================================
+   ASAS - ELAK OVERFLOW MENDATAR
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   LANDSCAPE
+   SEMUA DEVICE
+   ========================================================= */
+
+@media screen and (orientation: landscape) {
+
+    html {
+        height: auto !important;
+        min-height: 100%;
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+    }
+
+    body {
+        height: auto !important;
+        min-height: 100vh;
+
+        display: block !important;
+
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+
+        padding: 10px !important;
+    }
+
+
+    /* =========================
+       GAME BORDER
+       ========================= */
+
+    #game-card {
+        width: min(88vw, 1100px) !important;
+        max-width: 1100px !important;
+
+        height: auto !important;
+        min-height: 0 !important;
+
+        margin: 10px auto 35px auto !important;
+
+        padding: 18px 24px 30px !important;
+
+        box-sizing: border-box;
+
+        overflow: visible !important;
+
+        left: auto !important;
+        transform: none !important;
+    }
+
+
+    /* =========================
+       SOALAN + MARKAH
+       ========================= */
+
+    #game-card > div.flex.items-center.justify-between {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+
+        left: auto !important;
+        transform: none !important;
+
+        box-sizing: border-box;
+    }
+
+
+    /* =========================
+       KOTAK SOALAN
+       ========================= */
+
+    #question-area {
+        width: 100% !important;
+        box-sizing: border-box;
+    }
+
+    #question-image {
+        width: min(70vw, 650px) !important;
+        max-width: 100% !important;
+
+        margin-left: auto !important;
+        margin-right: auto !important;
+
+        left: auto !important;
+        transform: none !important;
+
+        box-sizing: border-box;
+    }
+
+
+    /* =========================
+       PERKATAAN
+       ========================= */
+
+    #question-word {
+        font-size: clamp(30px, 5vw, 52px) !important;
+    }
+
+
+    /* =========================
+       BUTTON JAWAPAN
+       ========================= */
+
+    #answers {
+        width: min(70vw, 720px) !important;
+        max-width: 100% !important;
+
+        margin-left: auto !important;
+        margin-right: auto !important;
+
+        box-sizing: border-box;
+
+        gap: clamp(8px, 1.2vw, 14px) !important;
+    }
+
+    #answers button {
+        width: 100% !important;
+
+        min-height: clamp(44px, 7vh, 58px) !important;
+
+        padding: 7px 10px !important;
+
+        font-size: clamp(15px, 2.2vw, 23px) !important;
+
+        box-sizing: border-box;
+    }
+
+
+    /* =========================
+       KEMBALI
+       ========================= */
+
+    #game-card > div.flex.flex-col.items-center {
+        margin-top: 15px !important;
+        margin-bottom: 5px !important;
+    }
+
+
+    /* =========================
+       LOGO
+       ========================= */
+
+    .bottom-logo {
+        width: clamp(60px, 8vw, 85px) !important;
+        height: clamp(60px, 8vw, 85px) !important;
+
+        bottom: 8px !important;
+        right: 8px !important;
+    }
+}
+
+
+/* =========================================================
+   LANDSCAPE - HP PENDEK
+   Contoh telefon yang tinggi skrin landscape sangat rendah
+   ========================================================= */
+
+@media screen and (orientation: landscape) and
+       (max-height: 500px) {
+
+    #game-card {
+        width: 88vw !important;
+
+        padding: 12px 18px 25px !important;
+
+        margin-top: 8px !important;
+        margin-bottom: 35px !important;
+    }
+
+
+    /* SOALAN + MARKAH */
+    #game-card > div.flex.items-center.justify-between {
+        padding: 6px 10px !important;
+        margin-bottom: 12px !important;
+    }
+
+
+    #game-card > div.flex.items-center.justify-between span {
+        font-size: clamp(13px, 2.5vw, 19px) !important;
+    }
+
+
+    /* KOTAK SOALAN */
+    #question-image {
+        width: min(76vw, 580px) !important;
+
+        padding: 12px 16px !important;
+
+        margin-bottom: 12px !important;
+    }
+
+
+    #question-image p.text-xl {
+        font-size: clamp(14px, 2.5vw, 20px) !important;
+        margin-bottom: 4px !important;
+    }
+
+
+    #question-word {
+        font-size: clamp(27px, 5vw, 44px) !important;
+    }
+
+
+    /* BUTTON */
+    #answers {
+        width: min(76vw, 680px) !important;
+        gap: 7px !important;
+    }
+
+    #answers button {
+        min-height: 40px !important;
+        padding: 5px 8px !important;
+        font-size: clamp(14px, 2.3vw, 20px) !important;
+    }
+
+
+    /* KEMBALI */
+    #game-card > div.flex.flex-col.items-center {
+        margin-top: 10px !important;
+    }
+
+    #game-card > div.flex.flex-col.items-center button {
+        padding: 6px 20px !important;
+        font-size: clamp(14px, 2.3vw, 19px) !important;
+    }
+
+
+    .bottom-logo {
+        width: 60px !important;
+        height: 60px !important;
+    }
+}
+
+
+/* =========================================================
+   PORTRAIT - HP KECIL
+   Design asal dikekalkan
+   ========================================================= */
+
+@media screen and (orientation: portrait) and
+       (max-width: 480px) {
+
+    body {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    #game-card {
+        width: 90% !important;
+        max-width: 800px !important;
+
+        box-sizing: border-box;
+    }
+
+    #question-image {
+        max-width: 100% !important;
+        box-sizing: border-box;
+    }
+
+    #answers {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        gap: 10px !important;
+    }
+
+    #answers button {
+        min-height: 50px !important;
+
+        font-size: clamp(15px, 4.5vw, 21px) !important;
+    }
+}
+
+
+/* =========================================================
+   PORTRAIT - TABLET
+   ========================================================= */
+
+@media screen and (orientation: portrait) and
+       (min-width: 481px) and
+       (max-width: 900px) {
+
+    body {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    #game-card {
+        width: 82% !important;
+        max-width: 800px !important;
+
+        box-sizing: border-box;
+    }
+
+    #question-image {
+        max-width: 600px !important;
+    }
+
+    #answers {
+        max-width: 600px !important;
+    }
+}
+
+
+/* =========================================================
+   PORTRAIT - TABLET BESAR / DESKTOP
+   ========================================================= */
+
+@media screen and (orientation: portrait) and
+       (min-width: 901px) {
+
+    body {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    #game-card {
+        max-width: 800px !important;
+        box-sizing: border-box;
+    }
+}
+
+
+/* =========================================================
+   LAPTOP / DESKTOP LANDSCAPE
+   ========================================================= */
+
+@media screen and (orientation: landscape) and
+       (min-width: 1000px) {
+
+    #game-card {
+        width: min(82vw, 1100px) !important;
+
+        padding-left: 28px !important;
+        padding-right: 28px !important;
+    }
+
+    #question-image {
+        width: min(65vw, 650px) !important;
+    }
+
+    #answers {
+        width: min(65vw, 720px) !important;
+    }
+}
+    </style>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js" type="text/javascript"></script>
+  <script src="/_sdk/935a53bc2e11fb8d.data_sdk.js" type="text/javascript" integrity="sha512-qr2oyPnEys1WebcOABaRh6hG77r5PWpqeWW6JTKbRJqly/INsfBi31CVNlTmHqjgeLpkVmmHZJUdxSx/32tOFQ=="></script>
+  <script src="/_sdk/6030e540d4419216.resizing_sdk.js" type="text/javascript" integrity="sha512-b5KWzyoXsbWP4smq4sftIi6Kts4YVBpBsz0BwCViwbBJkK64a3/Z6ZMdWA+qnplNcXw4mhZeqvQi3mOosiRJdA=="></script>
+ </head>
+ <body data-template-id="__page-root" class="w-full min-h-screen overflow-hidden relative flex items-center justify-center p-4"><!-- Background elements -->
+  <div class="fixed inset-0 pointer-events-none overflow-hidden" aria-hidden="true"><!-- Sun -->
+   <div class="sun-pulse absolute top-6 left-6 text-10xl sm:text-10xl">
+    🌞
+   </div><!-- Rainbow -->
+   <div class="absolute top-10 right-10 text-10xl float-slow opacity-70">
+    🌈
+   </div><!-- Clouds -->
+   <div class="absolute top-[12%] left-[20%] text-10xl float" style="animation-delay:0.5s">
+    ☁️
+   </div>
+   <div class="absolute top-[8%] left-[55%] text-20xl float" style="animation-delay:1.5s">
+    ☁️
+   </div>
+   <div class="absolute top-[18%] right-[15%] text-20xl float" style="animation-delay:2.5s">
+    ☁️
+   </div><!-- Birds -->
+   <div class="bird absolute top-[6%] text-5xl">
+    🦜 
+   </div>
+   <div class="bird2 absolute top-[18%] text-5xl">
+    🦜
+   </div><!-- Bees -->
+   <div class="bee absolute top-[45%] left-[15%] text-6xl">
+    🐝
+   </div>
+   <div class="bee absolute top-[45%] right-[15%] text-6xl" style="animation-delay:2s">
+    🐝
+   </div><!-- Ground -->
+   <div class="absolute bottom-0 left-0 right-0 flex justify-around items-end"><span class="sway text-4xl">🌹 </span> <span class="float-slow text-2xl" style="animation-delay:0.3s">🌸</span> <span class="sway text-4xl" style="animation-delay:1.0s">🌹 </span> <span class="float-slow text-2xl" style="animation-delay:0.7s">🌺</span> <span class="sway text-4xl" style="animation-delay:1.0s">🌹 </span> <span class="float-slow text-2xl" style="animation-delay:1.2s">🌸 </span> <span class="sway text-4xl" style="animation-delay:1.0s">🌹 </span>
+   </div>
+   
+  </div><!-- Music toggle --> <button id="music-btn" onclick="toggleMusic()" class="fixed top-4 right-4 z-50 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center text-2xl float" aria-label="Toggle music"> 🎵
+  
+  </button> <!-- Game Card -->
+<main id="game-card"
+class="relative -mt-50 z-50 w-full max-w-x1 mx-auto bg-transparent rounded-none shadow-none pt-2 px-0 pb-8 fade-in">
+
+
+<!-- SCORE + QUESTION -->
+<div class="flex items-center justify-between bg-white rounded-xl shadow-xl w-[120%] mx-auto relative left-1/2 -translate-x-1/2 -translate-y-6 px-4 mb-4">
+    
+    <div class="flex items-center gap-2">
+        <span class="text-3xl">📖</span>
+        <span class="font-black text-blue-600">
+            SOALAN : <span id="q-num">1</span>/40
+        </span>
+    </div>
+    
+    <div class="flex items-center gap-2">
+        <span class="font-black text-pink-600">
+            MARKAH :
+        </span>
+        <span id="score-val" class="font-black text-pink-600">0</span>
+    </div>
+    
+</div>
+   <!-- Question -->
+  <div id="question-area" class="text-center mb-6">
+
+   <div id="question-image"
+class="w-full max-w-sm mx-auto mb-5
+bg-white/100
+border-4 border-black
+rounded-3xl
+flex items-center justify-center
+px-6 py-8
+relative left-1/2 -translate-x-1/2"
+
+    <div class="text-center">
+
+        <p class="text-xl font-bold text-gray-500 mb-2">
+            KATA LAWAN
+        </p>
+
+        <p id="question-word"
+        class="text-4xl sm:text-5xl font-black text-blue-600"
+        style="text-shadow:0 2px 3px rgba(0,0,0,.15);">
+        BESAR
+        </p>
+
+    </div>
+
+</div>
+
+   </div><!-- Answer Buttons -->
+   
+<div id="answers" class="grid grid-cols-2 gap-4 w-full max-w-md mx-auto">
+</div>
+      
+   </div><!-- Feedback -->
+   <div id="feedback" class="hidden absolute inset-0 rounded-1xl flex items-center justify-center /9000 backdrop-blur">
+    <p id="feedback-text" class="text-3xl sm:text-4xl font-bold text-center zoom-in"></p>
+   </div>
+   
+   <div class="flex flex-col items-center mt-8 mb-2">
+
+<button onclick="window.location.href='melayu.html'"
+class="bg-violet-600 hover:bg-violet-700 text-white font-bold px-6 py-2 rounded-full shadow-lg mb-6"
+style="box-shadow:0 0 0 3px rgba(255,255,255,.85),0 0 15px rgba(255,255,255,.55),0 8px 18px rgba(0,0,0,.2);">
+    🔙 KEMBALI
+</button>
+
+<!-- HE BLOOM LOGO -->
+
+<img src="HE_Bloom.png"
+     alt="HE Bloom"
+     class="he-bloom-logo bottom-logo">
+</div>
+  </main><!-- End Screen -->
+  
+<div id="end-screen" class="hidden relative z-10 w-full max-w-md bg-white/5 backdrop-blur-xl rounded-[100px] border-[10px] border-white shadow-3xl p-8 fade-in flex flex-col items-center justify-center">
+    
+    <div class="flex flex-col items-center justify-center text-center">
+        
+   <h1 data-template-id="congrats-title" class="canva-text text-3xl sm:text-4xl font-bold mb-4"></h1>
+   
+   <p id="final-score" class="text-5xl font-bold text-blue-600 mb-3 text-center w-full"></p>
+   
+   <p id="final-msg" class="text-2xl font-semibold mb-6"></p>
+<button
+class="btn-answer bg-gradient-to-r from-pink-400 to-purple-400 text-white text-xl font-bold px-6 py-3 rounded-full shadow-lg"
+
+onclick="restartGame()">
+▶ MAIN SEMULA
+</button>
+  </div>
+  <script>
+  
+        const oppositePairs = [
+    
+    ["PAGI", "MALAM"],
+    ["AWAL", "LEWAT"],
+    ["SEKARANG", "DAHULU"],
+    ["CEPAT", "LAMBAT"],
+    ["BESAR", "KECIL"],
+    ["TINGGI", "RENDAH"],
+    ["BAIK", "JAHAT"],
+    ["GEMBIRA", "SEDIH"],
+    ["TENANG", "GELISAH"],
+    ["TERUJA", "KECEWA"],
+    ["SEJUK", "PANAS"],
+    ["TERANG", "GELAP"],
+    ["KERAS", "LEMBUT"],
+    ["KUAT", "LEMAH"],
+    ["BERANI", "MALU"],
+    ["DUDUK", "BERDIRI"],
+    ["PERGI", "DATANG"],
+    ["KELUAR", "MASUK"],
+    ["TUTUP", "BUKA"],
+    ["KAYA", "MISKIN"],
+    ["BERSIH", "KOTOR"],
+    ["JUJUR", "BOHONG"],
+    ["SOPAN", "BIADAB"],
+    ["BETUL", "SALAH"],
+    ["CANTIK", "HODOH"],
+    ["MENANGIS", "KETAWA"],
+    ["BASAH", "KERING"],
+    ["JAUH", "DEKAT"],
+    ["ATAS", "BAWAH"],
+    ["DEPAN", "BELAKANG"],
+    ["DALAM", "LUAR"],
+    ["PENUH", "KOSONG"], 
+    ["SELAMAT", "BAHAYA"],
+    ["INGAT", "LUPA"],
+    ["PERTAMA", "TERAKHIR"],
+    ["SEBELUM", "SELEPAS"],
+    ["TANYA", "JAWAB"],
+    ["ASLI", "PALSU"],
+    ["MENANG", "KALAH"],
+    ["TARIK", "TOLAK"],
+    ["TIMUR", "BARAT"],
+    ["CINTA", "BENCI"],
+    ["SELATAN", "UTARA"],
+    ["PANJANG", "PENDEK"],
+    ["KIRI", "KANAN"],
+    ["BERAT", "RINGAN"],
+    ["KURUS", "GEMUK"],
+    ["TEBAL", "NIPIS"], 
+    ["NAIK", "TURUN"],
+    ["HIDUP", "MATI"],
+    ["BISING", "SENYAP"],
+    ["SIANG", "MALAM"],
+    ["MAHAL", "MURAH"], 
+    ["SIHAT", "SAKIT"],
+["MUDA", "TUA"],
+["KASAR", "HALUS"],
+["MANIS", "PAHIT"],
+["BARU", "LAMA"],
+["LEBAR", "SEMPIT"],
+["LAPAR", "KENYANG"],
+["LURUS", "BENGKOK"],
+["WARAS", "GILA"],
+["HARUM", "BUSUK"],
+["POSITIF", "NEGATIF"],
+["RAJIN", "MALAS"],
+["TAJAM", "TUMPUL"],
+["KETAT", "LONGGAR"], 
+["MAJU", "MUNDUR"],
+["BANYAK", "SEDIKIT"],
+["BELI", "JUAL"],
+["PUTIH", "HITAM"],
+["JINAK", "LIAR"],
+["MEMBERI", "MENERIMA"],
+["MINUM", "MAKAN"],
+["SETUJU", "BANTAH"],
+["BANJIR", "KEMARAU"],
+["KEMPIS", "BUNCIT"],
+["LABUH", "SINGKAT"],
+["ISI", "KULIT"],
+["BANGUN", "JATUH"],
+["KENDUR", "TEGANG"],
+["KEMAS", "COMOT"],
+["MAJIKAN", "PEKERJA"],
+["SYURGA", "NERAKA"],
+["TANAM", "CABUT"],
+["JELAS", "KABUR"],
+["HILANG", "JUMPA"],
+["HINGGAP", "TERBANG"],
+["MUDAH", "SUKAR"],
+["SEGAR", "LAYU"],
+["RAPAT", "RENGGANG"],
+["HINGGAP", "TERBANG"],
+["PEMURAH", "KEDEKUT"],
+["GENAP", "GANJIL"],
+["MINIMUM", "MAKSIMUM"],
+["BERJAYA", "GAGAL"],
+["PANDAI", "BODOH"],
+["AKRAB", "RENGGANG"],
+["CETEK", "DALAM"],
+["DEWASA", "KANAK-KANAK"],
+["CERIA", "MURAM"],
+["MASAK", "MENTAH"],
+["BERKUMPUL", "BERSURAI"],
+["DESA", "KOTA"],
+["IMPORT", "EKSPORT"],
+["LELAKI", "PEREMPUAN"],
+["TERAPUNG", "TENGGELAM"],
+["LAJU", "PERLAHAN"], 
+["LUSUH", "BAHARU"],
+["PUJI", "KUTUK"],
+["CAIR", "BEKU"],
+["CUKUP", "KURANG"], 
+["JARANG", "RAPAT"],
+["BAHAGIA", "DERITA"],
+["RELA", "ENGGAN"],
+["TEGAK", "CONDONG"],
+["GARING", "LEMAU"],
+["SULUNG", "BONGSU"],
+["CERMAT", "CUAI"],
+["JIMAT", "BOROS"],
+["DAMAI", "PERANG"],
+["HANTAR", "JEMPUT"],
+["PANGKAL", "HUJUNG"],
+["MULIA", "HINA"],
+["JANDA", "DUDA"],
+["JERNIH", "KERUH"],
+["KOREK", "TIMBUS"],
+["ANGKAT", "LETAK"],
+["BELUM", "SUDAH"],
+["SUBUR", "TANDUS"]
+];
+    
+    
+        const btnColors = [
+            "bg-pink-500 hover:bg-pink-500",
+            "bg-blue-500 hover:bg-blue-500",
+            "bg-green-500 hover:bg-green-500",
+            "bg-orange-500 hover:bg-orange-500"
+        ];
+
+        let questions = [], currentQ = 0, score = 0, answered = false;
+            let firstTry = true;
+        let audioCtx = null, musicOsc = null, musicPlaying = false;
+
+        function getAudioCtx() {
+            if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            return audioCtx;
+        }
+
+        function playCorrectSound() {
+            const ctx = getAudioCtx();
+            const o = ctx.createOscillator(); const g = ctx.createGain();
+            o.connect(g); g.connect(ctx.destination);
+            o.type = 'sine'; o.frequency.setValueAtTime(523, ctx.currentTime);
+            o.frequency.setValueAtTime(659, ctx.currentTime + 0.1);
+            o.frequency.setValueAtTime(784, ctx.currentTime + 0.2);
+            g.gain.setValueAtTime(0.3, ctx.currentTime);
+            g.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.4);
+            o.start(); o.stop(ctx.currentTime + 0.4);
+        }
+
+        function playWrongSound() {
+            const ctx = getAudioCtx();
+            const o = ctx.createOscillator(); const g = ctx.createGain();
+            o.connect(g); g.connect(ctx.destination);
+            o.type = 'sawtooth'; o.frequency.setValueAtTime(200, ctx.currentTime);
+            o.frequency.setValueAtTime(150, ctx.currentTime + 0.2);
+            g.gain.setValueAtTime(0.2, ctx.currentTime);
+            g.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.3);
+            o.start(); o.stop(ctx.currentTime + 0.3);
+        }
+        
+        function playClickSound() {
+    const ctx = getAudioCtx();
+    
+    const o = ctx.createOscillator();
+    const g = ctx.createGain();
+    
+    o.frequency.value = 600;
+    g.gain.value = 0.08;
+    
+    o.connect(g);
+    g.connect(ctx.destination);
+    
+    o.start();
+    o.stop(ctx.currentTime + 0.08);
+}
+
+        function toggleMusic() {
+    
+    playClickSound(); // bunyi klik setiap kali tekan
+    
+    const ctx = getAudioCtx();
+    
+    if (musicPlaying) {
+        stopMusic();
+        return;
+    }
+    
+    musicPlaying = true;
+    
+    // Tekan pertama = music ON
+    document.getElementById('music-btn').textContent = '🎵';
+    
+    playMusicLoop();
+}
+        let musicInterval;
+        function playMusicLoop() {
+            const ctx = getAudioCtx();
+            const notes = [262,294,330,349,392,349,330,294];
+            let i = 0;
+            function playNote() {
+                if (!musicPlaying) return;
+                const o = ctx.createOscillator(); const g = ctx.createGain();
+                o.connect(g); g.connect(ctx.destination);
+                o.type = 'sine'; o.frequency.value = notes[i % notes.length];
+                g.gain.setValueAtTime(0.08, ctx.currentTime);
+                g.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.4);
+                o.start(); o.stop(ctx.currentTime + 0.4);
+                i++;
+            }
+            playNote();
+            musicInterval = setInterval(playNote, 500);
+        }
+
+        function stopMusic() {
+            musicPlaying = false;
+            clearInterval(musicInterval);
+            document.getElementById('music-btn').textContent = '🔇 ';
+        }
+
+function shuffle(arr) {
+    for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+}
+
+        function generateQuestions() {
+    
+    let allQuestions = [];
+    
+    // Setiap pasangan menghasilkan 2 soalan
+    oppositePairs.forEach(pair => {
+        
+        allQuestions.push({
+            word: pair[0],
+            answer: pair[1]
+        });
+        
+        allQuestions.push({
+            word: pair[1],
+            answer: pair[0]
+        });
+        
+    });
+    
+    // Rawak semua soalan
+    shuffle(allQuestions);
+    
+    // Ambil 40 soalan sahaja
+    questions = allQuestions.slice(0, 40).map(q => {
+        
+        const wrongAnswers = shuffle(
+            allQuestions
+            .filter(x => x.answer !== q.answer)
+            .map(x => x.answer)
+        ).slice(0, 3);
+        
+        return {
+            word: q.word,
+            answer: q.answer,
+            options: shuffle([
+                q.answer,
+                ...wrongAnswers
+            ])
+        };
+        
+    });
+}
+
+        function renderQuestion() {
+    
+    answered = false;
+    firstTry = true;
+    
+    const q = questions[currentQ];
+    
+    // Paparkan perkataan
+  document.getElementById("question-word").textContent = q.word.charAt(0).toUpperCase() + q.word.slice(1).toLowerCase();
+    
+    // Nombor soalan
+    document.getElementById("q-num").textContent = currentQ + 1;
+    
+    // Markah
+    document.getElementById("score-val").textContent = score;
+    
+    // Pilihan jawapan
+    const container = document.getElementById("answers");
+    container.innerHTML = "";
+    
+    q.options.forEach((opt, i) => {
+        
+        const btn = document.createElement("button");
+        
+        btn.className =
+            `btn-answer ${btnColors[i]}
+        w-full min-h-14 px-2 py-2
+        text-white font-bold text-xl
+        rounded-2xl shadow-md
+        flex items-center justify-center text-center`;
+        
+        btn.style.boxShadow =
+    "0 0 10px #ffffff, 0 0 20px rgba(255,255,255,0.8), 0 8px 15px rgba(0,0,0,0.25)";
+
+btn.style.border = "3px solid #ffffff";
+        
+        btn.textContent = opt.charAt(0).toUpperCase() + opt.slice(1).toLowerCase();
+        
+        btn.onclick = () => checkAnswer(opt, q.answer, btn);
+        
+        container.appendChild(btn);
+    });
+}
+        function checkAnswer(selected, correct, btn) {
+            if (answered) return;
+            if (selected === correct) {
+                answered = true;
+                if (firstTry) {
+                   score++;
+                }
+                
+                playCorrectSound();
+                showFeedback('✅ BETUL 🎉', 'text-green-500');
+                setTimeout(() => {
+                    hideFeedback();
+                    currentQ++;
+                    if (currentQ >= 40) showEnd();
+                    else renderQuestion();
+                }, 1000);
+            } else {
+                firstTry = false;
+                playWrongSound();
+                btn.classList.add('shake');
+                showFeedback('❌ CUBA LAGI', 'text-red-500');
+                setTimeout(() => {
+                    hideFeedback();
+                    btn.classList.remove('shake');
+                }, 800);
+            }
+        }
+
+function showFeedback(text, cls) {
+    const fb = document.getElementById('feedback');
+    const ft = document.getElementById('feedback-text');
+
+    ft.innerHTML = `
+    <div style="
+        background:#ffffff;
+        border:4px solid ${cls.includes('green') ? '#22c55e' : '#ef4444'};
+        border-radius:20px;
+        padding:15px 25px;
+        display:inline-block;
+        box'shadow:0 8px 20px rgba(0,0,0,0.35);
+        font-size:30px;
+        font-weight:900;
+        color:${cls.includes('green') ? '#22c55e' : '#ef4444'};
+    ">
+        ${text.replace('\n','<br>')}
+    </div>`;
+
+    fb.classList.remove('hidden');
+}
+
+        function hideFeedback() {
+            document.getElementById('feedback').classList.add('hidden');
+        }
+
+        function showEnd() {
+    document.getElementById('game-card').classList.add('hidden');
+    
+    const end = document.getElementById('end-screen');
+    end.classList.remove('hidden');
+    
+    document.getElementById('final-score').textContent = `${score} / 40`;
+    
+    let msg = "";
+    
+    if (score >= 36) {
+msg = "🏆 CEMERLANG";
+} else if (score >= 30) {
+msg = "👏 SYABAS";
+} else if (score >= 24) {
+msg = "😊 TERUS BERUSAHA";
+} else {
+msg = "❤️ JANGAN PUTUS ASA";
+}
+    
+    document.getElementById('final-msg').textContent = msg;
+}
+        function restartGame() {
+            score = 0; currentQ = 0;
+            generateQuestions();
+            document.getElementById('end-screen').classList.add('hidden');
+            document.getElementById('game-card').classList.remove('hidden');
+            renderQuestion();
+        }
+
+        generateQuestions();
+        renderQuestion();
+    </script>
+ </body>
+</html>

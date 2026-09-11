@@ -1,0 +1,1269 @@
+<!doctype html>
+<html lang="ms">
+ <head><script>window["__codeletBootstrap__"]=JSON.parse('{"A":"A","B":"20260730-05-6814160","C":{"Abril Fatface":"YACgEZbkUVE,0","Alfa Slab One":"YACgEYS9sJU,0","Anton":"YACgEcYqQ-A,0","Archivo":"YAHO2-t-jNE,0","Arial":"YAGyDvJ_4Ts,0","Bebas Neue":"YACgESME5ew,0","Broken Glyph":"YADZ-exUkv0,0","Canva Sans":"YAFdJjTk5UU,0","Caveat":"YALBs2ploWQ,0","Comic Sans MS":"YAHO2VMiyZo,0","Cormorant Garamond":"YAFdJhX-538,0","Courier New":"YAGzXiGs0_8,0","DM Sans":"YAD1aU3sLnI,0","DM Serif Display":"YAD1aYG82rc,0","Forum":"YACgEcnnqB4,0","Fraunces":"YAEul-FRQw4,0","Georgia":"YAGzXkO0pEM,0","Ghost Mono":"YAHO2EIdDP0,0","Helvetica Neue":"YAFcf6CtJfI,0","Impact":"YAFcfnjI7Vk,0","Inter":"YAFdJvSyp_k,3","Iowan Old Style":"YAGNIFa8j9o,0","Jacques Francois":"YAHO2a5g66Q,0","JetBrains Mono":"YADy3sAhvXQ,0","Oleo Script":"YACgEQQ14jI,0","Playfair Display":"YAFdJhem5V8,1","Poppins":"YAE5fPSY9qM,0","Press Start 2P":"YAFyGr-8pmQ,0","Source Sans 3":"YAG4lO1Mj10,0","Space Grotesk":"YAHO2sjPCSM,0","Times New Roman":"YAGzXW3gftg,0","Times":"YAGzXW3gftg,0","Trebuchet MS":"YAFcfrglpVA,0","Verdana":"YAGzXTctYtQ,0","Work Sans":"YAGXhLOKv44,0","Yellowtail":"YACgEYG4kG4,0"}}');</script><script src="/_sdk/a27874207e105461.telemetry_sdk.js" integrity="sha512-wgI5N9F7oA2h3vH+benMYIv4wGqTct4nKWakqgvfgRyBLmfYq8q/fi6gkfWKd2hMsyN+VQ/qOAOpxybwkcoxlA=="></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Numbers Sudoku_Easy</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<script type="module">
+
+import {
+    initializeApp,
+    getApps,
+    getApp
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+import {
+    getAuth,
+    onAuthStateChanged
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+import {
+    getFirestore,
+    doc,
+    getDoc
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+import {
+    saveSudokuResult
+} from "./sudokuLeaderboard.js";
+
+
+const firebaseConfig = {
+    apiKey: "AIzaSyB0crUiSYBTxye5nHDOYJ8I7dNAv-mLO7g",
+    authDomain: "he-bloom-edu-games.firebaseapp.com",
+    projectId: "he-bloom-edu-games",
+    storageBucket: "he-bloom-edu-games.firebasestorage.app",
+    messagingSenderId: "629319143905",
+    appId: "1:629319143905:web:2a989f47e473c4ad7302a0"
+};
+
+
+// Guna Firebase app yang sedia ada
+const app = getApps().length
+    ? getApp()
+    : initializeApp(firebaseConfig);
+
+const auth = getAuth(app);
+const db = getFirestore(app);
+
+
+// Benarkan finishGame() guna fungsi ini
+window.saveSudokuResult = saveSudokuResult;
+
+
+// DATA PEMAIN
+window.firebasePlayerName = "Unknown Player";
+window.firebasePlayerUid = null;
+window.saveSudokuResult = saveSudokuResult;
+
+
+onAuthStateChanged(auth, async (user) => {
+
+    if (!user) {
+        console.log("Tiada akaun Firebase.");
+        return;
+    }
+
+    try {
+
+        const uid = user.uid;
+
+        window.firebasePlayerUid = uid;
+
+
+        const playerRef =
+            doc(db, "sudokuPlayers", uid);
+
+        const playerSnap =
+            await getDoc(playerRef);
+
+
+        if (playerSnap.exists()) {
+
+            const data =
+                playerSnap.data();
+
+            window.firebasePlayerName =
+                data.name || "Unknown Player";
+
+
+            console.log(
+                "Nama Firebase:",
+                window.firebasePlayerName
+            );
+
+            console.log(
+                "UID Firebase:",
+                window.firebasePlayerUid
+            );
+
+
+            // Beritahu code utama nama sudah siap
+            window.dispatchEvent(
+                new CustomEvent(
+                    "firebasePlayerReady",
+                    {
+                        detail: {
+                            name:
+                                window.firebasePlayerName,
+                            uid:
+                                window.firebasePlayerUid
+                        }
+                    }
+                )
+            );
+
+        }
+
+    } catch (error) {
+
+        console.error(
+            "Gagal ambil data Firebase:",
+            error
+        );
+
+    }
+
+});
+
+</script>
+</script>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <script src="/_sdk/b23f1f6ec78e9bd4.editing_sdk.js" integrity="sha512-WFdQutvUZzxrmcHkL8cbfuFDTeF8Cn8Bt3yqX/a/OdiqPz/t9UcjsIsZK7D+tMTmC2JTwhwRJNyfcHmIWhG8Wg=="></script>
+  <style>
+body {
+    background: url("puzzle.png") no-repeat center center fixed;
+    background-size: cover;
+}
+        * { font-family: 'Fredoka', sans-serif; }
+        
+        @keyframes float { 0%,100%{ transform: translateY(0) } 50%{ transform: translateY(-10px) } }
+        @keyframes floatSlow { 0%,100%{ transform: translateY(0) rotate(0deg) } 50%{ transform: translateY(-6px) rotate(2deg) } }
+ @keyframes birdFly {
+    0% {
+        transform: translateX(-120px) translateY(0px) rotate(-6deg);
+    }
+    15% {
+        transform: translateX(15vw) translateY(-18px) rotate(4deg);
+    }
+    30% {
+        transform: translateX(30vw) translateY(8px) rotate(-3deg);
+    }
+    45% {
+        transform: translateX(45vw) translateY(-22px) rotate(5deg);
+    }
+    60% {
+        transform: translateX(60vw) translateY(12px) rotate(-4deg);
+    }
+    75% {
+        transform: translateX(80vw) translateY(-15px) rotate(3deg);
+    }
+    90% {
+        transform: translateX(95vw) translateY(6px) rotate(-2deg);
+    }
+    100% {
+        transform: translateX(110vw) translateY(-10px) rotate(2deg);
+    }
+}
+        @keyframes beeFly { 0%,100%{ transform: translate(0,0) } 25%{ transform: translate(30px,-20px) } 50%{ transform: translate(-10px,-30px) } 75%{ transform: translate(20px,10px) } }
+        @keyframes sway { 0%,100%{ transform: rotate(-2deg) } 50%{ transform: rotate(2deg) } }
+        @keyframes sunPulse { 0%,100%{ transform: scale(1) } 50%{ transform: scale(1.05) } }
+        @keyframes zoomIn { 0%{ transform: scale(0.5); opacity:0 } 100%{ transform: scale(1); opacity:1 } }
+        @keyframes shake { 0%,100%{ transform: translateX(0) } 20%{ transform: translateX(-8px) } 40%{ transform: translateX(8px) } 60%{ transform: translateX(-5px) } 80%{ transform: translateX(5px) } }
+        @keyframes fadeIn { from{ opacity:0; transform:translateY(10px) } to{ opacity:1; transform:translateY(0) } }
+        
+        .float { animation: float 3s ease-in-out infinite; }
+        .float-slow { animation: floatSlow 4s ease-in-out infinite; }
+        .bird { animation: birdFly 30s linear infinite; }
+        .bird2 { animation: birdFly 40s linear infinite; animation-delay: 10s; }
+        .bee { animation: beeFly 5s ease-in-out infinite; }
+        .sway { animation: sway 3s ease-in-out infinite; }
+        .sun-pulse { animation: sunPulse 4s ease-in-out infinite; }
+        .zoom-in { animation: zoomIn 0.3s ease-out; }
+        .shake { animation: shake 0.4s ease-out; }
+        .fade-in { animation: fadeIn 0.4s ease-out; }
+        
+    
+
+/* ===== COLOUR SUDOKU STYLE ===== */
+
+#game-card {
+    width: 60%;
+    max-width: 500px;
+    
+    height: 800px;
+    min-height: 800px;
+    
+    margin: 0 auto;
+    padding: 60px 24px;
+    
+    box-sizing: border-box;
+    
+    background: rgba(235, 255, 250, 0.10);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    
+    border: 3px solid rgba(255, 255, 255, 0.85);
+    border-radius: 10px;
+    
+    box-shadow:
+        0 0 0 3px rgba(255, 255, 255, 0.25),
+        0 12px 35px rgba(70, 130, 120, 0.18);
+}
+
+/* Grid Sudoku */
+#sudoku-grid {
+    width: 100%;
+    max-width: 680px;
+    margin: 0 auto;
+    
+    background: rgba(255, 255, 255, 0.82);
+    border: 5px solid #f3a6bb;
+    border-radius: 32px;
+    
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.12),
+        inset 0 0 0 2px rgba(255, 255, 255, 0.8);
+}
+
+/* Petak Sudoku */
+#sudoku-grid button {
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px solid #efc2ce;
+    transition: all 0.15s ease;
+    height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Garisan tengah 2x2 */
+#sudoku-grid button:nth-child(2),
+#sudoku-grid button:nth-child(6),
+#sudoku-grid button:nth-child(10),
+#sudoku-grid button:nth-child(14) {
+    border-right: 4px solid #f06b91;
+}
+
+#sudoku-grid button:nth-child(9),
+#sudoku-grid button:nth-child(10),
+#sudoku-grid button:nth-child(11),
+#sudoku-grid button:nth-child(12) {
+    border-top: 4px solid #f06b91;
+}
+
+#sudoku-grid button:hover {
+    background: #fff5f8;
+    transform: scale(1.02);
+}
+
+/* Bulatan warna */
+#sudoku-grid button span {
+    box-shadow: none !important;
+    background: transparent !important;
+}
+/* Butang warna */
+#answers {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 8px;
+width: 80%;
+max-width: 700px;
+margin: 6px auto 0;
+}
+#answers button {
+min-height: 70px;
+height: 70px;
+border-radius: 16px;
+
+background: rgba(255, 255, 255, 0.90);  
+color: #7e22ce !important;  
+
+font-size: 40px !important;  
+font-weight: 800;  
+
+display: flex !important;  
+align-items: center !important;  
+justify-content: center !important;  
+
+padding: 0 !important;
+
+}
+
+#answers button:hover {
+    transform: translateY(-4px) scale(1.03);
+}
+
+#answers button:active {
+    transform: scale(0.96);
+}
+
+/* Telefon */
+@media (max-width: 640px) {
+    
+    #game-card {
+        width: 96%;
+        padding: 12px 12px 22px;
+        border-radius: 28px;
+    }
+    
+    #answers {
+        gap: 8px;
+    }
+    
+#answers button {
+    min-height: 70px;
+    font-size: 46px !important;
+    font-weight: 800;
+    padding: 0 !important;
+}
+.he-bloom-logo {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    z-index: 9999;
+    opacity: .95;
+    pointer-events: none;
+}
+
+.bottom-logo {
+    bottom: 18px;
+    right: 18px;
+}
+/* =====================================================
+   LANDSCAPE - BOLEH SCROLL
+   DESIGN ASAL KEKAL
+   ===================================================== */
+@media (orientation: landscape) and (max-height: 600px) {
+    
+    html,
+    body {
+        width: 100%;
+        min-width: 0;
+        height: auto;
+        min-height: 100%;
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+    }
+    
+    body {
+        align-items: flex-start;
+        justify-content: center;
+        padding-top: 0 !important;
+        padding-bottom: 20px !important;
+    }
+    
+    #game-card {
+        height: auto !important;
+        min-height: 0 !important;
+        
+        margin-top: 0 !important;
+        margin-bottom: 20px !important;
+        
+        padding: 20px 24px 50px !important;
+        
+        box-sizing: border-box;
+    }
+}
+.player-number {
+    position: relative;
+    display: inline-block;
+    font-size: 46px;
+    font-weight: 800;
+    line-height: 1;
+    color: #7e22ce !important;
+}
+
+.medium-hint-dot {
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    background: #000000 !important;
+    border-radius: 50%;
+    top: -2px;
+    right: -7px;
+}
+
+    </style>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js" type="text/javascript"></script>
+  <script src="/_sdk/935a53bc2e11fb8d.data_sdk.js" type="text/javascript" integrity="sha512-qr2oyPnEys1WebcOABaRh6hG77r5PWpqeWW6JTKbRJqly/INsfBi31CVNlTmHqjgeLpkVmmHZJUdxSx/32tOFQ=="></script>
+  <script src="/_sdk/6030e540d4419216.resizing_sdk.js" type="text/javascript" integrity="sha512-b5KWzyoXsbWP4smq4sftIi6Kts4YVBpBsz0BwCViwbBJkK64a3/Z6ZMdWA+qnplNcXw4mhZeqvQi3mOosiRJdA=="></script>
+ </head>
+ <body data-template-id="__page-root" class="w-full min-h-screen overflow-hidden relative flex items-center justify-center p-4"><!-- Background elements -->
+  <div class="fixed inset-0 pointer-events-none overflow-hidden" aria-hidden="true"><!-- Sun -->
+   <div class="sun-pulse absolute top-6 left-6 text-10xl sm:text-10xl">
+    🌞
+   </div><!-- Rainbow -->
+   <div class="absolute top-10 right-10 text-10xl float-slow opacity-70">
+    🌈
+   </div><!-- Clouds -->
+   <div class="absolute top-[12%] left-[20%] text-10xl float" style="animation-delay:0.5s">
+    ☁️
+    </div>
+   <div class="absolute top-[8%] left-[55%] text-20xl float" style="animation-delay:1.5s">
+    ☁️
+   </div>
+   <div class="absolute top-[18%] right-[15%] text-20xl float" style="animation-delay:2.5s">
+    ☁️
+   </div><!-- Birds -->
+   <div class="bird absolute top-[3%] text-5xl">
+    🦜 
+   </div>
+   <div class="bird2 absolute top-[10%] text-5xl">
+    🦜
+   </div><!-- Bees -->
+   <div class="bee absolute top-[45%] left-[2%] text-6xl">
+    🐝
+   </div>
+   <div class="bee absolute top-[45%] right-[2%] text-6xl" style="animation-delay:2s">
+    🐝
+   </div><!-- Ground -->
+   <div class="absolute bottom-0 left-0 right-0 flex justify-around items-end"><span class="sway text-4xl">🌹 </span> <span class="float-slow text-2xl" style="animation-delay:0.3s">🌸</span> <span class="sway text-4xl" style="animation-delay:1.0s">🌹 </span> <span class="float-slow text-2xl" style="animation-delay:0.7s">🌺</span> <span class="sway text-4xl" style="animation-delay:1.0s">🌹 </span> <span class="float-slow text-2xl" style="animation-delay:1.2s">🌸 </span> <span class="sway text-4xl" style="animation-delay:1.0s">🌹 </span>
+   </div>
+   
+  </div><!-- Music toggle --> <button id="music-btn" onclick="toggleMusic()" class="fixed top-4 right-4 z-50 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center text-2xl float" aria-label="Toggle music"> 🎵
+  
+  </button> <!-- Game Card -->
+<main id="game-card"
+class="relative -mt-50 z-50 w-full max-w-x1 mx-auto bg-transparent rounded-none shadow-none pt-2 px-0 pb-8 fade-in">
+
+<div class="text-center mb-2">
+    <div class="flex justify-between items-center max-w-xl mx-auto">
+        
+<div class="bg-white/80 rounded-2xl px-4 py-1 shadow-lg">
+    <div class="text-pink-400 font-bold text-sm">ROUND</div>
+    <div id="question-number" class="text-lg font-bold text-purple-800">
+        1 / 10
+    </div>
+</div>
+        
+       <div class="bg-white/80 rounded-2xl px-4 py-1 shadow-lg">
+    <div class="text-blue-400 font-bold text-sm">TIMER</div>
+    <div id="timer" class="text-lg font-bold text-purple-800">
+        20:00
+    </div>
+</div>
+        
+    </div>
+</div>
+
+<div class="bg-white/80 rounded-3xl p-3 mb-3 max-w-2xl mx-auto">
+
+    <div id="sudoku-grid"
+         class="grid grid-cols-4 gap-0 w-full max-w-2xl mx-auto mb-4">
+    </div>
+
+</div>
+
+<div id="answers" class="grid grid-cols-5 gap-2 w-full max-w-2xl mx-auto mt-2">
+    
+    <button data-number="1" class="number-answer-button"><span>1</span></button>
+    <button data-number="2" class="number-answer-button"><span>2</span></button>
+    <button data-number="3" class="number-answer-button"><span>3</span></button>
+    <button data-number="4" class="number-answer-button"><span>4</span></button>
+</div>
+
+</div>
+
+<div id="feedback"
+     class="hidden fixed left-1/2 top-[45%]
+-translate-x-1/2 -translate-y-1/2
+z-[9999] min-w-[260px] px-6 py-3
+bg-white rounded-3xl border-4
+text-center font-bold text-3xl shadow-2xl">
+</div>
+
+<div id="bottom-buttons"
+     class="flex justify-center items-center gap-2 mt-2 flex-wrap">
+    
+   <button id="delete-btn"
+    class="bg-red-500 text-white font-bold rounded-xl shadow-lg
+    border-2 border-white/80
+           flex items-center justify-center gap-1"
+    style="width: 120px; height: 55px; font-size: 14px;">
+    🗑️ DELETE
+</button> 
+ 
+
+<button id="back-btn"
+    onclick="location.href='sudoku.html'"
+    class="bg-gray-500 text-white font-bold rounded-xl shadow-lg
+    border-2 border-white/80
+    flex items-center justify-center gap-1"
+    style="width: 120px; height: 55px; font-size: 14px;">
+    ◀️ BACK
+</button>
+
+<!-- HE BLOOM LOGO -->
+
+<img src="HE_Bloom.png"
+     alt="HE Bloom"
+     class="he-bloom-logo bottom-logo">
+</div>
+
+<!-- END SCREEN -->
+<div id="end-screen"
+     class="hidden fixed inset-0 z-[10000] flex items-center justify-center px-4">
+
+    <div class="w-[82%] max-w-md rounded-[38px]
+                border-[6px] border-pink-400
+                bg-white/85 backdrop-blur-md
+                shadow-2xl text-center
+                px-5 py-7">
+
+        <!-- Inner white area -->
+        <div class="rounded-[28px]
+                    border-2 border-pink-200
+                    bg-white/70
+                    px-4 py-6">
+
+            <div id="final-score"
+                 class="text-5xl font-extrabold
+                        text-blue-600 mb-3">
+                10 / 10
+            </div>
+
+            <div id="final-msg"
+                 class="text-2xl font-bold
+                        text-gray-900 mb-6">
+                🏆 EXCELLENT
+            </div>
+
+            <button onclick="location.reload()"
+                    class="bg-gradient-to-r from-pink-400 to-purple-500
+                           text-white text-xl font-bold
+                           px-8 py-4 rounded-full
+                           shadow-xl border-4 border-white
+                           active:scale-95">
+                ▶ PLAY AGAIN 
+            </button>
+
+        </div>
+    </div>
+</div>
+
+<script>
+let audioCtx = null;
+let musicInterval = null;
+let musicPlaying = false;
+
+function getAudioCtx() {
+if (!audioCtx) {
+audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+}
+if (audioCtx.state === "suspended") {
+audioCtx.resume();
+}
+return audioCtx;
+} 
+
+function playClickSound() {
+    const ctx = getAudioCtx();
+    
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    
+    osc.frequency.value = 600;
+    gain.gain.value = 0.08;
+    
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+    
+    osc.start();
+    osc.stop(ctx.currentTime + 0.08);
+}
+
+function toggleMusic() {
+    const ctx = getAudioCtx();
+    
+    if (musicPlaying) {
+        stopMusic();
+        return;
+    }
+    
+    musicPlaying = true;
+    document.getElementById("music-btn").textContent = "🎵";
+    playMusicLoop();
+}
+
+function playMusicLoop() {
+    const ctx = getAudioCtx();
+    
+    const notes = [262, 294, 330, 349, 392, 349, 330, 294];
+    let i = 0;
+    
+    function playNote() {
+        if (!musicPlaying) return;
+        
+        const o = ctx.createOscillator();
+        const g = ctx.createGain();
+        
+        o.connect(g);
+        g.connect(ctx.destination);
+        
+        o.type = "sine";
+        o.frequency.value = notes[i % notes.length];
+        
+        g.gain.setValueAtTime(0.08, ctx.currentTime);
+        g.gain.exponentialRampToValueAtTime(
+            0.01,
+            ctx.currentTime + 0.4
+        );
+        
+        o.start();
+        o.stop(ctx.currentTime + 0.4);
+        
+        i++;
+    }
+    
+    playNote();
+    musicInterval = setInterval(playNote, 500);
+}
+
+function stopMusic() {
+    musicPlaying = false;
+    
+    clearInterval(musicInterval);
+    
+    document.getElementById("music-btn").textContent = "🔇";
+}
+
+
+function playCorrectSound() {
+    const ctx = getAudioCtx();
+    
+    const notes = [523, 659, 784];
+    
+    notes.forEach((freq, i) => {
+        const o = ctx.createOscillator();
+        const g = ctx.createGain();
+        
+        o.connect(g);
+        g.connect(ctx.destination);
+        
+        o.type = "sine";
+        o.frequency.value = freq;
+        
+        g.gain.setValueAtTime(0.001, ctx.currentTime);
+        g.gain.exponentialRampToValueAtTime(
+            0.08,
+            ctx.currentTime + 0.03
+        );
+        g.gain.exponentialRampToValueAtTime(
+            0.001,
+            ctx.currentTime + 0.25
+        );
+        
+        o.start(ctx.currentTime + i * 0.12);
+        o.stop(ctx.currentTime + i * 0.12 + 0.25);
+    });
+}
+
+function playWrongSound() {
+    const ctx = getAudioCtx();
+    
+    const o = ctx.createOscillator();
+    const g = ctx.createGain();
+    
+    o.connect(g);
+    g.connect(ctx.destination);
+    
+    o.type = "sawtooth";
+    o.frequency.value = 180;
+    
+    g.gain.setValueAtTime(0.001, ctx.currentTime);
+    g.gain.exponentialRampToValueAtTime(
+        0.08,
+        ctx.currentTime + 0.03
+    );
+    g.gain.exponentialRampToValueAtTime(
+        0.001,
+        ctx.currentTime + 0.4
+    );
+    
+    o.start();
+    o.stop(ctx.currentTime + 0.4);
+}
+
+let currentQuestion = 0;
+let answerLocked = false;
+
+let score = 0;
+
+let timeLeft = 20 * 60;
+let timerInterval = null;
+let timerStarted = false;
+let gameFinished = false;
+
+/* =========================
+   PLAYER NAME
+========================= */
+
+let playerName = window.firebasePlayerName || "Unknown Player";
+
+let firebaseReady = false;
+
+window.addEventListener("firebasePlayerReady", (event) => {
+    
+    playerName = event.detail.name;
+    
+    window.firebasePlayerName = event.detail.name;
+    window.firebasePlayerUid = event.detail.uid;
+    
+    firebaseReady = true;
+    
+    console.log(
+        "✅ Firebase pemain siap:",
+        window.firebasePlayerName,
+        window.firebasePlayerUid
+    );
+});
+
+
+let sudokuQuestions = [];
+
+function generateRandomSudoku() {
+    
+    // 4 nombor untuk Number Sudoku
+    const numbers = [1, 2, 3, 4];
+    
+    const base = [
+        0, 1, 2, 3,
+        2, 3, 0, 1,
+        1, 0, 3, 2,
+        3, 2, 1, 0
+    ];
+    
+    // Acak susunan nombor 1, 2, 3, 4
+    const shuffledNumbers = [...numbers]
+        .sort(() => Math.random() - 0.5);
+    
+    // Sudoku lengkap
+    const solution = base.map(n => shuffledNumbers[n]);
+    
+    // Salin untuk petak permainan
+    const grid = [...solution];
+    
+    // 4 atau 5 petak kosong
+    const emptyCount =
+        Math.floor(Math.random() * 2) + 4;
+    
+    // Pilih lokasi kosong secara rawak
+    const positions = [...Array(16).keys()]
+        .sort(() => Math.random() - 0.5);
+    
+    for (let i = 0; i < emptyCount; i++) {
+        grid[positions[i]] = null;
+    }
+    
+    return {
+        grid: grid,
+        initialGrid: [...grid],
+        solution: solution
+    };
+}
+
+function generateQuestions() {
+    
+    sudokuQuestions = [];
+    
+    // 10 round
+    for (let i = 0; i < 10; i++) {
+        sudokuQuestions.push(
+            generateRandomSudoku()
+        );
+    }
+}
+
+generateQuestions();
+
+function renderSudokuGrid() {
+    const grid = document.getElementById("sudoku-grid");
+    grid.innerHTML = "";
+    
+    const current = sudokuQuestions[currentQuestion];
+    
+    current.grid.forEach((number, index) => {
+        
+        const button = document.createElement("button");
+        
+        button.dataset.index = index;
+        
+        if (number !== null) {
+            
+            button.innerHTML =
+                `<span class="text-[44px] font-extrabold text-purple-700">
+                ${number}
+            </span>`;
+            
+        } else {
+            
+            // Petak kosong
+            button.classList.add("empty-cell");
+            
+        }
+        
+        grid.appendChild(button);
+    });
+}
+
+renderSudokuGrid();
+
+
+function updateTimer() {
+    const minutes = Math.floor(timeLeft / 60);
+    const seconds = timeLeft % 60;
+
+    document.getElementById("timer").textContent =
+        `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
+}
+
+
+function startTimer() {
+    updateTimer();
+
+    timerInterval = setInterval(() => {
+
+        if (gameFinished) return;
+
+        timeLeft--;
+
+        if (timeLeft <= 0) {
+            timeLeft = 0;
+            updateTimer();
+            finishGame(true);
+            return;
+        }
+
+        updateTimer();
+
+    }, 1000);
+}
+
+function finishGame(timeUp = false) {
+    
+    if (gameFinished) return;
+    
+    gameFinished = true;
+    answerLocked = true;
+    
+    if (timerInterval) {
+        clearInterval(timerInterval);
+        timerInterval = null;
+    }
+    
+    const elapsed = (20 * 60) - timeLeft;
+    
+    
+    // =========================
+    // SIMPAN KE FIREBASE
+    // NUMBERS SUDOKU EASY
+    // =========================
+    
+    if (!timeUp && score === 10) {
+        
+        const saveResult = () => {
+            
+            const name =
+                window.firebasePlayerName;
+            
+            const uid =
+                window.firebasePlayerUid;
+            
+            console.log(
+                "Cuba simpan leaderboard:",
+                name,
+                uid
+            );
+            
+            if (
+                !name ||
+                name === "Unknown Player" ||
+                !uid
+            ) {
+                console.log(
+                    "⏳ Nama Firebase belum siap, cuba lagi..."
+                );
+                
+                setTimeout(saveResult, 500);
+                return;
+            }
+            
+            if (!window.saveSudokuResult) {
+                
+                console.error(
+                    "❌ saveSudokuResult tidak tersedia."
+                );
+                
+                return;
+            }
+            
+            window.saveSudokuResult(
+                    name,
+                    "numbers",
+                    "easy",
+                    elapsed,
+                    uid
+                )
+                .then(() => {
+                    
+                    console.log(
+                        "✅ NAMA BERJAYA DISIMPAN:",
+                        name
+                    );
+                    
+                })
+                .catch((error) => {
+                    
+                    console.error(
+                        "❌ Gagal simpan leaderboard:",
+                        error
+                    );
+                    
+                });
+            
+        };
+        
+        saveResult();
+    }
+    
+    
+    // =========================
+    // PAPAR END SCREEN
+    // =========================
+    
+    const endScreen =
+        document.getElementById("end-screen");
+    
+    const finalScore =
+        document.getElementById("final-score");
+    
+    const finalMsg =
+        document.getElementById("final-msg");
+    
+    
+    finalScore.textContent =
+        `${score} / 10`;
+    
+    
+    if (timeUp) {
+        
+        finalMsg.innerHTML =
+            "⏰ TIME'S UP<br>❤️ DON'T GIVE UP";
+        
+    } else if (
+        score === 10 &&
+        elapsed <= 10 * 60
+    ) {
+        
+        finalMsg.textContent =
+            "🏆 EXCELLENT";
+        
+    } else if (
+        score === 10 &&
+        elapsed > 10 * 60
+    ) {
+        
+        finalMsg.textContent =
+            "👍 GREAT JOB";
+        
+    } else {
+        
+        finalMsg.textContent =
+            "💪 DON'T GIVE UP";
+    }
+    
+    
+    endScreen.classList.remove("hidden");
+}
+
+function nextRound() {
+
+    // Round 10 selesai = tamat game
+    if (currentQuestion >= sudokuQuestions.length - 1) {
+        finishGame(false);
+        return;
+    }
+
+    currentQuestion++;
+
+    answerLocked = false;
+    selectedCell = null;
+
+    renderSudokuGrid();
+    setupSudokuCells();
+
+highlightNextEmptyCell();
+
+    document.getElementById("question-number").textContent =
+        `${currentQuestion + 1} / ${sudokuQuestions.length}`;
+}</script>     
+
+<script>
+    const answerButtons = document.querySelectorAll("#answers button");
+
+answerButtons.forEach(button => {
+            
+            button.addEventListener("click", function() {
+                        
+                        if (!timerStarted) {
+                            timerStarted = true;
+                            startTimer();
+                        }
+                        
+                        if (answerLocked) return;
+                        
+                        if (!selectedCell) return;
+        
+        const selectedAnswer =
+    Number(this.querySelector("span").textContent.trim());
+        
+        const current =
+            sudokuQuestions[currentQuestion];
+        
+        const cellIndex =
+            Number(selectedCell.dataset.index);
+        
+       // nombor asal sistem tidak boleh diubah
+if (current.initialGrid[cellIndex] !== null) return;
+
+       // Masukkan nombor yang dipilih
+// TIDAK semak duplicate dahulu
+current.grid[cellIndex] = selectedAnswer;
+
+selectedCell.innerHTML =
+    `<span class="player-number" style="color:#7e22ce !important;">
+        ${selectedAnswer}
+        <i class="medium-hint-dot"></i>
+    </span>`;
+    
+    
+        selectedCell.style.boxShadow = "";
+        selectedCell.style.background =
+            "rgba(255, 255, 255, 0.72)";
+        
+        
+        // Cari petak kosong seterusnya
+        const nextEmpty =
+    current.grid.findIndex(number => number === null);
+        
+        if (nextEmpty !== -1) {
+            
+            const cells =
+                document.querySelectorAll("#sudoku-grid button");
+            
+            cells.forEach(cell => {
+                cell.style.boxShadow = "";
+                cell.style.background =
+                    "rgba(255, 255, 255, 0.72)";
+            });
+            
+            selectedCell = cells[nextEmpty];
+            
+            selectedCell.style.boxShadow =
+                "inset 0 0 0 4px #f06b91, 0 0 12px rgba(240,107,145,0.45)";
+            
+            selectedCell.style.background =
+                "#fff5f8";
+            
+        } else {
+    
+    // SEMUA PETAK SUDAH DIISI
+    const correct = checkSudokuAnswer(current.grid);
+    
+    const feedback = document.getElementById("feedback");
+    
+    if (correct) {
+    
+    // BETUL
+    score++;
+    
+    setTimeout(() => {
+    playCorrectSound();
+}, 200);
+    
+    feedback.textContent = "✅ TRUE 🎉";
+    feedback.className =
+        "fixed left-1/2 top-[40%] -translate-x-1/2 -translate-y-1/2 z-[9999] min-w-[260px] px-6 py-3 bg-white rounded-3xl border-4 text-center font-bold text-3xl shadow-2xl text-green-500 border-green-500";
+    
+    feedback.classList.remove("hidden");
+    feedback.style.display = "block";
+    
+    // Auto Round seterusnya
+    setTimeout(() => {
+        feedback.classList.add("hidden");
+        feedback.style.display = "none";
+        nextRound();
+    }, 1500);
+    
+} else {
+    
+    // SALAH
+    setTimeout(() => {
+    playWrongSound();
+}, 200);
+    
+    feedback.textContent = "❌ TRY AGAIN ";
+    feedback.className =
+        "fixed left-1/2 top-[40%] -translate-x-1/2 -translate-y-1/2 z-[9999] min-w-[260px] px-6 py-3 bg-white rounded-3xl border-4 text-center font-bold text-3xl shadow-2xl text-red-500 border-red-500";
+    
+    feedback.classList.remove("hidden");
+    feedback.style.display = "block";
+    
+    // Tidak pindah round
+    setTimeout(() => {
+        feedback.classList.add("hidden");
+        feedback.style.display = "none";
+    }, 1500);
+}
+}
+});
+
+});
+
+function checkSudokuAnswer(grid) {
+    
+    // SEMAK MELINTANG
+    for (let row = 0; row < 4; row++) {
+        
+        const rowNumbers =
+            grid.slice(row * 4, row * 4 + 4);
+        
+        if (new Set(rowNumbers).size !== 4) {
+            return false;
+        }
+    }
+    
+    // SEMAK MENEGAK
+    for (let col = 0; col < 4; col++) {
+        
+        const colNumbers = [];
+        
+        for (let row = 0; row < 4; row++) {
+            
+            colNumbers.push(
+                grid[row * 4 + col]
+            );
+        }
+        
+        if (new Set(colNumbers).size !== 4) {
+            return false;
+        }
+    }
+    
+    return true;
+}
+
+function highlightNextEmptyCell() {
+    
+    const current = sudokuQuestions[currentQuestion];
+    
+    const nextEmptyIndex =
+        current.grid.findIndex(color => !color);
+    
+    const cells =
+        document.querySelectorAll("#sudoku-grid button");
+    
+    cells.forEach(cell => {
+        cell.style.boxShadow = "";
+        cell.style.background =
+            "rgba(255, 255, 255, 0.72)";
+    });
+    
+    if (nextEmptyIndex !== -1) {
+    
+    const targetCell = cells[nextEmptyIndex];
+    
+    selectedCell = targetCell;
+    
+    targetCell.style.boxShadow =
+        "inset 0 0 0 4px #f06b91, 0 0 12px rgba(240,107,145,0.45)";
+    
+    targetCell.style.background = "#fff5f8";
+}
+}
+
+
+
+let selectedCell = null;
+function setupSudokuCells() {
+    
+    sudokuCells = document.querySelectorAll("#sudoku-grid button");
+    
+    const current = sudokuQuestions[currentQuestion];
+    
+    sudokuCells.forEach(cell => {
+        
+        cell.addEventListener("click", function() {
+            
+            const index = Number(this.dataset.index);
+            
+            // WARNA ASAL TIDAK BOLEH DIPILIH
+            if (current.initialGrid[index] !== null) {
+                selectedCell = null;
+                return;
+            }
+            
+            // Buang highlight kotak lain
+            sudokuCells.forEach(c => {
+                c.style.boxShadow = "";
+                c.style.background =
+                    "rgba(255, 255, 255, 0.72)";
+            });
+            
+            // Pilih kotak kosong / warna yang pemain isi
+            selectedCell = this;
+            
+            this.style.boxShadow =
+                "inset 0 0 0 4px #f06b91, 0 0 12px rgba(240,107,145,0.45)";
+            
+            this.style.background = "#fff5f8";
+            
+        });
+        
+    });
+}
+
+
+setupSudokuCells();
+
+highlightNextEmptyCell();
+
+document.getElementById("delete-btn").addEventListener("click", function() {
+    
+    if (!selectedCell) return;
+    
+    const current = sudokuQuestions[currentQuestion];
+    const cellIndex = Number(selectedCell.dataset.index);
+    
+// WARNA ASAL TIDAK BOLEH DIPADAM
+if (current.initialGrid[cellIndex] !== null) {
+    return;
+}
+
+// HANYA WARNA YANG PEMAIN ISI BOLEH DIPADAM
+current.grid[cellIndex] = null;
+    
+    // Padam warna pada skrin
+    selectedCell.innerHTML = "";
+    
+    selectedCell.style.boxShadow =
+        "inset 0 0 0 4px #f06b91, 0 0 12px rgba(240,107,145,0.45)";
+    
+    selectedCell.style.background = "#fff5f8";
+    
+});
+
+document.querySelectorAll("button:not(#back-btn)").forEach(button => {
+    button.addEventListener("click", function() {
+        playClickSound();
+    });
+});
+
+</script>    
+
+
+
+ </body>
+</html>

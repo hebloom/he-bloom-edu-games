@@ -1,0 +1,1962 @@
+<!doctype html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Math Crossword</title>
+
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+body {
+    background: url("puzzle.png") no-repeat center center fixed;
+    background-size: cover;
+}
+
+* {
+    font-family: 'Fredoka', sans-serif;
+}
+
+@keyframes float {
+    0%,100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes floatSlow {
+    0%,100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-6px) rotate(2deg);
+    }
+}
+
+@keyframes birdFly {
+    0% {
+        transform: translateX(-120px) translateY(0px) rotate(-6deg);
+    }
+    15% {
+        transform: translateX(15vw) translateY(-18px) rotate(4deg);
+    }
+    30% {
+        transform: translateX(30vw) translateY(8px) rotate(-3deg);
+    }
+    45% {
+        transform: translateX(45vw) translateY(-22px) rotate(5deg);
+    }
+    60% {
+        transform: translateX(60vw) translateY(12px) rotate(-4deg);
+    }
+    75% {
+        transform: translateX(80vw) translateY(-15px) rotate(3deg);
+    }
+    90% {
+        transform: translateX(95vw) translateY(6px) rotate(-2deg);
+    }
+    100% {
+        transform: translateX(110vw) translateY(-10px) rotate(2deg);
+    }
+}
+
+@keyframes beeFly {
+    0%,100% {
+        transform: translate(0,0);
+    }
+    25% {
+        transform: translate(30px,-20px);
+    }
+    50% {
+        transform: translate(-10px,-30px);
+    }
+    75% {
+        transform: translate(20px,10px);
+    }
+}
+
+@keyframes sway {
+    0%,100% {
+        transform: rotate(-2deg);
+    }
+    50% {
+        transform: rotate(2deg);
+    }
+}
+
+@keyframes sunPulse {
+    0%,100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes zoomIn {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes shake {
+    0%,100% {
+        transform: translateX(0);
+    }
+    20% {
+        transform: translateX(-8px);
+    }
+    40% {
+        transform: translateX(8px);
+    }
+    60% {
+        transform: translateX(-5px);
+    }
+    80% {
+        transform: translateX(5px);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.float-slow {
+  animation: floatSlow 4s ease-in-out infinite;
+}
+
+.bird {
+  animation: birdFly 30s linear infinite;
+}
+
+.bird2 {
+  animation: birdFly 40s linear infinite;
+  animation-delay: 10s;
+}
+
+.bee {
+  animation: beeFly 5s ease-in-out infinite;
+}
+
+.sway {
+  animation: sway 3s ease-in-out infinite;
+}
+
+.sun-pulse {
+  animation: sunPulse 4s ease-in-out infinite;
+}
+
+.zoom-in {
+  animation: zoomIn 0.3s ease-out;
+}
+
+.shake {
+  animation: shake 0.4s ease-out;
+}
+
+.fade-in {
+  animation: fadeIn 0.4s ease-out;
+}
+
+/* ===== COLOUR CROSSWORD STYLE ===== */
+
+#game-card {
+  width: 60%;
+  max-width: 500px;
+  
+  height: 800px;
+  min-height: 800px;
+  
+  margin: 0 auto;
+  padding: 60px 24px;
+  
+  box-sizing: border-box;
+  
+  background: rgba(235, 255, 250, 0.10);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  
+  border: 3px solid rgba(255, 255, 255, 0.85);
+  border-radius: 10px;
+  
+  box-shadow:
+    0 0 0 3px rgba(255, 255, 255, 0.25),
+    0 12px 35px rgba(70, 130, 120, 0.18);
+}
+
+/* ===== GRID CROSSWORD ===== */
+
+#crossword-grid {
+  width: 100%;
+  max-width: 680px;
+  height: 520px;
+  max-height: 56vh;
+  
+  margin: 45 auto 10px;
+  
+  display: grid;
+  gap: 3px;
+  justify-content: center;
+  align-content: center;
+  
+  background: rgba(255, 255, 255, 0.82);
+  border: 5px solid #f3a6bb;
+  border-radius: 32px;
+  
+  overflow: hidden;
+  
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.12),
+    inset 0 0 0 2px rgba(255, 255, 255, 0.8);
+}
+
+
+/* ===== PETAK CROSSWORD ===== */
+
+#crossword-grid button {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid #e5a8ba;
+  transition: all 0.15s ease;
+  
+  width: var(--cell-size, 26px);
+  height: var(--cell-size, 26px);
+  
+  min-width: 0;
+  min-height: 0;
+  
+  padding: 0;
+  margin: 0;
+  
+  font-size: var(--cell-font-size, 16px);
+  font-weight: bold;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  box-sizing: border-box;
+}
+
+#crossword-grid button:hover {
+  background: #fff5f8;
+  transform: scale(1.02);
+}
+
+/* Petak hitam = bahagian crossword yang tidak digunakan */
+#crossword-grid .black-cell {
+  background: #111;
+  border: 1px solid #111;
+  box-sizing: border-box;
+}
+
+#answers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  width: 100%;
+  margin: 4px auto 0;
+}
+
+.number-row,
+.symbol-row {
+  display: flex;
+  justify-content: center;
+  gap: 3px;
+}
+
+#answers button {
+  width: 28px;
+  height: 28px;
+  min-height: 28px;
+  max-height: 28px;
+  
+  padding: 0;
+  margin: 0;
+  line-height: 28px;
+  
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 700;
+  
+  background: rgba(255, 255, 255, 0.85);
+  color: #222;
+  border: 2px solid #f3a6bb;
+  
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.10);
+  
+  transition: transform 0.15s ease;
+}
+
+#answers button:hover {
+  transform: translateY(-4px) scale(1.03);
+}
+
+#answers button:active {
+  transform: scale(0.96);
+}
+
+.he-bloom-logo {
+  position: fixed;
+  width: 80px;
+  height: 80px;
+  z-index: 9999;
+  opacity: .95;
+  pointer-events: none;
+}
+
+.bottom-logo {
+  bottom: 18px;
+  right: 18px;
+}
+/* ===== TELEFON ===== */
+
+@media (max-width: 640px) {
+  
+  #game-card {
+    width: 96%;
+    padding: 12px 12px 22px;
+    border-radius: 28px;
+  }
+  
+  #answers {
+    gap: 5px;
+  }
+  
+  #answers button {
+    width: 32px;
+    height: 42px;
+    min-height: 42px;
+    font-size: 13px;
+    padding: 0;
+  }
+}
+/* =====================================================
+   RESPONSIVE UNTUK SEMUA DEVICE
+   CROSSWORD KEKAL SAIZ ASAL
+   LANDSCAPE = BOLEH SCROLL
+   ===================================================== */
+
+/* Jangan benarkan halaman mengecilkan crossword */
+html {
+  width: 100%;
+  min-width: 0;
+}
+
+body {
+  width: 100%;
+  min-width: 0;
+  overflow-x: hidden;
+  overflow-y: auto !important;
+}
+
+
+/* =====================================================
+   GAME CARD
+   SAIZ ASAL KEKAL
+   ===================================================== */
+
+#game-card {
+  box-sizing: border-box;
+}
+
+
+/* =====================================================
+   CROSSWORD GRID
+   PENTING:
+   JANGAN GUNA max-height: 56vh
+   KERANA LANDSCAPE PENDEK AKAN MEMOTONG GRID
+   ===================================================== */
+
+#crossword-grid {
+  width: 100%;
+  max-width: 680px;
+  
+  height: 520px;
+  min-height: 520px;
+  max-height: none;
+  
+  flex-shrink: 0;
+  
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+
+/* =====================================================
+   PETAK CROSSWORD
+   SAIZ 32px KEKAL
+   ===================================================== */
+
+#crossword-grid .crossword-cell {
+  flex-shrink: 0;
+}
+
+
+/* =====================================================
+   PHONE PORTRAIT
+   ===================================================== */
+
+@media (max-width: 640px) {
+  
+  #game-card {
+    width: 96%;
+    max-width: 500px;
+    
+    height: 800px;
+    min-height: 800px;
+    
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  #crossword-grid {
+    width: 100%;
+    height: 520px;
+    min-height: 520px;
+    max-height: none;
+    
+    overflow: hidden;
+  }
+  
+  /* Logo KEKAL saiz asal */
+  .he-bloom-logo {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+
+/* =====================================================
+   PHONE LANDSCAPE
+   GRID TIDAK DIKECILKAN
+   HALAMAN BOLEH SCROLL
+   ===================================================== */
+
+@media (max-width: 900px) and (orientation: landscape) {
+  
+  html,
+  body {
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+  }
+  
+  #game-card {
+    width: 500px;
+    max-width: 500px;
+    
+    height: 920px;
+    min-height: 920px;
+    
+    margin-left: auto;
+    margin-right: auto;
+    
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  
+  #crossword-grid {
+    width: 100%;
+    max-width: 680px;
+    
+    height: 520px;
+    min-height: 520px;
+    max-height: none;
+    
+    overflow: hidden;
+  }
+  
+  /* JANGAN kecilkan logo */
+  .he-bloom-logo {
+    width: 80px;
+    height: 80px;
+  }
+  
+  /* Music button kekal */
+  #music-btn {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+
+/* =====================================================
+   LANDSCAPE YANG SANGAT PENDEK
+   CONTOH HP DIPUSING LANDSCAPE
+   ===================================================== */
+
+@media (orientation: landscape) and (max-height: 600px) {
+  
+  html,
+  body {
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+  }
+  
+  #game-card {
+    width: 500px;
+    max-width: 500px;
+    
+    height: 920px;
+    min-height: 920px;
+    
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  #crossword-grid {
+    height: 520px;
+    min-height: 520px;
+    max-height: none;
+    
+    overflow: hidden;
+  }
+  
+  /* Logo tidak dikecilkan */
+  .he-bloom-logo {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+
+/* =====================================================
+   TABLET / DESKTOP
+   ===================================================== */
+
+@media (min-width: 641px) {
+  
+  #game-card {
+    max-width: 500px;
+  }
+  
+  #crossword-grid {
+    height: 520px;
+    min-height: 520px;
+    max-height: none;
+  }
+}
+
+
+  </style>
+</head>
+
+<body class="w-full min-h-screen overflow-hidden relative flex items-center justify-center p-4">
+  
+  <!-- Background elements -->
+  <div class="fixed inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
+    
+    <!-- Sun -->
+    <div class="sun-pulse absolute top-6 left-6 text-10xl sm:text-10xl">
+      🌞
+    </div>
+    
+    <!-- Rainbow -->
+    <div class="absolute top-10 right-10 text-10xl float-slow opacity-70">
+      🌈
+    </div>
+    
+    <!-- Clouds -->
+    <div class="absolute top-[12%] left-[20%] text-10xl float" style="animation-delay:0.5s">
+      ☁️
+    </div>
+    
+    <div class="absolute top-[8%] left-[55%] text-20xl float" style="animation-delay:1.5s">
+      ☁️
+    </div>
+    
+    <div class="absolute top-[18%] right-[15%] text-20xl float" style="animation-delay:2.5s">
+      ☁️
+    </div>
+    
+    <!-- Birds -->
+    <div class="bird absolute top-[3%] text-5xl">
+      🦜
+    </div>
+    
+    <div class="bird2 absolute top-[10%] text-5xl">
+      🦜
+    </div>
+    
+    <!-- Bees -->
+    <div class="bee absolute top-[45%] left-[2%] text-6xl">
+      🐝
+    </div>
+    
+    <div class="bee absolute top-[45%] right-[2%] text-6xl" style="animation-delay:2s">
+      🐝
+    </div>
+    
+    <!-- Ground -->
+    <div class="absolute bottom-0 left-0 right-0 flex justify-around items-end">
+      <span class="sway text-4xl">🌹</span>
+      <span class="float-slow text-2xl" style="animation-delay:0.3s">🌸</span>
+      <span class="sway text-4xl" style="animation-delay:1s">🌹</span>
+      <span class="float-slow text-2xl" style="animation-delay:0.7s">🌺</span>
+      <span class="sway text-4xl" style="animation-delay:1s">🌹</span>
+      <span class="float-slow text-2xl" style="animation-delay:1.2s">🌸</span>
+      <span class="sway text-4xl" style="animation-delay:1s">🌹</span>
+    </div>
+    
+  </div>
+  
+  <!-- Music toggle -->
+<button id="music-btn"
+        onclick="toggleMusic()"
+        class="fixed top-4 right-4 z-50 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center text-2xl float"
+        aria-label="Toggle music">
+    🎵
+</button>
+
+<!-- Game Card -->
+<main id="game-card"
+      class="relative -mt-50 z-50 w-full max-w-x1 mx-auto bg-transparent rounded-none shadow-none pt-2 px-0 pb-8 fade-in">
+
+    <div class="text-center mb-2">
+        <div class="flex justify-between items-center max-w-xl mx-auto">
+        </div>
+    </div>
+
+    <div class="text-center mb-2 -mt-2">
+
+        <div class="inline-flex items-center gap-2 bg-white/90 rounded-2xl px-4 py-2 shadow-lg border-2 border-pink-300">
+
+            <span class="text-xl">🔢</span>
+
+            <div class="text-black font-extrabold text-xl tracking-wide flex items-center gap-3">
+                <span>MATH</span>
+                <span>CROSSWORD</span>
+            </div>
+
+            <span class="text-xl">🔢</span>
+
+        </div>
+
+    </div>
+    
+    <div class="bg-white/80 rounded-3xl p-3 mb-3 max-w-2xl mx-auto">
+  
+  <div id="crossword-grid"></div>
+  
+  
+  
+</div>
+
+
+<div id="answers">
+  
+  <div class="number-row">
+    <button class="letter-btn" data-letter="0">0</button>
+    <button class="letter-btn" data-letter="1">1</button>
+    <button class="letter-btn" data-letter="2">2</button>
+    <button class="letter-btn" data-letter="3">3</button>
+    <button class="letter-btn" data-letter="4">4</button>
+    <button class="letter-btn" data-letter="5">5</button>
+    <button class="letter-btn" data-letter="6">6</button>
+    <button class="letter-btn" data-letter="7">7</button>
+    <button class="letter-btn" data-letter="8">8</button>
+    <button class="letter-btn" data-letter="9">9</button>
+  </div>
+  
+  <div class="symbol-row">
+    <button class="letter-btn" data-letter="+">+</button>
+    <button class="letter-btn" data-letter="-">−</button>
+    <button class="letter-btn" data-letter="*">×</button>
+    <button class="letter-btn" data-letter="/">÷</button>
+    <button class="letter-btn" data-letter="=">=</button>
+  </div>
+  
+</div>
+
+<div id="bottom-buttons" class="flex justify-center items-center gap-2 mt-5 flex-wrap">
+
+    <button id="delete-btn"
+            class="bg-red-500 text-white font-bold rounded-xl shadow-lg
+            border-2 border-white/80
+            flex items-center justify-center gap-1"
+            style="width: 116px; height: 50px; font-size: 14px;">
+        🗑️ DELETE
+    </button>
+
+    <button id="back-btn"
+            onclick="location.href='crossword.html'"
+            class="bg-gray-500 text-white font-bold rounded-xl shadow-lg
+            border-2 border-white/80
+            flex items-center justify-center gap-1"
+            style="width: 116px; height: 50px; font-size: 14px;">
+        ◀️ BACK
+    </button>
+
+</div>
+
+<!-- HE BLOOM LOGO -->
+
+<img src="HE_Bloom.png"
+     alt="HE Bloom"
+     class="he-bloom-logo bottom-logo">
+</div>
+
+
+</main>
+
+
+<div id="feedback"
+     class="hidden fixed left-1/2 top-[45%]
+     -translate-x-1/2 -translate-y-1/2
+     z-[9999] min-w-[320px] px-6 py-3
+     bg-white rounded-3xl border-4
+     text-center font-bold text-3xl shadow-2xl">
+</div>
+
+
+
+<!-- END SCREEN -->
+<div id="end-screen"
+     class="hidden fixed inset-0 z-[10000] flex items-center justify-center px-4">
+
+    <div class="w-[82%] max-w-md rounded-[38px]
+                border-[6px] border-pink-400
+                bg-white/85 backdrop-blur-md
+                shadow-2xl text-center
+                px-5 py-7">
+
+        <div class="rounded-[28px]
+                    border-2 border-pink-200
+                    bg-white/70
+                    px-4 py-6">
+
+            <div id="final-msg"
+                 class="text-2xl font-bold
+                        text-gray-900 mb-6">
+                🏆 EXCELLENT
+            </div>
+
+            <button onclick="restartCrossword()"
+                    class="bg-gradient-to-r from-pink-400 to-purple-500
+                           text-white text-xl font-bold
+                           px-8 py-4 rounded-full
+                           shadow-xl border-4 border-white
+                           active:scale-95">
+                ▶ PLAY AGAIN
+            </button>
+
+        </div>
+    </div>
+</div>
+
+<script>
+
+/* ===== SOUND & MUSIC ===== */
+
+let audioCtx = null;
+let musicInterval = null;
+let musicPlaying = false;
+
+function getAudioCtx() {
+  if (!audioCtx) {
+    audioCtx = new(
+      window.AudioContext || window.webkitAudioContext
+    )();
+  }
+  
+  if (audioCtx.state === "suspended") {
+    audioCtx.resume();
+  }
+  
+  return audioCtx;
+}
+
+function playClickSound() {
+  const ctx = getAudioCtx();
+  
+  const osc = ctx.createOscillator();
+  const gain = ctx.createGain();
+  
+  osc.frequency.value = 600;
+  gain.gain.value = 0.08;
+  
+  osc.connect(gain);
+  gain.connect(ctx.destination);
+  
+  osc.start();
+  osc.stop(ctx.currentTime + 0.08);
+}
+
+
+/* ===== MUSIC ===== */
+
+function toggleMusic() {
+  getAudioCtx();
+  
+  if (musicPlaying) {
+    stopMusic();
+    return;
+  }
+  
+  musicPlaying = true;
+  document.getElementById("music-btn").textContent = "🎵";
+  
+  playMusicLoop();
+}
+
+function playMusicLoop() {
+  const ctx = getAudioCtx();
+  
+  const notes = [262, 294, 330, 349, 392, 349, 330, 294];
+  let i = 0;
+  
+  function playNote() {
+    if (!musicPlaying) return;
+    
+    const o = ctx.createOscillator();
+    const g = ctx.createGain();
+    
+    o.connect(g);
+    g.connect(ctx.destination);
+    
+    o.type = "sine";
+    o.frequency.value = notes[i % notes.length];
+    
+    g.gain.setValueAtTime(0.08, ctx.currentTime);
+    g.gain.exponentialRampToValueAtTime(
+      0.01,
+      ctx.currentTime + 0.4
+    );
+    
+    o.start();
+    o.stop(ctx.currentTime + 0.4);
+    
+    i++;
+  }
+  
+  playNote();
+  musicInterval = setInterval(playNote, 500);
+}
+
+function stopMusic() {
+  musicPlaying = false;
+  
+  clearInterval(musicInterval);
+  
+  document.getElementById("music-btn").textContent = "🔇";
+}
+
+
+/* ===== CORRECT SOUND ===== */
+
+function playCorrectSound() {
+  const ctx = getAudioCtx();
+  
+  const notes = [523, 659, 784];
+  
+  notes.forEach((freq, i) => {
+    const o = ctx.createOscillator();
+    const g = ctx.createGain();
+    
+    o.connect(g);
+    g.connect(ctx.destination);
+    
+    o.type = "sine";
+    o.frequency.value = freq;
+    
+    g.gain.setValueAtTime(0.001, ctx.currentTime);
+    g.gain.exponentialRampToValueAtTime(
+      0.08,
+      ctx.currentTime + 0.03
+    );
+    g.gain.exponentialRampToValueAtTime(
+      0.001,
+      ctx.currentTime + 0.25
+    );
+    
+    o.start(ctx.currentTime + i * 0.12);
+    o.stop(ctx.currentTime + i * 0.12 + 0.25);
+  });
+}
+
+
+/* ===== WRONG SOUND ===== */
+
+function playWrongSound() {
+  const ctx = getAudioCtx();
+  
+  const o = ctx.createOscillator();
+  const g = ctx.createGain();
+  
+  o.connect(g);
+  g.connect(ctx.destination);
+  
+  o.type = "sawtooth";
+  o.frequency.value = 180;
+  
+  g.gain.setValueAtTime(0.001, ctx.currentTime);
+  g.gain.exponentialRampToValueAtTime(
+    0.08,
+    ctx.currentTime + 0.03
+  );
+  g.gain.exponentialRampToValueAtTime(
+    0.001,
+    ctx.currentTime + 0.4
+  );
+  
+  o.start();
+  o.stop(ctx.currentTime + 0.4);
+}
+
+
+/* ===== GAME VARIABLES ===== */
+
+let selectedCell = null;
+let currentPuzzleIndex = 0;
+let completedPuzzles = 0;
+
+let lastGameMath = [];
+
+const totalPuzzles = 14;
+
+/* ===== 14 SOALAN MATH CROSSWORD ===== */
+
+const crosswordWords = [
+  ["16", "÷", "4", "=", "4"],
+  ["2", "×", "3", "=", "6"],
+  ["2", "+", "3", "=", "5"],
+  ["4", "×", "3", "=", "12"],
+  ["4", "+", "5", "=", "9"],
+  ["9", "+", "6", "=", "15"],
+  ["42", "÷", "6", "=", "7"],
+  ["25", "-", "10", "=", "15"],
+  ["3", "+", "2", "=", "5"],
+  ["6", "÷", "2", "=", "3"],
+  ["8", "+", "4", "=", "12"],
+  ["7", "-", "2", "=", "5"],
+  ["10", "-", "5", "=", "5"],
+  ["9", "÷", "3", "=", "3"]
+];
+
+
+
+function renderCrosswordGrid() {
+
+    const grid = document.getElementById("crossword-grid");
+    grid.innerHTML = "";
+
+    /* ================================
+       SAIZ PETAK
+    ================================ */
+
+    const CELL = 32;
+
+
+    /* ==========================================
+       BENTUK CROSSWORD
+       [column, row]
+    ========================================== */
+
+    const CELLS = [
+
+        /* ===== ATAS KIRI ===== */
+        [0,0],[1,0],[2,0],[3,0],[4,0],
+
+        [2,1],        [4,1],
+
+        [0,2],[1,2],[2,2],[3,2],[4,2],
+
+        [0,3],        [2,3],        [4,3],
+
+        [0,4],        [2,4],        [4,4],
+
+        [0,5],
+
+        [0,6],
+
+
+        /* ===== TENGAH ATAS ===== */
+        [6,2],
+
+        [6,3],
+
+        [5,4],[6,4],[7,4],
+
+        [6,5],
+
+
+        /* ===== ATAS KANAN ===== */
+        [8,0],
+        [8,1],
+        [8,2],
+        [8,3],
+        [8,4],
+
+
+        /* ===== KUMPULAN BAWAH ===== */
+        [2,6],[3,6],[4,6],[5,6],[6,6],
+
+        [2,7],        [4,7],
+
+        [0,8],[1,8],[2,8],[3,8],[4,8],
+
+        [2,9],        [4,9],
+
+        [2,10],       [4,10],
+
+
+        /* ===== KANAN BAWAH ===== */
+        [8,6],
+        [8,7],
+        [8,8],
+        [8,9],
+        [8,10],
+
+
+        /* ===== GARISAN BAWAH ===== */
+        [5,10],[6,10],
+        [7,10], 
+
+    ];
+
+    const PINK_SPACES = [
+        [3,1],
+        [3,7], 
+    ];
+    
+    // ===== MAX JAWAPAN =====
+const MAX_ANSWER = 500;
+
+
+// ===== BENTUK 14 SOALAN KEKAL =====
+const CROSSWORD_LINES = [
+
+  { cells: [[0,0],[1,0],[2,0],[3,0],[4,0]] },
+  { cells: [[0,2],[0,3],[0,4],[0,5],[0,6]] },
+  { cells: [[0,2],[1,2],[2,2],[3,2],[4,2]] },
+  { cells: [[2,0],[2,1],[2,2],[2,3],[2,4]] },
+  { cells: [[4,0],[4,1],[4,2],[4,3],[4,4]] },
+
+  { cells: [[4,4],[5,4],[6,4],[7,4],[8,4]] },
+  { cells: [[6,2],[6,3],[6,4],[6,5],[6,6]] },
+  { cells: [[8,0],[8,1],[8,2],[8,3],[8,4]] },
+
+  { cells: [[2,6],[3,6],[4,6],[5,6],[6,6]] },
+  { cells: [[2,6],[2,7],[2,8],[2,9],[2,10]] },
+  { cells: [[4,6],[4,7],[4,8],[4,9],[4,10]] },
+
+  { cells: [[0,8],[1,8],[2,8],[3,8],[4,8]] },
+  { cells: [[4,10],[5,10],[6,10],[7,10],[8,10]] },
+  { cells: [[8,6],[8,7],[8,8],[8,9],[8,10]] }
+
+];
+
+
+// ===== RANDOM NUMBER =====
+function randomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+
+// ===== CHECK EQUATION =====
+function isValidEquation(a, op, b, c) {
+
+  if (
+    !Number.isInteger(a) ||
+    !Number.isInteger(b) ||
+    !Number.isInteger(c)
+  ) return false;
+
+  if (a < 1 || b < 1 || c < 1) return false;
+
+  if (a > MAX_ANSWER ||
+      b > MAX_ANSWER ||
+      c > MAX_ANSWER) return false;
+
+  if (op === "+") return a + b === c;
+
+  if (op === "−") return a - b === c;
+
+  if (op === "×") return a * b === c;
+
+  if (op === "÷") return b !== 0 && a / b === c;
+
+  return false;
+}
+
+
+// ===== BUAT EQUATION IKUT NOMBOR YANG SUDAH BERSILANG =====
+function createEquation(known) {
+  
+  const ops = ["+", "−", "×", "÷"];
+  
+  for (let attempt = 0; attempt < 5000; attempt++) {
+    
+    const op = ops[randomInt(0, ops.length - 1)];
+    
+    let a = known[0];
+    let b = known[2];
+    let c = known[4];
+    
+    
+    // ===== TIADA NOMBOR TETAP =====
+    if (a === undefined && b === undefined && c === undefined) {
+      
+      if (op === "+") {
+        a = randomInt(1, 250);
+        b = randomInt(1, 500 - a);
+        c = a + b;
+      }
+      
+      else if (op === "−") {
+        a = randomInt(2, 500);
+        b = randomInt(1, a - 1);
+        c = a - b;
+      }
+      
+      else if (op === "×") {
+        a = randomInt(1, 25);
+        b = randomInt(1, Math.floor(500 / a));
+        c = a * b;
+      }
+      
+      else if (op === "÷") {
+        b = randomInt(2, 20);
+        c = randomInt(1, Math.floor(500 / b));
+        a = b * c;
+      }
+    }
+    
+    
+    // ===== A SAHAJA TETAP =====
+    else if (a !== undefined && b === undefined && c === undefined) {
+      
+      if (op === "+") {
+        if (a >= 500) continue;
+        b = randomInt(1, 500 - a);
+        c = a + b;
+      }
+      
+      else if (op === "−") {
+        if (a <= 1) continue;
+        b = randomInt(1, a - 1);
+        c = a - b;
+      }
+      
+      else if (op === "×") {
+        if (a > 500) continue;
+        b = randomInt(1, Math.floor(500 / a));
+        c = a * b;
+      }
+      
+      else if (op === "÷") {
+        const divisors = [];
+        
+        for (let x = 2; x <= a; x++) {
+          if (a % x === 0) divisors.push(x);
+        }
+        
+        if (divisors.length === 0) continue;
+        
+        b = divisors[randomInt(0, divisors.length - 1)];
+        c = a / b;
+      }
+    }
+    
+    
+    // ===== B SAHAJA TETAP =====
+    else if (a === undefined && b !== undefined && c === undefined) {
+      
+      if (op === "+") {
+        if (b >= 500) continue;
+        a = randomInt(1, 500 - b);
+        c = a + b;
+      }
+      
+      else if (op === "−") {
+        if (b >= 500) continue;
+        a = randomInt(b + 1, 500);
+        c = a - b;
+      }
+      
+      else if (op === "×") {
+        a = randomInt(1, Math.floor(500 / b));
+        c = a * b;
+      }
+      
+      else if (op === "÷") {
+        c = randomInt(1, Math.floor(500 / b));
+        a = b * c;
+      }
+    }
+    
+    
+    // ===== C SAHAJA TETAP =====
+    else if (a === undefined && b === undefined && c !== undefined) {
+      
+      if (op === "+") {
+        if (c < 2) continue;
+        a = randomInt(1, c - 1);
+        b = c - a;
+      }
+      
+      else if (op === "−") {
+        if (c >= 500) continue;
+        b = randomInt(1, 500 - c);
+        a = b + c;
+      }
+      
+      else if (op === "×") {
+        const factors = [];
+        
+        for (let x = 1; x <= c; x++) {
+          if (c % x === 0) factors.push(x);
+        }
+        
+        if (factors.length === 0) continue;
+        
+        a = factors[randomInt(0, factors.length - 1)];
+        b = c / a;
+      }
+      
+      else if (op === "÷") {
+        b = randomInt(2, Math.floor(500 / c));
+        a = b * c;
+      }
+    }
+    
+    
+    // ===== A DAN B TETAP =====
+    else if (a !== undefined && b !== undefined && c === undefined) {
+      
+      if (op === "+") {
+        c = a + b;
+      }
+      
+      else if (op === "−") {
+        if (a <= b) continue;
+        c = a - b;
+      }
+      
+      else if (op === "×") {
+        c = a * b;
+      }
+      
+      else if (op === "÷") {
+        if (b === 0 || a % b !== 0) continue;
+        c = a / b;
+      }
+    }
+    
+    
+    // ===== A DAN C TETAP =====
+    else if (a !== undefined && b === undefined && c !== undefined) {
+      
+      if (op === "+") {
+        b = c - a;
+      }
+      
+      else if (op === "−") {
+        b = a - c;
+      }
+      
+      else if (op === "×") {
+        if (a === 0 || c % a !== 0) continue;
+        b = c / a;
+      }
+      
+      else if (op === "÷") {
+        if (c === 0 || a % c !== 0) continue;
+        b = a / c;
+      }
+    }
+    
+    
+    // ===== B DAN C TETAP =====
+    else if (a === undefined && b !== undefined && c !== undefined) {
+      
+      if (op === "+") {
+        a = c - b;
+      }
+      
+      else if (op === "−") {
+        a = b + c;
+      }
+      
+      else if (op === "×") {
+        if (b === 0 || c % b !== 0) continue;
+        a = c / b;
+      }
+      
+      else if (op === "÷") {
+        a = b * c;
+      }
+    }
+    
+    
+    // ===== SEMUA NOMBOR TETAP =====
+    else {
+      if (!isValidEquation(a, op, b, c)) continue;
+    }
+    
+    
+    // ===== CHECK AKHIR =====
+    if (isValidEquation(a, op, b, c)) {
+      
+      return [
+        String(a),
+        op,
+        String(b),
+        "=",
+        String(c)
+      ];
+    }
+  }
+  
+  
+// Tiada equation sesuai untuk nombor persilangan ini
+return null;
+}
+
+
+// ===== JANA 14 SOALAN YANG BERSAMBUNG =====
+function generateRandomCrossword() {
+  
+  // Cuba buat keseluruhan puzzle
+  for (let puzzleAttempt = 0; puzzleAttempt < 100; puzzleAttempt++) {
+    
+    const cellValues = {};
+    let success = true;
+    
+    
+    // Buang math lama dahulu
+    CROSSWORD_LINES.forEach(line => {
+      line.math = null;
+    });
+    
+    
+    // Buat 14 soalan satu demi satu
+    for (const line of CROSSWORD_LINES) {
+      
+      const known = {};
+      
+      
+      // Ambil nombor yang SUDAH ADA pada kotak bersilang
+      [0, 2, 4].forEach(index => {
+        
+        const pos = line.cells[index];
+        const key = pos[0] + "," + pos[1];
+        
+        if (cellValues[key] !== undefined) {
+          known[index] = cellValues[key];
+        }
+        
+      });
+      
+      
+      // Buat equation ikut nombor persilangan
+      const math = createEquation(known);
+      
+      
+      // Kalau tiada equation sesuai, mula semula seluruh puzzle
+      if (!math) {
+        success = false;
+        break;
+      }
+      
+      
+      // CHECK: Jangan benarkan nombor lama ditukar
+      let valid = true;
+      
+      [0, 2, 4].forEach(index => {
+        
+        const pos = line.cells[index];
+        const key = pos[0] + "," + pos[1];
+        const newValue = Number(math[index]);
+        
+        if (
+          cellValues[key] !== undefined &&
+          cellValues[key] !== newValue
+        ) {
+          valid = false;
+        }
+        
+      });
+      
+      
+      // Jika nombor persilangan berubah, mula semula puzzle
+      if (!valid) {
+        success = false;
+        break;
+      }
+      
+      
+      // Simpan equation
+      line.math = math;
+      
+      
+      // Simpan nombor HANYA jika kotak belum ada nombor
+      [0, 2, 4].forEach(index => {
+        
+        const pos = line.cells[index];
+        const key = pos[0] + "," + pos[1];
+        
+        if (cellValues[key] === undefined) {
+          cellValues[key] = Number(math[index]);
+        }
+        
+      });
+      
+    }
+    
+    
+    // Kalau semua 14 berjaya, siap
+    if (success) {
+      return;
+    }
+    
+  }
+  
+  
+  console.log("Tidak dapat jana crossword yang sesuai.");
+}
+
+
+// ===== JANA PUZZLE RAWAK =====
+generateRandomCrossword();
+
+const PUZZLE = {};
+const DISPLAY = {};
+const BLANK_KEYS = new Set();
+
+const blanks = [
+  [2],
+  [0],
+  [2],
+  [2],
+  [0],
+  [2],
+  [0],
+  [2],
+  [4],
+  [0],
+  [2],
+  [4],
+  [0],
+  [4]
+];
+
+CROSSWORD_LINES.forEach((line, lineIndex) => {
+  
+  blanks[lineIndex]?.forEach(index => {
+    
+    const pos = line.cells[index];
+    
+    if (pos) {
+      const key = pos[0] + "," + pos[1];
+      BLANK_KEYS.add(key);
+    }
+    
+  });
+  
+});
+
+
+CROSSWORD_LINES.forEach((line) => {
+  
+  line.cells.forEach((pos, index) => {
+    
+    const key = pos[0] + "," + pos[1];
+    
+    // Setiap petak boleh mengandungi 1, 2 atau 3 digit
+    PUZZLE[key] = line.math[index];
+    
+    if (BLANK_KEYS.has(key)) {
+      DISPLAY[key] = "";
+    } else {
+      DISPLAY[key] = line.math[index];
+    }
+    
+  });
+  
+});
+
+
+/* ================================
+   TENGAHKAN KESELURUHAN BENTUK
+================================ */
+
+const cols = CELLS.map(cell => cell[0]);
+const rows = CELLS.map(cell => cell[1]);
+
+const minCol = Math.min(...cols);
+const maxCol = Math.max(...cols);
+
+const minRow = Math.min(...rows);
+const maxRow = Math.max(...rows);
+
+const shapeWidth =
+  (maxCol - minCol + 1) * CELL;
+
+const shapeHeight =
+  (maxRow - minRow + 1) * CELL;
+
+grid.style.position = "relative";
+
+const startX = Math.floor(
+  (grid.clientWidth - shapeWidth) / 2
+);
+
+const startY = Math.floor(
+  (grid.clientHeight - shapeHeight) / 2
+);
+
+/* ================================
+   BUAT PETAK
+================================ */
+
+CELLS.forEach(([col, row]) => {
+      
+      const cell = document.createElement("div");
+      
+      cell.className = "crossword-cell";
+      
+      const key = col + "," + row;
+      
+      const correctValue = PUZZLE[key];
+const displayValue = DISPLAY[key];
+
+cell.dataset.correct = correctValue || "";
+
+/* PAPARKAN KOTAK YANG SUDAH DITETAPKAN */
+if (displayValue !== undefined && displayValue !== null && displayValue !== "") {
+  cell.textContent = displayValue;
+  cell.dataset.fixed = "true";
+} else {
+  cell.textContent = "";
+  cell.dataset.fixed = "false";
+}
+
+      cell.dataset.wordIds = "";
+      
+      cell.style.position = "absolute";
+      
+      cell.style.width = CELL + "px";
+      cell.style.height = CELL + "px";
+      
+      cell.style.display = "flex";
+      cell.style.alignItems = "center";
+      cell.style.justifyContent = "center";
+      cell.style.textAlign = "center";
+      
+      cell.style.left =
+        (startX + (col - minCol) * CELL) + "px";
+      
+      cell.style.top =
+        (startY + (row - minRow) * CELL) + "px";
+      
+      /* PETAK PUTIH */
+      cell.style.background = "rgba(255,255,255,0.88)";
+      
+      /* GARISAN NIPIS */
+      cell.style.border = "1px solid #d99aae";
+      
+      cell.style.boxSizing = "border-box";
+      cell.style.margin = "0";
+      cell.style.padding = "0";
+      
+      /* KLIK KOTAK KOSONG */
+if (cell.dataset.fixed === "false") {
+  
+  cell.style.cursor = "pointer";
+  
+  cell.addEventListener("click", function() {
+  
+  clearCellHighlight();
+  
+  // Pilih kotak
+  selectedCell = cell;
+  
+  // TANDA: nombor lama masih ada dan tunggu butang nombor ditekan
+  selectedCell.dataset.replacing = "true";
+  
+  // Bingkai pink
+  selectedCell.classList.add("selected-cell");
+  
+  selectedCell.style.boxShadow =
+    "inset 0 0 0 4px #f06b91, 0 0 12px rgba(240,107,145,0.45)";
+  
+  selectedCell.style.background = "#fff5f8";
+});
+}
+
+grid.appendChild(cell);
+
+});
+
+PINK_SPACES.forEach(([col, row]) => {
+  
+  const pinkSpace = document.createElement("div");
+  
+  pinkSpace.style.position = "absolute";
+  
+  pinkSpace.style.width = CELL + "px";
+  pinkSpace.style.height = CELL + "px";
+  
+  pinkSpace.style.left =
+    (startX + (col - minCol) * CELL) + "px";
+  
+  pinkSpace.style.top =
+    (startY + (row - minRow) * CELL) + "px";
+  
+  pinkSpace.style.background = "#ff4f9a";
+  
+  pinkSpace.style.border = "none";
+  
+  pinkSpace.style.boxSizing = "border-box";
+  
+  pinkSpace.style.pointerEvents = "none";
+  
+  grid.appendChild(pinkSpace);
+  
+});
+ 
+
+// PILIH KOTAK KOSONG PERTAMA SECARA AUTOMATIK
+const firstEmptyCell = [...grid.children].find(cell =>
+  cell.dataset.fixed === "false"
+);
+
+if (firstEmptyCell) {
+  
+  clearCellHighlight();
+  
+  selectedCell = firstEmptyCell;
+  
+  selectedCell.classList.add("selected-cell");
+  
+  selectedCell.style.boxShadow =
+    "inset 0 0 0 4px #f06b91, 0 0 12px rgba(240,107,145,0.45)";
+  
+  selectedCell.style.background = "#fff5f8";
+}
+
+}
+
+renderCrosswordGrid();
+
+function clearCellHighlight() {  
+  document.querySelectorAll(".selected-cell").forEach(cell => {
+    
+    cell.classList.remove("selected-cell");
+    
+    cell.style.boxShadow = "";
+    cell.style.background = "rgba(255,255,255,0.88)";
+    
+  });
+  
+}
+
+function highlightNextEmptyCell(fromCell = null) {
+  
+  const allCells = Array.from(
+    document.querySelectorAll(
+      "#crossword-grid .crossword-cell"
+    )
+  );
+  
+  // Buang bingkai pink lama
+  clearCellHighlight();
+  
+  // Cari kedudukan kotak yang baru sahaja diisi
+  let currentIndex = allCells.indexOf(fromCell);
+  
+  // Cari kotak kosong seterusnya
+  for (let i = currentIndex + 1; i < allCells.length; i++) {
+    
+    const cell = allCells[i];
+    
+    if (
+      cell.dataset.fixed !== "true" &&
+      !cell.textContent.trim()
+    ) {
+      
+      selectedCell = cell;
+      
+      cell.classList.add("selected-cell");
+      
+      cell.style.boxShadow =
+        "inset 0 0 0 4px #f06b91, 0 0 12px rgba(240,107,145,0.45)";
+      
+      cell.style.background = "#fff5f8";
+      
+      return;
+    }
+  }
+  
+  // Kalau sampai hujung, sambung cari dari awal
+  for (let i = 0; i < currentIndex; i++) {
+    
+    const cell = allCells[i];
+    
+    if (
+      cell.dataset.fixed !== "true" &&
+      !cell.textContent.trim()
+    ) {
+      
+      selectedCell = cell;
+      
+      cell.classList.add("selected-cell");
+      
+      cell.style.boxShadow =
+        "inset 0 0 0 4px #f06b91, 0 0 12px rgba(240,107,145,0.45)";
+      
+      cell.style.background = "#fff5f8";
+      
+      return;
+    }
+  }
+  
+// Semua kotak sudah penuh
+if (fromCell) {
+  
+  selectedCell = fromCell;
+  
+  selectedCell.classList.add("selected-cell");
+  
+  selectedCell.style.boxShadow =
+    "inset 0 0 0 4px #f06b91, 0 0 12px rgba(240,107,145,0.45)";
+  
+  selectedCell.style.background = "#fff5f8";
+}
+
+setTimeout(() => {
+  checkCrosswordComplete();
+}, 150);
+
+}
+
+function checkCrosswordComplete() {
+  
+  const allCells = Array.from(
+    document.querySelectorAll("#crossword-grid .crossword-cell")
+  );
+  
+  const wrongCells = [];
+  
+  allCells.forEach(cell => {
+    
+    // Semak kotak yang pemain isi sahaja
+    if (cell.dataset.fixed === "false") {
+      
+      const playerAnswer = cell.textContent.trim();
+      const correctAnswer = (cell.dataset.correct || "").trim();
+      
+      if (playerAnswer !== correctAnswer) {
+        wrongCells.push(cell);
+      }
+      
+    }
+    
+  });
+  
+  const feedback =
+    document.getElementById("feedback");
+  
+  feedback.classList.remove("hidden");
+  
+  // =========================
+  // SEMUA BETUL
+  // =========================
+  
+  if (wrongCells.length === 0) {
+    
+    feedback.innerHTML = "✅ TRUE 🎉";
+    feedback.style.color = "#16a34a";
+    feedback.style.borderColor = "#22c55e";
+    
+    playCorrectSound();
+    
+    setTimeout(() => {
+      
+      feedback.classList.add("hidden");
+      
+      document.getElementById("final-msg").innerHTML =
+  "🏆 EXCELLENT<br><span style='font-size:13px; white-space:nowrap;'>YOU COMPLETED THE CROSSWORD 🎉</span>";
+      
+      document.getElementById("end-screen")
+        .classList.remove("hidden");
+      
+    }, 1600);
+    
+    return;
+    
+  } else {
+    
+    feedback.innerHTML = "❌ TRY AGAIN";
+    feedback.style.color = "#dc2626";
+    feedback.style.borderColor = "#ef4444";
+    
+    playWrongSound();
+    
+  }
+  
+  setTimeout(() => {
+    feedback.classList.add("hidden");
+  }, 2000);
+  
+}
+
+document.getElementById("delete-btn")
+  .addEventListener("click", function() {
+    
+    if (!selectedCell) return;
+    
+    if (selectedCell.dataset.fixed === "true") return;
+    
+   
+    
+    selectedCell.textContent = "";
+    
+    selectedCell.classList.remove("filled");
+    
+    clearCellHighlight();
+    
+    selectedCell.classList.add("selected-cell");
+    
+    selectedCell.style.boxShadow =
+      "inset 0 0 0 4px #f06b91, 0 0 12px rgba(240,107,145,0.45)";
+    
+    selectedCell.style.background = "#fff5f8";
+    
+  });
+  
+  document.querySelectorAll(".letter-btn").forEach(button => {
+  button.addEventListener("click", function() {
+    
+    playClickSound();
+    
+    if (!selectedCell) return;
+    if (selectedCell.dataset.fixed === "true") return;
+    
+    const value = button.dataset.letter;
+    const correctAnswer = selectedCell.dataset.correct || "";
+    const neededLength = correctAnswer.length;
+    
+    // Simpan nombor yang sedang ditaip
+    let currentValue = selectedCell.dataset.input || "";
+    
+    // Kalau klik kotak lama untuk tukar jawapan,
+    // jangan padam lagi sehingga tekan nombor baru
+    if (selectedCell.dataset.replacing === "true") {
+      currentValue = "";
+      selectedCell.dataset.replacing = "false";
+    }
+    
+    // Tambah digit baru
+    if (currentValue.length < neededLength) {
+      currentValue += value;
+    }
+    
+// Paparkan nombor terus
+selectedCell.dataset.input = currentValue;
+selectedCell.textContent = currentValue;
+
+// Pastikan nombor terus jelas
+selectedCell.style.color = "#222";
+selectedCell.style.opacity = "1";
+selectedCell.style.fontWeight = "700";
+selectedCell.style.textShadow = "none";
+    
+    // Hanya pergi kotak seterusnya selepas cukup digit
+    if (currentValue.length === neededLength) {
+      highlightNextEmptyCell(selectedCell);
+    }
+    
+  });
+});
+
+
+document.getElementById("delete-btn")
+  .addEventListener("click", function() {
+    
+    // Kalau belum pilih kotak
+    if (!selectedCell) return;
+    
+    // Jangan padam kotak tetap
+    if (selectedCell.dataset.fixed === "true") return;
+    
+    // BUNYI CLICK DELETE
+    playClickSound();
+    
+    // Padam isi
+    selectedCell.textContent = "";
+    
+    selectedCell.classList.remove("filled");
+    
+    clearCellHighlight();
+    
+    // Kekalkan kotak yang sama sebagai pilihan
+    selectedCell.classList.add("selected-cell");
+    
+    selectedCell.style.boxShadow =
+      "inset 0 0 0 4px #f06b91, 0 0 12px rgba(240,107,145,0.45)";
+    
+    selectedCell.style.background = "#fff5f8";
+    
+  });
+
+
+/* ===== SEMUA BUTANG ADA BUNYI CLICK KECUALI BACK ===== */
+
+document.querySelectorAll(
+  "button:not(#back-btn):not(#delete-btn)"
+).forEach(button => {
+  
+  button.addEventListener("click", function() {
+    playClickSound();
+  });
+  
+});
+
+function restartCrossword() {
+  
+  // Bunyi click
+  playClickSound();
+  
+  // Tutup skrin EXCELLENT
+  const finalScreen = document.getElementById("final-screen");
+  
+  if (finalScreen) {
+    finalScreen.classList.add("hidden");
+  }
+  
+  // Reset pilihan kotak
+  selectedCell = null;
+  
+  // Reload game semula
+  location.reload();
+}
+
+</script>
+
+</body>
+</html>

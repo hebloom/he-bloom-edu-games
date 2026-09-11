@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HE Bloom Edu Games</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🌸 HE Bloom Edu Games</h1>
+
+<input
+type="email"
+id="email"
+placeholder="Email">
+
+<input
+type="password"
+id="password"
+placeholder="Password">
+
+<div class="buttons">
+
+<button id="registerBtn">
+Create Account
+</button>
+
+<button id="loginBtn">
+Login
+</button>
+
+</div>
+
+<!-- FORGOT PASSWORD -->
+<p id="forgotPassword">
+    Forgot Password?
+</p>
+
+<div id="resetBox" style="display:none;">
+
+    <input
+        type="email"
+        id="resetEmail"
+        placeholder="Enter your email">
+
+    <button id="resetBtn">
+        Send Reset Link
+    </button>
+
+    <p id="backToLogin">
+        ← Back to Login
+    </p>
+
+</div>
+
+<p id="message"></p>
+
+</div>
+
+<script type="module" src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js"></script>
+
+<script type="module" src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js"></script>
+
+<script type="module" src="script.js"></script>
+
+</body>
+</html>

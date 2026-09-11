@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>English Language | HE Bloom Edu Games</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff 0%,
+            #f8fbff 48%,
+            #fff3f9 100%
+        );
+
+    padding:30px;
+    min-height:100vh;
+    position:relative;
+    overflow-x:hidden;
+}
+
+/* TIADA bulatan besar di penjuru */
+body::before,
+body::after{
+    content:none;
+}
+
+.container{
+    max-width:380px;
+    margin:auto;
+}
+
+
+/* =========================
+   TAJUK
+========================= */
+
+h1 {
+    color: #d92f87;
+    text-align: center;
+    font-size: 44px;
+    font-weight: 900;
+    white-space: nowrap;
+    
+    width: 100%;
+    margin: 2px auto 0 auto;
+    
+    text-shadow:
+        3px 3px 0 #ffffff,
+        -2px -2px 0 #ffffff,
+        0 5px 8px rgba(217, 47, 135, 0.45),
+        0 8px 14px rgba(255, 120, 190, 0.25);
+}
+
+
+/* =========================
+   SUBTITLE
+========================= */
+
+.subtitle {
+  text-align: center;
+  color: #5b32d6;
+  font-size: 25px;
+  font-weight: 800;
+  white-space: nowrap;
+  
+  margin-top: 15px;
+  margin-bottom: 35px;
+  
+  text-shadow:
+    2px 2px 0 #ffffff,
+    -2px -2px 0 #ffffff,
+    0 4px 7px rgba(91, 50, 214, 0.40),
+    0 7px 12px rgba(120, 90, 230, 0.20);
+}
+
+/* =========================
+   MENU CARD
+========================= */
+
+.card{
+    background:rgba(255,255,255,.96);
+
+    padding:20px;
+    margin-bottom:8px;
+
+    border-radius:20px;
+    border:3px solid #ff9dcc;
+
+    box-shadow:
+        0 5px 15px rgba(120,160,210,.15),
+        0 0 12px rgba(255,130,190,.20);
+
+    font-size:21px;
+    font-weight:bold;
+
+    cursor:pointer;
+    transition:.2s;
+
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+
+    gap:12px;
+    white-space:nowrap;
+}
+
+.card:hover{
+    transform:scale(1.02);
+}
+
+
+/* =========================
+   ICON
+========================= */
+
+.card .icon{
+    width:45px;
+
+    text-align:center;
+
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+
+    flex-shrink:0;
+}
+
+
+/* =========================
+   LEVEL BUTTON
+========================= */
+
+.level-btn{
+    width:60%;
+    margin:12px auto;
+
+    padding:14px 0;
+
+    justify-content:center;
+}
+
+
+/* =========================
+   BACK BUTTON
+========================= */
+
+.back{
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff 0%,
+            #ffd6eb 25%,
+            #ff8fc7 55%,
+            #8fd3ff 100%
+        );
+
+    color:white;
+
+    text-align:center;
+
+    width:50%;
+
+    margin:20px auto;
+
+    border:3px solid #ffffff;
+    border-radius:20px;
+
+    box-shadow:
+        0 6px 16px rgba(255,120,190,.30),
+        0 0 18px rgba(120,190,255,.35);
+
+    font-size:25px;
+    font-weight:bold;
+
+    text-shadow:
+        1px 1px 2px rgba(80,100,180,.35);
+
+    transition:.2s;
+
+    justify-content:center;
+}
+
+.back:active{
+    transform:scale(.95);
+
+    box-shadow:
+        0 3px 8px rgba(255,100,180,.25),
+        0 0 12px rgba(255,140,200,.35);
+}
+
+.he-bloom-logo {
+    position: fixed;
+    width: 100px;
+    height: 100px;
+    z-index: 9999;
+    opacity: .95;
+    pointer-events: none;
+}
+
+.bottom-logo {
+    bottom: 18px;
+    right: 18px;
+}
+/* =====================================================
+   RESPONSIVE FINAL - ALL DEVICES
+   PHONE + TABLET + LAPTOP + COMPUTER
+   PORTRAIT + LANDSCAPE
+
+   DESIGN ASAL KEKAL
+   ===================================================== */
+
+
+/* =========================
+   SEMUA DEVICE
+   ========================= */
+
+html,
+body {
+    width: 100%;
+    min-width: 0;
+    overflow-x: hidden;
+}
+
+.container {
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   PHONE KECIL
+   ========================= */
+
+@media (max-width: 379px) {
+    
+    body {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+    
+    .container {
+        width: 380px;
+        max-width: 380px;
+        margin-left: auto;
+        margin-right: auto;
+        
+        transform-origin: top center;
+        zoom: 0.90;
+    }
+}
+
+
+/* =========================
+   HP SANGAT KECIL
+   ========================= */
+
+@media (max-width: 340px) {
+    
+    .container {
+        zoom: 0.82;
+    }
+}
+
+
+/* =========================
+   LANDSCAPE
+   ========================= */
+
+@media (orientation: landscape) {
+    
+    html,
+    body {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+}
+
+
+/* =========================
+   LAPTOP / KOMPUTER
+   ========================= */
+
+@media (min-width: 901px) {
+    
+    html,
+    body {
+        width: 100%;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+    
+    .container {
+        width: 380px;
+        max-width: 380px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="container">
+
+    <h1>English Language</h1>
+
+    <p class="subtitle">Choose a Category</p>
+
+
+    <!-- =========================
+         MAIN MENU
+    ========================== -->
+
+    <div class="card"
+         onclick="location.href='choosethefirst3letters.html'">
+
+        <span class="icon">🔠</span>
+        <span>First Three Letters</span>
+
+    </div>
+
+
+    <div class="card"
+         onclick="location.href='complete.html'">
+
+        <span class="icon">📘 </span>
+        <span>Complete the Words</span>
+
+    </div>
+
+
+    <div class="card"
+         onclick="location.href='match.html'">
+
+        <span class="icon">🖼️</span>
+        <span>Match Pictures to Words</span>
+
+    </div>
+
+
+    <div class="card"
+         onclick="toggleUnscrambletheWords()">
+
+        <span class="icon">📝</span>
+        <span>Unscramble Words</span>
+
+    </div>
+
+
+    <!-- UNSCRAMBLE MENU -->
+
+    <div id="unscramblethewordsMenu"
+         style="display:none; margin-top:10px;">
+
+        <div class="card level-btn"
+             onclick="location.href='unscramble_easy.html'">
+
+            🟢 Easy
+
+        </div>
+
+        <div class="card level-btn"
+             onclick="location.href='unscramble_medium.html'">
+
+            🟡 Medium
+
+        </div>
+
+        <div class="card level-btn"
+             onclick="location.href='unscramble_hard.html'">
+
+            🔴 Hard
+
+        </div>
+
+    </div>
+
+
+    <div class="card"
+         onclick="location.href='opposite_words.html'">
+
+        <span class="icon">🔄</span>
+        <span>Opposite Words</span>
+
+    </div>
+
+
+    <!-- GRAMMAR TEST -->
+
+    <div class="card"
+         onclick="toggleGrammarTestMenu()">
+
+        <span class="icon">✅</span>
+        <span>Grammar Test</span>
+
+    </div>
+
+
+    <!-- GRAMMAR TEST MENU -->
+
+    <div id="grammartestMenu"
+         style="display:none; margin-top:10px;">
+
+        <div class="card level-btn"
+             onclick="location.href='grammartest_easy.html'">
+
+            🟢 Easy
+
+        </div>
+
+        <div class="card level-btn"
+             onclick="location.href='grammartest_medium.html'">
+
+            🟡 Medium
+
+        </div>
+
+        <div class="card level-btn"
+             onclick="location.href='grammartest_hard.html'">
+
+            🔴 Hard
+
+        </div>
+
+    </div>
+
+
+    <!-- LEARN ENGLISH -->
+
+    <div class="card"
+         onclick="toggleLearnEnglishMenu()">
+
+        <span class="icon">📚</span>
+        <span>Learn English</span>
+
+    </div>
+
+
+    <!-- LEARN ENGLISH MENU -->
+
+    <div id="learnenglishMenu"
+         style="display:none; margin-top:10px;">
+
+        <div class="card level-btn"
+             onclick="location.href='alphabet.html'">
+
+            🔤 Alphabet
+
+        </div>
+
+
+        <div class="card level-btn"
+             onclick="location.href='numbers.html'">
+
+            🔢 Numbers
+
+        </div>
+
+
+        <div class="card level-btn"
+             onclick="location.href='le_animals.html'">
+
+            🐱 Animals
+
+        </div>
+
+
+        <div class="card level-btn"
+             onclick="location.href='le_fruits.html'">
+
+            🍎 Fruits
+
+        </div>
+
+
+        <div class="card level-btn"
+             onclick="location.href='le_flowers.html'">
+
+            🌺 Flowers
+
+        </div>
+
+
+        <div class="card level-btn"
+             onclick="location.href='le_vegetables.html'">
+
+            🥕 Vegetables
+
+        </div>
+
+
+        <div class="card level-btn"
+             onclick="location.href='le_bodyparts.html'">
+
+            🖐️ Body Parts
+
+        </div>
+
+
+        <div class="card level-btn"
+             onclick="location.href='le_vehicles.html'">
+
+            🚗 Vehicles
+
+        </div>
+
+
+        <div class="card level-btn"
+             onclick="location.href='presenttense_pasttense.html'">
+
+            📓 Present to Past
+
+        </div>
+
+    </div>
+
+
+    <!-- BACK -->
+
+    <div class="card back"
+         onclick="location.href='dashboard.html'">
+
+        ⬅️ Back
+
+    </div>
+
+</div>
+
+
+<!-- HE BLOOM LOGO -->
+
+<img src="HE_Bloom.png"
+     alt="HE Bloom"
+     class="he-bloom-logo bottom-logo">
+     
+     
+
+
+<script>
+
+/* =========================
+   UNSCRAMBLE
+========================= */
+
+function toggleUnscrambletheWords(){
+
+    const menu =
+        document.getElementById("unscramblethewordsMenu");
+
+    menu.style.display =
+        (menu.style.display === "none")
+        ? "block"
+        : "none";
+}
+
+
+/* =========================
+   LEARN ENGLISH
+========================= */
+
+function toggleLearnEnglishMenu(){
+
+    const menu =
+        document.getElementById("learnenglishMenu");
+
+    menu.style.display =
+        (menu.style.display === "none")
+        ? "block"
+        : "none";
+}
+
+
+/* =========================
+   GRAMMAR TEST
+========================= */
+
+function toggleGrammarTestMenu(){
+
+    const menu =
+        document.getElementById("grammartestMenu");
+
+    menu.style.display =
+        (menu.style.display === "none")
+        ? "block"
+        : "none";
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Malay Language | HE Bloom Edu Games</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff 0%,
+            #f8fbff 48%,
+            #fff3f9 100%
+        );
+
+    padding:30px;
+    min-height:100vh;
+    position:relative;
+    overflow-x:hidden;
+}
+
+body::before,
+body::after{
+    content:none;
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container{
+    max-width:380px;
+    margin:auto;
+}
+
+
+/* =========================
+   TAJUK
+========================= */
+
+
+
+h1 {
+    color: #d92f87;
+    text-align: center;
+    font-size: 44px;
+    font-weight: 900;
+    white-space: nowrap;
+    
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    margin-top: 2px;
+    
+    text-shadow:
+        3px 3px 0 #ffffff,
+        -2px -2px 0 #ffffff,
+        0 5px 8px rgba(217, 47, 135, 0.45),
+        0 8px 14px rgba(255, 120, 190, 0.25);
+}
+
+/* =========================
+   SUBTITLE
+========================= */
+
+.logo p{
+    text-align:center;
+    color:#5b32d6;
+    font-size:25px;
+    font-weight:800;
+    white-space:nowrap;
+
+    margin-top:15px;
+    margin-bottom:35px;
+
+    text-shadow:
+        2px 2px 0 #ffffff,
+        -2px -2px 0 #ffffff,
+        0 4px 7px rgba(91,50,214,.40),
+        0 7px 12px rgba(120,90,230,.20);
+}
+
+
+/* =========================
+   MENU CARD
+========================= */
+
+.card {
+    background: rgba(255, 255, 255, .96);
+    
+    padding: 20px;
+    margin-bottom: 8px;
+    
+    border-radius: 20px;
+    border: 3px solid #ff9dcc;
+    
+    box-shadow:
+        0 5px 15px rgba(120, 160, 210, .15),
+        0 0 12px rgba(255, 130, 190, .20);
+    
+    font-size: 21px;
+    font-weight: bold;
+    
+    cursor: pointer;
+    transition: .2s;
+    
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    
+    gap: 16px;
+    white-space: nowrap;
+}
+
+.card:hover{
+    transform:scale(1.02);
+}
+
+
+/* =========================
+   ICON
+========================= */
+
+.card .icon{
+    width:45px;
+
+    text-align:center;
+
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+
+    flex-shrink:0;
+}
+
+
+/* =========================
+   LEVEL BUTTON
+========================= */
+
+.level-btn{
+    width:60%;
+    margin:12px auto;
+
+    padding:14px 0;
+
+    justify-content:center;
+}
+
+
+/* =========================
+   BACK BUTTON
+========================= */
+
+.back{
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff 0%,
+            #ffd6eb 25%,
+            #ff8fc7 55%,
+            #8fd3ff 100%
+        );
+
+    color:white;
+
+    text-align:center;
+
+    width:50%;
+
+    margin:20px auto;
+
+    border:3px solid #ffffff;
+    border-radius:20px;
+
+    box-shadow:
+        0 6px 16px rgba(255,120,190,.30),
+        0 0 18px rgba(120,190,255,.35);
+
+    font-size:25px;
+    font-weight:bold;
+
+    text-shadow:
+        1px 1px 2px rgba(80,100,180,.35);
+
+    transition:.2s;
+
+    justify-content:center;
+}
+
+.back:active{
+    transform:scale(.95);
+
+    box-shadow:
+        0 3px 8px rgba(255,100,180,.25),
+        0 0 12px rgba(255,140,200,.35);
+}
+
+.he-bloom-logo {
+    position: fixed;
+    width: 100px;
+    height: 100px;
+    z-index: 9999;
+    opacity: .95;
+    pointer-events: none;
+}
+
+.bottom-logo {
+    bottom: 18px;
+    right: 18px;
+}
+/* =====================================================
+   RESPONSIVE FINAL - ALL DEVICES
+   PHONE + TABLET + LAPTOP + COMPUTER
+   PORTRAIT + LANDSCAPE
+
+   DESIGN ASAL KEKAL
+   ===================================================== */
+
+
+/* =========================
+   SEMUA DEVICE
+   ========================= */
+
+html,
+body {
+    width: 100%;
+    min-width: 0;
+    overflow-x: hidden;
+}
+
+.container {
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   PHONE KECIL
+   ========================= */
+
+@media (max-width: 379px) {
+    
+    body {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+    
+    .container {
+        width: 380px;
+        max-width: 380px;
+        margin-left: auto;
+        margin-right: auto;
+        
+        transform-origin: top center;
+        zoom: 0.90;
+    }
+}
+
+
+/* =========================
+   HP SANGAT KECIL
+   ========================= */
+
+@media (max-width: 340px) {
+    
+    .container {
+        zoom: 0.82;
+    }
+}
+
+
+/* =========================
+   LANDSCAPE
+   ========================= */
+
+@media (orientation: landscape) {
+    
+    html,
+    body {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+}
+
+
+/* =========================
+   LAPTOP / KOMPUTER
+   ========================= */
+
+@media (min-width: 901px) {
+    
+    html,
+    body {
+        width: 100%;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+    
+    .container {
+        width: 380px;
+        max-width: 380px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="logo">
+<h1>Bahasa Melayu</h1>
+<p>Pilih Kategori</p>
+</div>
+
+<div class="card" onclick="location.href='pilih_nama.html'">
+    <span class="icon">☑️</span>
+    <span>Pilih Nama Gambar</span>
+</div>
+
+<div class="card" onclick="location.href='pilih2hurufpertama.html'">
+    <span class="icon">🔡</span>
+    <span>Pilih Dua Huruf Pertama</span>
+</div>
+
+<div class="card" onclick="location.href='lawan_kata.html'">
+    <span class="icon">🔄</span>
+    <span>Lawan Kata (Antonim)</span>
+</div>
+
+<div class="card" onclick="location.href='lengkapkan.html'">
+    <span class="icon">📝</span>
+    <span>Lengkapkan Perkataan</span>
+</div>
+
+
+<div class="card susun huruf" onclick="toggleSusunMenu()">
+    <span class="icon">✍️</span>
+    <span>Susun Huruf</span>
+</div>
+
+<div id="susunMenu" style="display:none; margin-top:10px;">
+    
+    <div class="card level-btn" onclick="location.href='susun_easy.html'">
+        🟢 Easy
+    </div>
+    
+    <div class="card level-btn" onclick="location.href='susun_medium.html'">
+        🟡 Medium
+    </div>
+    
+    <div class="card level-btn" onclick="location.href='susun_hard.html'">
+        🔴 Hard
+    </div>
+    
+</div>
+
+
+<div class="card" onclick="toggleBinaAyatMenu()">
+    <span class="icon">📚</span>
+    <span>Bina Ayat</span>
+</div>
+
+<div id="binaayatMenu" style="display:none; margin-top:10px;">
+    
+    <div class="card level-btn" onclick="location.href='binaayat_easy.html'">
+        🟢 Easy
+    </div>
+    
+    <div class="card level-btn" onclick="location.href='binaayat_medium.html'">
+        🟡 Medium
+    </div>
+    
+    <div class="card level-btn" onclick="location.href='binaayat_hard.html'">
+        🔴 Hard
+    </div>
+    
+</div>
+
+
+<div class="card" onclick="togglePengetahuanAmMenu()">
+    <span class="icon">🧠</span>
+    <span>Pengetahuan Am</span>
+</div>
+
+<div id="pengetahuanamMenu" style="display:none; margin-top:10px;">
+    
+    <div class="card level-btn" onclick="location.href='pengetahuanam_easy.html'">
+        🟢 Easy
+    </div>
+    
+    <div class="card level-btn" onclick="location.href='pengetahuanam_medium.html'">
+        🟡 Medium
+    </div>
+    
+    <div class="card level-btn" onclick="location.href='pengetahuanam_hard.html'">
+        🔴 Hard
+    </div>
+    
+</div>
+
+
+<div class="card back" onclick="location.href='dashboard.html'">
+    ⬅️ Kembali
+</div>
+
+</div>
+
+<!-- HE BLOOM LOGO -->
+
+<img src="HE_Bloom.png"
+     alt="HE Bloom"
+     class="he-bloom-logo bottom-logo">
+<script>
+function toggleSusunMenu() {
+    const menu = document.getElementById("susunMenu");
+    menu.style.display =
+        (menu.style.display === "none") ? "block" : "none";
+}
+</script>
+
+<script>
+function toggleBinaAyatMenu() {
+    const menu = document.getElementById("binaayatMenu");
+    menu.style.display =
+        (menu.style.display === "none") ? "block" : "none";
+}
+</script>
+
+<script>
+function togglePengetahuanAmMenu() {
+    const menu = document.getElementById("pengetahuanamMenu");
+    menu.style.display =
+        (menu.style.display === "none") ? "block" : "none";
+}
+</script>
+
+</body>
+</html>

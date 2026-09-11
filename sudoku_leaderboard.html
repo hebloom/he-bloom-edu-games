@@ -1,0 +1,1274 @@
+<!doctype html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sudoku Leaderboard</title>
+
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    box-sizing:border-box;
+    font-family:'Fredoka',sans-serif;
+}
+
+html,body{
+    margin:0;
+    min-height:100%;
+}
+
+body{
+    min-height:100vh;
+    padding:20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff4fa 0%,
+            #f3efff 45%,
+            #dff7ff 100%
+        );
+
+    overflow-x:hidden;
+}
+
+
+/* =========================
+   MAIN PAGE
+   ========================= */
+
+.page{
+    position:relative;
+    z-index:1;
+
+    width:100%;
+    max-width:850px;
+
+    margin:0 auto;
+}
+
+
+/* =========================
+   TITLE
+   ========================= */
+
+.title-box{
+    text-align:center;
+    margin:10px auto 22px;
+}
+
+.title {
+    display: inline-block;
+    
+    padding: 8px 20px;
+    
+    background: rgba(255, 255, 255, .88);
+    
+    border: 4px solid #f3a6bb;
+    border-radius: 28px;
+    
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .12);
+    
+    color: #7c3aed;
+    
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.subtitle{
+    margin-top:8px;
+
+    color:#6b7280;
+
+    font-size:17px;
+    font-weight:500;
+}
+
+
+/* =========================
+   NUMBERS / COLOUR BUTTON
+   ========================= */
+
+.category-buttons{
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:10px;
+
+    max-width:620px;
+
+    margin:0 auto 22px;
+}
+
+.category-buttons button{
+    border:3px solid white;
+
+    border-radius:18px;
+
+    padding:11px 10px;
+
+    font-size:17px;
+    font-weight:700;
+
+    color:white;
+
+    box-shadow:0 5px 12px rgba(0,0,0,.13);
+
+    cursor:pointer;
+
+    transition:.15s;
+}
+
+.category-buttons button:hover{
+    transform:translateY(-2px);
+}
+
+.category-buttons button.active{
+    outline:4px solid rgba(240,107,145,.35);
+
+    transform:scale(1.02);
+}
+
+.numbers{
+    background:#8b5cf6;
+}
+
+.colours{
+    background:#ec4899;
+}
+
+
+/* =========================
+   LEADERBOARD CARD
+   ========================= */
+
+.leaderboard-card{
+    background:rgba(255,255,255,.86);
+
+    border:4px solid rgba(255,255,255,.95);
+
+    border-radius:30px;
+
+    padding:20px;
+
+    box-shadow:
+        0 10px 28px rgba(0,0,0,.13),
+        0 0 0 3px rgba(243,166,187,.25);
+}
+
+.section-title{
+    text-align:center;
+
+    color:#7c3aed;
+
+    font-size:25px;
+    font-weight:700;
+
+    margin-bottom:15px;
+}
+
+
+/* =========================
+   EASY MEDIUM HARD
+   ========================= */
+
+.level-tabs{
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:9px;
+
+    margin-bottom:18px;
+}
+
+.level-tabs button{
+    background:#f3f4f6;
+
+    color:#4b5563;
+
+    border:3px solid white;
+
+    border-radius:16px;
+
+    padding:10px 6px;
+
+    font-size:16px;
+    font-weight:700;
+
+    box-shadow:0 4px 9px rgba(0,0,0,.10);
+
+    cursor:pointer;
+}
+
+.level-tabs button.active{
+    background:#f06b91;
+
+    color:white;
+}
+
+
+/* =========================
+   TABLE
+   ========================= */
+
+.table{
+    width:100%;
+
+    border-collapse:separate;
+
+    border-spacing:0 7px;
+}
+
+.table th{
+    color:#6b7280;
+
+    font-size:14px;
+
+    padding:4px 8px;
+}
+
+.table td{
+    background:#fff;
+
+    padding:11px 8px;
+
+    font-size:17px;
+    font-weight:600;
+}
+
+.table td:first-child{
+    border-radius:14px 0 0 14px;
+
+    width:65px;
+
+    text-align:center;
+}
+
+.table td:nth-child(2){
+    text-align:left;
+}
+
+.table td:last-child{
+    border-radius:0 14px 14px 0;
+
+    text-align:right;
+
+    color:#7c3aed;
+
+    width:110px;
+}
+
+.rank{
+    font-size:21px;
+}
+
+.empty{
+    text-align:center;
+
+    padding:28px 10px;
+
+    color:#9ca3af;
+
+    font-size:17px;
+    font-weight:500;
+}
+
+
+/* =========================
+   BACK BUTTON
+========================= */
+
+.back-btn{
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff 0%,
+            #ffd6eb 25%,
+            #ff8fc7 55%,
+            #8fd3ff 100%
+        );
+
+    color:white;
+
+    text-align:center;
+
+    width:190px;
+    height:60px;
+
+    margin:20px auto;
+
+    border:3px solid #ffffff;
+    border-radius:20px;
+
+    box-shadow:
+        0 6px 16px rgba(255,120,190,.30),
+        0 0 18px rgba(120,190,255,.35);
+
+    font-size:19px;
+    font-weight:bold;
+
+    text-shadow:
+        1px 1px 2px rgba(80,100,180,.35);
+
+    transition:.2s;
+
+    cursor:pointer;
+
+    display:block;
+}
+
+.back-btn:active{
+    transform:scale(.95);
+
+    box-shadow:
+        0 3px 8px rgba(255,100,180,.25),
+        0 0 12px rgba(255,140,200,.35);
+}
+
+.he-bloom-logo {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    z-index: 9999;
+    opacity: .95;
+    pointer-events: none;
+}
+
+.bottom-logo {
+    bottom: 18px;
+    right: 18px;
+}
+
+/* =========================
+   WARNA BUTANG SUDOKU
+========================= */
+
+#numbers-btn {
+    background: #4f8ff7 !important;
+    color: white !important;
+}
+
+#colours-btn {
+    background: #b98cff !important;
+    color: white !important;
+}
+
+/* Bila dipilih */
+#numbers-btn.active {
+    background: #4f8ff7 !important;
+    color: white !important;
+}
+
+#colours-btn.active {
+    background: #b98cff !important;
+    color: white !important;
+}
+/* =========================
+   LANDSCAPE
+   ========================= */
+
+@media (orientation:landscape) and (max-height:600px){
+
+    body{
+        padding:10px 18px 20px;
+    }
+
+    .title-box{
+        margin:0 auto 12px;
+    }
+
+    .title{
+        font-size:27px;
+        padding:9px 22px;
+    }
+
+    .subtitle{
+        font-size:14px;
+        margin-top:4px;
+    }
+
+    .category-buttons{
+        max-width:650px;
+
+        margin-bottom:12px;
+    }
+
+    .category-buttons button{
+        padding:7px;
+
+        font-size:15px;
+    }
+
+    .leaderboard-card{
+        padding:13px 16px;
+
+        border-radius:24px;
+    }
+
+    .section-title{
+        font-size:21px;
+
+        margin-bottom:9px;
+    }
+
+    .level-tabs{
+        margin-bottom:9px;
+    }
+
+    .level-tabs button{
+        padding:7px;
+
+        font-size:14px;
+    }
+
+    .table td{
+        padding:7px;
+
+        font-size:15px;
+    }
+
+    .back-btn{
+        margin:12px auto 0;
+
+        height:45px;
+    }
+}
+
+
+/* =========================
+   SMALL PHONE
+   ========================= */
+
+@media (max-width:520px){
+
+    body{
+        padding:12px;
+    }
+
+    .title{
+        font-size:27px;
+
+        padding:11px 18px;
+    }
+
+    .subtitle{
+        font-size:14px;
+    }
+
+    .category-buttons{
+        gap:8px;
+    }
+
+    .category-buttons button{
+        font-size:15px;
+    }
+
+    .leaderboard-card{
+        padding:14px 10px;
+    }
+
+    .table td{
+        font-size:15px;
+    }
+
+    .table td:first-child{
+        width:55px;
+    }
+
+    .table td:last-child{
+        width:85px;
+    }
+
+}
+
+/* =========================
+   SUSUNAN LEADERBOARD
+========================= */
+
+#leaderboard-body td:nth-child(1),
+#leaderboard-body td:nth-child(2),
+#leaderboard-body td:nth-child(3),
+#leaderboard-body td:nth-child(4) {
+    text-align: center !important;
+}
+
+#leaderboard-body td:nth-child(2) {
+    text-align: center !important;
+}
+
+#leaderboard-body td:nth-child(2),
+#leaderboard-body td:nth-child(3) {
+    color: #6f35d4 !important;
+    font-weight: bold;
+}
+
+/* =========================
+   LEADERBOARD - 20 PEMAIN
+========================= */
+
+.leaderboard-card {
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+}
+
+#leaderboard-body {
+    height: auto !important;
+}
+
+body {
+    overflow-y: auto !important;
+}
+</style>
+<body>
+    </div>
+    
+<!-- HE BLOOM LOGO -->
+
+<img src="HE_Bloom.png"
+     alt="HE Bloom"
+     class="he-bloom-logo bottom-logo">
+    </div>
+
+
+<main class="page">
+
+
+    <!-- TAJUK -->
+
+    <div class="title-box">
+
+        <div class="title">
+            🏆 SUDOKU LEADERBOARD 🧩
+        </div>
+
+        <div class="subtitle">
+            Ranking based on fastest time
+        </div>
+
+    </div>
+
+
+
+    <!-- PILIH JENIS SUDOKU -->
+
+    <div class="category-buttons">
+
+        <button
+            id="numbers-btn"
+            class="numbers active"
+            onclick="selectGame('numbers')">
+
+            🔢 Numbers Sudoku
+
+        </button>
+
+
+        <button
+            id="colours-btn"
+            class="colours"
+            onclick="selectGame('colours')">
+
+            🎨 Colours Sudoku 
+
+        </button>
+
+    </div>
+
+
+
+    <!-- LEADERBOARD -->
+
+    <section class="leaderboard-card">
+
+
+        <div
+            id="section-title"
+            class="section-title">
+
+            🔢 NUMBERS SUDOKU
+
+        </div>
+
+
+
+        <!-- EASY / MEDIUM / HARD -->
+
+        <div class="level-tabs">
+
+
+            <button
+                id="easy-tab"
+                class="active"
+                onclick="selectLevel('easy')">
+
+                🟢 EASY
+
+            </button>
+
+
+            <button
+                id="medium-tab"
+                onclick="selectLevel('medium')">
+
+                🟡 MEDIUM
+
+            </button>
+
+
+            <button
+                id="hard-tab"
+                onclick="selectLevel('hard')">
+
+                🔴 HARD
+
+            </button>
+
+
+        </div>
+
+
+
+        <!-- SENARAI PEMAIN -->
+
+        <table class="table">
+
+            <thead>
+
+                <tr>
+
+                 <th>RANK</th>
+<th>PLAYER</th>
+<th>SCORE</th>
+<th>TIME</th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody id="leaderboard-body">
+
+                <!-- Data pemain akan keluar di sini -->
+
+            </tbody>
+
+        </table>
+
+
+    </section>
+
+
+
+    <!-- BACK -->
+
+<button
+    class="back-btn"
+    onclick="window.location.href='sudoku.html'">
+
+    ◀️ BACK
+
+</button>
+
+
+</main>
+
+
+<script>
+const leaderboardKey = "sudokuLeaderboard";
+
+let currentGame = "numbers";
+let currentLevel = "easy";
+
+
+/* =========================
+   DATA ASAS
+   ========================= */
+
+function getDefaultData(){
+
+    return {
+        numbers_easy: [],
+        numbers_medium: [],
+        numbers_hard: [],
+
+        colours_easy: [],
+        colours_medium: [],
+        colours_hard: []
+    };
+
+}
+
+
+/* =========================
+   AMBIL DATA LEADERBOARD
+   ========================= */
+
+async function getLeaderboardData() {
+    
+    const data = {
+        numbers_easy: [],
+        numbers_medium: [],
+        numbers_hard: [],
+        colours_easy: [],
+        colours_medium: [],
+        colours_hard: []
+    };
+    
+    const keys = Object.keys(data);
+    
+    const {
+        initializeApp,
+        getApps,
+        getApp
+    } = await import(
+        "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js"
+    );
+    
+    const {
+        getFirestore,
+        doc,
+        getDoc
+    } = await import(
+        "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js"
+    );
+    
+    const firebaseConfig = {
+        apiKey: "AIzaSyB0crUiSYBTxye5nHDOYJ8I7dNAv-mLO7g",
+        authDomain: "he-bloom-edu-games.firebaseapp.com",
+        projectId: "he-bloom-edu-games",
+        storageBucket: "he-bloom-edu-games.firebasestorage.app",
+        messagingSenderId: "629319143905",
+        appId: "1:629319143905:web:2a989f47e473c4ad7302a0"
+    };
+    
+    const app =
+        getApps().length ?
+        getApp() :
+        initializeApp(firebaseConfig);
+    
+    const db = getFirestore(app);
+    
+    for (const key of keys) {
+        
+        try {
+            
+            const ref =
+                doc(
+                    db,
+                    "sudokuLeaderboard",
+                    key
+                );
+            
+            const snap =
+                await getDoc(ref);
+            
+            if (snap.exists()) {
+                
+                const players =
+                    snap.data().players || [];
+                
+                if (Array.isArray(players)) {
+                    
+                    data[key] =
+                        players
+                        .sort(
+                            (a, b) =>
+                            Number(a.time) -
+                            Number(b.time)
+                        )
+                        .slice(0, 50);
+                }
+            }
+            
+        } catch (error) {
+            
+            console.error(
+                "Gagal baca Firebase:",
+                key,
+                error
+            );
+        }
+    }
+    
+    return data;
+}
+
+/* =========================
+   FORMAT MASA
+   ========================= */
+
+function formatTime(totalSeconds){
+
+    const minutes =
+        Math.floor(totalSeconds / 60);
+
+    const seconds =
+        totalSeconds % 60;
+
+    return `${String(minutes).padStart(2,"0")}:${String(seconds).padStart(2,"0")}`;
+
+}
+
+
+/* =========================
+   ICON RANKING
+   ========================= */
+
+function getRankIcon(index){
+
+    if(index === 0){
+        return "🥇";
+    }
+
+    if(index === 1){
+        return "🥈";
+    }
+
+    if(index === 2){
+        return "🥉";
+    }
+
+    return index + 1;
+
+}
+
+
+/* =========================
+   PAPAR LEADERBOARD
+   ========================= */
+
+async function renderLeaderboard() {
+    
+    const body =
+        document.getElementById(
+            "leaderboard-body"
+        );
+    
+    if (!body) {
+        return;
+    }
+    
+    body.innerHTML = `
+        <tr>
+            <td colspan="4" class="empty">
+                ⏳ Loading leaderboard...
+            </td>
+        </tr>
+    `;
+    
+    
+    const data =
+        await getLeaderboardData();
+    
+    
+    const key =
+        `${currentGame}_${currentLevel}`;
+    
+    
+    let players =
+        Array.isArray(data[key]) ?
+        [...data[key]] :
+        [];
+    
+    
+    /* Masa paling cepat dahulu */
+    
+    players.sort(
+        (a, b) =>
+        Number(a.time) -
+        Number(b.time)
+    );
+    
+    
+    /* TOP 50 SAHAJA */
+    
+    players =
+        players.slice(0, 50);
+    
+    
+    body.innerHTML = "";
+    
+    
+    /* Tiada pemain */
+    
+    if (players.length === 0) {
+        
+        body.innerHTML = `
+            <tr>
+                <td colspan="4" class="empty">
+                    🧩 No player records yet.<br>
+                    Play Sudoku to get on the leaderboard!
+                </td>
+            </tr>
+        `;
+        
+        return;
+    }
+    
+    
+    /* Papar 50 pemain terbaik */
+    
+    players.forEach(
+        (player, index) => {
+            
+            const row =
+                document.createElement("tr");
+            
+            
+            row.innerHTML = `
+                <td>
+                    <span class="rank">
+                        ${getRankIcon(index)}
+                    </span>
+                </td>
+
+                <td>
+                    ${escapeHTML(player.name)}
+                </td>
+
+                <td>
+                    10/10
+                </td>
+
+                <td>
+                    ${formatTime(Number(player.time))}
+                </td>
+            `;
+            
+            
+            body.appendChild(row);
+            
+        }
+    );
+    
+}
+
+/* =========================
+   SELAMATKAN NAMA
+   ========================= */
+
+function escapeHTML(text){
+
+    const div =
+        document.createElement("div");
+
+    div.textContent = text;
+
+    return div.innerHTML;
+
+}
+
+
+/* =========================
+   PILIH NUMBERS / COLOUR
+   ========================= */
+
+function selectGame(game){
+
+    currentGame = game;
+
+
+    document
+        .getElementById("numbers-btn")
+        .classList.toggle(
+            "active",
+            game === "numbers"
+        );
+
+
+    document
+        .getElementById("colours-btn")
+        .classList.toggle(
+            "active",
+            game === "colours"
+        );
+
+
+    document
+        .getElementById("section-title")
+        .textContent =
+            game === "numbers"
+            ? "🔢 NUMBERS SUDOKU"
+            : "🎨 COLOURS SUDOKU";
+
+
+    renderLeaderboard();
+
+}
+
+
+/* =========================
+   PILIH EASY / MEDIUM / HARD
+   ========================= */
+
+function selectLevel(level){
+
+    currentLevel = level;
+
+
+    document
+        .getElementById("easy-tab")
+        .classList.toggle(
+            "active",
+            level === "easy"
+        );
+
+
+    document
+        .getElementById("medium-tab")
+        .classList.toggle(
+            "active",
+            level === "medium"
+        );
+
+
+    document
+        .getElementById("hard-tab")
+        .classList.toggle(
+            "active",
+            level === "hard"
+        );
+
+
+    renderLeaderboard();
+
+}
+
+
+/* =========================
+   SIMPAN KEPUTUSAN SUDOKU
+   =========================
+
+   Fungsi ini nanti akan dipanggil
+   oleh setiap game Sudoku.
+
+   Contoh:
+
+   saveSudokuResult(
+       "Ali",
+       "numbers",
+       "easy",
+       504
+   );
+
+   504 saat = 08:24
+*/
+
+async function saveSudokuResult(
+    name,
+    game,
+    level,
+    timeSeconds,
+    uid
+) {
+    
+    if (!name || !uid) {
+        return;
+    }
+    
+    if (
+        !["numbers", "colours"].includes(game)
+    ) {
+        return;
+    }
+    
+    if (
+        !["easy", "medium", "hard"].includes(level)
+    ) {
+        return;
+    }
+    
+    const seconds = Number(timeSeconds);
+    
+    if (
+        !Number.isFinite(seconds) ||
+        seconds <= 0
+    ) {
+        return;
+    }
+    
+    
+    // =========================
+    // FIREBASE
+    // =========================
+    
+    const {
+        initializeApp,
+        getApps,
+        getApp
+    } = await import(
+        "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js"
+    );
+    
+    const {
+        getFirestore,
+        doc,
+        getDoc,
+        setDoc
+    } = await import(
+        "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js"
+    );
+    
+    
+    const firebaseConfig = {
+        apiKey: "AIzaSyB0crUiSYBTxye5nHDOYJ8I7dNAv-mLO7g",
+        authDomain: "he-bloom-edu-games.firebaseapp.com",
+        projectId: "he-bloom-edu-games",
+        storageBucket: "he-bloom-edu-games.firebasestorage.app",
+        messagingSenderId: "629319143905",
+        appId: "1:629319143905:web:2a989f47e473c4ad7302a0"
+    };
+    
+    
+    const app =
+        getApps().length ?
+        getApp() :
+        initializeApp(firebaseConfig);
+    
+    
+    const db =
+        getFirestore(app);
+    
+    
+    const key =
+        `${game}_${level}`;
+    
+    
+    const leaderboardRef =
+        doc(
+            db,
+            "sudokuLeaderboard",
+            key
+        );
+    
+    
+    const leaderboardSnap =
+        await getDoc(
+            leaderboardRef
+        );
+    
+    
+    let players = [];
+    
+    
+    if (leaderboardSnap.exists()) {
+        
+        players =
+            leaderboardSnap.data().players || [];
+        
+    }
+    
+    
+    // =========================
+    // CARI PEMAIN BERDASARKAN UID
+    // =========================
+    
+    const existing =
+        players.find(
+            player =>
+            player &&
+            player.uid === uid
+        );
+    
+    
+    // =========================
+    // PEMAIN BARU
+    // =========================
+    
+    if (!existing) {
+        
+        players.push({
+            
+            uid: uid,
+            name: name,
+            time: seconds
+            
+        });
+        
+    }
+    
+    
+    // =========================
+    // PEMAIN LAMA
+    // =========================
+    
+    else {
+        
+        existing.name = name;
+        
+        if (
+            seconds <
+            Number(existing.time)
+        ) {
+            
+            existing.time =
+                seconds;
+            
+        }
+        
+    }
+    
+    
+    // =========================
+    // SUSUN MASA TERPANTAS
+    // =========================
+    
+    players.sort(
+        (a, b) =>
+        Number(a.time) -
+        Number(b.time)
+    );
+    
+    
+    // =========================
+    // SIMPAN TOP 50 SAHAJA
+    // =========================
+    
+    players =
+        players.slice(0, 50);
+    
+    
+    // =========================
+    // SIMPAN KE FIRESTORE
+    // =========================
+    
+    await setDoc(
+        leaderboardRef,
+        {
+            players: players
+        }
+    );
+    
+    
+    console.log(
+        "TOP 50 Firebase leaderboard disimpan:",
+        name,
+        game,
+        level,
+        seconds
+    );
+    
+    renderLeaderboard();
+
+}
+
+
+/* =========================
+   MULA
+   ========================= */
+
+renderLeaderboard();
+
+</script>
+
+
+</body>
+</html>

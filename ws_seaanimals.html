@@ -1,0 +1,1436 @@
+<!doctype html>
+<html lang="ms">
+ <head><script>window["__codeletBootstrap__"]=JSON.parse('{"A":"A","B":"20260730-05-6814160","C":{"Abril Fatface":"YACgEZbkUVE,0","Alfa Slab One":"YACgEYS9sJU,0","Anton":"YACgEcYqQ-A,0","Archivo":"YAHO2-t-jNE,0","Arial":"YAGyDvJ_4Ts,0","Bebas Neue":"YACgESME5ew,0","Broken Glyph":"YADZ-exUkv0,0","Canva Sans":"YAFdJjTk5UU,0","Caveat":"YALBs2ploWQ,0","Comic Sans MS":"YAHO2VMiyZo,0","Cormorant Garamond":"YAFdJhX-538,0","Courier New":"YAGzXiGs0_8,0","DM Sans":"YAD1aU3sLnI,0","DM Serif Display":"YAD1aYG82rc,0","Forum":"YACgEcnnqB4,0","Fraunces":"YAEul-FRQw4,0","Georgia":"YAGzXkO0pEM,0","Ghost Mono":"YAHO2EIdDP0,0","Helvetica Neue":"YAFcf6CtJfI,0","Impact":"YAFcfnjI7Vk,0","Inter":"YAFdJvSyp_k,3","Iowan Old Style":"YAGNIFa8j9o,0","Jacques Francois":"YAHO2a5g66Q,0","JetBrains Mono":"YADy3sAhvXQ,0","Oleo Script":"YACgEQQ14jI,0","Playfair Display":"YAFdJhem5V8,1","Poppins":"YAE5fPSY9qM,0","Press Start 2P":"YAFyGr-8pmQ,0","Source Sans 3":"YAG4lO1Mj10,0","Space Grotesk":"YAHO2sjPCSM,0","Times New Roman":"YAGzXW3gftg,0","Times":"YAGzXW3gftg,0","Trebuchet MS":"YAFcfrglpVA,0","Verdana":"YAGzXTctYtQ,0","Work Sans":"YAGXhLOKv44,0","Yellowtail":"YACgEYG4kG4,0"}}');</script><script src="/_sdk/a27874207e105461.telemetry_sdk.js" integrity="sha512-wgI5N9F7oA2h3vH+benMYIv4wGqTct4nKWakqgvfgRyBLmfYq8q/fi6gkfWKd2hMsyN+VQ/qOAOpxybwkcoxlA=="></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sea Animals Word Search </title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <script src="/_sdk/b23f1f6ec78e9bd4.editing_sdk.js" integrity="sha512-WFdQutvUZzxrmcHkL8cbfuFDTeF8Cn8Bt3yqX/a/OdiqPz/t9UcjsIsZK7D+tMTmC2JTwhwRJNyfcHmIWhG8Wg=="></script>
+  <style>
+body {
+    background: url("puzzle.png") no-repeat center center fixed;
+    background-size: cover;
+}
+        * { font-family: 'Fredoka', sans-serif; }
+        
+        @keyframes float { 0%,100%{ transform: translateY(0) } 50%{ transform: translateY(-10px) } }
+        @keyframes floatSlow { 0%,100%{ transform: translateY(0) rotate(0deg) } 50%{ transform: translateY(-6px) rotate(2deg) } }
+ @keyframes birdFly {
+    0% {
+        transform: translateX(-120px) translateY(0px) rotate(-6deg);
+    }
+    15% {
+        transform: translateX(15vw) translateY(-18px) rotate(4deg);
+    }
+    30% {
+        transform: translateX(30vw) translateY(8px) rotate(-3deg);
+    }
+    45% {
+        transform: translateX(45vw) translateY(-22px) rotate(5deg);
+    }
+    60% {
+        transform: translateX(60vw) translateY(12px) rotate(-4deg);
+    }
+    75% {
+        transform: translateX(80vw) translateY(-15px) rotate(3deg);
+    }
+    90% {
+        transform: translateX(95vw) translateY(6px) rotate(-2deg);
+    }
+    100% {
+        transform: translateX(110vw) translateY(-10px) rotate(2deg);
+    }
+}
+        @keyframes beeFly { 0%,100%{ transform: translate(0,0) } 25%{ transform: translate(30px,-20px) } 50%{ transform: translate(-10px,-30px) } 75%{ transform: translate(20px,10px) } }
+        @keyframes sway { 0%,100%{ transform: rotate(-2deg) } 50%{ transform: rotate(2deg) } }
+        @keyframes sunPulse { 0%,100%{ transform: scale(1) } 50%{ transform: scale(1.05) } }
+        @keyframes zoomIn { 0%{ transform: scale(0.5); opacity:0 } 100%{ transform: scale(1); opacity:1 } }
+        @keyframes shake { 0%,100%{ transform: translateX(0) } 20%{ transform: translateX(-8px) } 40%{ transform: translateX(8px) } 60%{ transform: translateX(-5px) } 80%{ transform: translateX(5px) } }
+        @keyframes fadeIn { from{ opacity:0; transform:translateY(10px) } to{ opacity:1; transform:translateY(0) } }
+        
+        .float { animation: float 3s ease-in-out infinite; }
+        .float-slow { animation: floatSlow 4s ease-in-out infinite; }
+        .bird { animation: birdFly 30s linear infinite; }
+        .bird2 { animation: birdFly 40s linear infinite; animation-delay: 10s; }
+        .bee { animation: beeFly 5s ease-in-out infinite; }
+        .sway { animation: sway 3s ease-in-out infinite; }
+        .sun-pulse { animation: sunPulse 4s ease-in-out infinite; }
+        .zoom-in { animation: zoomIn 0.3s ease-out; }
+        .shake { animation: shake 0.4s ease-out; }
+        .fade-in { animation: fadeIn 0.4s ease-out; }
+        
+    
+
+/* ===== COLOUR WORD SEARCH STYLE ===== */
+
+#game-card {
+    width: 60%;
+    max-width: 500px;
+    
+    height: 800px;
+    min-height: 800px;
+    
+    margin: 0 auto;
+    padding: 60px 24px;
+    
+    box-sizing: border-box;
+    
+    background: rgba(235, 255, 250, 0.10);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    
+    border: 3px solid rgba(255, 255, 255, 0.85);
+    border-radius: 10px;
+    
+    box-shadow:
+        0 0 0 3px rgba(255, 255, 255, 0.25),
+        0 12px 35px rgba(70, 130, 120, 0.18);
+}
+
+/* Grid Word Search */
+#word-search-grid {
+  width: 100%;
+  max-width: 680px;
+  height: 480px;
+  max-height: 48vh;
+  
+  margin: 45 auto 10px;
+  
+  display: grid;
+  gap: 3px;
+  justify-content: center;
+  align-content: center;
+  
+  background: rgba(255, 255, 255, 0.82);
+  border: 5px solid #f3a6bb;
+  border-radius: 32px;
+  
+  overflow: hidden;
+  
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.12),
+    inset 0 0 0 2px rgba(255, 255, 255, 0.8);
+}
+
+/* Petak Word Search */
+#word-search-grid button {
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid #e5a8ba;
+    transition: all 0.15s ease;
+    
+    width: var(--cell-size, 26px);
+    height: var(--cell-size, 26px);
+    
+    min-width: 0;
+    min-height: 0;
+    
+    padding: 0;
+    margin: 0;
+    
+    font-size: var(--cell-font-size, 16px);
+    font-weight: bold;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    box-sizing: border-box;
+}
+
+
+#word-search-grid button:hover {
+    background: #fff5f8;
+    transform: scale(1.02);
+}
+
+
+#answers {
+  display: grid;
+  grid-template-columns: repeat(13, 1fr);
+  justify-content: center;
+  gap: 3px;
+  width: 100%;
+  max-width: 500px;
+  margin: 4px auto 0;
+}
+
+#answers button {
+  width: 28px;
+  height: 28px;
+  min-height: 28px;
+  max-height: 28px;
+  padding: 0;
+  margin: 0;
+  line-height: 28px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 700;
+  
+  background: rgba(255, 255, 255, 0.85);
+  color: #222;
+  border: 2px solid #f3a6bb;
+  
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.10);
+  
+  transition: transform 0.15s ease;
+}
+
+#answers button:hover {
+    transform: translateY(-4px) scale(1.03);
+}
+
+#answers button:active {
+    transform: scale(0.96);
+}
+
+/* Telefon */
+@media (max-width: 640px) {
+    
+    #game-card {
+        width: 96%;
+        padding: 12px 12px 22px;
+        border-radius: 28px;
+    }
+    
+    #answers {
+        gap: 5px;
+    }
+    
+#answers button {
+  width: 32px;
+  height: 42px;
+  min-height: 42px;
+  font-size: 13px;
+  padding: 0;
+}
+}
+.he-bloom-logo {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    z-index: 9999;
+    opacity: .95;
+    pointer-events: none;
+}
+
+.bottom-logo {
+    bottom: 18px;
+    right: 18px;
+}
+/* =====================================================
+   LANDSCAPE - GRID SEMUA HURUF + TIADA RUANG KOSONG
+   PORTRAIT KEKAL ASAL
+   ===================================================== */
+@media (orientation: landscape) and (max-height: 600px) {
+    
+    html,
+    body {
+        height: auto !important;
+        min-height: 100% !important;
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+    }
+    
+    body {
+        align-items: flex-start !important;
+        justify-content: center !important;
+    }
+    
+    #game-card {
+        width: 82% !important;
+        max-width: 850px !important;
+        
+        height: auto !important;
+        min-height: 0 !important;
+        
+        margin-top: 0 !important;
+        margin-bottom: 15px !important;
+        
+        padding-top: 20px !important;
+        padding-bottom: 30px !important;
+    }
+    
+    /* GRID HURUF */
+    #word-search-grid {
+        height: 370px !important;
+        max-height: none !important;
+        
+        margin-top: 20px !important;
+        margin-bottom: 10px !important;
+        
+        overflow: visible !important;
+        align-content: center !important;
+    }
+    
+    /* SAIZ HURUF KEKAL */
+    #word-search-grid button {
+        width: 27px !important;
+        height: 27px !important;
+    }
+    
+    /* SENARAI HAIWAN */
+    #word-list {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+    }
+    
+    /* BUTANG BAWAH */
+    #bottom-buttons {
+        margin-top: 8px !important;
+        margin-bottom: 5px !important;
+    }
+}
+
+    </style>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js" type="text/javascript"></script>
+  <script src="/_sdk/935a53bc2e11fb8d.data_sdk.js" type="text/javascript" integrity="sha512-qr2oyPnEys1WebcOABaRh6hG77r5PWpqeWW6JTKbRJqly/INsfBi31CVNlTmHqjgeLpkVmmHZJUdxSx/32tOFQ=="></script>
+  <script src="/_sdk/6030e540d4419216.resizing_sdk.js" type="text/javascript" integrity="sha512-b5KWzyoXsbWP4smq4sftIi6Kts4YVBpBsz0BwCViwbBJkK64a3/Z6ZMdWA+qnplNcXw4mhZeqvQi3mOosiRJdA=="></script>
+ </head>
+ <body data-template-id="__page-root" class="w-full min-h-screen overflow-hidden relative flex items-center justify-center p-4"><!-- Background elements -->
+  <div class="fixed inset-0 pointer-events-none overflow-hidden" aria-hidden="true"><!-- Sun -->
+   <div class="sun-pulse absolute top-6 left-6 text-10xl sm:text-10xl">
+    🌞
+   </div><!-- Rainbow -->
+   <div class="absolute top-10 right-10 text-10xl float-slow opacity-70">
+    🌈
+   </div><!-- Clouds -->
+   <div class="absolute top-[12%] left-[20%] text-10xl float" style="animation-delay:0.5s">
+    ☁️
+    </div>
+   <div class="absolute top-[8%] left-[55%] text-20xl float" style="animation-delay:1.5s">
+    ☁️
+   </div>
+   <div class="absolute top-[18%] right-[15%] text-20xl float" style="animation-delay:2.5s">
+    ☁️
+   </div><!-- Birds -->
+   <div class="bird absolute top-[3%] text-5xl">
+    🦜 
+   </div>
+   <div class="bird2 absolute top-[10%] text-5xl">
+    🦜
+   </div><!-- Bees -->
+   <div class="bee absolute top-[45%] left-[2%] text-6xl">
+    🐝
+   </div>
+   <div class="bee absolute top-[45%] right-[2%] text-6xl" style="animation-delay:2s">
+    🐝
+   </div><!-- Ground -->
+   <div class="absolute bottom-0 left-0 right-0 flex justify-around items-end"><span class="sway text-4xl">🌹 </span> <span class="float-slow text-2xl" style="animation-delay:0.3s">🌸</span> <span class="sway text-4xl" style="animation-delay:1.0s">🌹 </span> <span class="float-slow text-2xl" style="animation-delay:0.7s">🌺</span> <span class="sway text-4xl" style="animation-delay:1.0s">🌹 </span> <span class="float-slow text-2xl" style="animation-delay:1.2s">🌸 </span> <span class="sway text-4xl" style="animation-delay:1.0s">🌹 </span>
+   </div>
+   
+  </div><!-- Music toggle --> <button id="music-btn" onclick="toggleMusic()" class="fixed top-4 right-4 z-50 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center text-2xl float" aria-label="Toggle music"> 🎵
+  
+  </button> <!-- Game Card -->
+<main id="game-card"
+class="relative -mt-50 z-50 w-full max-w-x1 mx-auto bg-transparent rounded-none shadow-none pt-2 px-0 pb-8 fade-in">
+
+<div class="text-center mb-2">
+    <div class="flex justify-between items-center max-w-xl mx-auto">
+        
+        
+    </div>
+</div>
+
+<div class="text-center mb-2 -mt-2">
+    
+    <div class="inline-flex items-center gap-2 bg-white/90
+                rounded-2xl px-4 py-2 shadow-lg
+                border-2 border-pink-300">
+        
+        <span class="text-xl">🐠</span>
+        
+             <div class="text-black font-extrabold text-"14px"; tracking-wide flex items-center gap-3">
+          <span>SEA ANIMALS</span>
+          <span>WORD SEARCH</span>
+      </div>
+        
+        <span class="text-xl">🐠</span>
+        
+    </div>
+    
+</div>
+    
+</div>
+
+
+<div class="bg-white/80 rounded-3xl p-3 mb-3 max-w-2xl mx-auto">
+
+<div id="word-search-grid"></div>
+
+</div>
+
+<div id="word-list" class="bg-white/80 rounded-3xl p-1 -mt-3 max-w-2sm mx-auto">
+    
+    <div class="text-center font-extrabold text-sm text-pink-600 mb-2">
+         <div class="text-center font-extrabold text-sm text-pink-600 mb-2">
+    FIND&nbsp;&nbsp;THE&nbsp;&nbsp;SEA&nbsp;&nbsp; ANIMAL&nbsp;&nbsp;NAMES 🔎
+</div> 
+    </div>
+
+<div id="words-to-find"
+     class="grid grid-cols-[42%_42%] justify-center gap-1 text-center font-bold text-gray-800">
+</div>
+
+</div>
+</div>
+
+<div id="feedback"
+     class="hidden fixed left-1/2 top-[45%]
+-translate-x-1/2 -translate-y-1/2
+z-[9999] min-w-[320px] px-6 py-3
+bg-white rounded-3xl border-4
+text-center font-bold text-3xl shadow-2xl">
+</div>
+
+<div id="bottom-buttons"
+     class="flex justify-center items-center gap-2 mt-2 flex-wrap">
+    
+  <button id="clear-btn"
+ class="bg-orange-400 text-white font-bold rounded-xl shadow-lg
+ border-2 border-white/80
+        flex items-center justify-center gap-1"
+ style="width: 120px; height: 40px; font-size: 14px;">
+ 🔄 CLEAR
+</button>
+ 
+
+<button id="back-btn"
+    onclick="location.href='wordsearch.html'"
+    class="bg-gray-500 text-white font-bold rounded-xl shadow-lg
+    border-2 border-white/80
+    flex items-center justify-center gap-1"
+    style="width: 120px; height: 40px; font-size: 14px;">
+    ◀️ BACK
+</button>
+
+<!-- HE BLOOM LOGO -->
+
+<img src="HE_Bloom.png"
+     alt="HE Bloom"
+     class="he-bloom-logo bottom-logo">
+</div>
+
+<!-- END SCREEN -->
+<div id="end-screen"
+     class="hidden fixed inset-0 z-[10000] flex items-center justify-center px-4">
+
+    <div class="w-[82%] max-w-md rounded-[38px]
+                border-[6px] border-pink-400
+                bg-white/85 backdrop-blur-md
+                shadow-2xl text-center
+                px-5 py-7">
+
+        <!-- Inner white area -->
+        <div class="rounded-[28px]
+                    border-2 border-pink-200
+                    bg-white/70
+                    px-4 py-6">
+
+
+            <div id="final-msg"
+                 class="text-2xl font-bold
+                        text-gray-900 mb-6">
+                🏆 EXCELLENT
+            </div>
+
+         <button onclick="restartWordSearch()"
+        class="bg-gradient-to-r from-pink-400 to-purple-500
+               text-white text-xl font-bold
+               px-8 py-4 rounded-full
+               shadow-xl border-4 border-white
+               active:scale-95">
+    ▶ PLAY AGAIN
+</button>
+
+        </div>
+    </div>
+</div>
+
+<script>
+let audioCtx = null;
+let musicInterval = null;
+let musicPlaying = false;
+
+function getAudioCtx() {
+if (!audioCtx) {
+audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+}
+if (audioCtx.state === "suspended") {
+audioCtx.resume();
+}
+return audioCtx;
+} 
+
+function playClickSound() {
+    const ctx = getAudioCtx();
+    
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    
+    osc.frequency.value = 600;
+    gain.gain.value = 0.08;
+    
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+    
+    osc.start();
+    osc.stop(ctx.currentTime + 0.08);
+}
+
+function toggleMusic() {
+    const ctx = getAudioCtx();
+    
+    if (musicPlaying) {
+        stopMusic();
+        return;
+    }
+    
+    musicPlaying = true;
+    document.getElementById("music-btn").textContent = "🎵";
+    playMusicLoop();
+}
+
+function playMusicLoop() {
+    const ctx = getAudioCtx();
+    
+    const notes = [262, 294, 330, 349, 392, 349, 330, 294];
+    let i = 0;
+    
+    function playNote() {
+        if (!musicPlaying) return;
+        
+        const o = ctx.createOscillator();
+        const g = ctx.createGain();
+        
+        o.connect(g);
+        g.connect(ctx.destination);
+        
+        o.type = "sine";
+        o.frequency.value = notes[i % notes.length];
+        
+        g.gain.setValueAtTime(0.08, ctx.currentTime);
+        g.gain.exponentialRampToValueAtTime(
+            0.01,
+            ctx.currentTime + 0.4
+        );
+        
+        o.start();
+        o.stop(ctx.currentTime + 0.4);
+        
+        i++;
+    }
+    
+    playNote();
+    musicInterval = setInterval(playNote, 500);
+}
+
+function stopMusic() {
+    musicPlaying = false;
+    
+    clearInterval(musicInterval);
+    
+    document.getElementById("music-btn").textContent = "🔇";
+}
+
+
+function playCorrectSound() {
+    const ctx = getAudioCtx();
+    
+    const notes = [523, 659, 784];
+    
+    notes.forEach((freq, i) => {
+        const o = ctx.createOscillator();
+        const g = ctx.createGain();
+        
+        o.connect(g);
+        g.connect(ctx.destination);
+        
+        o.type = "sine";
+        o.frequency.value = freq;
+        
+        g.gain.setValueAtTime(0.001, ctx.currentTime);
+        g.gain.exponentialRampToValueAtTime(
+            0.08,
+            ctx.currentTime + 0.03
+        );
+        g.gain.exponentialRampToValueAtTime(
+            0.001,
+            ctx.currentTime + 0.25
+        );
+        
+        o.start(ctx.currentTime + i * 0.12);
+        o.stop(ctx.currentTime + i * 0.12 + 0.25);
+    });
+}
+
+function playWrongSound() {
+    const ctx = getAudioCtx();
+    
+    const o = ctx.createOscillator();
+    const g = ctx.createGain();
+    
+    o.connect(g);
+    g.connect(ctx.destination);
+    
+    o.type = "sawtooth";
+    o.frequency.value = 180;
+    
+    g.gain.setValueAtTime(0.001, ctx.currentTime);
+    g.gain.exponentialRampToValueAtTime(
+        0.08,
+        ctx.currentTime + 0.03
+    );
+    g.gain.exponentialRampToValueAtTime(
+        0.001,
+        ctx.currentTime + 0.4
+    );
+    
+    o.start();
+    o.stop(ctx.currentTime + 0.4);
+}
+
+const seaAnimalWords = [
+    "ANGELFISH", "AROWANA", "BETTA", "CARP", "CATFISH", "CLAM",
+    "CLOWNFISH", "CRAB", "DOLPHIN", "EEL", "GOLDFISH", "GROUPER",
+    "GUPPY", "JELLYFISH", "KOI", "LOBSTER", "MACKEREL", "OCTOPUS",
+    "OYSTER", "PUFFERFISH", "SALMON", "SARDINE", "SEAHORSE", "SEALION",
+    "SHARK", "SHRIMP", "SQUID", "STARFISH", "STINGRAY", "SWORDFISH",
+    "TILAPIA", "TUNA", "WALRUS", "WHALE"
+];
+
+let wordSearchWords = [];
+
+// Queue haiwan laut untuk satu pusingan penuh
+let seaAnimalQueue = [];
+
+// Simpan 10 haiwan laut game sebelum ini
+let lastGameSeaAnimals = [];
+
+
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    
+    return array;
+}
+
+
+function makeNewSeaAnimalQueue() {
+    
+    // Ambil semua haiwan laut
+    let newQueue = [...seaAnimalWords];
+    
+    // Shuffle dulu
+    shuffleArray(newQueue);
+    
+    // Jangan bagi haiwan laut game terakhir muncul
+    // di awal pusingan baru
+    const safeSeaAnimals = newQueue.filter(
+        seaAnimal => !lastGameSeaAnimals.includes(seaAnimal)
+    );
+    
+    const repeatedSeaAnimals = newQueue.filter(
+        seaAnimal => lastGameSeaAnimals.includes(seaAnimal)
+    );
+    
+    // Haiwan laut baru/berbeza di depan
+    // Haiwan laut game lama di belakang
+    seaAnimalQueue = [
+        ...safeSeaAnimals,
+        ...repeatedSeaAnimals
+    ];
+}
+
+
+function chooseSeaAnimals() {
+    
+    wordSearchWords = [];
+    
+    // Kalau belum ada queue, mula pusingan baru
+    if (seaAnimalQueue.length === 0) {
+        makeNewSeaAnimalQueue();
+    }
+    
+    // Ambil 10 haiwan laut
+    while (wordSearchWords.length < 10) {
+        
+        // Kalau pusingan lama habis
+        if (seaAnimalQueue.length === 0) {
+            makeNewSeaAnimalQueue();
+        }
+        
+        const seaAnimal = seaAnimalQueue.shift();
+        
+        // Elak nama sama dalam game yang sama
+        if (!wordSearchWords.includes(seaAnimal)) {
+            wordSearchWords.push(seaAnimal);
+        }
+    }
+    
+    // Simpan game ini
+    lastGameSeaAnimals = [...wordSearchWords];
+}
+
+function generateQuestions() {
+    chooseSeaAnimals();
+}
+
+
+generateQuestions();
+renderWordSearchGrid();
+
+function restartWordSearch() {
+    document.getElementById("end-screen").classList.add("hidden");
+    document.getElementById("feedback").classList.add("hidden");
+    
+    
+    
+    generateQuestions();
+    renderWordSearchGrid();
+}
+
+
+
+function renderWordSearchGrid() {
+    
+    const grid = document.getElementById("word-search-grid");
+    const wordList = document.getElementById("words-to-find");
+
+    grid.innerHTML = "";
+    wordList.innerHTML = "";
+
+    wordSearchSelection = [];
+    wordSearchFound = [];
+    wordSearchPlaced = [];
+
+    const SIZE = 12;
+
+    // =====================================
+    // BUAT GRID KOSONG
+    // =====================================
+
+    let cells = Array.from(
+        { length: SIZE },
+        () => Array(SIZE).fill("")
+    );
+
+    // =====================================
+    // LETAK 10 NAMA HAIWAN LAUT
+    // =====================================
+
+    const words = [...wordSearchWords]
+    .map(word => word.toUpperCase());
+
+    function canPlaceWord(word, row, col, direction) {
+
+        for (let i = 0; i < word.length; i++) {
+
+            const r =
+  direction === "across" ? row :
+  direction === "down" ? row + i :
+  direction === "diagDown" ? row + i :
+  row - i;
+
+const c =
+  direction === "across" ? col + i :
+  direction === "down" ? col :
+  direction === "diagDown" ? col + i :
+  col + i;
+  
+            // Keluar grid
+            if (
+                r < 0 ||
+                r >= SIZE ||
+                c < 0 ||
+                c >= SIZE
+            ) {
+                return false;
+            }
+
+            // Ada huruf lain yang tidak sama
+            if (
+                cells[r][c] !== "" &&
+                cells[r][c] !== word[i]
+            ) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    function placeWord(word) {
+
+        let placed = false;
+        let attempts = 0;
+
+        while (!placed && attempts < 500) {
+
+            attempts++;
+
+            const directions = [
+  "across",
+  "down",
+  "diagDown",
+  "diagUp"
+];
+
+const direction =
+  directions[Math.floor(Math.random() * directions.length)];
+
+            const row =
+                Math.floor(Math.random() * SIZE);
+
+            const col =
+                Math.floor(Math.random() * SIZE);
+
+            if (
+                !canPlaceWord(
+                    word,
+                    row,
+                    col,
+                    direction
+                )
+            ) {
+                continue;
+            }
+
+            const positions = [];
+
+            for (
+                let i = 0;
+                i < word.length;
+                i++
+            ) {
+
+                const r =
+  direction === "across" ? row :
+  direction === "down" ? row + i :
+  direction === "diagDown" ? row + i :
+  row - i;
+
+                const c =
+  direction === "across" ? col + i :
+  direction === "down" ? col :
+  direction === "diagDown" ? col + i :
+  col + i;
+
+                cells[r][c] = word[i];
+
+                positions.push({
+                    row: r,
+                    col: c
+                });
+            }
+
+            wordSearchPlaced.push({
+                word: word,
+                positions: positions
+            });
+
+            placed = true;
+        }
+
+        return placed;
+    }
+
+    // Letak semua 10 word
+    for (const word of words) {
+
+        const success =
+            placeWord(word);
+
+        // Kalau gagal, buat semula game
+        if (!success) {
+
+            generateQuestions();
+            renderWordSearchGrid();
+            return;
+        }
+    }
+
+    // =====================================
+    // ISI HURUF RAWAK
+    // =====================================
+
+    const alphabet =
+        "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+    for (
+        let r = 0;
+        r < SIZE;
+        r++
+    ) {
+
+        for (
+            let c = 0;
+            c < SIZE;
+            c++
+        ) {
+
+            if (cells[r][c] === "") {
+
+                cells[r][c] =
+                    alphabet[
+                        Math.floor(
+                            Math.random() *
+                            alphabet.length
+                        )
+                    ];
+            }
+        }
+    }
+
+    // =====================================
+    // SAIZ GRID
+    // =====================================
+
+    const cellSize = 27;
+
+    grid.style.gridTemplateColumns =
+        `repeat(${SIZE}, ${cellSize}px)`;
+
+    grid.style.gridTemplateRows =
+        `repeat(${SIZE}, ${cellSize}px)`;
+
+    grid.style.gap = "2px";
+
+    grid.style.setProperty(
+        "--cell-size",
+        `${cellSize}px`
+    );
+
+    grid.style.setProperty(
+        "--cell-font-size",
+        "15px"
+    );
+
+    // =====================================
+    // PAPAR SENARAI WORD
+    // =====================================
+
+    words.forEach(word => {
+
+        const item =
+            document.createElement("div");
+
+        item.textContent = word;
+        
+item.style.fontSize = "12px";
+
+        item.dataset.word = word;
+
+        item.className =
+            "word-search-item";
+
+        item.style.padding =
+            "2px 1px";
+
+        item.style.border =
+            "2px solid #f3a6bb";
+
+        item.style.borderRadius =
+            "10px";
+
+        item.style.background =
+            "rgba(255,255,255,0.9)";
+
+        wordList.appendChild(item);
+        
+        item.addEventListener("click", function() {
+  playClickSound();
+  highlightWordFromList(word);
+});
+    });
+
+    // =====================================
+    // LUKIS GRID
+    // =====================================
+
+    for (
+        let r = 0;
+        r < SIZE;
+        r++
+    ) {
+
+        for (
+            let c = 0;
+            c < SIZE;
+            c++
+        ) {
+
+            const cell =
+                document.createElement("button");
+
+            cell.className =
+             "word-search-cell";
+
+            cell.textContent =
+                cells[r][c];
+
+            cell.dataset.row = r;
+            cell.dataset.col = c;
+
+            cell.addEventListener(
+  "click",
+  function() {
+    
+    // Kalau huruf sudah hijau
+    if (
+      this.classList.contains(
+        "found-word-cell"
+      )
+    ) {
+      
+      // Semak sama ada huruf ini bertindih
+      // dengan word yang belum dijumpai
+      const canUseAgain =
+        wordSearchPlaced.some(
+          placedWord => {
+            
+            if (
+              wordSearchFound.includes(
+                placedWord.word
+              )
+            ) {
+              return false;
+            }
+            
+            return placedWord.positions.some(
+              pos =>
+              pos.row ===
+              Number(this.dataset.row) &&
+              pos.col ===
+              Number(this.dataset.col)
+            );
+          }
+        );
+      
+      // Kalau hanya word yang sudah siap,
+      // jangan gerakkan bingkai pink
+      if (!canUseAgain) {
+        return;
+      }
+    }
+    
+    selectWordSearchCell(this);
+    
+  }
+);
+
+            grid.appendChild(cell);
+        }
+    }
+}
+
+
+// =====================================
+// PILIH HURUF WORD SEARCH
+// =====================================
+
+function selectWordSearchCell(cell) {
+
+    const alreadySelected =
+        wordSearchSelection.includes(cell);
+
+    // Kalau tekan semula huruf sama
+    // buang huruf itu
+    if (alreadySelected) {
+
+        cell.classList.remove(
+            "selected-cell"
+        );
+
+        cell.style.boxShadow = "";
+        cell.style.background = "";
+
+        wordSearchSelection =
+            wordSearchSelection.filter(
+                item => item !== cell
+            );
+
+        return;
+    }
+
+
+    // =====================================
+    // HURUF PERTAMA
+    // =====================================
+
+    if (
+        wordSearchSelection.length === 0
+    ) {
+
+        wordSearchSelection.push(cell);
+
+        cell.classList.add(
+            "selected-cell"
+        );
+
+        cell.style.boxShadow =
+            "inset 0 0 0 3px #f06b91, 0 0 10px rgba(240,107,145,0.45)";
+
+        cell.style.background =
+            "#fff0f5";
+
+        return;
+    }
+
+
+    const lastCell =
+        wordSearchSelection[
+            wordSearchSelection.length - 1
+        ];
+
+    const lastRow =
+        Number(lastCell.dataset.row);
+
+    const lastCol =
+        Number(lastCell.dataset.col);
+
+    const newRow =
+        Number(cell.dataset.row);
+
+    const newCol =
+        Number(cell.dataset.col);
+
+    const rowDiff =
+        Math.abs(newRow - lastRow);
+
+    const colDiff =
+        Math.abs(newCol - lastCol);
+
+
+// MESTI BERSEBELAHAN
+
+if (
+  !(
+    (rowDiff === 1 && colDiff === 0) ||
+    (rowDiff === 0 && colDiff === 1) ||
+    (rowDiff === 1 && colDiff === 1)
+  )
+) {
+  return;
+}
+
+
+// =====================================
+// MESTI KEKAL SATU GARIS
+// MELINTANG / MENEGAK / DIAGONAL
+// =====================================
+
+if (wordSearchSelection.length >= 2) {
+  
+  const firstCell =
+    wordSearchSelection[0];
+  
+  const secondCell =
+    wordSearchSelection[1];
+  
+  const firstRow =
+    Number(firstCell.dataset.row);
+  
+  const firstCol =
+    Number(firstCell.dataset.col);
+  
+  const secondRow =
+    Number(secondCell.dataset.row);
+  
+  const secondCol =
+    Number(secondCell.dataset.col);
+  
+  
+  // Arah daripada huruf pertama ke kedua
+  const rowStep =
+    secondRow - firstRow;
+  
+  const colStep =
+    secondCol - firstCol;
+  
+  
+  // Mesti huruf seterusnya ikut arah sama
+  const expectedRow =
+    secondRow +
+    rowStep * (wordSearchSelection.length - 1);
+  
+  const expectedCol =
+    secondCol +
+    colStep * (wordSearchSelection.length - 1);
+  
+  
+  if (
+    newRow !== expectedRow ||
+    newCol !== expectedCol
+  ) {
+    return;
+  }
+}
+
+    wordSearchSelection.push(cell);
+
+    cell.classList.add(
+        "selected-cell"
+    );
+
+    cell.style.boxShadow =
+        "inset 0 0 0 3px #f06b91, 0 0 10px rgba(240,107,145,0.45)";
+
+    cell.style.background =
+        "#fff0f5";
+
+
+    // Semak perkataan
+    checkWordSearchSelection();
+}
+
+
+// =====================================
+// SEMAK PERKATAAN YANG DIPILIH
+// =====================================
+
+function checkWordSearchSelection() {
+
+    const selectedPositions =
+        wordSearchSelection.map(cell => ({
+            row:
+                Number(cell.dataset.row),
+            col:
+                Number(cell.dataset.col)
+        }));
+
+
+    for (
+        const placedWord
+        of wordSearchPlaced
+    ) {
+
+        // Sudah jumpa
+        if (
+            wordSearchFound.includes(
+                placedWord.word
+            )
+        ) {
+            continue;
+        }
+
+        if (
+            selectedPositions.length !==
+            placedWord.positions.length
+        ) {
+            continue;
+        }
+
+
+        // Semak arah biasa
+        const normalMatch =
+            selectedPositions.every(
+                (pos, index) =>
+                    pos.row ===
+                        placedWord.positions[index].row &&
+                    pos.col ===
+                        placedWord.positions[index].col
+            );
+
+
+        // Semak arah terbalik
+        const reverseMatch =
+            selectedPositions.every(
+                (pos, index) => {
+
+                    const reverseIndex =
+                        placedWord.positions.length -
+                        1 -
+                        index;
+
+                    return (
+                        pos.row ===
+                            placedWord.positions[
+                                reverseIndex
+                            ].row &&
+                        pos.col ===
+                            placedWord.positions[
+                                reverseIndex
+                            ].col
+                    );
+                }
+            );
+
+
+        if (
+            normalMatch ||
+            reverseMatch
+        ) {
+
+            wordFound(
+                placedWord.word
+            );
+
+            return;
+        }
+    }
+}
+
+
+// =====================================
+// WORD BETUL
+// =====================================
+
+function wordFound(word) {
+
+    wordSearchFound.push(word);
+
+    wordSearchSelection.forEach(cell => {
+
+        cell.classList.remove(
+            "selected-cell"
+        );
+
+        cell.classList.add(
+            "found-word-cell"
+        );
+
+        cell.style.background =
+            "#bbf7d0";
+
+        cell.style.borderColor =
+            "#22c55e";
+
+        cell.style.color =
+            "#166534";
+
+        cell.style.boxShadow =
+            "inset 0 0 0 2px #22c55e";
+    });
+
+
+    // Warna word dalam senarai
+    const wordItem =
+        document.querySelector(
+            `.word-search-item[data-word="${word}"]`
+        );
+
+    if (wordItem) {
+
+        wordItem.style.background =
+            "#bbf7d0";
+
+        wordItem.style.borderColor =
+            "#22c55e";
+
+        wordItem.style.color =
+            "#166534";
+
+        wordItem.style.textDecoration =
+            "line-through";
+    }
+
+
+    // Bunyi betul
+    playCorrectSound();
+
+    wordSearchSelection = [];
+
+
+    // =====================================
+    // SEMUA 10 WORD SUDAH JUMPA
+    // =====================================
+
+    if (
+        wordSearchFound.length ===
+        wordSearchPlaced.length
+    ) {
+
+        setTimeout(() => {
+
+            const feedback =
+                document.getElementById(
+                    "feedback"
+                );
+
+            feedback.innerHTML =
+                "GOOD JOB 🎉";
+
+            feedback.style.color =
+                "#16a34a";
+
+            feedback.style.borderColor =
+                "#22c55e";
+
+            feedback.classList.remove(
+                "hidden"
+            );
+
+
+            document.getElementById(
+                "final-msg"
+            ).innerHTML =
+                "🏆 EXCELLENT<br><span style='font-size:13px; white-space:nowrap;'>YOU COMPLETED THE WORD SEARCH 🎉</span>";
+
+
+            setTimeout(() => {
+
+                feedback.classList.add(
+                    "hidden"
+                );
+
+                document.getElementById(
+                    "end-screen"
+                ).classList.remove(
+                    "hidden"
+                );
+
+            }, 1600);
+
+        }, 400);
+    }
+}
+
+
+
+
+
+// =====================================
+// BUTANG CLEAR WORD SEARCH
+// =====================================
+
+document.getElementById("clear-btn")
+  .addEventListener("click", function() {
+    
+    playClickSound();
+    
+    // Buang pilihan huruf yang sedang pink sahaja
+    wordSearchSelection.forEach(cell => {
+      
+      cell.classList.remove("selected-cell");
+      
+      cell.style.boxShadow = "";
+      cell.style.background = "";
+      
+    });
+    
+    // Kosongkan pilihan semasa
+    wordSearchSelection = [];
+    
+  });
+
+
+// =====================================
+// BUNYI CLICK UNTUK BUTANG LAIN
+// =====================================
+
+document.querySelectorAll(
+  "button:not(#back-btn):not(#clear-btn)"
+).forEach(button => {
+  
+  button.addEventListener("click", function() {
+    playClickSound();
+  });
+  
+});
+
+</script>    
+ </body>
+</html>
