@@ -118,22 +118,130 @@ right: 18px;
 }
 
 /* =========================================
-   AUTO SCALE - IKUT SAIZ SKRIN
+   HE BLOOM - UNIVERSAL FLUID RESPONSIVE
+   SATU DESIGN UNTUK SEMUA SKRIN
    ========================================= */
 
 #game-card {
-    transform-origin: top center;
+    width: min(94vw, 800px);
+    max-width: 800px;
+
+    min-height: auto;
+    height: auto;
+
+    margin: 0 auto;
+
+    padding:
+        clamp(18px, 4vw, 40px)
+        clamp(16px, 6vw, 70px)
+        clamp(24px, 5vw, 40px);
+
+    box-sizing: border-box;
+
+    zoom: 1;
+    transform: none;
 }
 
-/* Skrin menentukan skala game secara automatik */
-@supports (zoom: 1) {
-    #game-card {
-        zoom: min(
-            calc(90vw / 600),
-            calc(90vh / 750),
-            1
-        );
-    }
+/* SCORE + SOALAN */
+#game-card > div:first-child {
+    width: 100% !important;
+    max-width: 800px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+
+    padding:
+        clamp(8px, 2vw, 16px)
+        clamp(10px, 3vw, 20px);
+
+    box-sizing: border-box;
+}
+
+/* Tulisan SOALAN & MARKAH */
+#game-card > div:first-child span {
+    font-size: clamp(18px, 3vw, 30px);
+}
+
+/* ICON buku */
+#game-card > div:first-child .text-3xl {
+    font-size: clamp(22px, 4vw, 30px);
+}
+
+/* KOTAK GAMBAR */
+#question-image {
+    width: clamp(150px, 30vw, 300px) !important;
+    height: clamp(150px, 30vw, 300px) !important;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* BUTANG JAWAPAN */
+#answers {
+    width: 100% !important;
+    max-width: 800px !important;
+
+    gap: clamp(10px, 2.5vw, 24px);
+}
+
+/* Semua butang jawapan */
+.btn-answer {
+    width: 100% !important;
+
+    height: clamp(64px, 11vw, 100px) !important;
+
+    min-height: 64px;
+
+    padding:
+        clamp(8px, 2vw, 16px)
+        clamp(8px, 2vw, 20px);
+
+    font-size: clamp(18px, 3vw, 30px) !important;
+
+    line-height: 1.1;
+
+    box-sizing: border-box;
+}
+
+/* BUTANG KEMBALI */
+#game-card button[onclick*="melayu.html"] {
+    font-size: clamp(16px, 2.5vw, 24px) !important;
+
+    padding:
+        clamp(8px, 2vw, 12px)
+        clamp(18px, 4vw, 30px);
+
+    white-space: nowrap;
+}
+
+/* LOGO */
+.he-bloom-logo {
+    width: clamp(55px, 9vw, 80px);
+    height: clamp(55px, 9vw, 80px);
+}
+/* =========================================
+   BETULKAN SCORE BOX SUPAYA DALAM BORDER
+   ========================================= */
+
+#game-card {
+    margin-top: 0 !important;
+}
+
+/* Kotak SOALAN + MARKAH */
+#game-card>div:first-child {
+    width: 100% !important;
+    
+    position: relative !important;
+    left: auto !important;
+    
+    transform: none !important;
+    
+    margin-left: auto !important;
+    margin-right: auto !important;
+    
+    margin-top: 0 !important;
+    margin-bottom: clamp(16px, 3vw, 28px) !important;
+    
+    box-sizing: border-box;
 }
 </style>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js" type="text/javascript"></script>
@@ -169,7 +277,7 @@ right: 18px;
    <div class="bee absolute top-[45%] right-[2%] text-6xl" style="animation-delay:2s">
     🐝
    </div><!-- Ground -->
-   <div class="absolute bottom-0 left-0 right-0 flex justify-around items-end"><span class="sway text-4xl">🌹 </span> <span class="float-slow text-2xl" style="animation-delay:0.3s">🌸</span> <span class="sway text-4xl" style="animation-delay:1.0s">🌹 </span> <span class="float-slow text-2xl" style="animation-delay:0.7s">🌺</span> <span class="sway text-4xl" style="animation-delay:1.0s">🌹 </span> <span class="float-slow text-2xl" style="animation-delay:1.2s">🌸 </span> <span class="sway text-4xl" style="animation-delay:1.0s">🌹 </span>
+   <div class="absolute bottom-0 left-0 right-0 flex justify-around items-end"><span class="sway text-4xl">🌸 </span> <span class="float-slow text-2xl" style="animation-delay:0.3s">🌺 </span> <span class="sway text-4xl" style="animation-delay:1.0s">🌸 </span> <span class="float-slow text-2xl" style="animation-delay:0.7s">🌺</span> <span class="sway text-4xl" style="animation-delay:1.0s">🌸 </span> <span class="float-slow text-2xl" style="animation-delay:1.2s">🌺 </span> <span class="sway text-4xl" style="animation-delay:1.0s">🌸  </span>
    </div>
    
   </div><!-- Music toggle --> <button id="music-btn" onclick="toggleMusic()" class="fixed top-4 right-4 z-50 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center text-2xl float" aria-label="Toggle music"> 🎵
