@@ -109,48 +109,137 @@ body {
     bottom: 18px;
     right: 18px;
 }
-/* =========================================================
-   RESPONSIVE TAMBAHAN - ALL DEVICES
-   HP KECIL + HP BESAR
-   TABLET
-   LAPTOP + DESKTOP
-   PORTRAIT + LANDSCAPE
-
-   DESIGN ASAL DIKEKALKAN
-   RESPONSIVE HANYA MENYESUAIKAN SAIZ/PAPARAN
-   SCROLL AKTIF JIKA RUANG MENEGAK TIDAK CUKUP
-   ========================================================= */
-
-
-/* =========================================================
-   ASAS - ELAK OVERFLOW MENDATAR
-   ========================================================= */
-
-* {
-    box-sizing: border-box;
-}
+/* =========================================
+   UNIVERSAL RESPONSIVE - ALL DEVICES
+   ========================================= */
 
 html {
     width: 100%;
     min-height: 100%;
     overflow-x: hidden;
+    overflow-y: auto;
 }
 
 body {
     width: 100%;
+    min-width: 0;
     min-height: 100vh;
-    overflow-x: hidden;
+    height: auto !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    box-sizing: border-box;
 }
 
+/* GAME CARD */
+#game-card {
+    width: min(94vw, 800px) !important;
+    max-width: 800px !important;
+    height: auto !important;
+    min-height: auto !important;
 
-/* =========================================================
-   LANDSCAPE
-   SEMUA DEVICE
-   ========================================================= */
+    margin: 0 auto !important;
+
+    padding:
+        clamp(18px, 4vw, 40px)
+        clamp(16px, 6vw, 70px)
+        clamp(24px, 5vw, 40px);
+
+    box-sizing: border-box;
+    overflow: visible !important;
+    transform: none;
+}
+
+/* SCORE + SOALAN */
+#game-card > div.flex.items-center.justify-between {
+    width: 100% !important;
+    max-width: 100% !important;
+
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+
+    left: auto !important;
+    transform: none !important;
+
+    box-sizing: border-box;
+}
+
+/* KOTAK SOALAN */
+#question-image {
+    width: min(85%, 600px) !important;
+    max-width: 600px !important;
+    
+    margin-left: auto !important;
+    margin-right: auto !important;
+    
+    left: auto !important;
+    transform: none !important;
+    
+    box-sizing: border-box;
+}
+
+/* PERKATAAN */
+#question-word {
+    font-size: clamp(30px, 5vw, 52px) !important;
+}
+
+/* BUTANG JAWAPAN */
+#answers {
+    width: 100% !important;
+    max-width: 800px !important;
+
+    margin-left: auto !important;
+    margin-right: auto !important;
+
+    gap: clamp(10px, 2.5vw, 24px);
+
+    box-sizing: border-box;
+}
+
+#answers button {
+    width: 100% !important;
+
+    min-height: clamp(50px, 8vw, 80px) !important;
+
+    padding:
+        clamp(8px, 2vw, 16px)
+        clamp(8px, 2vw, 20px);
+
+    font-size: clamp(18px, 3vw, 30px) !important;
+
+    line-height: 1.1;
+    box-sizing: border-box;
+}
+
+/* BUTANG KEMBALI */
+#game-card > div.flex.flex-col.items-center {
+    margin-top: clamp(15px, 3vw, 30px) !important;
+    margin-bottom: 5px !important;
+}
+
+#game-card > div.flex.flex-col.items-center button {
+    font-size: clamp(16px, 2.5vw, 24px) !important;
+
+    padding:
+        clamp(8px, 2vw, 12px)
+        clamp(18px, 4vw, 30px);
+
+    white-space: nowrap;
+}
+
+/* LOGO */
+.he-bloom-logo {
+    width: clamp(55px, 9vw, 80px) !important;
+    height: clamp(55px, 9vw, 80px) !important;
+}
+
+/* =========================================
+   LANDSCAPE - BOLEH SCROLL
+   ========================================= */
 
 @media screen and (orientation: landscape) {
 
-    html {
+    html,
+    body {
         height: auto !important;
         min-height: 100%;
         overflow-x: hidden !important;
@@ -158,336 +247,19 @@ body {
     }
 
     body {
-        height: auto !important;
-        min-height: 100vh;
-
         display: block !important;
-
-        overflow-x: hidden !important;
-        overflow-y: auto !important;
-
-        padding: 10px !important;
+        padding: 16px !important;
     }
 
-
-    /* =========================
-       GAME BORDER
-       ========================= */
-
     #game-card {
-        width: min(88vw, 1100px) !important;
-        max-width: 1100px !important;
-
+        width: min(94vw, 800px) !important;
+        max-width: 800px !important;
         height: auto !important;
-        min-height: 0 !important;
+        min-height: auto !important;
 
-        margin: 10px auto 35px auto !important;
-
-        padding: 18px 24px 30px !important;
-
-        box-sizing: border-box;
+        margin: 0 auto 30px auto !important;
 
         overflow: visible !important;
-
-        left: auto !important;
-        transform: none !important;
-    }
-
-
-    /* =========================
-       SOALAN + MARKAH
-       ========================= */
-
-    #game-card > div.flex.items-center.justify-between {
-        width: 100% !important;
-        max-width: 100% !important;
-
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-
-        left: auto !important;
-        transform: none !important;
-
-        box-sizing: border-box;
-    }
-
-
-    /* =========================
-       KOTAK SOALAN
-       ========================= */
-
-    #question-area {
-        width: 100% !important;
-        box-sizing: border-box;
-    }
-
-    #question-image {
-        width: min(70vw, 650px) !important;
-        max-width: 100% !important;
-
-        margin-left: auto !important;
-        margin-right: auto !important;
-
-        left: auto !important;
-        transform: none !important;
-
-        box-sizing: border-box;
-    }
-
-
-    /* =========================
-       PERKATAAN
-       ========================= */
-
-    #question-word {
-        font-size: clamp(30px, 5vw, 52px) !important;
-    }
-
-
-    /* =========================
-       BUTTON JAWAPAN
-       ========================= */
-
-    #answers {
-        width: min(70vw, 720px) !important;
-        max-width: 100% !important;
-
-        margin-left: auto !important;
-        margin-right: auto !important;
-
-        box-sizing: border-box;
-
-        gap: clamp(8px, 1.2vw, 14px) !important;
-    }
-
-    #answers button {
-        width: 100% !important;
-
-        min-height: clamp(44px, 7vh, 58px) !important;
-
-        padding: 7px 10px !important;
-
-        font-size: clamp(15px, 2.2vw, 23px) !important;
-
-        box-sizing: border-box;
-    }
-
-
-    /* =========================
-       KEMBALI
-       ========================= */
-
-    #game-card > div.flex.flex-col.items-center {
-        margin-top: 15px !important;
-        margin-bottom: 5px !important;
-    }
-
-
-    /* =========================
-       LOGO
-       ========================= */
-
-    .bottom-logo {
-        width: clamp(60px, 8vw, 85px) !important;
-        height: clamp(60px, 8vw, 85px) !important;
-
-        bottom: 8px !important;
-        right: 8px !important;
-    }
-}
-
-
-/* =========================================================
-   LANDSCAPE - HP PENDEK
-   Contoh telefon yang tinggi skrin landscape sangat rendah
-   ========================================================= */
-
-@media screen and (orientation: landscape) and
-       (max-height: 500px) {
-
-    #game-card {
-        width: 88vw !important;
-
-        padding: 12px 18px 25px !important;
-
-        margin-top: 8px !important;
-        margin-bottom: 35px !important;
-    }
-
-
-    /* SOALAN + MARKAH */
-    #game-card > div.flex.items-center.justify-between {
-        padding: 6px 10px !important;
-        margin-bottom: 12px !important;
-    }
-
-
-    #game-card > div.flex.items-center.justify-between span {
-        font-size: clamp(13px, 2.5vw, 19px) !important;
-    }
-
-
-    /* KOTAK SOALAN */
-    #question-image {
-        width: min(76vw, 580px) !important;
-
-        padding: 12px 16px !important;
-
-        margin-bottom: 12px !important;
-    }
-
-
-    #question-image p.text-xl {
-        font-size: clamp(14px, 2.5vw, 20px) !important;
-        margin-bottom: 4px !important;
-    }
-
-
-    #question-word {
-        font-size: clamp(27px, 5vw, 44px) !important;
-    }
-
-
-    /* BUTTON */
-    #answers {
-        width: min(76vw, 680px) !important;
-        gap: 7px !important;
-    }
-
-    #answers button {
-        min-height: 40px !important;
-        padding: 5px 8px !important;
-        font-size: clamp(14px, 2.3vw, 20px) !important;
-    }
-
-
-    /* KEMBALI */
-    #game-card > div.flex.flex-col.items-center {
-        margin-top: 10px !important;
-    }
-
-    #game-card > div.flex.flex-col.items-center button {
-        padding: 6px 20px !important;
-        font-size: clamp(14px, 2.3vw, 19px) !important;
-    }
-
-
-    .bottom-logo {
-        width: 60px !important;
-        height: 60px !important;
-    }
-}
-
-
-/* =========================================================
-   PORTRAIT - HP KECIL
-   Design asal dikekalkan
-   ========================================================= */
-
-@media screen and (orientation: portrait) and
-       (max-width: 480px) {
-
-    body {
-        overflow-x: hidden;
-        overflow-y: auto;
-    }
-
-    #game-card {
-        width: 90% !important;
-        max-width: 800px !important;
-
-        box-sizing: border-box;
-    }
-
-    #question-image {
-        max-width: 100% !important;
-        box-sizing: border-box;
-    }
-
-    #answers {
-        width: 100% !important;
-        max-width: 100% !important;
-
-        gap: 10px !important;
-    }
-
-    #answers button {
-        min-height: 50px !important;
-
-        font-size: clamp(15px, 4.5vw, 21px) !important;
-    }
-}
-
-
-/* =========================================================
-   PORTRAIT - TABLET
-   ========================================================= */
-
-@media screen and (orientation: portrait) and
-       (min-width: 481px) and
-       (max-width: 900px) {
-
-    body {
-        overflow-x: hidden;
-        overflow-y: auto;
-    }
-
-    #game-card {
-        width: 82% !important;
-        max-width: 800px !important;
-
-        box-sizing: border-box;
-    }
-
-    #question-image {
-        max-width: 600px !important;
-    }
-
-    #answers {
-        max-width: 600px !important;
-    }
-}
-
-
-/* =========================================================
-   PORTRAIT - TABLET BESAR / DESKTOP
-   ========================================================= */
-
-@media screen and (orientation: portrait) and
-       (min-width: 901px) {
-
-    body {
-        overflow-x: hidden;
-        overflow-y: auto;
-    }
-
-    #game-card {
-        max-width: 800px !important;
-        box-sizing: border-box;
-    }
-}
-
-
-/* =========================================================
-   LAPTOP / DESKTOP LANDSCAPE
-   ========================================================= */
-
-@media screen and (orientation: landscape) and
-       (min-width: 1000px) {
-
-    #game-card {
-        width: min(82vw, 1100px) !important;
-
-        padding-left: 28px !important;
-        padding-right: 28px !important;
-    }
-
-    #question-image {
-        width: min(65vw, 650px) !important;
-    }
-
-    #answers {
-        width: min(65vw, 720px) !important;
     }
 }
     </style>
@@ -496,38 +268,23 @@ body {
   <script src="/_sdk/6030e540d4419216.resizing_sdk.js" type="text/javascript" integrity="sha512-b5KWzyoXsbWP4smq4sftIi6Kts4YVBpBsz0BwCViwbBJkK64a3/Z6ZMdWA+qnplNcXw4mhZeqvQi3mOosiRJdA=="></script>
  </head>
  <body data-template-id="__page-root" class="w-full min-h-screen overflow-hidden relative flex items-center justify-center p-4"><!-- Background elements -->
-  <div class="fixed inset-0 pointer-events-none overflow-hidden" aria-hidden="true"><!-- Sun -->
-   <div class="sun-pulse absolute top-6 left-6 text-10xl sm:text-10xl">
-    🌞
-   </div><!-- Rainbow -->
-   <div class="absolute top-10 right-10 text-10xl float-slow opacity-70">
-    🌈
-   </div><!-- Clouds -->
-   <div class="absolute top-[12%] left-[20%] text-10xl float" style="animation-delay:0.5s">
-    ☁️
-   </div>
-   <div class="absolute top-[8%] left-[55%] text-20xl float" style="animation-delay:1.5s">
-    ☁️
-   </div>
-   <div class="absolute top-[18%] right-[15%] text-20xl float" style="animation-delay:2.5s">
-    ☁️
-   </div><!-- Birds -->
-   <div class="bird absolute top-[6%] text-5xl">
-    🦜 
-   </div>
-   <div class="bird2 absolute top-[18%] text-5xl">
+</div><!-- Birds -->
+<div class="bird absolute top-[3%] text-5xl">
     🦜
-   </div><!-- Bees -->
-   <div class="bee absolute top-[45%] left-[15%] text-6xl">
+</div>
+<div class="bird2 absolute top-[10%] text-5xl">
+    🦜
+</div><!-- Bees -->
+<div class="bee absolute top-[45%] left-[2%] text-6xl">
     🐝
-   </div>
-   <div class="bee absolute top-[45%] right-[15%] text-6xl" style="animation-delay:2s">
+</div>
+<div class="bee absolute top-[45%] right-[2%] text-6xl" style="animation-delay:2s">
     🐝
-   </div><!-- Ground -->
-   <div class="absolute bottom-0 left-0 right-0 flex justify-around items-end"><span class="sway text-4xl">🌹 </span> <span class="float-slow text-2xl" style="animation-delay:0.3s">🌸</span> <span class="sway text-4xl" style="animation-delay:1.0s">🌹 </span> <span class="float-slow text-2xl" style="animation-delay:0.7s">🌺</span> <span class="sway text-4xl" style="animation-delay:1.0s">🌹 </span> <span class="float-slow text-2xl" style="animation-delay:1.2s">🌸 </span> <span class="sway text-4xl" style="animation-delay:1.0s">🌹 </span>
-   </div>
-   
-  </div><!-- Music toggle --> <button id="music-btn" onclick="toggleMusic()" class="fixed top-4 right-4 z-50 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center text-2xl float" aria-label="Toggle music"> 🎵
+</div><!-- Ground -->
+<div class="absolute bottom-0 left-0 right-0 flex justify-around items-end"><span class="sway text-4xl">🌸 </span> <span class="float-slow text-2xl" style="animation-delay:0.3s">🌺 </span> <span class="sway text-4xl" style="animation-delay:1.0s">🌸 </span> <span class="float-slow text-2xl" style="animation-delay:0.7s">🌺</span> <span class="sway text-4xl" style="animation-delay:1.0s">🌸 </span> <span class="float-slow text-2xl" style="animation-delay:1.2s">🌺 </span> <span class="sway text-4xl" style="animation-delay:1.0s">🌸 </span>
+</div>
+
+</div><!-- Music toggle --> <button id="music-btn" onclick="toggleMusic()" class="fixed top-4 right-4 z-50 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center text-2xl float" aria-label="Toggle music"> 🎵
   
   </button> <!-- Game Card -->
 <main id="game-card"
