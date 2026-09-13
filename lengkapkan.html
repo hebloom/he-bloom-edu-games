@@ -124,11 +124,16 @@ body {
     }
 }
 
-/* ===== SCORE + SOALAN - UNIVERSAL ===== */
+/* ===== KOTAK PUTIH SOALAN + MARKAH ===== */
+#game-card > div.flex.items-center.justify-between {
+    width: calc(100% + 50px) !important;
+    max-width: none !important;
 
-#game-card > div:first-child {
-    width: 110% !important;
-    max-width: 800px !important;
+    margin-left: -25px !important;
+    margin-right: -25px !important;
+
+    position: relative !important;
+    top: -16px !important;   /* NAIK 16px */
 
     height: auto !important;
     min-height: 0 !important;
@@ -138,20 +143,12 @@ body {
     justify-content: space-between !important;
     flex-wrap: nowrap !important;
 
-    padding: clamp(10px, 2vw, 16px)
-             clamp(14px, 4vw, 24px) !important;
-
-    position: relative !important;
-    left: 50% !important;
-    top: -10px !important;
-    transform: translateX(-50%) !important;
-
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-
+    padding: 12px 18px !important;
     box-sizing: border-box !important;
 
-    gap: clamp(14px, 4vw, 30px) !important;
+    left: auto !important;
+    transform: none !important;
+    gap: 10px !important;
 }
 
 /* Bahagian kiri & kanan */
