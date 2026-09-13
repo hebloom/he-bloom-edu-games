@@ -195,7 +195,7 @@ right: 18px;
         clamp(8px, 2vw, 16px)
         clamp(8px, 2vw, 20px);
 
-    font-size: clamp(20px, 3.5vw, 34px) !important;
+    font-size: clamp(24px, 3.5vw, 34px) !important;
 
     line-height: 1.1;
 
@@ -226,23 +226,27 @@ right: 18px;
     margin-top: 0 !important;
 }
 
-/* Kotak SOALAN + MARKAH */
+/* SCORE + SOALAN */
 #game-card>div:first-child {
     width: 100% !important;
+    max-width: 100% !important;
     
-    position: relative !important;
-    left: auto !important;
+    height: auto !important;
+    min-height: 0 !important;
     
-    transform: none !important;
+    padding: 10px 16px !important;
     
     margin-left: auto !important;
     margin-right: auto !important;
-    
     margin-top: 0 !important;
-    margin-bottom: clamp(16px, 3vw, 28px) !important;
+    margin-bottom: 20px !important;
+    
+    position: relative !important;
+    left: auto !important;
+    transform: none !important;
     
     box-sizing: border-box;
-} 
+}
     </style>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js" type="text/javascript"></script>
   <script src="/_sdk/935a53bc2e11fb8d.data_sdk.js" type="text/javascript" integrity="sha512-qr2oyPnEys1WebcOABaRh6hG77r5PWpqeWW6JTKbRJqly/INsfBi31CVNlTmHqjgeLpkVmmHZJUdxSx/32tOFQ=="></script>
@@ -275,7 +279,7 @@ class="relative -mt-50 z-50 w-full max-w-x1 mx-auto bg-transparent rounded-none 
 
 
 <!-- SCORE + QUESTION -->
-<div class="flex items-center justify-between bg-white rounded-xl shadow-xl w-[120%] mx-auto relative left-1/2 -translate-x-1/2 -translate-y-6 px-4 mb-4">
+<div class="flex items-center justify-between bg-white rounded-xl shadow-xl w-[120%] mx-auto relative left-1/2 -translate-x-1/2 -translate-y-6 px-4 py-2 mb-4">
     
     <div class="flex items-center gap-2">
         <span class="text-3xl">📖</span>

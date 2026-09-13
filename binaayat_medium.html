@@ -110,8 +110,8 @@ LOGO
 
 .he-bloom-logo {
 position: fixed;
-width: 100px;
-height: 100px;
+width: 80px;
+height: 80px;
 z-index: 9999;
 opacity: .95;
 pointer-events: none;
@@ -394,38 +394,23 @@ body {
   <script src="/_sdk/6030e540d4419216.resizing_sdk.js" type="text/javascript" integrity="sha512-b5KWzyoXsbWP4smq4sftIi6Kts4YVBpBsz0BwCViwbBJkK64a3/Z6ZMdWA+qnplNcXw4mhZeqvQi3mOosiRJdA=="></script>
  </head>
 <body data-template-id="__page-root" class="w-full min-h-screen overflow-x-hidden overflow-y-auto relative flex items-center justify-center p-4"><!-- Background elements -->
-  <div class="fixed inset-0 pointer-events-none overflow-hidden" aria-hidden="true"><!-- Sun -->
-   <div class="sun-pulse absolute top-6 left-6 text-10xl sm:text-10xl">
-    🌞
-   </div><!-- Rainbow -->
-   <div class="absolute top-10 right-10 text-10xl float-slow opacity-70">
-    🌈
-   </div><!-- Clouds -->
-   <div class="absolute top-[12%] left-[20%] text-10xl float" style="animation-delay:0.5s">
-    ☁️
-   </div>
-   <div class="absolute top-[8%] left-[55%] text-20xl float" style="animation-delay:1.5s">
-    ☁️
-   </div>
-   <div class="absolute top-[18%] right-[15%] text-20xl float" style="animation-delay:2.5s">
-    ☁️
-   </div><!-- Birds -->
-   <div class="bird absolute top-[6%] text-5xl">
-    🦜 
-   </div>
-   <div class="bird2 absolute top-[18%] text-5xl">
+  </div><!-- Birds -->
+<div class="bird absolute top-[3%] text-5xl">
     🦜
-   </div><!-- Bees -->
-   <div class="bee absolute top-[45%] left-[15%] text-6xl">
+</div>
+<div class="bird2 absolute top-[10%] text-5xl">
+    🦜
+</div><!-- Bees -->
+<div class="bee absolute top-[45%] left-[2%] text-6xl">
     🐝
-   </div>
-   <div class="bee absolute top-[45%] right-[15%] text-6xl" style="animation-delay:2s">
+</div>
+<div class="bee absolute top-[45%] right-[2%] text-6xl" style="animation-delay:2s">
     🐝
-   </div><!-- Ground -->
-   <div class="absolute bottom-0 left-0 right-0 flex justify-around items-end"><span class="sway text-4xl">🌹 </span> <span class="float-slow text-2xl" style="animation-delay:0.3s">🌸</span> <span class="sway text-4xl" style="animation-delay:1.0s">🌹 </span> <span class="float-slow text-2xl" style="animation-delay:0.7s">🌺</span> <span class="sway text-4xl" style="animation-delay:1.0s">🌹 </span> <span class="float-slow text-2xl" style="animation-delay:1.2s">🌸 </span> <span class="sway text-4xl" style="animation-delay:1.0s">🌹 </span>
-   </div>
-   
-  </div><!-- Music toggle --> <button id="music-btn" onclick="toggleMusic()" class="fixed top-4 right-4 z-50 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center text-2xl float" aria-label="Toggle music"> 🎵
+</div><!-- Ground -->
+<div class="absolute bottom-0 left-0 right-0 flex justify-around items-end"><span class="sway text-4xl">🌸 </span> <span class="float-slow text-2xl" style="animation-delay:0.3s">🌺 </span> <span class="sway text-4xl" style="animation-delay:1.0s">🌸 </span> <span class="float-slow text-2xl" style="animation-delay:0.7s">🌺</span> <span class="sway text-4xl" style="animation-delay:1.0s">🌸 </span> <span class="float-slow text-2xl" style="animation-delay:1.2s">🌺 </span> <span class="sway text-4xl" style="animation-delay:1.0s">🌸 </span>
+</div>
+
+</div><!-- Music toggle --> <button id="music-btn" onclick="toggleMusic()" class="fixed top-4 right-4 z-50 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center text-2xl float" aria-label="Toggle music"> 🎵
   
   </button> <!-- Game Card -->
 <main id="game-card"
@@ -537,63 +522,63 @@ onclick="restartGame()">
   <script>
   
         const words = [
- { image: "images/penguin.png", answer: ["Penguin", "mempunyai", "bulu", "berwarna", "hitam", "dan", "putih"] },
-{ image: "images/penyapu.png", answer: ["Ani", "menyapu", "lantai", "dengan", "penyapu"] },
-{ image: "images/pepatung.png", answer: ["Pepatung", "boleh", "terbang", "di", "udara"] },
-{ image: "images/pintu.png", answer: ["Pintu", "digunakan", "untuk", "masuk", "dan", "keluar"] },
-{ image: "images/rama_rama.png", answer: ["Rama-rama", "mempunyai", "sayap", "yang", "cantik"] },
-{ image: "images/rambut.png", answer: ["Kita", "perlu", "menjaga", "kebersihan", "rambut"] },
-{ image: "images/rambutan.png", answer: ["Ibu", "membeli", "rambutan", "di", "pasar"] },
-{ image: "images/pisang.png", answer: ["Pisang", "berwarna", "kuning", "apabila", "masak"] },
-{ image: "images/roti.png", answer: ["Saya", "makan", "roti", "waktu", "pagi"] },
-{ image: "images/rumah.png", answer: ["Rumah", "itu", "mempunyai", "pintu", "dan", "tingkap"] },
-{ image: "images/salak.png", answer: ["Kulit", "salak", "kelihatan", "seperti", "sisik", "ular"] },
-{ image: "images/sarung_tangan.png", answer: ["Mina", "memakai", "sarung", "tangan", "ketika", "cuaca", "sejuk"] },
-{ image: "images/sekolah.png", answer: ["Saya", "belajar", "bersama", "kawan", "di", "sekolah"] },
-{ image: "images/selipar.png", answer: ["Saya", "menyusun", "selipar", "di", "depan", "pintu"] },
-{ image: "images/seluar.png", answer: ["Saya", "melipat", "seluar", "selepas", "dicuci"] },
-{ image: "images/semut.png", answer: ["Semut", "membawa", "makanan", "ke", "sarang"] },
-{ image: "images/cermin.png", answer: ["Saya", "melihat", "wajah", "di", "cermin"] },
-{ image: "images/hospital.png", answer: ["Ibu", "melawat", "nenek", "di", "hospital", "semalam"] },
-{ image: "images/jam_tangan.png", answer: ["Kakak", "memakai", "jam", "tangan", "setiap", "hari"] },
-{ image: "images/jambatan.png", answer: ["Kereta", "bergerak", "perlahan", "di", "atas", "jambatan", "panjang"] },
-{ image: "images/kaktus.png", answer: ["Kaktus", "tumbuh", "subur", "di", "kawasan", "padang", "pasir"] },
-{ image: "images/kambing.png", answer: ["Kambing", "berbulu", "putih", "itu", "kelihatan", "sangat", "comel"] },
-{ image: "images/kamera.png", answer: ["Jurugambar", "memegang", "kamera", "ketika", "merakam", "majlis", "perkahwinan"] },
-{ image: "images/lembu.png", answer: ["Lembu", "menghasilkan", "susu", "yang", "berkhasiat", "untuk", "diminum"] },
-{ image: "images/lidah.png", answer: ["Doktor", "memeriksa", "lidah", "semasa", "pemeriksaan", "kesihatan"] },
-{ image: "images/lobak_merah.png", answer: ["Adik", "mencuci", "lobak","merah","sebelum", "ibu", "memasaknya"] },
-{ image: "images/lutut.png", answer: ["Lutut", "saya", "masih", "sakit", "selepas", "terjatuh"] },
-{ image: "images/mata.png", answer: ["Debu", "boleh", "menyebabkan", "mata", "menjadi", "pedih"] },
-{ image: "images/meja.png", answer: ["Kakak", "menyusun", "buku", "di", "atas", "meja", "belajar"] },
-{ image: "images/monyet.png", answer: ["Monyet", "comel", "itu", "menarik", "perhatian", "pengunjung", "zoo"] },
-{ image: "images/nanas.png", answer: ["Saya", "membeli", "nanas", "segar", "di", "pasar", "pagi"] },
-{ image: "images/nangka.png", answer: ["Nangka", "masak", "mengeluarkan", "bau", "harum", "yang", "menarik", "perhatian"] },
-{ image: "images/pari.png", answer: ["Pari", "ialah", "haiwan", "laut", "yang", "berbentuk", "lebar"] },
-{ image: "images/panda.png", answer: ["Panda", "suka", "makan", "buluh", "sebagai", "makanan", "utama"] },
-{ image: "images/topi.png", answer: ["Topi", "membantu", "melindungi", "kepala", "daripada", "panas", "matahari"] },
-    { image: "images/mangkuk.png", answer: ["Ibu", "menghidangkan", "sup", "panas", "menggunakan", "mangkuk", "besar"] },
-    { image: "images/pinggan.png", answer: ["Siti", "menyusun", "pinggan", "bersih", "di", "atas", "rak", "dapur"] },
-    { image: "images/garpu.png", answer: ["Garpu", "kecil", "itu", "digunakan", "oleh", "adik", "ketika", "makan"] },
-    { image: "images/sudu.png", answer: ["Sudu", "digunakan", "untuk", "menikmati", "makanan", "berkuah", "dan", "lembut"] },
-    { image: "images/kerusi.png", answer: ["Adik", "duduk", "di", "kerusi", "sambil", "membaca", "buku"] },
-    { image: "images/ketam.png", answer: ["Ketam", "mempunyai", "mata", "kecil", "pada", "bahagian", "atas", "badannya"] },
-    { image: "images/kuda.png", answer: ["Penunggang", "menaiki", "kuda", "ketika", "pertandingan", "di", "padang"] },
-    { image: "images/kumbang.png", answer: ["Kumbang", "mencari", "makanan", "pada", "tumbuhan", "dan", "bunga"] },
-    { image: "images/kunci.png", answer: ["Kunci", "digunakan", "untuk", "membuka", "dan", "mengunci", "pintu"] },
-    { image: "images/lalat.png", answer: ["Lalat", "sering", "hinggap", "pada", "makanan", "yang", "terbuka"] },
-    { image: "images/lebah.png", answer: ["Lebah", "membantu", "proses", "pendebungaan", "untuk", "tumbuhan", "membesar"] },
-    { image: "images/kuali.png", answer: ["Kuali", "perlu", "dibersihkan", "selepas", "digunakan", "untuk", "memasak"] },
-    { image: "images/kucing.png", answer: ["Kucing", "bergerak", "senyap", "ketika", "memburu", "mangsa", "kecil"] },
-    { image: "images/kasut.png", answer: ["Adik", "menyimpan", "kasut", "di", "rak", "selepas", "digunakan"] },
-    { image: "images/katak.png", answer: ["Saya", "melihat", "katak", "melompat", "di", "tepi", "kolam"] },
-    { image: "images/katil.png", answer: ["Ibu", "membeli", "cadar", "baharu", "untuk", "katil", "di", "bilik"] },
-    { image: "images/kelapa.png", answer: ["Kelapa", "mempunyai", "kulit", "keras", "dan", "isi", "putih", "yang", "sedap"] },
-    { image: "images/payung.png", answer: ["Payung", "lipat", "mudah", "dibawa", "ke", "mana-mana", "sahaja"] },
-    { image: "images/pelangi.png", answer: ["Adik", "teruja", "melihat", "pelangi", "yang", "muncul", "petang", "tadi"] },
-    { image: "images/pemadam.png", answer: ["Cikgu", "meminta", "murid", "membawa", "pensel", "dan", "pemadam"] },
-    { image: "images/pembaris.png", answer: ["Saya", "menggunakan", "pembaris", "ketika", "melukis", "garisan", "lurus"] },
-    { image: "images/tikus.png", answer: ["Kucing", "mengejar", "tikus", "yang", "berada", "di", "dapur"] }
+    { image: "images2/penguin.png", answer: ["Penguin", "mempunyai", "bulu", "berwarna", "hitam", "dan", "putih"] },
+    { image: "images2/penyapu.png", answer: ["Ani", "menyapu", "lantai", "dengan", "penyapu"] },
+    { image: "images2/pepatung.png", answer: ["Pepatung", "boleh", "terbang", "di", "udara"] },
+    { image: "images2/pintu.png", answer: ["Pintu", "digunakan", "untuk", "masuk", "dan", "keluar"] },
+    { image: "images2/rama_rama.png", answer: ["Rama-rama", "mempunyai", "sayap", "yang", "cantik"] },
+    { image: "images2/rambut.png", answer: ["Kita", "perlu", "menjaga", "kebersihan", "rambut"] },
+    { image: "images2/rambutan.png", answer: ["Ibu", "membeli", "rambutan", "di", "pasar"] },
+    { image: "images2/pisang.png", answer: ["Pisang", "berwarna", "kuning", "apabila", "masak"] },
+    { image: "images2/roti.png", answer: ["Saya", "makan", "roti", "waktu", "pagi"] },
+    { image: "images2/rumah.png", answer: ["Rumah", "itu", "mempunyai", "pintu", "dan", "tingkap"] },
+    { image: "images2/salak.png", answer: ["Kulit", "salak", "kelihatan", "seperti", "sisik", "ular"] },
+    { image: "images2/sarung_tangan.png", answer: ["Mina", "memakai", "sarung", "tangan", "ketika", "cuaca", "sejuk"] },
+    { image: "images2/sekolah.png", answer: ["Saya", "belajar", "bersama", "kawan", "di", "sekolah"] },
+    { image: "images2/selipar.png", answer: ["Saya", "menyusun", "selipar", "di", "depan", "pintu"] },
+    { image: "images2/seluar.png", answer: ["Saya", "melipat", "seluar", "selepas", "dicuci"] },
+    { image: "images2/semut.png", answer: ["Semut", "membawa", "makanan", "ke", "sarang"] },
+    { image: "images2/cermin.png", answer: ["Saya", "melihat", "wajah", "di", "cermin"] },
+    { image: "images2/hospital.png", answer: ["Ibu", "melawat", "nenek", "di", "hospital", "semalam"] },
+    { image: "images2/jam_tangan.png", answer: ["Kakak", "memakai", "jam", "tangan", "setiap", "hari"] },
+    { image: "images2/jambatan.png", answer: ["Kereta", "bergerak", "perlahan", "di", "atas", "jambatan", "panjang"] },
+    { image: "images2/kaktus.png", answer: ["Kaktus", "tumbuh", "subur", "di", "kawasan", "padang", "pasir"] },
+    { image: "images2/kambing.png", answer: ["Kambing", "berbulu", "putih", "itu", "kelihatan", "sangat", "comel"] },
+    { image: "images2/kamera.png", answer: ["Jurugambar", "memegang", "kamera", "ketika", "merakam", "majlis", "perkahwinan"] },
+    { image: "images2/lembu.png", answer: ["Lembu", "menghasilkan", "susu", "yang", "berkhasiat", "untuk", "diminum"] },
+    { image: "images2/lidah.png", answer: ["Doktor", "memeriksa", "lidah", "semasa", "pemeriksaan", "kesihatan"] },
+    { image: "images2/lobak_merah.png", answer: ["Adik", "mencuci", "lobak", "merah", "sebelum", "ibu", "memasaknya"] },
+    { image: "images2/lutut.png", answer: ["Lutut", "saya", "masih", "sakit", "selepas", "terjatuh"] },
+    { image: "images2/mata.png", answer: ["Debu", "boleh", "menyebabkan", "mata", "menjadi", "pedih"] },
+    { image: "images2/meja.png", answer: ["Kakak", "menyusun", "buku", "di", "atas", "meja", "belajar"] },
+    { image: "images2/monyet.png", answer: ["Monyet", "comel", "itu", "menarik", "perhatian", "pengunjung", "zoo"] },
+    { image: "images2/nanas.png", answer: ["Saya", "membeli", "nanas", "segar", "di", "pasar", "pagi"] },
+    { image: "images2/nangka.png", answer: ["Nangka", "masak", "mengeluarkan", "bau", "harum", "yang", "menarik", "perhatian"] },
+    { image: "images2/pari.png", answer: ["Pari", "ialah", "haiwan", "laut", "yang", "berbentuk", "lebar"] },
+    { image: "images2/panda.png", answer: ["Panda", "suka", "makan", "buluh", "sebagai", "makanan", "utama"] },
+    { image: "images2/topi.png", answer: ["Topi", "membantu", "melindungi", "kepala", "daripada", "panas", "matahari"] },
+    { image: "images2/mangkuk.png", answer: ["Ibu", "menghidangkan", "sup", "panas", "menggunakan", "mangkuk", "besar"] },
+    { image: "images2/pinggan.png", answer: ["Siti", "menyusun", "pinggan", "bersih", "di", "atas", "rak", "dapur"] },
+    { image: "images2/garpu.png", answer: ["Garpu", "kecil", "itu", "digunakan", "oleh", "adik", "ketika", "makan"] },
+    { image: "images2/sudu.png", answer: ["Sudu", "digunakan", "untuk", "menikmati", "makanan", "berkuah", "dan", "lembut"] },
+    { image: "images2/kerusi.png", answer: ["Adik", "duduk", "di", "kerusi", "sambil", "membaca", "buku"] },
+    { image: "images2/ketam.png", answer: ["Ketam", "mempunyai", "mata", "kecil", "pada", "bahagian", "atas", "badannya"] },
+    { image: "images2/kuda.png", answer: ["Penunggang", "menaiki", "kuda", "ketika", "pertandingan", "di", "padang"] },
+    { image: "images2/kumbang.png", answer: ["Kumbang", "mencari", "makanan", "pada", "tumbuhan", "dan", "bunga"] },
+    { image: "images2/kunci.png", answer: ["Kunci", "digunakan", "untuk", "membuka", "dan", "mengunci", "pintu"] },
+    { image: "images2/lalat.png", answer: ["Lalat", "sering", "hinggap", "pada", "makanan", "yang", "terbuka"] },
+    { image: "images2/lebah.png", answer: ["Lebah", "membantu", "proses", "pendebungaan", "untuk", "tumbuhan", "membesar"] },
+    { image: "images2/kuali.png", answer: ["Kuali", "perlu", "dibersihkan", "selepas", "digunakan", "untuk", "memasak"] },
+    { image: "images2/kucing.png", answer: ["Kucing", "bergerak", "senyap", "ketika", "memburu", "mangsa", "kecil"] },
+    { image: "images2/kasut.png", answer: ["Adik", "menyimpan", "kasut", "di", "rak", "selepas", "digunakan"] },
+    { image: "images2/katak.png", answer: ["Saya", "melihat", "katak", "melompat", "di", "tepi", "kolam"] },
+    { image: "images2/katil.png", answer: ["Ibu", "membeli", "cadar", "baharu", "untuk", "katil", "di", "bilik"] },
+    { image: "images2/kelapa.png", answer: ["Kelapa", "mempunyai", "kulit", "keras", "dan", "isi", "putih", "yang", "sedap"] },
+    { image: "images2/payung.png", answer: ["Payung", "lipat", "mudah", "dibawa", "ke", "mana-mana", "sahaja"] },
+    { image: "images2/pelangi.png", answer: ["Adik", "teruja", "melihat", "pelangi", "yang", "muncul", "petang", "tadi"] },
+    { image: "images2/pemadam.png", answer: ["Cikgu", "meminta", "murid", "membawa", "pensel", "dan", "pemadam"] },
+    { image: "images2/pembaris.png", answer: ["Saya", "menggunakan", "pembaris", "ketika", "melukis", "garisan", "lurus"] },
+    { image: "images2/tikus.png", answer: ["Kucing", "mengejar", "tikus", "yang", "berada", "di", "dapur"] }
 ];
 
 

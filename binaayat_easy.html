@@ -110,8 +110,8 @@ body {
 
 .he-bloom-logo {
     position: fixed;
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     z-index: 9999;
     opacity: .95;
     pointer-events: none;
@@ -171,38 +171,23 @@ resizeGame();
   <script src="/_sdk/6030e540d4419216.resizing_sdk.js" type="text/javascript" integrity="sha512-b5KWzyoXsbWP4smq4sftIi6Kts4YVBpBsz0BwCViwbBJkK64a3/Z6ZMdWA+qnplNcXw4mhZeqvQi3mOosiRJdA=="></script>
  </head>
 <body data-template-id="__page-root" class="w-full min-h-screen overflow-x-hidden overflow-y-auto relative flex items-center justify-center p-4"><!-- Background elements -->
-  <div class="fixed inset-0 pointer-events-none overflow-hidden" aria-hidden="true"><!-- Sun -->
-   <div class="sun-pulse absolute top-6 left-6 text-10xl sm:text-10xl">
-    🌞
-   </div><!-- Rainbow -->
-   <div class="absolute top-10 right-10 text-10xl float-slow opacity-70">
-    🌈
-   </div><!-- Clouds -->
-   <div class="absolute top-[12%] left-[20%] text-10xl float" style="animation-delay:0.5s">
-    ☁️
-   </div>
-   <div class="absolute top-[8%] left-[55%] text-20xl float" style="animation-delay:1.5s">
-    ☁️
-   </div>
-   <div class="absolute top-[18%] right-[15%] text-20xl float" style="animation-delay:2.5s">
-    ☁️
-   </div><!-- Birds -->
-   <div class="bird absolute top-[6%] text-5xl">
-    🦜 
-   </div>
-   <div class="bird2 absolute top-[18%] text-5xl">
+  </div><!-- Birds -->
+<div class="bird absolute top-[3%] text-5xl">
     🦜
-   </div><!-- Bees -->
-   <div class="bee absolute top-[45%] left-[15%] text-6xl">
+</div>
+<div class="bird2 absolute top-[10%] text-5xl">
+    🦜
+</div><!-- Bees -->
+<div class="bee absolute top-[45%] left-[2%] text-6xl">
     🐝
-   </div>
-   <div class="bee absolute top-[45%] right-[15%] text-6xl" style="animation-delay:2s">
+</div>
+<div class="bee absolute top-[45%] right-[2%] text-6xl" style="animation-delay:2s">
     🐝
-   </div><!-- Ground -->
-   <div class="absolute bottom-0 left-0 right-0 flex justify-around items-end"><span class="sway text-4xl">🌹 </span> <span class="float-slow text-2xl" style="animation-delay:0.3s">🌸</span> <span class="sway text-4xl" style="animation-delay:1.0s">🌹 </span> <span class="float-slow text-2xl" style="animation-delay:0.7s">🌺</span> <span class="sway text-4xl" style="animation-delay:1.0s">🌹 </span> <span class="float-slow text-2xl" style="animation-delay:1.2s">🌸 </span> <span class="sway text-4xl" style="animation-delay:1.0s">🌹 </span>
-   </div>
-   
-  </div><!-- Music toggle --> <button id="music-btn" onclick="toggleMusic()" class="fixed top-4 right-4 z-50 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center text-2xl float" aria-label="Toggle music"> 🎵
+</div><!-- Ground -->
+<div class="absolute bottom-0 left-0 right-0 flex justify-around items-end"><span class="sway text-4xl">🌸 </span> <span class="float-slow text-2xl" style="animation-delay:0.3s">🌺 </span> <span class="sway text-4xl" style="animation-delay:1.0s">🌸 </span> <span class="float-slow text-2xl" style="animation-delay:0.7s">🌺</span> <span class="sway text-4xl" style="animation-delay:1.0s">🌸 </span> <span class="float-slow text-2xl" style="animation-delay:1.2s">🌺 </span> <span class="sway text-4xl" style="animation-delay:1.0s">🌸 </span>
+</div>
+
+</div><!-- Music toggle --> <button id="music-btn" onclick="toggleMusic()" class="fixed top-4 right-4 z-50 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center text-2xl float" aria-label="Toggle music"> 🎵
   
   </button> <!-- Game Card -->
 <main id="game-card"
@@ -317,70 +302,70 @@ onclick="restartGame()">
   <script>
   
         const words = [
-  { image: "images/basikal.png", answer: ["Abu", "naik", "basikal"] },
-  { image: "images/bola.png", answer: ["Ali", "ada", "bola"] },
-  { image: "images/gajah.png", answer: ["Gajah", "ada", "belalai"] },
-  { image: "images/jerung.png", answer: ["Jerung", "hidup", "di", "laut"] },
-  { image: "images/anjing.png", answer: ["Anjing", "makan", "tulang"] },
-  { image: "images/arnab.png", answer: ["Arnab", "suka", "makan", "lobak"] },
-  { image: "images/buku.png", answer: ["Saya", "suka", "membaca", "buku"] },
-  { image: "images/bulan.png", answer: ["Bulan", "ada", "di", "langit"] },
-  { image: "images/daun.png", answer: ["Daun", "berwarna", "hijau"] },
-  { image: "images/harimau.png", answer: ["Harimau", "makan", "daging"] },
-  { image: "images/kapal.png", answer: ["Kapal", "di", "laut"] },
-  { image: "images/katak.png", answer: ["Katak", "pandai", "melompat"] },
-  { image: "images/kelapa.png", answer: ["Air", "kelapa", "segar"] },
-  { image: "images/kereta.png", answer: ["Ayah", "memandu", "kereta"] },
-  { image: "images/ketam.png", answer: ["Ketam", "ada", "sepit"] },
-  { image: "images/kucing.png", answer: ["Kucing", "makan", "ikan"] },
-  { image: "images/kuda.png", answer: ["Kuda", "makan", "rumput"] },
-  { image: "images/lebah.png", answer: ["Lebah", "buat", "madu"] },
-  { image: "images/lemon.png", answer: ["Lemon", "sangat", "masam"] },
-  { image: "images/matahari.png", answer: ["Matahari", "sangat", "panas"] },
-  { image: "images/lobak_merah.png", answer: ["Sayur", "lobak","merah", "berkhasiat"] },
-  { image: "images/monyet.png", answer: ["Monyet", "makan", "pisang"] },
-  { image: "images/pari.png", answer: ["Pari", "sedang", "berenang"] },
-  { image: "images/nanas.png", answer: ["Saya", "makan", "nanas"] },
-  { image: "images/pelangi.png", answer: ["Pelangi", "sangat", "cantik"] },
-  { image: "images/pemadam.png", answer: ["Pemadam", "saya", "cantik"] },
-  { image: "images/pisang.png", answer: ["Pisang", "berwarna", "kuning"] },
-  { image: "images/pokok.png", answer: ["Pokok", "tumbuh", "subur"] },
-  { image: "images/rumah.png", answer: ["Rumah", "saya", "cantik"] },
-  { image: "images/salak.png", answer: ["Saya", "suka","makan","buah","salak"] },
-  { image: "images/sekolah.png", answer: ["Saya", "pergi", "ke", "sekolah"] },
-  { image: "images/semut.png", answer: ["Semut", "itu", "kecil"] },
-  { image: "images/sotong.png", answer: ["Sotong", "hidup", "di", "laut"] },
-  { image: "images/terung.png", answer: ["Terung", "berwarna", "ungu"] },
-    { image: "images/tomato.png", answer: ["Tomato", "berwarna", "merah"] }, 
-      { image: "images/baju.png", answer: ["Baju", "saya", "bersih"] }, 
-      { image: "images/seluar.png", answer: ["Seluar", "Ali", "koyak"] }, 
-      { image: "images/mata.png", answer: ["Mata", "Siti", "berwarna", "coklat"] }, 
-      { image: "images/rambut.png", answer: ["Adik", "menyikat", "rambut"] }, 
-       { image: "images/telinga.png", answer: ["Doktor", "memeriksa", "telinga", "Amin"] }, 
-        { image: "images/tangan.png", answer: ["Mia", "mencuci","tangan"] },
-         { image: "images/stoking.png", answer: ["Stoking", "Mia", "bersih"] }, 
-         { image: "images/tembikai.png", answer: ["Isi", "tembikai", "berwarna", "merah"] }, 
-          { image: "images/tikus.png", answer: ["Tikus", "berlari", "laju"] }, 
-           { image: "images/timun.png", answer: ["Ibu", "memotong", "timun"] }, 
-            { image: "images/tingkap.png", answer: ["Ina", "membuka", "tingkap"] }, 
-   { image: "images/topi.png", answer: ["Adik", "memakai", "topi", "biru"] }, 
-     { image: "images/tupai.png", answer: ["Tupai", "makan", "buah", "rambutan"] },
-       { image: "images/udang.png", answer: ["Nelayan" , "menangkap", "udang"] },
-         { image: "images/ular.png", answer: ["Ular", "tidak", "mempunyai", "kaki"] },
-         { image: "images/garpu.png", answer: ["Abu", "memegang", "garpu"] },
-{ image: "images/sudu.png", answer: ["Sudu", "di", "dalam", "mangkuk"] },
-{ image: "images/pinggan.png", answer: ["Pinggan", "itu", "bersih"] },
-{ image: "images/mangkuk.png", answer: ["Mangkuk", "berwarna", "biru"] },
-{ image: "images/kuali.png", answer: ["Ibu", "menggunakan", "kuali"] },
-{ image: "images/kasut.png", answer: ["Kasut", "saya", "baharu"] },
-{ image: "images/selipar.png", answer: ["Selipar", "saya","warna","biru"] },
-{ image: "images/katil.png", answer: ["Adik", "tidur", "di", "katil"] },
-{ image: "images/kerusi.png", answer: ["Kerusi", "itu", "rosak"] },
-{ image: "images/meja.png", answer: ["Buku", "di", "meja"] },
-{ image: "images/kumbang.png", answer: ["Kumbang", "di", "daun"] },
-{ image: "images/kunci.png", answer: ["Kunci", "di", "dalam", "beg"] },
-{ image: "images/lalat.png", answer: ["Lalat", "hinggap", "di", "meja"] },
-         
+    { image: "images2/basikal.png", answer: ["Abu", "naik", "basikal"] },
+    { image: "images2/bola.png", answer: ["Ali", "ada", "bola"] },
+    { image: "images2/gajah.png", answer: ["Gajah", "ada", "belalai"] },
+    { image: "images2/jerung.png", answer: ["Jerung", "hidup", "di", "laut"] },
+    { image: "images2/anjing.png", answer: ["Anjing", "makan", "tulang"] },
+    { image: "images2/arnab.png", answer: ["Arnab", "suka", "makan", "lobak"] },
+    { image: "images2/buku.png", answer: ["Saya", "suka", "membaca", "buku"] },
+    { image: "images2/bulan.png", answer: ["Bulan", "ada", "di", "langit"] },
+    { image: "images2/daun.png", answer: ["Daun", "berwarna", "hijau"] },
+    { image: "images2/harimau.png", answer: ["Harimau", "makan", "daging"] },
+    { image: "images2/kapal.png", answer: ["Kapal", "di", "laut"] },
+    { image: "images2/katak.png", answer: ["Katak", "pandai", "melompat"] },
+    { image: "images2/kelapa.png", answer: ["Air", "kelapa", "segar"] },
+    { image: "images2/kereta.png", answer: ["Ayah", "memandu", "kereta"] },
+    { image: "images2/ketam.png", answer: ["Ketam", "ada", "sepit"] },
+    { image: "images2/kucing.png", answer: ["Kucing", "makan", "ikan"] },
+    { image: "images2/kuda.png", answer: ["Kuda", "makan", "rumput"] },
+    { image: "images2/lebah.png", answer: ["Lebah", "buat", "madu"] },
+    { image: "images2/lemon.png", answer: ["Lemon", "sangat", "masam"] },
+    { image: "images2/matahari.png", answer: ["Matahari", "sangat", "panas"] },
+    { image: "images2/lobak_merah.png", answer: ["Sayur", "lobak", "merah", "berkhasiat"] },
+    { image: "images2/monyet.png", answer: ["Monyet", "makan", "pisang"] },
+    { image: "images2/pari.png", answer: ["Pari", "sedang", "berenang"] },
+    { image: "images2/nanas.png", answer: ["Saya", "makan", "nanas"] },
+    { image: "images2/pelangi.png", answer: ["Pelangi", "sangat", "cantik"] },
+    { image: "images2/pemadam.png", answer: ["Pemadam", "saya", "cantik"] },
+    { image: "images2/pisang.png", answer: ["Pisang", "berwarna", "kuning"] },
+    { image: "images2/pokok.png", answer: ["Pokok", "tumbuh", "subur"] },
+    { image: "images2/rumah.png", answer: ["Rumah", "saya", "cantik"] },
+    { image: "images2/salak.png", answer: ["Saya", "suka", "makan", "buah", "salak"] },
+    { image: "images2/sekolah.png", answer: ["Saya", "pergi", "ke", "sekolah"] },
+    { image: "images2/semut.png", answer: ["Semut", "itu", "kecil"] },
+    { image: "images2/sotong.png", answer: ["Sotong", "hidup", "di", "laut"] },
+    { image: "images2/terung.png", answer: ["Terung", "berwarna", "ungu"] },
+    { image: "images2/tomato.png", answer: ["Tomato", "berwarna", "merah"] },
+    { image: "images2/baju.png", answer: ["Baju", "saya", "bersih"] },
+    { image: "images2/seluar.png", answer: ["Seluar", "Ali", "koyak"] },
+    { image: "images2/mata.png", answer: ["Mata", "Siti", "berwarna", "coklat"] },
+    { image: "images2/rambut.png", answer: ["Adik", "menyikat", "rambut"] },
+    { image: "images2/telinga.png", answer: ["Doktor", "memeriksa", "telinga", "Amin"] },
+    { image: "images2/tangan.png", answer: ["Mia", "mencuci", "tangan"] },
+    { image: "images2/stoking.png", answer: ["Stoking", "Mia", "bersih"] },
+    { image: "images2/tembikai.png", answer: ["Isi", "tembikai", "berwarna", "merah"] },
+    { image: "images2/tikus.png", answer: ["Tikus", "berlari", "laju"] },
+    { image: "images2/timun.png", answer: ["Ibu", "memotong", "timun"] },
+    { image: "images2/tingkap.png", answer: ["Ina", "membuka", "tingkap"] },
+    { image: "images2/topi.png", answer: ["Adik", "memakai", "topi", "biru"] },
+    { image: "images2/tupai.png", answer: ["Tupai", "makan", "buah", "rambutan"] },
+    { image: "images2/udang.png", answer: ["Nelayan", "menangkap", "udang"] },
+    { image: "images2/ular.png", answer: ["Ular", "tidak", "mempunyai", "kaki"] },
+    { image: "images2/garpu.png", answer: ["Abu", "memegang", "garpu"] },
+    { image: "images2/sudu.png", answer: ["Sudu", "di", "dalam", "mangkuk"] },
+    { image: "images2/pinggan.png", answer: ["Pinggan", "itu", "bersih"] },
+    { image: "images2/mangkuk.png", answer: ["Mangkuk", "berwarna", "biru"] },
+    { image: "images2/kuali.png", answer: ["Ibu", "menggunakan", "kuali"] },
+    { image: "images2/kasut.png", answer: ["Kasut", "saya", "baharu"] },
+    { image: "images2/selipar.png", answer: ["Selipar", "saya", "warna", "biru"] },
+    { image: "images2/katil.png", answer: ["Adik", "tidur", "di", "katil"] },
+    { image: "images2/kerusi.png", answer: ["Kerusi", "itu", "rosak"] },
+    { image: "images2/meja.png", answer: ["Buku", "di", "meja"] },
+    { image: "images2/kumbang.png", answer: ["Kumbang", "di", "daun"] },
+    { image: "images2/kunci.png", answer: ["Kunci", "di", "dalam", "beg"] },
+    { image: "images2/lalat.png", answer: ["Lalat", "hinggap", "di", "meja"] },
+    
 ];
 
         const btnColors = [

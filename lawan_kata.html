@@ -165,15 +165,18 @@ body {
 
 /* KOTAK SOALAN */
 #question-image {
-    width: 100% !important;
-    max-width: 650px !important;
-
+    width: min(78%, 600px) !important;
+    max-width: 600px !important;
+    
+    min-height: clamp(180px, 25vw, 240px) !important;
+    height: auto !important;
+    
     margin-left: auto !important;
     margin-right: auto !important;
-
+    
     left: auto !important;
     transform: none !important;
-
+    
     box-sizing: border-box;
 }
 
@@ -197,14 +200,13 @@ body {
 
 #answers button {
     width: 100% !important;
-
-    min-height: clamp(50px, 8vw, 80px) !important;
+    min-height: clamp(58px, 9vw, 90px) !important;
 
     padding:
         clamp(8px, 2vw, 16px)
         clamp(8px, 2vw, 20px);
 
-    font-size: clamp(18px, 3vw, 30px) !important;
+    font-size: clamp(24px, 3.5vw, 34px) !important;
 
     line-height: 1.1;
     box-sizing: border-box;
@@ -267,7 +269,7 @@ body {
   <script src="/_sdk/935a53bc2e11fb8d.data_sdk.js" type="text/javascript" integrity="sha512-qr2oyPnEys1WebcOABaRh6hG77r5PWpqeWW6JTKbRJqly/INsfBi31CVNlTmHqjgeLpkVmmHZJUdxSx/32tOFQ=="></script>
   <script src="/_sdk/6030e540d4419216.resizing_sdk.js" type="text/javascript" integrity="sha512-b5KWzyoXsbWP4smq4sftIi6Kts4YVBpBsz0BwCViwbBJkK64a3/Z6ZMdWA+qnplNcXw4mhZeqvQi3mOosiRJdA=="></script>
  </head>
-<body data-template-id="__page-root" class="w-full min-h-screen overflow-x-hidden overflow-y-auto relative flex items-center justify-center p-4"><!-- Background elements -->
+ <body data-template-id="__page-root" class="w-full min-h-screen overflow-hidden relative flex items-center justify-center p-4"><!-- Background elements -->
 </div><!-- Birds -->
 <div class="bird absolute top-[3%] text-5xl">
     🦜
@@ -281,7 +283,7 @@ body {
 <div class="bee absolute top-[45%] right-[2%] text-6xl" style="animation-delay:2s">
     🐝
 </div><!-- Ground -->
-<div class="absolute bottom-0 left-0 right-0 flex justify-around items-end"><span class="sway text-4xl">🌸 </span> <span class="float-slow text-2xl" style="animation-delay:0.3s">🌺 </span> <span class="sway text-4xl" style="animation-delay:1.0s">🌸 </span> <span class="float-slow text-2xl" style="animation-delay:0.7s">🌺</span> <span class="sway text-4xl" style="animation-delay:1.0s">🌸 </span> <span class="float-slow text-2xl" style="animation-delay:1.2s">🌺 </span> <span class="sway text-4xl" style="animation-delay:1.0s">🌸 </span>
+<div class="absolute bottom-0 left-0 right-0 flex justify-around items-end"><span class="sway text-4xl">🌸 </span> <span class="float-slow text-2xl" style="animation-delay:0.3s">🌺 </span> <span class="sway text-4xl" style="animation-delay:1.0s">🌸 </span> <span class="float-slow text-2xl" style="animation-delay:0.7s">🌺</span> <span class="sway text-4xl" style="animation-delay:1.0s"0s>🌸 </span> <span class="float-slow text-2xl" style="animation-delay:1.2s">🌺 </span> <span class="sway text-4xl" style="animation-delay:1.0s">🌸 </span>
 </div>
 
 </div><!-- Music toggle --> <button id="music-btn" onclick="toggleMusic()" class="fixed top-4 right-4 z-50 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center text-2xl float" aria-label="Toggle music"> 🎵
@@ -292,7 +294,7 @@ class="relative -mt-50 z-50 w-full max-w-x1 mx-auto bg-transparent rounded-none 
 
 
 <!-- SCORE + QUESTION -->
-<div class="flex items-center justify-between bg-white rounded-xl shadow-xl w-[120%] mx-auto relative left-1/2 -translate-x-1/2 -translate-y-6 px-4 mb-4">
+<div class="flex items-center justify-between bg-white rounded-xl shadow-xl w-[120%] mx-auto relative left-1/2 -translate-x-1/2 -translate-y-6 px-4 py-2 mb-4">
     
     <div class="flex items-center gap-2">
         <span class="text-3xl">📖</span>
