@@ -132,6 +132,37 @@ body {
     align-content: flex-start;
     overflow: hidden;
 }
+
+/* ===== KOTAK SOALAN + MARKAH ===== */
+#game-card>div.flex.items-center.justify-between {
+    width: 100% !important;
+    max-width: 100% !important;
+    
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    
+    align-items: center !important;
+    justify-content: space-between !important;
+    
+    box-sizing: border-box !important;
+    white-space: nowrap !important;
+}
+
+#game-card>div.flex.items-center.justify-between>div {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+}
+
+#game-card>div.flex.items-center.justify-between span {
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+}
 </style>
 
 
@@ -195,7 +226,7 @@ class="relative -mt-50 z-50 w-full max-w-x1 mx-auto bg-transparent rounded-none 
 
 
 <!-- SCORE + QUESTION -->
-<<div class="flex items-center justify-between bg-white rounded-xl shadow-xl w-full mx-auto relative -translate-y-6 px-4 mb-4">
+<div class="flex items-center justify-between bg-white rounded-xl shadow-xl w-[120%] mx-auto relative left-1/2 -translate-x-1/2 -translate-y-6 px-4 py-2 mb-4">
     
     <div class="flex items-center gap-2">
         <span class="text-3xl">📖</span>
