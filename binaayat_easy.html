@@ -2,14 +2,14 @@
 <html lang="ms">
  <head><script>window["__codeletBootstrap__"]=JSON.parse('{"A":"A","B":"20260730-05-6814160","C":{"Abril Fatface":"YACgEZbkUVE,0","Alfa Slab One":"YACgEYS9sJU,0","Anton":"YACgEcYqQ-A,0","Archivo":"YAHO2-t-jNE,0","Arial":"YAGyDvJ_4Ts,0","Bebas Neue":"YACgESME5ew,0","Broken Glyph":"YADZ-exUkv0,0","Canva Sans":"YAFdJjTk5UU,0","Caveat":"YALBs2ploWQ,0","Comic Sans MS":"YAHO2VMiyZo,0","Cormorant Garamond":"YAFdJhX-538,0","Courier New":"YAGzXiGs0_8,0","DM Sans":"YAD1aU3sLnI,0","DM Serif Display":"YAD1aYG82rc,0","Forum":"YACgEcnnqB4,0","Fraunces":"YAEul-FRQw4,0","Georgia":"YAGzXkO0pEM,0","Ghost Mono":"YAHO2EIdDP0,0","Helvetica Neue":"YAFcf6CtJfI,0","Impact":"YAFcfnjI7Vk,0","Inter":"YAFdJvSyp_k,3","Iowan Old Style":"YAGNIFa8j9o,0","Jacques Francois":"YAHO2a5g66Q,0","JetBrains Mono":"YADy3sAhvXQ,0","Oleo Script":"YACgEQQ14jI,0","Playfair Display":"YAFdJhem5V8,1","Poppins":"YAE5fPSY9qM,0","Press Start 2P":"YAFyGr-8pmQ,0","Source Sans 3":"YAG4lO1Mj10,0","Space Grotesk":"YAHO2sjPCSM,0","Times New Roman":"YAGzXW3gftg,0","Times":"YAGzXW3gftg,0","Trebuchet MS":"YAFcfrglpVA,0","Verdana":"YAGzXTctYtQ,0","Work Sans":"YAGXhLOKv44,0","Yellowtail":"YACgEYG4kG4,0"}}');</script><script src="/_sdk/a27874207e105461.telemetry_sdk.js" integrity="sha512-wgI5N9F7oA2h3vH+benMYIv4wGqTct4nKWakqgvfgRyBLmfYq8q/fi6gkfWKd2hMsyN+VQ/qOAOpxybwkcoxlA=="></script>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Bina Ayat_Easy</title>
   <script src="https://cdn.tailwindcss.com/3.4.17"></script>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
   <script src="/_sdk/b23f1f6ec78e9bd4.editing_sdk.js" integrity="sha512-WFdQutvUZzxrmcHkL8cbfuFDTeF8Cn8Bt3yqX/a/OdiqPz/t9UcjsIsZK7D+tMTmC2JTwhwRJNyfcHmIWhG8Wg=="></script>
   <style>
 body {
-    background: url("malay.png") no-repeat center center fixed;
+    background: url("malay.png") no-repeat center center scroll;
     background-size: cover;
 }
         * { font-family: 'Fredoka', sans-serif; }
@@ -131,6 +131,10 @@ body {
     height: 190px;
     align-content: flex-start;
     overflow: hidden;
+    
+    /* Turunkan butang perkataan sedikit */
+    padding-top: 15px;
+    box-sizing: border-box;
 }
 
 /* ===== KOTAK SOALAN + MARKAH ===== */
@@ -164,60 +168,9 @@ body {
     flex-shrink: 0 !important;
 }
 </style>
-
-
-<script>
-    function resizeGame() {
-    
-    const game = document.getElementById("game-card");
-    
-    if (!game) return;
-    
-    /* SAIZ ASAL */
-    const baseWidth = 700;
-    
-    /* LEBAR SKRIN */
-    const availableWidth = window.innerWidth - 20;
-    
-    /* SCALE IKUT LEBAR */
-    let scale = availableWidth / baseWidth;
-    
-    /* JANGAN LEBIH BESAR DARIPADA SAIZ ASAL */
-    scale = Math.min(scale, 1);
-    
-    /* APPLY SCALE */
-    game.style.zoom = scale;
-}
-
-/* UPDATE BILA SKRIN BERUBAH */
-window.addEventListener("resize", resizeGame);
-window.addEventListener("orientationchange", resizeGame);
-
-resizeGame();
-
-/* ===== SOALAN + MARKAH ===== */
-#game - card > div.flex.items - center.justify - between {
-    display: flex!important;
-    flex - direction: row!important;
-    align - items: center!important;
-    justify - content: space - between!important;
-    flex - wrap: nowrap!important;
-    box - sizing: border - box!important;
-}
-
-#game - card > div.flex.items - center.justify - between > div: first - child {
-    flex: 0 0 auto!important;
-    white - space: nowrap!important;
-}
-
-#game - card > div.flex.items - center.justify - between > div: last - child {
-    flex: 0 0 auto!important;
-    white - space: nowrap!important;
-    margin - left: 35 px!important;
-}
 </script>
 
-    </style>
+    
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js" type="text/javascript"></script>
   <script src="/_sdk/935a53bc2e11fb8d.data_sdk.js" type="text/javascript" integrity="sha512-qr2oyPnEys1WebcOABaRh6hG77r5PWpqeWW6JTKbRJqly/INsfBi31CVNlTmHqjgeLpkVmmHZJUdxSx/32tOFQ=="></script>
   <script src="/_sdk/6030e540d4419216.resizing_sdk.js" type="text/javascript" integrity="sha512-b5KWzyoXsbWP4smq4sftIi6Kts4YVBpBsz0BwCViwbBJkK64a3/Z6ZMdWA+qnplNcXw4mhZeqvQi3mOosiRJdA=="></script>
@@ -247,7 +200,7 @@ class="relative -mt-50 z-50 w-full max-w-x1 mx-auto bg-transparent rounded-none 
 
 
 <!-- SCORE + QUESTION -->
-<div class="flex items-center justify-between bg-white rounded-xl shadow-xl w-[100%] mx-auto relative left-1/2 -translate-x-1/2 -translate-y-6 px-4 py-2 mb-4">
+<div class="flex items-center justify-between bg-white rounded-xl shadow-xl w-[124%] mx-auto relative left-1/2 -translate-x-1/2 -translate-y-6 px-4 py-2 mb-4">
     
     <div class="flex items-center gap-2">
         <span class="text-3xl">📖</span>
@@ -358,7 +311,7 @@ onclick="restartGame()">
     { image: "images2/bola.png", answer: ["Ali", "ada", "bola"] },
     { image: "images2/gajah.png", answer: ["Gajah", "ada", "belalai"] },
     { image: "images2/jerung.png", answer: ["Jerung", "hidup", "di", "laut"] },
-    { image: "images2/anjing.png", answer: ["Anjing", "makan", "tulang"] },
+    { image: "images2/anjing.png", answer: ["Anjing", "itu", "sedang", "tidur"] },
     { image: "images2/arnab.png", answer: ["Arnab", "suka", "makan", "lobak"] },
     { image: "images2/buku.png", answer: ["Saya", "suka", "membaca", "buku"] },
     { image: "images2/bulan.png", answer: ["Bulan", "ada", "di", "langit"] },
@@ -412,8 +365,8 @@ onclick="restartGame()">
     { image: "images2/kasut.png", answer: ["Kasut", "saya", "baharu"] },
     { image: "images2/selipar.png", answer: ["Selipar", "saya", "warna", "biru"] },
     { image: "images2/katil.png", answer: ["Adik", "tidur", "di", "katil"] },
-    { image: "images2/kerusi.png", answer: ["Kerusi", "itu", "rosak"] },
-    { image: "images2/meja.png", answer: ["Buku", "di", "meja"] },
+    { image: "images2/kerusi.png", answer: ["Amir", "duduk", "menggunakan", "kerusi"] },
+    { image: "images2/meja.png", answer: ["Buku", "di", "atas", "meja"] },
     { image: "images2/kumbang.png", answer: ["Kumbang", "di", "daun"] },
     { image: "images2/kunci.png", answer: ["Kunci", "di", "dalam", "beg"] },
     { image: "images2/lalat.png", answer: ["Lalat", "hinggap", "di", "meja"] },
