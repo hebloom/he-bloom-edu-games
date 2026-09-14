@@ -91,32 +91,6 @@ body {
 }
 
 
-/* =========================================
-GAME CARD - DESIGN ASAL
-========================================= */
-
-#game-card {
-width: 700px;
-height: 820px;
-
-margin: 0 auto;
-padding: 40px 70px;
-
-box-sizing: border-box;
-
-background: rgba(220, 245, 255, 0.25);
-backdrop-filter: blur(3px);
--webkit-backdrop-filter: blur(3px);
-
-border: 2px solid rgba(255, 255, 255, 0.9);
-border-radius: 35px;
-
-overflow: hidden;
-
-box-shadow:
-0 0 0 2px rgba(255, 255, 255, 0.25),
-0 10px 30px rgba(255, 255, 255, 0.20);
-}
 
 
 /* =========================================
@@ -219,9 +193,8 @@ resizeGame();
 <main id="game-card"
 class="relative -mt-50 z-50 w-full max-w-x1 mx-auto bg-transparent rounded-none shadow-none pt-2 px-0 pb-8 fade-in">
 
-
 <!-- SCORE + QUESTION -->
-<<div class="flex items-center justify-between bg-white rounded-xl shadow-xl w-full mx-auto relative -translate-y-6 px-4 mb-4">
+<div class="flex items-center justify-between bg-white rounded-xl shadow-xl w-[100%] mx-auto relative left-1/2 -translate-x-1/2 -translate-y-6 px-4 py-2 mb-4">
     
     <div class="flex items-center gap-2">
         <span class="text-3xl">📖</span>
