@@ -195,13 +195,25 @@ window.addEventListener("orientationchange", resizeGame);
 
 resizeGame();
 
+/* ===== SOALAN + MARKAH ===== */
 #game - card > div.flex.items - center.justify - between {
-    gap: 18 px!important;
+    display: flex!important;
+    flex - direction: row!important;
+    align - items: center!important;
+    justify - content: space - between!important;
+    flex - wrap: nowrap!important;
+    box - sizing: border - box!important;
 }
 
-#game - card > div.flex.items - center.justify - between > div {
+#game - card > div.flex.items - center.justify - between > div: first - child {
+    flex: 0 0 auto!important;
     white - space: nowrap!important;
-    flex - shrink: 0!important;
+}
+
+#game - card > div.flex.items - center.justify - between > div: last - child {
+    flex: 0 0 auto!important;
+    white - space: nowrap!important;
+    margin - left: 35 px!important;
 }
 </script>
 
