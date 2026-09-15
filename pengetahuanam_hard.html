@@ -909,6 +909,14 @@ questions = shuffle([...questionBank]).slice(0, 15);
   `btn-answer ${btnColors[i]} w-[80%] mx-auto flex items-center justify-center text-center text-white font-bold text-1xl py-4 px-1 rounded-3xl shadow-md`;
     
     btn.textContent = opt;
+    requestAnimationFrame(() => {
+    let size = 28;
+    
+    while (btn.scrollWidth > btn.clientWidth && size > 16) {
+        size -= 1;
+        btn.style.fontSize = size + "px";
+    }
+});
     
     btn.onclick = () => checkAnswer(opt, q.answer, btn);
     
