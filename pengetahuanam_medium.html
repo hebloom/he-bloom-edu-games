@@ -15,7 +15,7 @@
   <style>
   
 body {
-    background: url("malay.png") no-repeat center center fixed;
+    background: url("malay.png") no-repeat center center;
     background-size: cover;
 }
         * { font-family: 'Fredoka', sans-serif; }
@@ -82,18 +82,21 @@ body {
 .btn-answer:active {
     transform: scale(0.95);
 }
-#game-card{
-  width: 96%;
-  height: 96vh;
+#game-card {
+  width: min(96%, 700px);
+  height: auto;
+  min-height: 0;
   max-width: 700px;
-    padding: 70px 70px;
-    background: rgba(255,255,255,0.20);
-    backdrop-filter: blur(1px);
-    -webkit-backdrop-filter: blur(100px);
-
-    border: 1px solid #ffffff;
-    border-radius: 30px;
-    box-shadow: 0 15px 15px rgba(0,0,0,0.18);
+  padding: 70px 70px;
+  box-sizing: border-box;
+  
+  background: rgba(255, 255, 255, 0.20);
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
+  
+  border: 1px solid #ffffff;
+  border-radius: 30px;
+  box-shadow: 0 15px 15px rgba(0, 0, 0, 0.18);
 }
 .he-bloom-logo {
     position: fixed;
@@ -108,13 +111,33 @@ body {
     bottom: 18px;
     right: 18px;
 }
+/* UNIVERSAL RESPONSIVE - BUTANG JAWAPAN SAHAJA */
+
+#answers {
+    gap: clamp(10px, 2.5vw, 20px);
+}
+
+#answers .btn-answer {
+    width: 100% !important;
+    height: clamp(68px, 10vw, 80px) !important;
+
+    padding:
+        clamp(8px, 2vw, 12px)
+        clamp(8px, 2vw, 16px);
+
+    font-size: clamp(20px, 3vw, 28px) !important;
+    line-height: 1.1;
+
+    box-sizing: border-box;
+    white-space: normal;
+}
 
     </style>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js" type="text/javascript"></script>
   <script src="/_sdk/935a53bc2e11fb8d.data_sdk.js" type="text/javascript" integrity="sha512-qr2oyPnEys1WebcOABaRh6hG77r5PWpqeWW6JTKbRJqly/INsfBi31CVNlTmHqjgeLpkVmmHZJUdxSx/32tOFQ=="></script>
   <script src="/_sdk/6030e540d4419216.resizing_sdk.js" type="text/javascript" integrity="sha512-b5KWzyoXsbWP4smq4sftIi6Kts4YVBpBsz0BwCViwbBJkK64a3/Z6ZMdWA+qnplNcXw4mhZeqvQi3mOosiRJdA=="></script>
  </head>
- <body data-template-id="__page-root" class="w-full min-h-screen overflow-hidden relative flex items-center justify-center p-4"><!-- Background elements -->
+<body data-template-id="__page-root" class="w-full min-h-screen overflow-x-hidden overflow-y-auto relative flex items-center justify-center p-4"><!-- Background elements -->
 </div><!-- Birds -->
 <div class="bird absolute top-[3%] text-5xl">
     🦜
@@ -164,11 +187,13 @@ max-w-xl mx-auto bg-transparent rounded-none shadow-none pt-2 px-0 pb-8 fade-in"
    </div> 
 <!-- Question -->
 <div id="question-area" class="text-center mb-6">
-<div class="w-120%] mx-auto bg-white
+<div class="w-[120%] mx-auto bg-white
             rounded-3xl
             border-4 border-black
             shadow-xl
-            px-1 py-5
+            h-[160px]
+            flex items-center justify-center
+            px-4
             relative left-1/2 -translate-x-1/2">
 
         <p id="question-text"
@@ -184,7 +209,7 @@ max-w-xl mx-auto bg-transparent rounded-none shadow-none pt-2 px-0 pb-8 fade-in"
 </div>
     
    </div><!-- Answer Buttons -->
-  <div id="answers" class="grid grid-cols-1 sm:grid-cols-8 gap-3 w-[100%] mx-auto relative left-1/2 -translate-x-1/2">
+<div id="answers" class="grid grid-cols-2 gap-4 w-[110%] mx-auto relative left-1/2 -translate-x-1/2">
       
    </div><!-- Feedback -->
    <div id="feedback" class="hidden absolute inset-0 rounded-1xl flex items-center justify-center /9000 backdrop-blur">
@@ -902,7 +927,7 @@ questions = shuffle([...questionBank]).slice(0, 15);
     const btn = document.createElement("button");
     
     btn.className =
-  `btn-answer ${btnColors[i]} w-[80%] mx-auto flex items-center justify-center text-center text-white font-bold text-1xl py-4 px-1 rounded-3xl shadow-md`;
+    `btn-answer ${btnColors[i]} w-full h-[80px] mx-auto flex items-center justify-center text-center text-white font-bold text-2xl py-2 px-3 rounded-3xl shadow-md`;
     
     btn.textContent = opt;
     
