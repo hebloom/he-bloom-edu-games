@@ -51,9 +51,27 @@ body {
         @keyframes beeFly { 0%,100%{ transform: translate(0,0) } 25%{ transform: translate(30px,-20px) } 50%{ transform: translate(-10px,-30px) } 75%{ transform: translate(20px,10px) } }
         @keyframes sway { 0%,100%{ transform: rotate(-2deg) } 50%{ transform: rotate(2deg) } }
         @keyframes sunPulse { 0%,100%{ transform: scale(1) } 50%{ transform: scale(1.05) } }
-        @keyframes zoomIn { 0%{ transform: scale(0.5); opacity:0 } 100%{ transform: scale(1); opacity:1 } }
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    transform: none;
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
         @keyframes shake { 0%,100%{ transform: translateX(0) } 20%{ transform: translateX(-8px) } 40%{ transform: translateX(8px) } 60%{ transform: translateX(-5px) } 80%{ transform: translateX(5px) } }
-        @keyframes fadeIn { from{ opacity:0; transform:translateY(10px) } to{ opacity:1; transform:translateY(0) } }
+     @keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: none;
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
         
         .float { animation: float 3s ease-in-out infinite; }
         .float-slow { animation: floatSlow 4s ease-in-out infinite; }
@@ -63,7 +81,10 @@ body {
         .sway { animation: sway 3s ease-in-out infinite; }
         .sun-pulse { animation: sunPulse 4s ease-in-out infinite; }
         .zoom-in { animation: zoomIn 0.3s ease-out; }
-        .shake { animation: shake 0.4s ease-out; }
+      .shake {
+  animation: none !important;
+  transform: none !important;
+}
         .fade-in { animation: fadeIn 0.4s ease-out; }
         
           .btn-answer {
@@ -89,14 +110,16 @@ body {
   /* Kekalkan saiz asal */
   transform: none;
 }
+
+
 #game-card{
   width: 96%;
   height: 96vh;
   max-width: 700px;
     padding: 70px 70px;
     background: rgba(255,255,255,0.20);
-    backdrop-filter: blur(1px);
-    -webkit-backdrop-filter: blur(100px);
+    backdrop-filter: blur(3px);
+-webkit-backdrop-filter: blur(3px);
 
     border: 1px solid #ffffff;
     border-radius: 30px;
@@ -104,8 +127,8 @@ body {
 }
 .he-bloom-logo {
     position: fixed;
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     z-index: 9999;
     opacity: .95;
     pointer-events: none;
@@ -145,7 +168,7 @@ class="relative z-50 w-[100%]
 max-w-xl mx-auto bg-transparent rounded-none shadow-none pt-2 px-0 pb-8 fade-in">
 
 <!-- SCORE + QUESTION -->
-<div class="flex items-center justify-between bg-white rounded-xl shadow-xl w-[120%] mx-auto relative left-1/2 -translate-x-1/2 -translate-y-12 px-4 mb-4">
+<div class="flex items-center justify-between bg-white rounded-xl shadow-xl w-[120%] mx-auto relative left-1/2 -translate-x-1/2 -translate-y-12 px-4 py-2 mb-4">
     
     <div class="flex items-center gap-2">
     <span class="text-3xl">📖</span>
@@ -169,7 +192,9 @@ max-w-xl mx-auto bg-transparent rounded-none shadow-none pt-2 px-0 pb-8 fade-in"
             rounded-3xl
             border-4 border-black
             shadow-xl
-            px-1 py-5
+            h-[160px]
+            flex items-center justify-center
+            px-4
             relative left-1/2 -translate-x-1/2">
 
         <p id="question-text"
@@ -192,7 +217,7 @@ max-w-xl mx-auto bg-transparent rounded-none shadow-none pt-2 px-0 pb-8 fade-in"
     <p id="feedback-text" class="text-3xl sm:text-4xl font-bold text-center zoom-in"></p>
    </div>
    
-   <div class="flex flex-col items-center mt-8 mb-2">
+   <div class="flex flex-col items-center mt-16 mb-2">
 
 <button
 onclick="window.location.href='melayu.html'"
@@ -894,8 +919,9 @@ questions = shuffle([...questionBank]).slice(0, 15);
   options.forEach((opt, i) => {
     const btn = document.createElement("button");
     
-    btn.className =
-  `btn-answer ${btnColors[i]} w-[80%] mx-auto flex items-center justify-center text-center text-white font-bold text-2xl py-4 px-1 rounded-3xl shadow-md`;
+    
+btn.className =
+  `btn-answer ${btnColors[i]} w-[85%] mx-auto flex items-center justify-center text-center text-white font-bold text-2xl py-3 px-1 rounded-3xl shadow-md`;
     
     btn.textContent = opt;
     
