@@ -129,6 +129,26 @@ body {
     bottom: 18px;
     right: 18px;
 }
+/* UNIVERSAL RESPONSIVE - BUTANG JAWAPAN SAHAJA */
+
+#answers {
+    gap: clamp(10px, 2.5vw, 20px);
+}
+
+#answers .btn-answer {
+    width: 100% !important;
+    height: clamp(68px, 10vw, 80px) !important;
+
+    padding:
+        clamp(8px, 2vw, 12px)
+        clamp(8px, 2vw, 16px);
+
+    font-size: clamp(20px, 3vw, 28px) !important;
+    line-height: 1.1;
+
+    box-sizing: border-box;
+    white-space: normal;
+}
 
 
     </style>
@@ -209,7 +229,7 @@ max-w-xl mx-auto bg-transparent rounded-none shadow-none pt-2 px-0 pb-8 fade-in"
 </div>
     
    </div><!-- Answer Buttons -->
-<div id="answers" class="grid grid-cols-2 gap-4 w-[100%] mx-auto relative left-1/2 -translate-x-1/2">
+<div id="answers" class="grid grid-cols-2 gap-4 w-[112%] mx-auto relative left-1/2 -translate-x-1/2">
       
    </div><!-- Feedback -->
   <div id="feedback" class="hidden absolute inset-0 flex items-center justify-center">
