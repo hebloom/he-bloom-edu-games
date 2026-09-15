@@ -62,7 +62,7 @@ body {
         
         .btn-answer { transition: transform 0.15s, box-shadow 0.15s; }
         .btn-answer:hover { transform: scale(1.05); }
-      .btn-answer:active { transform: none !important; }
+    .btn-answer:active { transform: scale(0.95); }
 #game-card {
     width: 98%;
     max-width: 800px;
@@ -97,8 +97,8 @@ body {
 }
 .he-bloom-logo {
     position: fixed;
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     z-index: 9999;
     opacity: .95;
     pointer-events: none;
@@ -192,7 +192,13 @@ body {
 <div class="absolute bottom-0 left-0 right-0 flex justify-around items-end"><span class="sway text-4xl">🌸 </span> <span class="float-slow text-2xl" style="animation-delay:0.3s">🌺 </span> <span class="sway text-4xl" style="animation-delay:1.0s">🌸 </span> <span class="float-slow text-2xl" style="animation-delay:0.7s">🌺</span> <span class="sway text-4xl" style="animation-delay:1.0s">🌸 </span> <span class="float-slow text-2xl" style="animation-delay:1.2s">🌺 </span> <span class="sway text-4xl" style="animation-delay:1.0s">🌸 </span>
 </div>
 
-</div><!-- Music toggle --> <button id="music-btn" onclick="toggleMusic()" class="fixed top-4 right-4 z-50 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center text-2xl float" aria-label="Toggle music"> 🎵
+</div><!-- Music toggle -->
+<button id="music-btn"
+        onclick="toggleMusic()"
+        class="absolute top-4 right-4 z-50 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center text-2xl"
+        aria-label="Toggle music">
+    🎵
+</button>�
   
   </button> <!-- Game Card -->
 <main id="game-card"

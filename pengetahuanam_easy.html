@@ -15,8 +15,8 @@
   <style>
   
 body {
-    background: url("malay.png") no-repeat center center fixed;
-    background-size: cover;
+  background: url("malay.png") no-repeat center center;
+  background-size: cover;
 }
         * { font-family: 'Fredoka', sans-serif; }
         
@@ -80,46 +80,34 @@ body {
         .bee { animation: beeFly 5s ease-in-out infinite; }
         .sway { animation: sway 3s ease-in-out infinite; }
         .sun-pulse { animation: sunPulse 4s ease-in-out infinite; }
-        .zoom-in { animation: zoomIn 0.3s ease-out; }
-      .shake {
-  animation: none !important;
-  transform: none !important;
-}
+       .zoom-in { animation: zoomIn 0.3s ease-out; }
+        .shake { animation: shake 0.4s ease-out; }
         .fade-in { animation: fadeIn 0.4s ease-out; }
         
-          .btn-answer {
-  border: 3px solid #ffffff;
-  box-shadow:
-    0 0 10px #ffffff,
-    0 0 20px rgba(255, 255, 255, 0.8),
-    0 8px 15px rgba(0, 0, 0, 0.25);
-  
-  /* Tiada zoom / scale bila ditekan */
-  transition: box-shadow 0.15s ease;
+       .btn-answer {
+    transition: transform 0.15s, box-shadow 0.15s;
+    border: 3px solid #ffffff;
+    box-shadow:
+        0 0 10px #ffffff,
+        0 0 20px rgba(255, 255, 255, 0.8),
+        0 8px 15px rgba(0, 0, 0, 0.25);
 }
 
 .btn-answer:hover {
-  /* Jangan scale button */
-  box-shadow:
-    0 0 10px #ffffff,
-    0 0 20px rgba(255, 255, 255, 0.8),
-    0 8px 15px rgba(0, 0, 0, 0.25);
+    transform: scale(1.05);
 }
 
 .btn-answer:active {
-  /* Kekalkan saiz asal */
-  transform: none;
+    transform: scale(0.95);
 }
-
-
 #game-card{
   width: 96%;
   height: 96vh;
   max-width: 700px;
     padding: 70px 70px;
     background: rgba(255,255,255,0.20);
-    backdrop-filter: blur(3px);
--webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(100px);
 
     border: 1px solid #ffffff;
     border-radius: 30px;
@@ -161,7 +149,13 @@ body {
 <div class="absolute bottom-0 left-0 right-0 flex justify-around items-end"><span class="sway text-4xl">🌸 </span> <span class="float-slow text-2xl" style="animation-delay:0.3s">🌺 </span> <span class="sway text-4xl" style="animation-delay:1.0s">🌸 </span> <span class="float-slow text-2xl" style="animation-delay:0.7s">🌺</span> <span class="sway text-4xl" style="animation-delay:1.0s">🌸 </span> <span class="float-slow text-2xl" style="animation-delay:1.2s">🌺 </span> <span class="sway text-4xl" style="animation-delay:1.0s">🌸 </span>
 </div>
 
-</div><!-- Music toggle --> <button id="music-btn" onclick="toggleMusic()" class="fixed top-4 right-4 z-50 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center text-2xl float" aria-label="Toggle music"> 🎵
+</div><!-- Music toggle -->
+<button id="music-btn"
+        onclick="toggleMusic()"
+        class="absolute top-4 right-4 z-50 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center text-2xl"
+        aria-label="Toggle music">
+    🎵
+</button>
 </button> <!-- Game Card -->
 <main id="game-card"
 class="relative z-50 w-[100%]
