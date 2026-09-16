@@ -938,7 +938,11 @@ questions = shuffle([...questionBank]).slice(0, 15);
     requestAnimationFrame(() => {
     let size = 28;
     
-    while (btn.scrollWidth > btn.clientWidth && size > 16) {
+    while (
+        (btn.scrollWidth > btn.clientWidth ||
+            btn.scrollHeight > btn.clientHeight) &&
+        size > 16
+    ) {
         size -= 1;
         btn.style.fontSize = size + "px";
     }
