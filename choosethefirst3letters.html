@@ -203,7 +203,13 @@ right: 18px;
 }
 
 /* BUTANG KEMBALI */
-#game-card button[onclick*="melayu.html"] {
+#game#question-image {
+    width: clamp(260px, 55vw, 480px) !important;
+    height: clamp(150px, 30vw, 300px) !important;
+    
+    margin-left: auto;
+    margin-right: auto;
+}-card button[onclick*="melayu.html"] {
     font-size: clamp(16px, 2.5vw, 24px) !important;
 
     padding:
@@ -332,7 +338,7 @@ style="box-shadow:
     <p id="feedback-text" class="text-3xl sm:text-4xl font-bold text-center zoom-in"></p>
    </div>
    
-   <div class="flex flex-col items-center mt-24 mb-2">
+   <div class="flex flex-col items-center mt-20 mb-2">
 
 <button
 onclick="window.location.href='english.html'"

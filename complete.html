@@ -9,7 +9,7 @@
   <script src="/_sdk/b23f1f6ec78e9bd4.editing_sdk.js" integrity="sha512-WFdQutvUZzxrmcHkL8cbfuFDTeF8Cn8Bt3yqX/a/OdiqPz/t9UcjsIsZK7D+tMTmC2JTwhwRJNyfcHmIWhG8Wg=="></script>
   <style>
 body {
-    background: url("malay.png") no-repeat center center fixed;
+    background: url("english.png") no-repeat center center;
     background-size: cover;
 }
         * { font-family: 'Fredoka', sans-serif; }
@@ -63,20 +63,11 @@ body {
         .btn-answer { transition: transform 0.15s, box-shadow 0.15s; }
         .btn-answer:hover { transform: scale(1.05); }
         .btn-answer:active { transform: scale(0.95); }
-/* =====================================================
-   GAME CARD - RESPONSIVE
-   ===================================================== */
-
 #game-card {
-    width: 90%;
-    max-width: 700px;
-    height: 90%;
-    min-height: 700px;
-    
-    margin: 0 auto;
-    padding: 40px 50px;
-    
-    box-sizing: border-box;
+    width: 98%;
+    max-width: 800px;
+    min-height: 60vh;
+    padding: 40px 70px;
     
     background: rgba(220, 245, 255, 0.25);
     backdrop-filter: blur(3px);
@@ -84,36 +75,12 @@ body {
     
     border: 2px solid rgba(255, 255, 255, 0.9);
     border-radius: 35px;
-    
     overflow: hidden;
     
     box-shadow:
         0 0 0 2px rgba(255, 255, 255, 0.25),
         0 10px 30px rgba(255, 255, 255, 0.20);
 }
-
-
-/* =====================================================
-   QUESTION + SCORE
-   ===================================================== */
-
-#question-score {
-    width: 100% !important;
-    max-width: 100% !important;
-    
-    left: 0 !important;
-    transform: translateY(-1.5rem) !important;
-    
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    
-    box-sizing: border-box !important;
-}
-
-
-/* =====================================================
-   GAMBAR
-   ===================================================== */
 
 .question-img {
     width: 100%;
@@ -122,15 +89,16 @@ body {
     display: block;
 }
 
-
-/* =====================================================
-   LOGO
-   ===================================================== */
-
+#game-card{
+    width:98%;
+    max-width:700px;
+    height:px;      /* Ubah nilai ini ikut kehendak */
+    margin:0 auto;
+}
 .he-bloom-logo {
     position: fixed;
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     z-index: 9999;
     opacity: .95;
     pointer-events: none;
@@ -140,127 +108,66 @@ body {
     bottom: 18px;
     right: 18px;
 }
+/* ===== SCORE + QUESTION RESPONSIVE ===== */
+#score-bar {
+    width: 60%;
+    box-sizing: border-box;
+}
 
-
-/* =====================================================
-   HP PORTRAIT
-   ===================================================== */
-
-@media (max-width: 480px) {
-    
-    #game-card {
-        width: calc(100vw - 12px) !important;
-        max-width: none !important;
-        
-        min-height: auto !important;
-        
-        padding: 20px 14px;
-    }
-    
-    #question-image {
-        width: 150px !important;
-        height: 150px !important;
-    }
-    
-    #question-word {
-        font-size: 27px !important;
-    }
-    
-    .he-bloom-logo {
-        width: 60px;
-        height: 60px;
-        right: 6px;
-        bottom: 6px;
+/* LANDSCAPE */
+@media (orientation: landscape) {
+    #score-bar {
+        width: 60%;
+        max-width: 100%;
+        left: 0;
+        transform: translateY(-24px);
     }
 }
 
+/* ===== KOTAK PUTIH SOALAN + MARKAH ===== */
+#game-card > div.flex.items-center.justify-between {
+    width: calc(100% + 50px) !important;
+    max-width: none !important;
 
-/* =====================================================
-   HP LANDSCAPE
-   ===================================================== */
+    margin-left: -25px !important;
+    margin-right: -25px !important;
 
-@media (max-width: 900px) and (orientation: landscape) {
-    
-    html,
-    body {
-        height: auto !important;
-        min-height: 100% !important;
-        
-        overflow-x: hidden !important;
-        overflow-y: auto !important;
-    }
-    
-    #game-card {
-        width: 80% !important;
-        max-width: 620px !important;
-        
-        min-height: auto !important;
-        
-        margin: 5px auto !important;
-        
-        padding: 18px 25px;
-        
-        box-sizing: border-box;
-        
-        overflow: visible !important;
-    }
-    
-    #question-score {
-        width: 100% !important;
-        max-width: 100% !important;
-        
-        left: 0 !important;
-        transform: translateY(-1rem) !important;
-    }
-    
-    #question-image {
-        width: 115px !important;
-        height: 115px !important;
-        
-        margin-bottom: 8px !important;
-    }
-    
-    #question-word {
-        font-size: 25px !important;
-        margin-top: 8px !important;
-    }
-    
-    #answers {
-        max-width: 340px;
-        gap: 7px !important;
-    }
-    
-    #answers button {
-        height: 48px !important;
-        font-size: 15px !important;
-        padding: 7px 10px !important;
-    }
-    
-    .he-bloom-logo {
-        width: 52px;
-        height: 52px;
-        right: 8px;
-        bottom: 8px;
-    }
+    position: relative !important;
+    top: -16px !important;   /* NAIK 16px */
+
+    height: auto !important;
+    min-height: 0 !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    flex-wrap: nowrap !important;
+
+    padding: 12px 18px !important;
+    box-sizing: border-box !important;
+
+    left: auto !important;
+    transform: none !important;
+    gap: 10px !important;
 }
 
+/* Bahagian kiri & kanan */
+#game-card > div:first-child > div {
+    display: flex !important;
+    align-items: center !important;
+    flex-shrink: 1 !important;
+    min-width: 0 !important;
+}
 
-/* =====================================================
-   SKRIN BESAR / LANDSCAPE
-   ===================================================== */
+/* Tulisan SOALAN + MARKAH */
+#game-card > div:first-child span {
+    font-size: clamp(14px, 3vw, 30px) !important;
+    white-space: nowrap !important;
+}
 
-@media (min-width: 901px) and (orientation: landscape) {
-    
-    #game-card {
-        width: 70% !important;
-        max-width: 700px !important;
-        
-        min-height: auto !important;
-        
-        margin: 5px auto !important;
-        
-        box-sizing: border-box;
-    }
+/* Icon buku */
+#game-card > div:first-child .text-3xl {
+    font-size: clamp(20px, 4vw, 30px) !important;
 }
 
     </style>
@@ -268,39 +175,30 @@ body {
   <script src="/_sdk/935a53bc2e11fb8d.data_sdk.js" type="text/javascript" integrity="sha512-qr2oyPnEys1WebcOABaRh6hG77r5PWpqeWW6JTKbRJqly/INsfBi31CVNlTmHqjgeLpkVmmHZJUdxSx/32tOFQ=="></script>
   <script src="/_sdk/6030e540d4419216.resizing_sdk.js" type="text/javascript" integrity="sha512-b5KWzyoXsbWP4smq4sftIi6Kts4YVBpBsz0BwCViwbBJkK64a3/Z6ZMdWA+qnplNcXw4mhZeqvQi3mOosiRJdA=="></script>
  </head>
-<body data-template-id="__page-root" class="w-full min-h-screen relative flex items-center justify-center p-4"><!-- Background elements -->
-  <div class="fixed inset-0 pointer-events-none overflow-hidden" aria-hidden="true"><!-- Sun -->
-   <div class="sun-pulse absolute top-6 left-6 text-10xl sm:text-10xl">
-    🌞
-   </div><!-- Rainbow -->
-   <div class="absolute top-10 right-10 text-10xl float-slow opacity-70">
-    🌈
-   </div><!-- Clouds -->
-   <div class="absolute top-[12%] left-[20%] text-10xl float" style="animation-delay:0.5s">
-    ☁️
-   </div>
-   <div class="absolute top-[8%] left-[55%] text-20xl float" style="animation-delay:1.5s">
-    ☁️
-   </div>
-   <div class="absolute top-[18%] right-[15%] text-20xl float" style="animation-delay:2.5s">
-    ☁️
-   </div><!-- Birds -->
-   <div class="bird absolute top-[6%] text-5xl">
-    🦜 
-   </div>
-   <div class="bird2 absolute top-[18%] text-5xl">
+<body data-template-id="__page-root" class="w-full min-h-screen overflow-x-hidden overflow-y-auto relative flex items-center justify-center p-4"><!-- Background elements -->
+</div><!-- Birds -->
+<div class="bird absolute top-[3%] text-5xl">
     🦜
-   </div><!-- Bees -->
-   <div class="bee absolute top-[45%] left-[15%] text-6xl">
+</div>
+<div class="bird2 absolute top-[10%] text-5xl">
+    🦜
+</div><!-- Bees -->
+<div class="bee absolute top-[45%] left-[2%] text-6xl">
     🐝
-   </div>
-   <div class="bee absolute top-[45%] right-[15%] text-6xl" style="animation-delay:2s">
+</div>
+<div class="bee absolute top-[45%] right-[2%] text-6xl" style="animation-delay:2s">
     🐝
-   </div><!-- Ground -->
-   <div class="absolute bottom-0 left-0 right-0 flex justify-around items-end"><span class="sway text-4xl">🌹 </span> <span class="float-slow text-2xl" style="animation-delay:0.3s">🌸</span> <span class="sway text-4xl" style="animation-delay:1.0s">🌹 </span> <span class="float-slow text-2xl" style="animation-delay:0.7s">🌺</span> <span class="sway text-4xl" style="animation-delay:1.0s">🌹 </span> <span class="float-slow text-2xl" style="animation-delay:1.2s">🌸 </span> <span class="sway text-4xl" style="animation-delay:1.0s">🌹 </span>
-   </div>
-   
-  </div><!-- Music toggle --> <button id="music-btn" onclick="toggleMusic()" class="fixed top-4 right-4 z-50 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center text-2xl float" aria-label="Toggle music"> 🎵
+</div><!-- Ground -->
+<div class="absolute bottom-0 left-0 right-0 flex justify-around items-end"><span class="sway text-4xl">🌸 </span> <span class="float-slow text-2xl" style="animation-delay:0.3s">🌺 </span> <span class="sway text-4xl" style="animation-delay:1.0s">🌸 </span> <span class="float-slow text-2xl" style="animation-delay:0.7s">🌺</span> <span class="sway text-4xl" style="animation-delay:1.0s">🌸 </span> <span class="float-slow text-2xl" style="animation-delay:1.2s">🌺 </span> <span class="sway text-4xl" style="animation-delay:1.0s">🌸 </span>
+</div>
+
+</div><!-- Music toggle -->
+<button id="music-btn"
+        onclick="toggleMusic()"
+        class="absolute top-4 right-4 z-50 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center text-2xl"
+        aria-label="Toggle music">
+    🎵
+</button>
   
   </button> <!-- Game Card -->
 <main id="game-card"
@@ -396,70 +294,70 @@ onclick="restartGame()">
   <script>
   
         const words = [
-    { word: "DOG", image: "images/anjing.png" },
-    { word: "RABBIT", image: "images/arnab.png" },
-    { word: "BICYCLE", image: "images/basikal.png" },
-    { word: "BALL", image: "images/bola.png" },
-    { word: "BOOK", image: "images/buku.png" },
-    { word: "MOON", image: "images/bulan.png" },
-    { word: "LEAF", image: "images/daun.png" },
-    { word: "ELEPHANT", image: "images/gajah.png" },
-    { word: "TIGER", image: "images/harimau.png" },
-    { word: "HELICOPTER", image: "images/helikopter.png" },
-    { word: "CORN", image: "images/jagung.png" },
-    { word: "SHARK", image: "images/jerung.png" },
-    { word: "CAMERA", image: "images/kamera.png" },
-    { word: "SHIP", image: "images/kapal.png" },
-    { word: "AIRPLANE", image: "images/kapal_terbang.png" },
-    { word: "FROG", image: "images/katak.png" },
-    { word: "COCONUT", image: "images/kelapa.png" },
-    { word: "CAR", image: "images/kereta.png" },
-    { word: "TRAIN", image: "images/kereta_api.png" },
-    { word: "CRAB", image: "images/ketam.png" },
-    { word: "CAT", image: "images/kucing.png" },
-    { word: "HORSE", image: "images/kuda.png" },
-    { word: "BEE", image: "images/lebah.png" },
-    { word: "LEMON", image: "images/lemon.png" },
-    { word: "CARROT", image: "images/lobak_merah.png" },
-    { word: "SUN", image: "images/matahari.png" },
-    { word: "MONKEY", image: "images/monyet.png" },
-    { word: "PINEAPPLE", image: "images/nanas.png" },
-    { word: "STINGRAY", image: "images/pari.png" },
-    { word: "RAINBOW", image: "images/pelangi.png" },
-    { word: "ERASER", image: "images/pemadam.png" },
-    { word: "BANANA", image: "images/pisang.png" },
-    { word: "TREE", image: "images/pokok.png" },
-    { word: "HOUSE", image: "images/rumah.png" },
-    { word: "SNAKEFRUIT", image: "images/salak.png" },
-    { word: "SCHOOL", image: "images/sekolah.png" },
-    { word: "ANT", image: "images/semut.png" },
-    { word: "SQUID", image: "images/sotong.png" },
-    { word: "TELEVISION", image: "images/televisyen.png" },
-    { word: "EGGPLANT", image: "images/terung.png" },
-    { word: "CUCUMBER", image: "images/timun.png" },
-    { word: "TOMATO", image: "images/tomato.png" }, 
-    { word: "FAN", image: "images/kipas.png" }, 
-    { word: "BIN", image: "images/tong_sampah.png" },
-    { word: "DRESS", image: "images/gaun.png" }, 
-    { word: "PUMPKIN", image: "images/labu.png" }, 
-    { word: "CAKE", image: "images/kek.png" }, 
-    { word: "BOOKCASE", image: "images/rak_buku.png" }, 
-    { word: "LAMP", image: "images/lampu.png" },
-     { word: "LADYBUG", image: "images/kumbang.png" },
-     { word: "COCKROACH", image: "images/lipas.png" },
-     { word: "MOSQUITO", image: "images/nyamuk.png" },
-     { word: "GUITAR", image: "images/gitar.png" },
-     { word: "CHAIR", image: "images/kerusi.png" }, 
-     { word: "TABLE", image: "images/meja.png" },
-     { word: "BED", image: "images/katil.png" },
-     { word: "KIWI", image: "images/kiwi.png" },
-     { word: "SUGAR CANE", image: "images/tebu.png" },
-     { word: "BREADFRUIT", image: "images/sukun.png" },
-     { word: "STARFRUIT", image: "images/belimbing.png" },
-     { word: "DRAGON FRUIT", image: "images/buah_naga.png" },
-     { word: "AMBARELLA", image: "images/kedondong.png" },
-     { word: "PEAR", image: "images/pir.png" },
-     { word: "POMEGRANATE", image: "images/delima.png" },
+        { word: "DOG", image: "images2/anjing.png" },
+        { word: "RABBIT", image: "images2/arnab.png" },
+        { word: "BICYCLE", image: "images2/basikal.png" },
+        { word: "BALL", image: "images2/bola.png" },
+        { word: "BOOK", image: "images2/buku.png" },
+        { word: "MOON", image: "images2/bulan.png" },
+        { word: "LEAF", image: "images2/daun.png" },
+        { word: "ELEPHANT", image: "images2/gajah.png" },
+        { word: "TIGER", image: "images2/harimau.png" },
+        { word: "HELICOPTER", image: "images2/helikopter.png" },
+        { word: "CORN", image: "images2/jagung.png" },
+        { word: "SHARK", image: "images2/jerung.png" },
+        { word: "CAMERA", image: "images2/kamera.png" },
+        { word: "SHIP", image: "images2/kapal.png" },
+        { word: "AIRPLANE", image: "images2/kapal_terbang.png" },
+        { word: "FROG", image: "images2/katak.png" },
+        { word: "COCONUT", image: "images2/kelapa.png" },
+        { word: "CAR", image: "images2/kereta.png" },
+        { word: "TRAIN", image: "images2/kereta_api.png" },
+        { word: "CRAB", image: "images2/ketam.png" },
+        { word: "CAT", image: "images2/kucing.png" },
+        { word: "HORSE", image: "images2/kuda.png" },
+        { word: "BEE", image: "images2/lebah.png" },
+        { word: "LEMON", image: "images2/lemon.png" },
+        { word: "CARROT", image: "images2/lobak_merah.png" },
+    { word: "SUN", image: "images2/matahari.png" },
+{ word: "MONKEY", image: "images2/monyet.png" },
+{ word: "PINEAPPLE", image: "images2/nanas.png" },
+{ word: "STINGRAY", image: "images2/pari.png" },
+{ word: "RAINBOW", image: "images2/pelangi.png" },
+{ word: "ERASER", image: "images2/pemadam.png" },
+{ word: "BANANA", image: "images2/pisang.png" },
+{ word: "TREE", image: "images2/pokok.png" },
+{ word: "HOUSE", image: "images2/rumah.png" },
+{ word: "SNAKEFRUIT", image: "images2/salak.png" },
+{ word: "SCHOOL", image: "images2/sekolah.png" },
+{ word: "ANT", image: "images2/semut.png" },
+{ word: "SQUID", image: "images2/sotong.png" },
+{ word: "TELEVISION", image: "images2/televisyen.png" },
+{ word: "EGGPLANT", image: "images2/terung.png" },
+{ word: "CUCUMBER", image: "images2/timun.png" },
+{ word: "TOMATO", image: "images2/tomato.png" },
+{ word: "FAN", image: "images2/kipas.png" },
+{ word: "BIN", image: "images2/tong_sampah.png" },
+{ word: "DRESS", image: "images2/gaun.png" },
+{ word: "PUMPKIN", image: "images2/labu.png" },
+{ word: "CAKE", image: "images2/kek.png" },
+{ word: "BOOKCASE", image: "images2/rak_buku.png" },
+{ word: "LAMP", image: "images2/lampu.png" },
+{ word: "LADYBUG", image: "images2/kumbang.png" },
+{ word: "COCKROACH", image: "images2/lipas.png" },
+{ word: "MOSQUITO", image: "images2/nyamuk.png" },
+{ word: "GUITAR", image: "images2/gitar.png" },
+{ word: "CHAIR", image: "images2/kerusi.png" },
+{ word: "TABLE", image: "images2/meja.png" },
+{ word: "BED", image: "images2/katil.png" },
+{ word: "KIWI", image: "images2/kiwi.png" },
+{ word: "SUGAR CANE", image: "images2/tebu.png" },
+{ word: "BREADFRUIT", image: "images2/sukun.png" },
+{ word: "STARFRUIT", image: "images2/belimbing.png" },
+{ word: "DRAGON FRUIT", image: "images2/buah_naga.png" },
+{ word: "AMBARELLA", image: "images2/kedondong.png" },
+{ word: "PEAR", image: "images2/pir.png" },
+{ word: "POMEGRANATE", image: "images2/delima.png" },
      { word: "CARNATION", image: "images1/carnation.png" },
 { word: "ROSE", image: "images1/rose.png" },
 { word: "TULIP", image: "images1/tulip.png" },
