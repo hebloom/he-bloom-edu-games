@@ -64,19 +64,27 @@ body {
         .btn-answer:hover { transform: scale(1.05); }
         .btn-answer:active { transform: scale(0.95); }
 #game-card {
-    width: 98%;
+    width: min(94vw, 800px);
     max-width: 800px;
-    min-height: 60vh;
-    padding: 40px 70px;
-    
+    min-height: auto;
+    height: auto;
+    margin: 0 auto;
+
+    padding:
+        clamp(18px, 4vw, 40px)
+        clamp(16px, 6vw, 70px)
+        clamp(24px, 5vw, 40px);
+
+    box-sizing: border-box;
+
     background: rgba(220, 245, 255, 0.25);
     backdrop-filter: blur(3px);
     -webkit-backdrop-filter: blur(3px);
-    
+
     border: 2px solid rgba(255, 255, 255, 0.9);
     border-radius: 35px;
-    overflow: hidden;
-    
+    overflow: visible;
+
     box-shadow:
         0 0 0 2px rgba(255, 255, 255, 0.25),
         0 10px 30px rgba(255, 255, 255, 0.20);
@@ -89,12 +97,7 @@ body {
     display: block;
 }
 
-#game-card{
-    width:98%;
-    max-width:700px;
-    height:px;      /* Ubah nilai ini ikut kehendak */
-    margin:0 auto;
-}
+
 .he-bloom-logo {
     position: fixed;
     width: 60px;
@@ -108,47 +111,31 @@ body {
     bottom: 18px;
     right: 18px;
 }
-/* ===== SCORE + QUESTION RESPONSIVE ===== */
-#score-bar {
-    width: 60%;
-    box-sizing: border-box;
-}
-
-/* LANDSCAPE */
-@media (orientation: landscape) {
-    #score-bar {
-        width: 60%;
-        max-width: 100%;
-        left: 0;
-        transform: translateY(-24px);
-    }
-}
-
-/* ===== KOTAK PUTIH SOALAN + MARKAH ===== */
-#game-card > div.flex.items-center.justify-between {
-    width: calc(100% + 50px) !important;
-    max-width: none !important;
-
-    margin-left: -25px !important;
-    margin-right: -25px !important;
-
-    position: relative !important;
-    top: -16px !important;   /* NAIK 16px */
-
+/* ===== SCORE + QUESTION ===== */
+#game-card>div:first-child {
+    width: 100% !important;
+    max-width: 100% !important;
+    
     height: auto !important;
     min-height: 0 !important;
-
+    
+    padding: 10px 16px !important;
+    
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-top: 0 !important;
+    margin-bottom: 20px !important;
+    
+    position: relative !important;
+    left: auto !important;
+    transform: none !important;
+    
+    box-sizing: border-box !important;
+    
     display: flex !important;
     align-items: center !important;
     justify-content: space-between !important;
     flex-wrap: nowrap !important;
-
-    padding: 12px 18px !important;
-    box-sizing: border-box !important;
-
-    left: auto !important;
-    transform: none !important;
-    gap: 10px !important;
 }
 
 /* Bahagian kiri & kanan */
@@ -159,15 +146,25 @@ body {
     min-width: 0 !important;
 }
 
-/* Tulisan SOALAN + MARKAH */
+/* Tulisan SCORE + QUESTION */
 #game-card > div:first-child span {
     font-size: 20px !important;
-    white-space: nowrap !important;
 }
 
 /* Icon buku */
 #game-card > div:first-child .text-3xl {
     font-size: clamp(20px, 4vw, 30px) !important;
+}
+
+/* BUTANG BACK */
+#game-card button[onclick*="english.html"] {
+    font-size: clamp(16px, 2.5vw, 24px) !important;
+
+    padding:
+        clamp(8px, 2vw, 12px)
+        clamp(18px, 4vw, 30px);
+
+    white-space: nowrap;
 }
 
     </style>
