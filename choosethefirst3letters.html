@@ -72,7 +72,7 @@ body {
     width: 90%;
     max-width: 700px;
 
-    height: 700px;
+    height: 760px;
     min-height: 0;
 
     margin: 0 auto;
@@ -127,6 +127,34 @@ body {
     right: 18px;
 }
 
+/* UNIVERSAL RESPONSIVE - KEKALKAN BENTUK ASAL */
+
+#game-card {
+    width: 90%;
+    max-width: 700px;
+    height: clamp(700px, 92vh, 760px);
+    box-sizing: border-box;
+}
+
+/* Question + Score kekalkan lebar asal */
+#game-card>div:first-of-type {
+    width: 120%;
+}
+
+/* 4 answer button */
+#answers {
+    width: 100%;
+    max-width: 24rem;
+    gap: clamp(12px, 2.5vw, 16px);
+}
+
+/* Saiz butang responsif, bentuk asal kekal */
+#answers .btn-answer {
+    height: clamp(56px, 8vw, 80px);
+    font-size: clamp(20px, 3vw, 28px);
+    padding: clamp(8px, 2vw, 12px);
+    box-sizing: border-box;
+}
 
     </style>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js" type="text/javascript"></script>
@@ -164,7 +192,7 @@ class="relative -mt-50 z-50 w-full max-w-x1 mx-auto bg-transparent rounded-none 
 
 
 <!-- SCORE + QUESTION -->
-<div class="flex items-center justify-between bg-white rounded-xl shadow-xl w-[120%] mx-auto relative left-1/2 -translate-x-1/2 -translate-y-12 px-4 py-2 mb-4">
+<div class="flex items-center justify-between bg-white rounded-xl shadow-xl w-[120%] mx-auto relative left-1/2 -translate-x-1/2 -translate-y-4 px-4 py-2 mb-4">
     
     <div class="flex items-center gap-2">
         <span class="text-3xl">📖</span>
@@ -185,7 +213,7 @@ class="relative -mt-50 z-50 w-full max-w-x1 mx-auto bg-transparent rounded-none 
   <div id="question-area" class="text-center mb-6">
 
       <div id="question-image"
-class="w-72 h-44 mx-auto mb-5
+class="w-72 h-44 mx-auto mt-12 mb-5
 bg-white
 border-4 border-black
 rounded-3xl
@@ -205,7 +233,7 @@ style="box-shadow:
 </div>
    </div><!-- Answer Buttons -->
    
-<div id="answers" class="grid grid-cols-2 gap-4 w-full max-w-sm mx-auto">
+<div id="answers" class="grid grid-cols-2 gap-4 w-full max-w-sm mx-auto mt-8">
 </div>
       
    </div><!-- Feedback -->
@@ -213,7 +241,7 @@ style="box-shadow:
     <p id="feedback-text" class="text-3xl sm:text-4xl font-bold text-center zoom-in"></p>
    </div>
    
-   <div class="flex flex-col items-center mt-8 mb-2">
+   <div class="flex flex-col items-center mt-16 mb-2">
 
 <button
 onclick="window.location.href='english.html'"
