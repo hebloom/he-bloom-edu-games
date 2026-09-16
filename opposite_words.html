@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <<!doctype html>
+  <!doctype html>
 <html lang="ms">
  <head><script>window["__codeletBootstrap__"]=JSON.parse('{"A":"A","B":"20260730-05-6814160","C":{"Abril Fatface":"YACgEZbkUVE,0","Alfa Slab One":"YACgEYS9sJU,0","Anton":"YACgEcYqQ-A,0","Archivo":"YAHO2-t-jNE,0","Arial":"YAGyDvJ_4Ts,0","Bebas Neue":"YACgESME5ew,0","Broken Glyph":"YADZ-exUkv0,0","Canva Sans":"YAFdJjTk5UU,0","Caveat":"YALBs2ploWQ,0","Comic Sans MS":"YAHO2VMiyZo,0","Cormorant Garamond":"YAFdJhX-538,0","Courier New":"YAGzXiGs0_8,0","DM Sans":"YAD1aU3sLnI,0","DM Serif Display":"YAD1aYG82rc,0","Forum":"YACgEcnnqB4,0","Fraunces":"YAEul-FRQw4,0","Georgia":"YAGzXkO0pEM,0","Ghost Mono":"YAHO2EIdDP0,0","Helvetica Neue":"YAFcf6CtJfI,0","Impact":"YAFcfnjI7Vk,0","Inter":"YAFdJvSyp_k,3","Iowan Old Style":"YAGNIFa8j9o,0","Jacques Francois":"YAHO2a5g66Q,0","JetBrains Mono":"YADy3sAhvXQ,0","Oleo Script":"YACgEQQ14jI,0","Playfair Display":"YAFdJhem5V8,1","Poppins":"YAE5fPSY9qM,0","Press Start 2P":"YAFyGr-8pmQ,0","Source Sans 3":"YAG4lO1Mj10,0","Space Grotesk":"YAHO2sjPCSM,0","Times New Roman":"YAGzXW3gftg,0","Times":"YAGzXW3gftg,0","Trebuchet MS":"YAFcfrglpVA,0","Verdana":"YAGzXTctYtQ,0","Work Sans":"YAGXhLOKv44,0","Yellowtail":"YACgEYG4kG4,0"}}');</script><script src="/_sdk/a27874207e105461.telemetry_sdk.js" integrity="sha512-wgI5N9F7oA2h3vH+benMYIv4wGqTct4nKWakqgvfgRyBLmfYq8q/fi6gkfWKd2hMsyN+VQ/qOAOpxybwkcoxlA=="></script>
   <meta charset="UTF-8">
@@ -66,38 +66,43 @@ body {
         .shake { animation: shake 0.4s ease-out; }
         .fade-in { animation: fadeIn 0.4s ease-out; }
         
-       .btn-answer {
-    transition: transform 0.15s, box-shadow 0.15s;
-    border: 3px solid #ffffff;
-    box-shadow:
-        0 0 10px #ffffff,
-        0 0 20px rgba(255, 255, 255, 0.8),
-        0 8px 15px rgba(0, 0, 0, 0.25);
-}
-
-.btn-answer:hover {
-    transform: scale(1.05);
-}
-
-.btn-answer:active {
-    transform: scale(0.95);
-}
-#game-card{
-    width: 94%;
+#game-card {
+    width: 90%;
+    height: 90%;
     max-width: 800px;
-    padding: 70px 70px;
-    background: rgba(255,255,255,0.20);
-    backdrop-filter: blur(1px);
-    -webkit-backdrop-filter: blur(100px);
+    min-height: 80vh;
+    padding: 40px 70px;
+    
+    background: rgba(220, 245, 255, 0.25);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    border-radius: 35px;
+    overflow: hidden;
+    
+    box-shadow:
+        0 0 0 2px rgba(255, 255, 255, 0.25),
+        0 10px 30px rgba(255, 255, 255, 0.20);
+}
 
-    border: 1px solid #ffffff;
-    border-radius: 30px;
-    box-shadow: 0 15px 15px rgba(0,0,0,0.18);
+.question-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+#game-card{
+    width:90%;
+    max-width:700px;
+    height:90px;      /* Ubah nilai ini ikut kehendak */
+    margin:0 auto;
 }
 .he-bloom-logo {
     position: fixed;
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     z-index: 9999;
     opacity: .95;
     pointer-events: none;
@@ -107,120 +112,228 @@ body {
     bottom: 18px;
     right: 18px;
 }
-/* =====================================================
-   LANDSCAPE - BOLEH SCROLL
-   SOALAN + 4 BUTANG KEKAL DI TENGAH
-   PORTRAIT TIDAK BERUBAH
-   ===================================================== */
+/* =========================================
+   UNIVERSAL RESPONSIVE - ALL DEVICES
+   ========================================= */
 
-@media (orientation: landscape) and (max-height: 600px) {
+html {
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+body {
+    width: 100%;
+    min-width: 0;
+    min-height: 100vh;
+    height: auto !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    box-sizing: border-box;
+}
+
+/* GAME CARD */
+#game-card {
+    width: min(94vw, 800px) !important;
+    max-width: 800px !important;
+    height: auto !important;
+    min-height: auto !important;
+
+    margin: 0 auto !important;
+
+    padding:
+    clamp(28px, 5vw, 50px)
+    clamp(16px, 6vw, 70px)
+    clamp(34px, 6vw, 50px);
+
+    box-sizing: border-box;
+    overflow: visible !important;
+    transform: none;
     
+}
+
+/* SCORE + SOALAN */
+#game-card > div.flex.items-center.justify-between {
+    width: 100% !important;
+    max-width: 100% !important;
+
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+
+    left: auto !important;
+    transform: none !important;
+
+    box-sizing: border-box;
+}
+
+/* KOTAK SOALAN */
+    #question-image {
+    width: 60% !important;
+    max-width: 600px !important;
+    
+    min-height: clamp(180px, 25vw, 240px) !important;
+    height: auto !important;
+    
+    margin-left: auto !important;
+    margin-right: auto !important;
+    
+    left: auto !important;
+    transform: none !important;
+    
+    box-sizing: border-box;
+}
+
+/* PERKATAAN */
+#question-word {
+    font-size: clamp(30px, 5vw, 52px) !important;
+}
+
+/* KATA LAWAN + PERKATAAN - SENTIASA 2 BARIS */
+#question-image>div {
+    display: block !important;
+    width: 100% !important;
+    text-align: center !important;
+}
+
+#question-image>div p {
+    display: block !important;
+    width: 100% !important;
+    text-align: center !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+#question-image>div #question-word {
+    display: block !important;
+    margin-top: 8px !important;
+}
+
+/* BUTANG JAWAPAN */
+#answers {
+    width: 100% !important;
+    max-width: 800px !important;
+
+    margin-left: auto !important;
+    margin-right: auto !important;
+
+    gap: clamp(10px, 2.5vw, 24px);
+
+    box-sizing: border-box;
+}
+
+#answers button {
+    width: 100% !important;
+    min-height: clamp(58px, 9vw, 90px) !important;
+
+    padding:
+        clamp(8px, 2vw, 16px)
+        clamp(8px, 2vw, 20px);
+
+    font-size: clamp(24px, 3.5vw, 34px) !important;
+
+    line-height: 1.1;
+    box-sizing: border-box;
+}
+
+/* BUTANG KEMBALI */
+#game-card > div.flex.flex-col.items-center {
+    margin-top: clamp(15px, 3vw, 30px) !important;
+    margin-bottom: 5px !important;
+}
+
+#game-card > div.flex.flex-col.items-center button {
+    font-size: clamp(16px, 2.5vw, 24px) !important;
+
+    padding:
+        clamp(8px, 2vw, 12px)
+        clamp(18px, 4vw, 30px);
+
+    white-space: nowrap;
+}
+
+/* LOGO */
+.he-bloom-logo {
+    width: clamp(55px, 9vw, 80px) !important;
+    height: clamp(55px, 9vw, 80px) !important;
+}
+
+/* =========================================
+   LANDSCAPE - BOLEH SCROLL
+   ========================================= */
+
+@media screen and (orientation: landscape) {
+
     html,
     body {
-        width: 100%;
-        min-width: 0;
+        height: auto !important;
         min-height: 100%;
-        height: auto;
         overflow-x: hidden !important;
         overflow-y: auto !important;
     }
-    
+
     body {
-        align-items: flex-start !important;
-        justify-content: flex-start !important;
-        padding-top: 20px !important;
-        padding-bottom: 40px !important;
+        display: block !important;
+        padding: 16px !important;
     }
-    
-    /* KAWASAN GAME */
+
     #game-card {
-        width: 90% !important;
-        max-width: 900px !important;
-        margin: 20px auto 40px auto !important;
-        padding: 30px 20px 50px !important;
-    }
-    
-    /* QUESTION + SCORE */
-    #game-card>div:first-child {
-        width: 100% !important;
-        margin: 0 auto 25px auto !important;
-        left: auto !important;
-        transform: none !important;
-    }
-    
-    /* KOTAK SOALAN */
-    #question-image {
-        width: 90% !important;
-        max-width: 650px !important;
+        width: min(94vw, 800px) !important;
+        max-width: 800px !important;
+        height: auto !important;
+        min-height: auto !important;
+
         margin: 0 auto 30px auto !important;
-        left: auto !important;
-        transform: none !important;
-        padding: 30px 25px !important;
-    }
-    
-    /* 4 BUTANG — 2 x 2 */
-    #answers {
-        width: 100% !important;
-        margin: 0 auto !important;
-        left: auto !important;
-        transform: none !important;
-        
-        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-        gap: 14px !important;
-    }
-    
-    #answers .btn-answer {
-        width: 100% !important;
-        min-height: 90px !important;
-        margin: 0 !important;
-        padding: 18px 15px !important;
+
+        overflow: visible !important;
     }
 }
+
+/* ===== WHITE EDGE 4 ANSWER BUTTONS ===== */
+
+#answers .btn-answer {
+    border: 4px solid #ffffff !important;
+    box-sizing: border-box !important;
+    
+    box-shadow:
+        0 0 10px rgba(255, 255, 255, 0.9),
+        0 0 20px rgba(255, 255, 255, 0.6),
+        0 8px 15px rgba(0, 0, 0, 0.25) !important;
+}
+
     </style>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js" type="text/javascript"></script>
   <script src="/_sdk/935a53bc2e11fb8d.data_sdk.js" type="text/javascript" integrity="sha512-qr2oyPnEys1WebcOABaRh6hG77r5PWpqeWW6JTKbRJqly/INsfBi31CVNlTmHqjgeLpkVmmHZJUdxSx/32tOFQ=="></script>
   <script src="/_sdk/6030e540d4419216.resizing_sdk.js" type="text/javascript" integrity="sha512-b5KWzyoXsbWP4smq4sftIi6Kts4YVBpBsz0BwCViwbBJkK64a3/Z6ZMdWA+qnplNcXw4mhZeqvQi3mOosiRJdA=="></script>
  </head>
  <body data-template-id="__page-root" class="w-full min-h-screen overflow-hidden relative flex items-center justify-center p-4"><!-- Background elements -->
-  <div class="fixed inset-0 pointer-events-none overflow-hidden" aria-hidden="true"><!-- Sun -->
-   <div class="sun-pulse absolute top-6 left-6 text-10xl sm:text-10xl">
-    🌞
-   </div><!-- Rainbow -->
-   <div class="absolute top-10 right-10 text-10xl float-slow opacity-70">
-    🌈
-   </div><!-- Clouds -->
-   <div class="absolute top-[10%] left-[30%] text-20xl float" style="animation-delay:1.5s">
-    ☁️
-   </div>
-      <div class="absolute top-[10%] right-[30%] text-20xl float" style="animation-delay:1.5s">
-    ☁️
-   </div>
-   <div class="absolute top-[30%] left-[30%] text-20xl float" style="animation-delay:1.5s">
-    ☁️
-   </div>
-   <div class="absolute top-[30%] right-[30%] text-20xl float" style="animation-delay:1.5s">
-    ☁️
-   </div><!-- Birds -->
-   <div class="bird absolute top-[6%] text-5xl">
-    🦜 
-   </div>
-   <div class="bird2 absolute top-[18%] text-5xl">
+</div><!-- Birds -->
+<div class="bird absolute top-[3%] text-5xl">
     🦜
-   </div><!-- Bees -->
-   <div class="bee absolute top-[45%] left-[15%] text-6xl">
+</div>
+<div class="bird2 absolute top-[10%] text-5xl">
+    🦜
+</div><!-- Bees -->
+<div class="bee absolute top-[45%] left-[2%] text-6xl">
     🐝
-   </div>
-   <div class="bee absolute top-[45%] right-[15%] text-6xl" style="animation-delay:2s">
+</div>
+<div class="bee absolute top-[45%] right-[2%] text-6xl" style="animation-delay:2s">
     🐝
-   </div><!-- Ground -->
-   <div class="absolute bottom-0 left-0 right-0 flex justify-around items-end"><span class="sway text-4xl">🌹 </span> <span class="float-slow text-2xl" style="animation-delay:0.3s">🌸</span> <span class="sway text-4xl" style="animation-delay:1.0s">🌹 </span> <span class="float-slow text-2xl" style="animation-delay:0.7s">🌺</span> <span class="sway text-4xl" style="animation-delay:1.0s">🌹 </span> <span class="float-slow text-2xl" style="animation-delay:1.2s">🌸 </span> <span class="sway text-4xl" style="animation-delay:1.0s">🌹 </span>
-   </div>
-  </div><!-- Music toggle --> <button id="music-btn" onclick="toggleMusic()" class="fixed top-4 right-4 z-50 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center text-2xl float" aria-label="Toggle music"> 🎵 </button> <!-- Game Card -->
+</div><!-- Ground -->
+<div class="absolute bottom-0 left-0 right-0 flex justify-around items-end"><span class="sway text-4xl">🌸 </span> <span class="float-slow text-2xl" style="animation-delay:0.3s">🌺 </span> <span class="sway text-4xl" style="animation-delay:1.0s">🌸 </span> <span class="float-slow text-2xl" style="animation-delay:0.7s">🌺</span> <span class="sway text-4xl" style="animation-delay:1.0s"0s>🌸 </span> <span class="float-slow text-2xl" style="animation-delay:1.2s">🌺 </span> <span class="sway text-4xl" style="animation-delay:1.0s">🌸 </span>
+</div>
+
+</div><!-- Music toggle -->
+<button id="music-btn"
+        onclick="toggleMusic()"
+        class="absolute top-4 right-4 z-50 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center text-2xl"
+        aria-label="Toggle music">🎵</button>
+</button> <!-- Game Card -->
 <main id="game-card"
 class="relative -mt-50 z-50 w-[60%] max-w-xl mx-auto bg-transparent rounded-none shadow-none pt-2 px-0 pb-8 fade-in">
 
 <!-- SCORE + QUESTION -->
-<div class="flex items-center justify-between bg-white rounded-xl shadow-xl w-[120%] mx-auto relative left-1/2 -translate-x-1/2 -translate-y-12 px-4 mb-4">
+<div class="flex items-center justify-between bg-white rounded-xl shadow-xl w-[120%] mx-auto relative left-1/2 -translate-x-1/2 -translate-y-6 px-4 py-2 mb-4">
     
     <div class="flex items-center gap-2">
     <span class="text-3xl">📖</span>
@@ -266,7 +379,9 @@ relative left-1/2 -translate-x-1/2"
 </div>
 
    </div><!-- Answer Buttons -->
-<div id="answers" class="grid grid-cols-2 gap-2 w-[140%] mx-auto relative left-1/2 -translate-x-1/2">
+   
+   <div id="answers" class="grid grid-cols-2 gap-4 w-full max-w-md mx-auto">
+   </div>
       
    </div><!-- Feedback -->
    <div id="feedback" class="hidden absolute inset-0 rounded-1xl flex items-center justify-center /9000 backdrop-blur">
@@ -605,6 +720,10 @@ function playClickSound() {
     return [...wrongs];
 }
 
+function capitalizeWord(word) {
+    return word.charAt(0).toUpperCase() +
+        word.slice(1).toLowerCase();
+}
 
         function renderQuestion() {
   answered = false;
@@ -612,7 +731,8 @@ function playClickSound() {
   
   const q = questions[currentQ];
   
-  document.getElementById("question-word").textContent = q.word;
+  document.getElementById("question-word").textContent =
+    capitalizeWord(q.word);
   
   document.getElementById("q-num").textContent = currentQ + 1;
   document.getElementById("score-val").textContent = score;
@@ -628,7 +748,7 @@ function playClickSound() {
     btn.className =
     `btn-answer ${btnColors[i]} w-[90%] mx-auto text-white font-bold text-2xl py-4 px-6 rounded-3xl shadow-md`;
     
-    btn.textContent = opt;
+    btn.textContent = capitalizeWord(opt);
     
     btn.onclick = () => checkAnswer(opt, q.correct, btn);
     
