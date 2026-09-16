@@ -9,8 +9,8 @@
   <script src="/_sdk/b23f1f6ec78e9bd4.editing_sdk.js" integrity="sha512-WFdQutvUZzxrmcHkL8cbfuFDTeF8Cn8Bt3yqX/a/OdiqPz/t9UcjsIsZK7D+tMTmC2JTwhwRJNyfcHmIWhG8Wg=="></script>
   <style>
 body {
-    background: url("english.png") no-repeat center center fixed;
-    background-size: cover;
+  background: url("english.png") no-repeat center center fixed;
+  background-size: cover;
 }
         * { font-family: 'Fredoka', sans-serif; }
         
@@ -160,8 +160,8 @@ box-sizing: border-box;
 }
 .he-bloom-logo {
   position: fixed;
-  width: 100px;
-  height: 100px;
+  width: 60px;
+  height: 60px;
   z-index: 9999;
   opacity: .95;
   pointer-events: none;
@@ -398,38 +398,29 @@ button {
  
 <body data-template-id="__page-root" class="w-full min-h-screen overflow-y-auto relative flex items-start justify-center p-4"><!-- Background elements -->
  
-  <div class="fixed inset-0 pointer-events-none overflow-hidden" aria-hidden="true"><!-- Sun -->
-   <div class="sun-pulse absolute top-6 left-6 text-10xl sm:text-10xl">
-    🌞
-   </div><!-- Rainbow -->
-   <div class="absolute top-10 right-10 text-10xl float-slow opacity-70">
-    🌈
-   </div><!-- Clouds -->
-   <div class="absolute top-[12%] left-[20%] text-10xl float" style="animation-delay:0.5s">
-    ☁️
-   </div>
-   <div class="absolute top-[8%] left-[55%] text-20xl float" style="animation-delay:1.5s">
-    ☁️
-   </div>
-   <div class="absolute top-[18%] right-[15%] text-20xl float" style="animation-delay:2.5s">
-    ☁️
-   </div><!-- Birds -->
-   <div class="bird absolute top-[6%] text-5xl">
+</div><!-- Birds -->
+   <div class="bird absolute top-[1%] text-5xl">
     🦜 
    </div>
-   <div class="bird2 absolute top-[18%] text-5xl">
+   <div class="bird2 absolute top-[3%] text-5xl">
     🦜
    </div><!-- Bees -->
-   <div class="bee absolute top-[45%] left-[15%] text-6xl">
+   <div class="bee absolute top-[12%] left-[2%] text-6xl">
     🐝
    </div>
-   <div class="bee absolute top-[45%] right-[15%] text-6xl" style="animation-delay:2s">
+   <div class="bee absolute top-[12%] right-[2%] text-6xl" style="animation-delay:2s">
     🐝
    </div><!-- Ground -->
-   <div class="absolute bottom-0 left-0 right-0 flex justify-around items-end"><span class="sway text-4xl">🌹 </span> <span class="float-slow text-2xl" style="animation-delay:0.3s">🌸</span> <span class="sway text-4xl" style="animation-delay:1.0s">🌹 </span> <span class="float-slow text-2xl" style="animation-delay:0.7s">🌺</span> <span class="sway text-4xl" style="animation-delay:1.0s">🌹 </span> <span class="float-slow text-2xl" style="animation-delay:1.2s">🌸 </span> <span class="sway text-4xl" style="animation-delay:1.0s">🌹 </span>
+   <div class="absolute bottom-0 left-0 right-0 flex justify-around items-end"><span class="sway text-4xl">🌸 </span> <span class="float-slow text-2xl" style="animation-delay:0.3s">🌺 </span> <span class="sway text-4xl" style="animation-delay:1.0s">🌸 </span> <span class="float-slow text-2xl" style="animation-delay:0.7s">🌺</span> <span class="sway text-4xl" style="animation-delay:1.0s">🌸 </span> <span class="float-slow text-2xl" style="animation-delay:1.2s">🌺 </span> <span class="sway text-4xl" style="animation-delay:1.0s">🌸  </span>
    </div>
-   
-  </div><!-- Music toggle --> <button id="music-btn" onclick="toggleMusic()" class="fixed top-4 right-4 z-50 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center text-2xl float" aria-label="Toggle music"> 🎵
+
+</div><!-- Music toggle -->
+<button id="music-btn"
+        onclick="toggleMusic()"
+        class="absolute top-4 right-4 z-50 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center text-2xl"
+        aria-label="Toggle music">
+    🎵
+</button>
   
   </button> <!-- Game Card -->
 <main id="game-card"
@@ -593,49 +584,49 @@ function stopMusic() {
   
   
         const animals = [
-  { word: "CAT", image: "images/kucing.png" },       
-  { word: "DOG", image: "images/anjing.png" },
-  { word: "RABBIT", image: "images/arnab.png" },
-  { word: "MOUSE", image: "images/tikus.png" },
-  { word: "SQUIRREL", image: "images/tupai.png" },
-  { word: "CHICKEN", image: "images/ayam.png" },
-  { word: "DUCK", image: "images/itik.png" },
-  { word: "GOAT", image: "images/kambing.png" },
-  { word: "COW", image: "images/lembu.png" },
-  { word: "MONKEY", image: "images/monyet.png" },
-  { word: "PANDA", image: "images/panda.png" },
-  { word: "KOALA", image: "images/koala.png" },
-  { word: "BEAR", image: "images/beruang.png" },
-  { word: "HORSE", image: "images/kuda.png" },
-  { word: "ELEPHANT", image: "images/gajah.png" },
-  { word: "TIGER", image: "images/harimau.png" },
-  { word: "LION", image: "images/singa.png" },
-  { word: "SNAKE", image: "images/ular.png" },
-  { word: "FROG", image: "images/katak.png" },
-  { word: "LIZARD", image: "images/cicak.png" },
-  { word: "GRASSHOPPER", image: "images/belalang.png" },
-  { word: "BEE", image: "images/lebah.png" },
-  { word: "COCKROACH", image: "images/lipas.png" },
-  { word: "ANT", image: "images/semut.png" },
-  { word: "DRAGONFLY", image: "images/pepatung.png" },
-  { word: "BUTTERFLY", image: "images/rama_rama.png" },
-  { word: "LADYBUG", image: "images/kumbang.png" },
-  { word: "MOSQUITO", image: "images/nyamuk.png" },
-  { word: "FLY", image: "images/lalat.png" },
-  { word: "PARROT", image: "images/kakak_tua.png" }, 
-  { word: "PEACOCK", image: "images/merak.png" },
-  { word: "FLAMINGO", image: "images/flamingo.png" },
-  { word: "OSTRICH", image: "images/burung_unta.png" },
-  { word: "PENGUIN", image: "images/penguin.png" }, 
-  { word: "SEAHORSE", image: "images/kuda_laut.png" },
-  { word: "SQUID", image: "images/sotong.png" },
-  { word: "SHRIMP", image: "images/udang.png" },
-  { word: "CRAB", image: "images/ketam.png" },
-  { word: "STINGRAY", image: "images/pari.png" },
-  { word: "DOLPHIN", image: "images/lumba_lumba.png" },
-  { word: "SHARK", image: "images/jerung.png" },
-  { word: "WHALE", image: "images/paus.png" },
- 
+  { word: "CAT", image: "images2/kucing.png" },
+  { word: "DOG", image: "images2/anjing.png" },
+  { word: "RABBIT", image: "images2/arnab.png" },
+  { word: "MOUSE", image: "images2/tikus.png" },
+  { word: "SQUIRREL", image: "images2/tupai.png" },
+  { word: "CHICKEN", image: "images2/ayam.png" },
+  { word: "DUCK", image: "images2/itik.png" },
+  { word: "GOAT", image: "images2/kambing.png" },
+  { word: "COW", image: "images2/lembu.png" },
+  { word: "MONKEY", image: "images2/monyet.png" },
+  { word: "PANDA", image: "images2/panda.png" },
+  { word: "KOALA", image: "images2/koala.png" },
+  { word: "BEAR", image: "images2/beruang.png" },
+  { word: "HORSE", image: "images2/kuda.png" },
+  { word: "ELEPHANT", image: "images2/gajah.png" },
+  { word: "TIGER", image: "images2/harimau.png" },
+  { word: "LION", image: "images2/singa.png" },
+  { word: "SNAKE", image: "images2/ular.png" },
+  { word: "FROG", image: "images2/katak.png" },
+  { word: "LIZARD", image: "images2/cicak.png" },
+  { word: "GRASSHOPPER", image: "images2/belalang.png" },
+  { word: "BEE", image: "images2/lebah.png" },
+  { word: "COCKROACH", image: "images2/lipas.png" },
+  { word: "ANT", image: "images2/semut.png" },
+  { word: "DRAGONFLY", image: "images2/pepatung.png" },
+  { word: "BUTTERFLY", image: "images2/rama_rama.png" },
+  { word: "LADYBUG", image: "images2/kumbang.png" },
+  { word: "MOSQUITO", image: "images2/nyamuk.png" },
+  { word: "FLY", image: "images2/lalat.png" },
+  { word: "PARROT", image: "images2/kakak_tua.png" },
+  { word: "PEACOCK", image: "images2/merak.png" },
+  { word: "FLAMINGO", image: "images2/flamingo.png" },
+  { word: "OSTRICH", image: "images2/burung_unta.png" },
+  { word: "PENGUIN", image: "images2/penguin.png" },
+  { word: "SEAHORSE", image: "images2/kuda_laut.png" },
+  { word: "SQUID", image: "images2/sotong.png" },
+  { word: "SHRIMP", image: "images2/udang.png" },
+  { word: "CRAB", image: "images2/ketam.png" },
+  { word: "STINGRAY", image: "images2/pari.png" },
+  { word: "DOLPHIN", image: "images2/lumba_lumba.png" },
+  { word: "SHARK", image: "images2/jerung.png" },
+  { word: "WHALE", image: "images2/paus.png" },
+  
 ];
 
 const animalList = document.getElementById("animal-list");
