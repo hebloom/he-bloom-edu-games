@@ -3,13 +3,13 @@
  <head><script>window["__codeletBootstrap__"]=JSON.parse('{"A":"A","B":"20260730-05-6814160","C":{"Abril Fatface":"YACgEZbkUVE,0","Alfa Slab One":"YACgEYS9sJU,0","Anton":"YACgEcYqQ-A,0","Archivo":"YAHO2-t-jNE,0","Arial":"YAGyDvJ_4Ts,0","Bebas Neue":"YACgESME5ew,0","Broken Glyph":"YADZ-exUkv0,0","Canva Sans":"YAFdJjTk5UU,0","Caveat":"YALBs2ploWQ,0","Comic Sans MS":"YAHO2VMiyZo,0","Cormorant Garamond":"YAFdJhX-538,0","Courier New":"YAGzXiGs0_8,0","DM Sans":"YAD1aU3sLnI,0","DM Serif Display":"YAD1aYG82rc,0","Forum":"YACgEcnnqB4,0","Fraunces":"YAEul-FRQw4,0","Georgia":"YAGzXkO0pEM,0","Ghost Mono":"YAHO2EIdDP0,0","Helvetica Neue":"YAFcf6CtJfI,0","Impact":"YAFcfnjI7Vk,0","Inter":"YAFdJvSyp_k,3","Iowan Old Style":"YAGNIFa8j9o,0","Jacques Francois":"YAHO2a5g66Q,0","JetBrains Mono":"YADy3sAhvXQ,0","Oleo Script":"YACgEQQ14jI,0","Playfair Display":"YAFdJhem5V8,1","Poppins":"YAE5fPSY9qM,0","Press Start 2P":"YAFyGr-8pmQ,0","Source Sans 3":"YAG4lO1Mj10,0","Space Grotesk":"YAHO2sjPCSM,0","Times New Roman":"YAGzXW3gftg,0","Times":"YAGzXW3gftg,0","Trebuchet MS":"YAFcfrglpVA,0","Verdana":"YAGzXTctYtQ,0","Work Sans":"YAGXhLOKv44,0","Yellowtail":"YACgEYG4kG4,0"}}');</script><script src="/_sdk/a27874207e105461.telemetry_sdk.js" integrity="sha512-wgI5N9F7oA2h3vH+benMYIv4wGqTct4nKWakqgvfgRyBLmfYq8q/fi6gkfWKd2hMsyN+VQ/qOAOpxybwkcoxlA=="></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Match Pictures to Words</title>
+  <title>Choose the Correct Word</title>
   <script src="https://cdn.tailwindcss.com/3.4.17"></script>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
   <script src="/_sdk/b23f1f6ec78e9bd4.editing_sdk.js" integrity="sha512-WFdQutvUZzxrmcHkL8cbfuFDTeF8Cn8Bt3yqX/a/OdiqPz/t9UcjsIsZK7D+tMTmC2JTwhwRJNyfcHmIWhG8Wg=="></script>
   <style>
 body {
-    background: url("english.png") no-repeat center center fixed;
+    background: url("english.png") no-repeat center center;
     background-size: cover;
 }
         * { font-family: 'Fredoka', sans-serif; }
@@ -64,116 +64,209 @@ body {
         .btn-answer:hover { transform: scale(1.05); }
         .btn-answer:active { transform: scale(0.95); }
 #game-card {
-    width: 100%;
-    max-width: 800px;
-    min-height: 60vh;
-    padding: 40px 70px;
-    
-    background: rgba(220, 245, 255, 0.25);
-    backdrop-filter: blur(3px);
-    -webkit-backdrop-filter: blur(3px);
-    
-    border: 2px solid rgba(255, 255, 255, 0.9);
-    border-radius: 35px;
-    overflow: hidden;
-    
-    box-shadow:
-        0 0 0 2px rgba(255, 255, 255, 0.25),
-        0 10px 30px rgba(255, 255, 255, 0.20);
+width: 100%;
+max-width: 800px;
+min-height: 80vh;
+padding: 40px 70px;
+
+background: rgba(220, 245, 255, 0.25);
+backdrop-filter: blur(3px);
+-webkit-backdrop-filter: blur(3px);
+
+border: 2px solid rgba(255, 255, 255, 0.9);
+border-radius: 35px;
+
+overflow: visible;
+
+box-shadow:
+0 0 0 2px rgba(255, 255, 255, 0.25),
+0 10px 30px rgba(255, 255, 255, 0.20);
 }
 
 .question-img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    display: block;
+width: 100%;
+height: 100%;
+object-fit: contain;
+display: block;
 }
 
-#game-card{
-    width:90%;
-    max-width:700px;
-    height:750px;      /* Ubah nilai ini ikut kehendak */
-    margin:0 auto;
+#game-card {
+width: 90%;
+max-width: 600px;
+min-height: 750px;
+height: auto;
+margin: 0 auto;
 }
+
+/* =========================
+HE BLOOM LOGO
+========================= */
+
 .he-bloom-logo {
-    position: fixed;
-    width: 80px;
-    height: 80px;
-    z-index: 9999;
-    opacity: .95;
-    pointer-events: none;
+position: fixed;
+width: 60px;
+height: 60px;
+object-fit: contain;
+z-index: 9999;
+opacity: .95;
+pointer-events: none;
 }
 
 .bottom-logo {
-    bottom: 18px;
-    right: 18px;
+bottom: 18px;
+right: 18px;
 }
-/* =====================================================
-   LANDSCAPE - BOLEH SCROLL
-   DESIGN ASAL KEKAL
-   ===================================================== */
-@media (orientation: landscape) and (max-height: 600px) {
-    
-    html,
-    body {
-        width: 100%;
-        min-width: 0;
-        min-height: 100%;
-        height: auto;
-        overflow-x: hidden !important;
-        overflow-y: auto !important;
-    }
-    
-    body {
-        align-items: flex-start;
-        justify-content: center;
-    }
-    
-    #game-card {
-        height: auto;
-        min-height: 100vh;
-        margin-top: 20px;
-        margin-bottom: 40px;
-    }
+
+/* =========================================
+HE BLOOM - UNIVERSAL FLUID RESPONSIVE
+SATU DESIGN UNTUK SEMUA SKRIN
+========================================= */
+
+#game-card {
+width: min(94vw, 800px);
+max-width: 800px;
+
+min-height: auto;
+height: auto;
+
+margin: 0 auto;
+
+padding:
+clamp(18px, 4vw, 40px)
+clamp(16px, 6vw, 70px)
+clamp(24px, 5vw, 40px);
+
+box-sizing: border-box;
+
+zoom: 1;
+transform: none;
 }
-    </style>
+
+/* SCORE + SOALAN */
+#game-card > div:first-child {
+width: 100% !important;
+max-width: 800px;
+margin-left: auto !important;
+margin-right: auto !important;
+
+padding:
+clamp(8px, 2vw, 16px)
+clamp(10px, 3vw, 20px);
+
+box-sizing: border-box;
+}
+
+/* Tulisan SOALAN & MARKAH */
+#game-card > div:first-child span {
+font-size: 20px !important;
+}
+
+/* ICON buku */
+#game-card > div:first-child .text-3xl {
+font-size: clamp(22px, 4vw, 30px);
+}
+
+/* KOTAK GAMBAR */
+#question-image {
+width: clamp(150px, 30vw, 300px) !important;
+height: clamp(150px, 30vw, 300px) !important;
+
+margin-left: auto;
+margin-right: auto;
+}
+
+/* BUTANG JAWAPAN */
+#answers {
+width: 100% !important;
+max-width: 800px !important;
+
+gap: clamp(10px, 2.5vw, 24px);
+}
+
+/* Semua butang jawapan */
+.btn-answer {
+width: 100% !important;
+
+height: clamp(64px, 11vw, 100px) !important;
+
+min-height: 64px;
+
+padding:
+clamp(8px, 2vw, 16px)
+clamp(8px, 2vw, 20px);
+
+font-size: clamp(24px, 3.5vw, 34px) !important;
+
+line-height: 1.1;
+
+box-sizing: border-box;
+}
+
+/* BUTANG KEMBALI */
+#game-card button[onclick*="english.html"] {
+font-size: clamp(16px, 2.5vw, 24px) !important;
+
+padding:
+clamp(8px, 2vw, 12px)
+clamp(18px, 4vw, 30px);
+
+white-space: nowrap;
+}
+
+/* LOGO */
+.he-bloom-logo {
+width: clamp(55px, 9vw, 80px);
+height: clamp(55px, 9vw, 80px);
+}
+/* =========================================
+BETULKAN SCORE BOX SUPAYA DALAM BORDER
+========================================= */
+
+#game-card {
+margin-top: 0 !important;
+}
+
+/* SCORE + SOALAN */
+#game-card>div.flex.items-center.justify-between {
+width: 100% !important;
+max-width: 100% !important;
+
+margin-left: 0 !important;
+margin-right: 0 !important;
+
+left: auto !important;
+transform: none !important;
+
+box-sizing: border-box;
+}    </style>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js" type="text/javascript"></script>
   <script src="/_sdk/935a53bc2e11fb8d.data_sdk.js" type="text/javascript" integrity="sha512-qr2oyPnEys1WebcOABaRh6hG77r5PWpqeWW6JTKbRJqly/INsfBi31CVNlTmHqjgeLpkVmmHZJUdxSx/32tOFQ=="></script>
   <script src="/_sdk/6030e540d4419216.resizing_sdk.js" type="text/javascript" integrity="sha512-b5KWzyoXsbWP4smq4sftIi6Kts4YVBpBsz0BwCViwbBJkK64a3/Z6ZMdWA+qnplNcXw4mhZeqvQi3mOosiRJdA=="></script>
  </head>
- <body data-template-id="__page-root" class="w-full min-h-screen overflow-hidden relative flex items-center justify-center p-4"><!-- Background elements -->
-  <div class="fixed inset-0 pointer-events-none overflow-hidden" aria-hidden="true"><!-- Sun -->
-   <div class="sun-pulse absolute top-6 left-6 text-10xl sm:text-10xl">
-    🌞
-   </div><!-- Rainbow -->
-   <div class="absolute top-10 right-10 text-10xl float-slow opacity-70">
-    🌈
-   </div><!-- Clouds -->
-   <div class="absolute top-[12%] left-[20%] text-10xl float" style="animation-delay:0.5s">
-    ☁️
-   </div>
-   <div class="absolute top-[8%] left-[55%] text-20xl float" style="animation-delay:1.5s">
-    ☁️
-   </div>
-   <div class="absolute top-[18%] right-[15%] text-20xl float" style="animation-delay:2.5s">
-    ☁️
-   </div><!-- Birds -->
-   <div class="bird absolute top-[6%] text-5xl">
+<body data-template-id="__page-root" class="w-full min-h-screen overflow-x-hidden overflow-y-auto relative flex items-center justify-center p-4"><!-- Background elements 
+ </div><!-- Birds -->
+   <div class="bird absolute top-[3%] text-5xl">
     🦜 
    </div>
-   <div class="bird2 absolute top-[18%] text-5xl">
+   <div class="bird2 absolute top-[10%] text-5xl">
     🦜
    </div><!-- Bees -->
-   <div class="bee absolute top-[45%] left-[15%] text-6xl">
+   <div class="bee absolute top-[45%] left-[2%] text-6xl">
     🐝
    </div>
-   <div class="bee absolute top-[45%] right-[15%] text-6xl" style="animation-delay:2s">
+   <div class="bee absolute top-[45%] right-[2%] text-6xl" style="animation-delay:2s">
     🐝
    </div><!-- Ground -->
-   <div class="absolute bottom-0 left-0 right-0 flex justify-around items-end"><span class="sway text-4xl">🌹 </span> <span class="float-slow text-2xl" style="animation-delay:0.3s">🌸</span> <span class="sway text-4xl" style="animation-delay:1.0s">🌹 </span> <span class="float-slow text-2xl" style="animation-delay:0.7s">🌺</span> <span class="sway text-4xl" style="animation-delay:1.0s">🌹 </span> <span class="float-slow text-2xl" style="animation-delay:1.2s">🌸 </span> <span class="sway text-4xl" style="animation-delay:1.0s">🌹 </span>
+   <div class="absolute bottom-0 left-0 right-0 flex justify-around items-end"><span class="sway text-4xl">🌸 </span> <span class="float-slow text-2xl" style="animation-delay:0.3s">🌺 </span> <span class="sway text-4xl" style="animation-delay:1.0s">🌸 </span> <span class="float-slow text-2xl" style="animation-delay:0.7s">🌺</span> <span class="sway text-4xl" style="animation-delay:1.0s">🌸 </span> <span class="float-slow text-2xl" style="animation-delay:1.2s">🌺 </span> <span class="sway text-4xl" style="animation-delay:1.0s">🌸  </span>
    </div>
-   
-  </div><!-- Music toggle --> <button id="music-btn" onclick="toggleMusic()" class="fixed top-4 right-4 z-50 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center text-2xl float" aria-label="Toggle music"> 🎵
+
+</div><!-- Music toggle -->
+<button id="music-btn"
+        onclick="toggleMusic()"
+        class="absolute top-4 right-4 z-50 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center text-2xl"
+        aria-label="Toggle music">
+    🎵
+</button>
   
   </button> <!-- Game Card -->
 <main id="game-card"
@@ -181,7 +274,7 @@ class="relative -mt-50 z-50 w-full max-w-x1 mx-auto bg-transparent rounded-none 
 
 
 <!-- SCORE + QUESTION -->
-<div class="flex items-center justify-between bg-white rounded-xl shadow-xl w-[120%] mx-auto relative left-1/2 -translate-x-1/2 -translate-y-6 px-4 mb-4">
+<div class="flex items-center justify-between bg-white rounded-xl shadow-xl w-[120%] mx-auto relative left-1/2 -translate-x-1/2 -translate-y-6 px-4 py-2 mb-4">
     
     <div class="flex items-center gap-2">
         <span class="text-3xl">📖</span>
@@ -269,77 +362,77 @@ onclick="restartGame()">
   <script>
   
         const words = [
-    { word: "WATER", image: "images/air.png" },
-    { word: "GRAPES", image: "images/anggur.png" },
-    { word: "DOG", image: "images/anjing.png" },
-    { word: "FIRE", image: "images/api.png" },
-    { word: "RABBIT", image: "images/arnab.png" },
-    { word: "AVOCADO", image: "images/avokado.png" },
-    { word: "CLOUD", image: "images/awan.png" },
-    { word: "CHICKEN", image: "images/ayam.png" },
-    { word: "BUS", image: "images/bas.png" },
-    { word: "BICYCLE", image: "images/basikal.png" },
-    { word: "BAG", image: "images/beg.png" },
-    { word: "STAR", image: "images/bintang.png" },
-    { word: "BALL", image: "images/bola.png" },
-    { word: "BROCCOLI", image: "images/brokoli.png" },
-    { word: "BOOK", image: "images/buku.png" },
-    { word: "MOON", image: "images/bulan.png" },
-    { word: "MUSHROOM", image: "images/cendawan.png" },
-    { word: "LEAF", image: "images/daun.png" },
-    { word: "APPLE", image: "images/epal.png" },
-    { word: "FILE", image: "images/fail.png" },
-    { word: "ELEPHANT", image: "images/gajah.png" },
-    { word: "SCISSORS", image: "images/gunting.png" },
-    { word: "TIGER", image: "images/harimau.png" },
-    { word: "HELICOPTER", image: "images/helikopter.png" },
-    { word: "HOSPITAL", image: "images/hospital.png" },
-    { word: "DUCK", image: "images/itik.png" },
-    { word: "CORN", image: "images/jagung.png" },
-    { word: "CLOCK", image: "images/jam.png" },
-    { word: "BRIDGE", image: "images/jambatan.png" },
-    { word: "SHARK", image: "images/jerung.png" },
-    { word: "CACTUS", image: "images/kaktus.png" },
-    { word: "CAMERA", image: "images/kamera.png" },
-    { word: "SHIP", image: "images/kapal.png" },
-    { word: "AIRPLANE", image: "images/kapal_terbang.png" },
-    { word: "FROG", image: "images/katak.png" },
-    { word: "COCONUT", image: "images/kelapa.png" },
-    { word: "CAR", image: "images/kereta.png" },
-    { word: "TRAIN", image: "images/kereta_api.png" },
-    { word: "CRAB", image: "images/ketam.png" },
-    { word: "CAT", image: "images/kucing.png" },
-    { word: "HORSE", image: "images/kuda.png" },
-    { word: "TRAFFIC LIGHT", image: "images/lampu_isyarat.png" },
-    { word: "BEE", image: "images/lebah.png" },
-    { word: "LEMON", image: "images/lemon.png" },
-    { word: "CARROT", image: "images/lobak_merah.png" },
-    { word: "SUN", image: "images/matahari.png" },
-    { word: "MONKEY", image: "images/monyet.png" },
-    { word: "PINEAPPLE", image: "images/nanas.png" },
-    { word: "JACKFRUIT", image: "images/nangka.png" },
-    { word: "STINGRAY", image: "images/pari.png" },
-    { word: "RAINBOW", image: "images/pelangi.png" },
-    { word: "ERASER", image: "images/pemadam.png" },
-    { word: "RULER", image: "images/pembaris.png" },
-    { word: "PEN", image: "images/pen.png" },
-    { word: "PENCIL", image: "images/pencil.png" },
-    { word: "PENGUIN", image: "images/penguin.png" },
-    { word: "BANANA", image: "images/pisang.png" },
-    { word: "TREE", image: "images/pokok.png" },
-    { word: "RAMBUTAN", image: "images/rambutan.png" },
-    { word: "HOUSE", image: "images/rumah.png" },
-    { word: "SNAKEFRUIT", image: "images/salak.png" },
-    { word: "SCHOOL", image: "images/sekolah.png" },
-    { word: "ANT", image: "images/semut.png" },
-    { word: "SQUID", image: "images/sotong.png" },
-    { word: "STRAWBERRY", image: "images/strawberi.png" },
-    { word: "TELEVISION", image: "images/televisyen.png" },
-    { word: "WATERMELON", image: "images/tembikai.png" },
-    { word: "EGGPLANT", image: "images/terung.png" },
-    { word: "CUCUMBER", image: "images/timun.png" },
-    { word: "TOMATO", image: "images/tomato.png" },
-    { word: "SHRIMP", image: "images/udang.png" }, 
+        { word: "WATER", image: "images2/air.png" },
+        { word: "GRAPES", image: "images2/anggur.png" },
+        { word: "DOG", image: "images2/anjing.png" },
+        { word: "FIRE", image: "images2/api.png" },
+        { word: "RABBIT", image: "images2/arnab.png" },
+        { word: "AVOCADO", image: "images2/avokado.png" },
+        { word: "CLOUD", image: "images2/awan.png" },
+        { word: "CHICKEN", image: "images2/ayam.png" },
+        { word: "BUS", image: "images2/bas.png" },
+        { word: "BICYCLE", image: "images2/basikal.png" },
+        { word: "BAG", image: "images2/beg.png" },
+        { word: "STAR", image: "images2/bintang.png" },
+        { word: "BALL", image: "images2/bola.png" },
+        { word: "BROCCOLI", image: "images2/brokoli.png" },
+        { word: "BOOK", image: "images2/buku.png" },
+        { word: "MOON", image: "images2/bulan.png" },
+        { word: "MUSHROOM", image: "images2/cendawan.png" },
+        { word: "LEAF", image: "images2/daun.png" },
+        { word: "APPLE", image: "images2/epal.png" },
+        { word: "FILE", image: "images2/fail.png" },
+        { word: "ELEPHANT", image: "images2/gajah.png" },
+        { word: "SCISSORS", image: "images2/gunting.png" },
+        { word: "TIGER", image: "images2/harimau.png" },
+        { word: "HELICOPTER", image: "images2/helikopter.png" },
+        { word: "HOSPITAL", image: "images2/hospital.png" },
+        { word: "DUCK", image: "images2/itik.png" },
+        { word: "CORN", image: "images2/jagung.png" },
+        { word: "CLOCK", image: "images2/jam.png" },
+        { word: "BRIDGE", image: "images2/jambatan.png" },
+        { word: "SHARK", image: "images2/jerung.png" },
+        { word: "CACTUS", image: "images2/kaktus.png" },
+        { word: "CAMERA", image: "images2/kamera.png" },
+        { word: "SHIP", image: "images2/kapal.png" },
+        { word: "AIRPLANE", image: "images2/kapal_terbang.png" },
+ { word: "FROG", image: "images2/katak.png" },
+{ word: "COCONUT", image: "images2/kelapa.png" },
+{ word: "CAR", image: "images2/kereta.png" },
+{ word: "TRAIN", image: "images2/kereta_api.png" },
+{ word: "CRAB", image: "images2/ketam.png" },
+{ word: "CAT", image: "images2/kucing.png" },
+{ word: "HORSE", image: "images2/kuda.png" },
+{ word: "TRAFFIC LIGHT", image: "images2/lampu_isyarat.png" },
+{ word: "BEE", image: "images2/lebah.png" },
+{ word: "LEMON", image: "images2/lemon.png" },
+{ word: "CARROT", image: "images2/lobak_merah.png" },
+{ word: "SUN", image: "images2/matahari.png" },
+{ word: "MONKEY", image: "images2/monyet.png" },
+{ word: "PINEAPPLE", image: "images2/nanas.png" },
+{ word: "JACKFRUIT", image: "images2/nangka.png" },
+{ word: "STINGRAY", image: "images2/pari.png" },
+{ word: "RAINBOW", image: "images2/pelangi.png" },
+{ word: "ERASER", image: "images2/pemadam.png" },
+{ word: "RULER", image: "images2/pembaris.png" },
+{ word: "PEN", image: "images2/pen.png" },
+{ word: "PENCIL", image: "images2/pencil.png" },
+{ word: "PENGUIN", image: "images2/penguin.png" },
+{ word: "BANANA", image: "images2/pisang.png" },
+{ word: "TREE", image: "images2/pokok.png" },
+{ word: "RAMBUTAN", image: "images2/rambutan.png" },
+{ word: "HOUSE", image: "images2/rumah.png" },
+{ word: "SNAKEFRUIT", image: "images2/salak.png" },
+{ word: "SCHOOL", image: "images2/sekolah.png" },
+{ word: "ANT", image: "images2/semut.png" },
+{ word: "SQUID", image: "images2/sotong.png" },
+{ word: "STRAWBERRY", image: "images2/strawberi.png" },
+{ word: "TELEVISION", image: "images2/televisyen.png" },
+{ word: "WATERMELON", image: "images2/tembikai.png" },
+{ word: "EGGPLANT", image: "images2/terung.png" },
+{ word: "CUCUMBER", image: "images2/timun.png" },
+{ word: "TOMATO", image: "images2/tomato.png" },
+{ word: "SHRIMP", image: "images2/udang.png" }, 
     { word: "DAISY", image: "images1/daisy.png" },
 { word: "CARNATION", image: "images1/carnation.png" },
 { word: "LAVENDER", image: "images1/lavender.png" },
