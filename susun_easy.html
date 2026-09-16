@@ -60,7 +60,7 @@ body {
         .shake { animation: shake 0.4s ease-out; }
         .fade-in { animation: fadeIn 0.4s ease-out; }
         
-.btn-answer {
+     .btn-answer {
     border: 4px solid #fff;
     border-radius: 35px;
     
@@ -118,28 +118,26 @@ body {
     bottom: 18px;
     right: 18px;
 }
-/* =====================================================
-   LANDSCAPE - 4 BUTANG SEBARIS
-   PORTRAIT KEKAL SEPERTI ASAL
-   ===================================================== */
-@media (orientation: landscape) and (max-height: 600px) {
-    
-    #answers {
-        grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
-        width: 100% !important;
-        max-width: none !important;
-        left: 0 !important;
-        transform: none !important;
-        gap: 12px !important;
-    }
-    
-    #answers .btn-answer {
-        width: 100% !important;
-        min-width: 0 !important;
-        padding-left: 6px !important;
-        padding-right: 6px !important;
-        white-space: nowrap;
-    }
+/* ===== UNIVERSAL RESPONSIVE - BUTANG KE BAWAH ===== */
+
+#answers {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
+    max-width: 650px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    gap: 12px !important;
+}
+
+#answers .btn-answer {
+    width: 100% !important;
+    min-width: 0 !important;
+    height: auto !important;
+    min-height: 80px !important;
+    padding: 14px 10px !important;
+    box-sizing: border-box !important;
+    white-space: normal !important;
 }
 
 /* ===== UNIVERSAL SCROLL SAHAJA ===== */
@@ -171,7 +169,7 @@ body {
 <div class="bird2 absolute top-[10%] text-5xl">
     🦜
 </div><!-- Bees -->
-<div class="bee absolute top-[45%] left-[2%]-6xl">
+<div class="bee absolute top-[45%] left-[2%] text-6xl">
     🐝
 </div>
 <div class="bee absolute top-[45%] right-[2%] text-6xl" style="animation-delay:2s">
