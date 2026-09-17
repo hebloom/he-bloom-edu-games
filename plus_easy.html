@@ -169,31 +169,83 @@ body {
         white-space: nowrap !important;
         letter-spacing: -0.35px !important;
     }
+}
+
+/* =====================================================
+   FIX TABLET PORTRAIT
+   HP PORTRAIT KEKAL SEPERTI ASAL
+   ===================================================== */
+
+@media (orientation: portrait) and (min-width: 481px) {
     
-}
-/* UNIVERSAL: IKUT ORIENTASI SKRIN */
-
-/* PORTRAIT - SATU LAJUR */
-@media (orientation: portrait) {
+    html,
+    body {
+        width: 100%;
+        min-width: 0;
+        height: auto;
+        min-height: 100%;
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+    }
+    
+    body {
+        align-items: flex-start !important;
+        justify-content: center !important;
+        padding: 12px !important;
+    }
+    
+    #game-card {
+        width: 92vw !important;
+        max-width: none !important;
+        min-height: calc(100vh - 24px) !important;
+        height: auto !important;
+        
+        margin-top: 12px !important;
+        margin-bottom: 40px !important;
+        
+        padding: 70px 5vw 40px !important;
+        box-sizing: border-box !important;
+    }
+    
+    /* Besarkan soalan pada tablet */
+    #question-text {
+        font-size: clamp(36px, 4vw, 58px) !important;
+    }
+    
+    /* Besarkan butang jawapan */
     #answers {
+        width: 100% !important;
         grid-template-columns: 1fr !important;
+        gap: 18px !important;
+    }
+    
+    #answers .btn-answer {
+        width: 100% !important;
+        min-height: 68px !important;
+        font-size: clamp(22px, 2.5vw, 34px) !important;
+        padding-top: 12px !important;
+        padding-bottom: 12px !important;
+    }
+    
+    /* Besarkan tulisan status */
+    #status-bar {
+        width: 110% !important;
+    }
+    
+    #status-bar .font-black {
+        font-size: clamp(12px, 1.8vw, 22px) !important;
+    }
+    
+    #status-bar .text-3xl {
+        font-size: clamp(24px, 3vw, 40px) !important;
     }
 }
-
-/* LANDSCAPE - DUA LAJUR */
-@media (orientation: landscape) {
-    #answers {
-        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    }
-}
-
-
     </style>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js" type="text/javascript"></script>
   <script src="/_sdk/935a53bc2e11fb8d.data_sdk.js" type="text/javascript" integrity="sha512-qr2oyPnEys1WebcOABaRh6hG77r5PWpqeWW6JTKbRJqly/INsfBi31CVNlTmHqjgeLpkVmmHZJUdxSx/32tOFQ=="></script>
   <script src="/_sdk/6030e540d4419216.resizing_sdk.js" type="text/javascript" integrity="sha512-b5KWzyoXsbWP4smq4sftIi6Kts4YVBpBsz0BwCViwbBJkK64a3/Z6ZMdWA+qnplNcXw4mhZeqvQi3mOosiRJdA=="></script>
  </head>
-<body data-template-id="__page-root" class="w-full min-h-screen overflow-x-hidden overflow-y-auto relative flex items-center justify-center p-4"><!-- Background elements -->
+ <body data-template-id="__page-root" class="w-full min-h-screen overflow-hidden relative flex items-center justify-center p-4"><!-- Background elements -->
 </div><!-- Birds -->
    <div class="bird absolute top-[3%] text-5xl">
     🦜 
@@ -262,7 +314,7 @@ mb-4">
    <div id="question-area" class="text-center mb-6">
     <p id="question-text" class="text-16xl sm:text-14xl font-bold text-gray-600 fade-in">12 + 6 = ?</p>
    </div><!-- Answer Buttons -->
-  <div id="answers" class="grid grid-cols-1 gap-3">
+   <div id="answers" class="grid grid-cols-1 sm:grid-cols-2 gap-3">
    </div><!-- Feedback -->
    <div id="feedback" class="hidden absolute inset-0 rounded-1xl flex items-center justify-center /9000 backdrop-blur">
     <p id="feedback-text" class="text-3xl sm:text-4xl font-bold text-center zoom-in"></p>
