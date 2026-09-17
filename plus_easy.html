@@ -116,6 +116,62 @@ body {
         margin-bottom: 40px;
     }
 }
+/* FIX KHAS HP PORTRAIT SAHAJA */
+
+@media (orientation: portrait) and (max-width: 480px) {
+    
+    #status-bar {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        
+        left: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        
+        /* Kekalkan kedudukan naik asal */
+        transform: translateY(-12px) !important;
+        
+        padding-left: 4px !important;
+        padding-right: 4px !important;
+        gap: 2px !important;
+        overflow: hidden !important;
+    }
+    
+    #status-bar>div {
+        min-width: 0 !important;
+        gap: 3px !important;
+    }
+    
+    #status-bar>div:first-child {
+        flex: 1 1 0 !important;
+    }
+    
+    #status-bar>div:nth-child(2) {
+        flex: 0 0 1px !important;
+        margin-left: 2px !important;
+        margin-right: 2px !important;
+    }
+    
+    #status-bar>div:last-child {
+        flex: 1 1 0 !important;
+        justify-content: flex-end !important;
+    }
+    
+    #status-bar .text-3xl {
+        font-size: 20px !important;
+        line-height: 1 !important;
+    }
+    
+    #status-bar .font-black {
+        font-size: 10px !important;
+        line-height: 1.1 !important;
+        white-space: nowrap !important;
+        letter-spacing: -0.35px !important;
+    }
+    
+}
+
     </style>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js" type="text/javascript"></script>
   <script src="/_sdk/935a53bc2e11fb8d.data_sdk.js" type="text/javascript" integrity="sha512-qr2oyPnEys1WebcOABaRh6hG77r5PWpqeWW6JTKbRJqly/INsfBi31CVNlTmHqjgeLpkVmmHZJUdxSx/32tOFQ=="></script>
