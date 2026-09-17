@@ -8,10 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
   <script src="/_sdk/b23f1f6ec78e9bd4.editing_sdk.js" integrity="sha512-WFdQutvUZzxrmcHkL8cbfuFDTeF8Cn8Bt3yqX/a/OdiqPz/t9UcjsIsZK7D+tMTmC2JTwhwRJNyfcHmIWhG8Wg=="></script>
   <style>
-body {
-    background: url("english.png") no-repeat center center fixed;
-    background-size: cover;
-}
+
         * { font-family: 'Fredoka', sans-serif; }
         
         @keyframes float { 0%,100%{ transform: translateY(0) } 50%{ transform: translateY(-10px) } }
@@ -230,7 +227,23 @@ body {
 
   box-sizing: border-box;
 }
+/* STOP ALL FLICKERING ANIMATIONS */
+*,
+*::before,
+*::after {
+  animation: none !important;
+  transition: none !important;
+}
 
+body {
+  background-attachment: scroll !important;
+}
+
+#game-card {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  box-shadow: none !important;
+}
 
 
 
