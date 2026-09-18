@@ -364,3 +364,39 @@ button:active{
 .password-wrapper .eye-btn:active {
     transform: translateY(-50%) !important;
 }
+
+
+/* =========================
+   HONOR PAD - LOGIN LEBIH BESAR
+========================= */
+
+@media (min-width: 600px) {
+
+    .container {
+        max-width: 600px !important;
+        padding: 50px 45px 50px !important;
+    }
+
+    h1 {
+        font-size: 30px !important;
+    }
+
+    input {
+        height: 68px !important;
+        font-size: 24px !important;
+    }
+
+    .buttons {
+        gap: 20px !important;
+    }
+
+    button {
+        font-size: 25px !important;
+        min-height: 80px !important;
+    }
+
+    #forgotPassword {
+        font-size: 21px !important;
+    }
+
+}
