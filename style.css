@@ -372,12 +372,14 @@ button:active{
 
 @media (min-width: 600px) {
 
-    .container {
-        max-width: 680px !important;
-        min-height: 580px !important;
-        padding: 75px 55px !important;
-        box-sizing: border-box !important;
-    }
+.container {
+    max-width: 680px !important;
+    height: 680px !important;
+    min-height: 680px !important;
+    
+    padding: 75px 55px !important;
+    box-sizing: border-box !important;
+}
 
     h1 {
         font-size: 34px !important;
