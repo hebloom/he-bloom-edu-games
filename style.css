@@ -311,3 +311,52 @@ button:active{
 #backToLogin:active{
     transform:scale(.96);
 }
+
+
+/* =========================
+   PASSWORD EYE BUTTON
+========================= */
+
+.password-wrapper {
+    position: relative;
+    width: 100%;
+    margin-bottom: 24px;
+}
+
+/* KOTAK PASSWORD */
+
+.password-wrapper input {
+    width: 100%;
+    margin-bottom: 0;
+    padding-right: 60px;
+}
+
+/* SIMBOL KUNCI MANGGA */
+
+.password-wrapper .eye-btn {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 40px;
+    min-height: 40px;
+
+    padding: 0;
+    border: none;
+
+    background: transparent;
+    box-shadow: none;
+
+    font-size: 22px;
+    color: #777;
+
+    cursor: pointer;
+}
+
+/* TEKAN KUNCI MANGGA */
+
+.password-wrapper .eye-btn:active {
+    transform: translateY(-50%);
+}
