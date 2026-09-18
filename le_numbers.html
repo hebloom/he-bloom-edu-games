@@ -187,247 +187,307 @@ box-sizing: border-box;
   bottom: 18px;
   right: 18px;
 }
-/* =====================================================
-   RESPONSIVE TAMBAHAN - SEMUA DEVICE
-   HP KECIL / HP BESAR / TABLET / LAPTOP / DESKTOP
-   PORTRAIT + LANDSCAPE
-   DESIGN ASAL DIKEKALKAN
-   ===================================================== */
+
+/* =================================
+   NUMBERS - UNIVERSAL RESPONSIVE
+   HP + TABLET + KOMPUTER
+================================= */
+
+* {
+    box-sizing: border-box;
+}
 
 html {
-  width: 100%;
-  min-height: 100%;
-  overflow-x: hidden;
-  overflow-y: auto;
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 body {
-  width: 100%;
-  min-height: 100vh;
-  overflow-x: hidden;
-  overflow-y: auto;
-  box-sizing: border-box;
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: clamp(10px, 3vw, 30px);
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
-
-/* ===== SEMUA SKRIN ===== */
+/* =================================
+   GAME CARD
+================================= */
 
 #game-card {
-  box-sizing: border-box;
-  width: 90%;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    min-height: auto;
+    height: auto;
+    margin: 0 auto !important;
+
+    padding: clamp(25px, 5vw, 50px)
+             clamp(14px, 4vw, 50px)
+             clamp(35px, 5vw, 55px);
+
+    background: rgba(220, 245, 255, 0.25);
+
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    border-radius: clamp(20px, 4vw, 35px);
+
+    overflow: visible !important;
+
+    box-shadow:
+        0 0 0 2px rgba(255, 255, 255, 0.25),
+        0 10px 30px rgba(255, 255, 255, 0.20);
 }
+
+/* =================================
+   TAJUK NUMBERS
+================================= */
+
+.title-box {
+    width: fit-content;
+    max-width: 100%;
+    margin: 10px auto clamp(25px, 5vw, 40px);
+    padding: clamp(12px, 3vw, 20px)
+             clamp(18px, 5vw, 35px);
+    border-radius: 22px;
+}
+
+.title-box h1 {
+    font-size: clamp(42px, 7vw, 70px) !important;
+    line-height: 1.1;
+    white-space: nowrap;
+}
+
+/* =================================
+   GRID KAD NUMBERS
+================================= */
 
 #animal-list {
-  width: 100%;
-  max-width: 700px;
-  box-sizing: border-box;
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: clamp(16px, 3.5vw, 32px) !important;
+    width: 100% !important;
+    max-width: 1000px !important;
+    margin: 0 auto !important;
 }
 
-.vocab-card,
-.vocab-card img,
-.title-box {
-  box-sizing: border-box;
-  max-width: 100%;
+/* =================================
+   KOTAK NUMBERS
+================================= */
+
+.vocab-card {
+    width: 100%;
+    min-width: 0;
+    padding: clamp(12px, 2.5vw, 20px)
+             clamp(8px, 2vw, 16px)
+             5px;
+
+    background: #fff;
+    border: 3px solid #5b7cff;
+    border-radius: clamp(16px, 3vw, 24px);
+
+    text-align: center;
+
+    box-shadow:
+        0 6px 12px rgba(0, 0, 0, .15);
 }
 
+/* =================================
+   NOMBOR 1 2 3
+================================= */
 
-/* =====================================================
+.vocab-letter {
+    color: #2454d3;
+    font-size: clamp(42px, 7vw, 68px) !important;
+    font-weight: 900;
+    line-height: 1.1;
+    text-align: center;
+    margin-bottom: clamp(12px, 2vw, 20px);
+}
+
+/* =================================
+   EMOJI
+================================= */
+
+.number-emoji {
+    font-size: clamp(20px, 3vw, 28px);
+    line-height: 1.45;
+    text-align: center;
+    max-width: 100%;
+    margin: 0 auto 6px;
+
+    overflow-wrap: anywhere;
+    word-break: break-all;
+}
+
+/* =================================
+   NAMA NUMBER (ONE, TWO...)
+================================= */
+
+.vocab-word {
+    background: #2454d3;
+    color: #fff;
+
+    width: calc(100% + 10px);
+    margin: 0 -5px;
+
+    height: clamp(48px, 5vw, 64px);
+
+    font-size: clamp(24px, 3.5vw, 36px);
+    font-weight: 900;
+    line-height: 1.1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    border-radius: 10px;
+
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
+
+/* =================================
+   TABLET + KOMPUTER
+================================= */
+
+@media (min-width: 768px) {
+
+    #game-card {
+        max-width: 1000px;
+    }
+
+    #animal-list {
+        gap: 30px !important;
+    }
+
+    .vocab-card img {
+        max-width: 240px;
+        height: 190px;
+    }
+
+    .vocab-letter {
+        font-size: 80px !important;
+    }
+
+    .number-emoji {
+        font-size: 28px;
+    }
+
+    .vocab-word {
+        font-size: 32px;
+        height: 48px;
+    }
+
+}
+
+/* =================================
    HP KECIL
-   ===================================================== */
+================================= */
 
 @media (max-width: 380px) {
-  
-  #game-card {
-    width: 96%;
-    padding-left: 6px;
-    padding-right: 6px;
-  }
-  
-  #animal-list {
-    gap: 10px !important;
-  }
-  
-  .vocab-card {
-    padding-left: 7px;
-    padding-right: 7px;
-  }
-  
-  .vocab-card img {
-    width: 90px;
-    height: 90px;
-  }
-  
-  .vocab-letter {
-    font-size: 25px;
-  }
-  
-  .vocab-word {
-    font-size: 14px;
-  }
-  
-  .title-box h1 {
-    font-size: 32px;
-  }
+
+    body {
+        padding: 8px;
+    }
+
+    #game-card {
+        padding: 20px 8px 35px;
+    }
+
+    #animal-list {
+        gap: 10px !important;
+    }
+
+    .vocab-card {
+        border-width: 2px;
+        padding: 10px 6px 4px;
+    }
+
+    .vocab-letter {
+        font-size: 38px !important;
+    }
+
+    .number-emoji {
+        font-size: 18px;
+    }
+
+    .vocab-word {
+        font-size: 20px !important;
+        height: 44px !important;
+    }
+
 }
 
+/* =================================
+   PORTRAIT HP SAHAJA
+================================= */
 
-/* =====================================================
-   HP BESAR
-   ===================================================== */
+@media (max-width: 767px)
+       and (orientation: portrait) {
 
-@media (min-width: 381px) and (max-width: 600px) {
-  
-  #game-card {
-    width: 94%;
-    padding-left: 8px;
-    padding-right: 8px;
-  }
-  
-  #animal-list {
-    gap: 14px !important;
-  }
-  
-  .vocab-card img {
-    width: 105px;
-    height: 105px;
-  }
+    #game-card {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .vocab-card {
+        padding: 12px 8px 5px;
+    }
+
+    .vocab-letter {
+        font-size: 42px !important;
+    }
+
+    .number-emoji {
+        font-size: 20px;
+        line-height: 1.35;
+    }
+
+    .vocab-word {
+        height: 52px !important;
+        font-size: 24px !important;
+        line-height: 1.1;
+    }
+
 }
 
-
-/* =====================================================
-   TABLET
-   ===================================================== */
-
-@media (min-width: 601px) and (max-width: 1024px) {
-  
-  #game-card {
-    width: 88%;
-    max-width: 700px;
-  }
-  
-  #animal-list {
-    gap: 18px !important;
-  }
-  
-  .vocab-card img {
-    width: 115px;
-    height: 115px;
-  }
-}
-
-
-/* =====================================================
-   LAPTOP
-   ===================================================== */
-
-@media (min-width: 1025px) and (max-width: 1440px) {
-  
-  #game-card {
-    width: 90%;
-    max-width: 700px;
-  }
-  
-  #animal-list {
-    gap: 22px !important;
-  }
-}
-
-
-/* =====================================================
-   DESKTOP / KOMPUTER BESAR
-   ===================================================== */
-
-@media (min-width: 1441px) {
-  
-  #game-card {
-    width: 90%;
-    max-width: 700px;
-  }
-  
-  #animal-list {
-    gap: 24px !important;
-  }
-}
-
-
-/* =====================================================
-   LANDSCAPE - SEMUA DEVICE
-   Tidak potong kandungan.
-   Jika tinggi tidak cukup → boleh scroll.
-   ===================================================== */
+/* =================================
+   LANDSCAPE - BOLEH SCROLL
+================================= */
 
 @media (orientation: landscape) {
-  
-  html,
-  body {
-    overflow-x: hidden !important;
-    overflow-y: auto !important;
-  }
-  
-  #game-card {
-    height: auto !important;
-    min-height: 0 !important;
-  }
+
+    html,
+    body {
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+    }
+
+    #game-card {
+        height: auto !important;
+        min-height: 0 !important;
+    }
+
 }
 
-
-/* =====================================================
-   LANDSCAPE SKRIN RENDAH
-   ===================================================== */
-
-@media (orientation: landscape) and (max-height: 500px) {
-  
-  body {
-    min-height: 100vh;
-    height: auto !important;
-  }
-  
-  #game-card {
-    margin-top: 0 !important;
-    padding-top: 5px;
-    padding-bottom: 30px;
-  }
-  
-  .title-box {
-    margin-top: 5px;
-  }
-}
-
-
-/* =====================================
-   FIX KELIP LANDSCAPE + PORTRAIT
-   ===================================== */
+/* =================================
+   FIX ANIMATION
+================================= */
 
 #game-card {
-  animation: none !important;
-  transform: none !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
+    animation: none !important;
+    transform: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
 }
 
 .fade-in {
-  animation: none !important;
-  transform: none !important;
-}
-
-.float,
-.float-slow,
-.bird,
-.bird2,
-.bee,
-.sway,
-.sun-pulse {
-  animation: none !important;
-  transform: none !important;
-}
-
-html,
-body {
-  overflow-x: hidden;
-  overflow-y: auto;
+    animation: none !important;
+    transform: none !important;
 }
 
 
@@ -439,7 +499,7 @@ body {
   <script src="/_sdk/6030e540d4419216.resizing_sdk.js" type="text/javascript" integrity="sha512-b5KWzyoXsbWP4smq4sftIi6Kts4YVBpBsz0BwCViwbBJkK64a3/Z6ZMdWA+qnplNcXw4mhZeqvQi3mOosiRJdA=="></script>
  </head>
  
-<body data-template-id="__page-root" class="w-full min-h-screen overflow-y-auto relative flex items-start justify-center p-4"><!-- Background elements -->
+<body data-template-id="__page-root" class="w-full min-h-screen overflow-x-hidden overflow-y-auto relative flex items-center justify-center p-4"><!-- Background elements -->
  
 
 
