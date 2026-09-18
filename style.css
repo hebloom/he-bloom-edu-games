@@ -367,15 +367,16 @@ button:active{
 
 
 
+
 /* =========================
-   HONOR PAD - BESAR SIKIT
+   HONOR PAD - FINAL
 ========================= */
 
 @media (min-width: 600px) {
 
     .container {
         max-width: 680px !important;
-        padding: 75px 55px 75px !important;
+        padding: 75px 55px !important;
     }
 
     h1 {
