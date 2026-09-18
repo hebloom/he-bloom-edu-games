@@ -406,26 +406,32 @@ button:active{
 
 }
 
+
 /* =========================
-   FIX GARISAN SEBELAH KANAN
+   BACKGROUND PASTEL KEMAS
 ========================= */
 
-html,
 body {
-    width: 100%;
-    min-height: 100%;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden !important;
-}
+    background:
+        linear-gradient(
+            135deg,
+            #fff4fa 0%,
+            #f3efff 50%,
+            #dff7ff 100%
+        ) !important;
 
-body {
     background-repeat: no-repeat !important;
-    background-position: center center !important;
     background-size: cover !important;
-    background-attachment: fixed;
+
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
 }
 
-* {
-    box-sizing: border-box;
+/* BUANG CAHAYA YANG BOLEH HASILKAN GARIS */
+
+body::before,
+body::after {
+    display: none !important;
+    content: none !important;
 }
+
