@@ -408,30 +408,43 @@ button:active{
 
 
 /* =========================
-   BACKGROUND PASTEL KEMAS
+   BACKGROUND PASTEL UNIVERSAL
+   HP + TABLET
 ========================= */
 
+html {
+    width: 100%;
+    min-height: 100%;
+    background: linear-gradient(
+        135deg,
+        #fff4fa 0%,
+        #f3efff 50%,
+        #dff7ff 100%
+    ) !important;
+}
+
 body {
-    background:
-        linear-gradient(
-            135deg,
-            #fff4fa 0%,
-            #f3efff 50%,
-            #dff7ff 100%
-        ) !important;
+    width: 100%;
+    min-width: 100%;
+    min-height: 100vh;
+
+    margin: 0;
+    padding: 0;
+
+    background: transparent !important;
 
     background-repeat: no-repeat !important;
-    background-size: cover !important;
 
     overflow-x: hidden !important;
     overflow-y: auto !important;
 }
 
-/* BUANG CAHAYA YANG BOLEH HASILKAN GARIS */
+/* BUANG CAHAYA TAMBAHAN */
 
+html::before,
+html::after,
 body::before,
 body::after {
     display: none !important;
     content: none !important;
 }
-
