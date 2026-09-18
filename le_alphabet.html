@@ -349,6 +349,62 @@ button {
   }
 }
 
+/* ========================================
+   FIX ALPHABET CARD
+   KOTAK BIRU + SAIZ TEKS
+   ======================================== */
+
+/* KOTAK BIRU NAMA HAIWAN */
+
+.vocab-word {
+  width: calc(100% - 20px) !important;
+  margin: 0 auto !important;
+
+  height: 28px !important;
+
+  font-size: 18px !important;
+  font-weight: 900 !important;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+/* HURUF Aa Bb Cc */
+
+.vocab-letter {
+  font-size: 32px !important;
+  font-weight: 900 !important;
+  margin-bottom: 5px;
+}
+
+/* GAMBAR */
+
+.vocab-card img {
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 2px;
+}
+
+/* KAD PUTIH */
+
+.vocab-card {
+  overflow: hidden;
+}
+.title-box h1 {
+  font-size: 42px !important;
+}
+
+.vocab-letter {
+  font-size: 32px !important;
+}
+
+.vocab-word {
+  font-size: 18px !important;
+}
 
     </style>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js" type="text/javascript"></script>
@@ -356,7 +412,7 @@ button {
   <script src="/_sdk/6030e540d4419216.resizing_sdk.js" type="text/javascript" integrity="sha512-b5KWzyoXsbWP4smq4sftIi6Kts4YVBpBsz0BwCViwbBJkK64a3/Z6ZMdWA+qnplNcXw4mhZeqvQi3mOosiRJdA=="></script>
  </head>
  
-<body data-template-id="__page-root" class="w-full min-h-screen overflow-y-auto relative flex items-start justify-center p-4"><!-- Background elements -->
+<body data-template-id="__page-root" class="w-full min-h-screen overflow-x-hidden overflow-y-auto relative flex items-center justify-center p-4"><!-- Background elements -->
  
   </div><!-- Birds -->
    <div class="bird absolute top-[3%] text-5xl">
