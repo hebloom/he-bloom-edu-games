@@ -90,7 +90,7 @@ body {
 }
 
 #game-card {
-  width: 90%;
+  width: 100%;
   max-width: 700px;
   min-height: 820px;
   height: auto;
@@ -109,15 +109,16 @@ body {
 
 .vocab-letter {
   color: #2454d3;
-  font-size: 32px;
+  font-size: 52px !important;
   font-weight: 900;
   text-align: center;
-  margin-bottom: 5px;
+  margin-bottom: 18px;
+  transform: translateY(-8px);
 }
 
 .vocab-card img {
-  width: 125px;
-  height: 125px;
+  width: 160px;
+  height: 130px;
   object-fit: contain;
   display: block;
   margin: 0 auto 2px;
@@ -126,7 +127,7 @@ body {
 .vocab-word {
   background: #2454d3;
   color: #fff;
-  font-size: 18px;
+  font-size: 24px;
   font-weight: 900;
   height: 28px;
   
@@ -154,7 +155,7 @@ box-sizing: border-box;
 .title-box h1 {
   margin: 0;
   color: #2454d3;
-  font-size: 42px;
+  font-size: 62px;
   font-weight: 900;
   text-align: center;
 }
@@ -162,7 +163,7 @@ box-sizing: border-box;
 .title-box p {
   margin: 2px 0 0;
   color: #222;
-  font-size: 18px;
+  font-size: 26px;
   font-weight: 700;
   text-align: center;
 }
@@ -180,247 +181,8 @@ box-sizing: border-box;
   right: 18px;
 }
 
-/* ========================================
-   UNIVERSAL RESPONSIVE - ALPHABET
-   HP + TABLET + LAPTOP
-   ======================================== */
 
-html {
-  width: 100%;
-  min-height: 100%;
-  overflow-x: hidden;
-  overflow-y: auto;
-}
 
-body {
-  width: 100%;
-  min-height: 100vh;
-  overflow-x: hidden;
-  overflow-y: auto;
-  box-sizing: border-box;
-}
-
-/* GAME CARD */
-
-#game-card {
-  width: 96% !important;
-  max-width: 1100px !important;
-  min-height: auto !important;
-  height: auto !important;
-
-  margin: 0 auto !important;
-
-  padding: clamp(20px, 4vw, 50px)
-           clamp(8px, 3vw, 40px)
-           40px !important;
-
-  box-sizing: border-box;
-  overflow: visible !important;
-}
-
-/* TAJUK */
-
-.title-box {
-  max-width: 95%;
-  margin: 10px auto 25px;
-  box-sizing: border-box;
-}
-
-.title-box h1 {
-  font-size: clamp(28px, 4vw, 48px) !important;
-}
-
-/* SENARAI KAD */
-
-#animal-list {
-  display: grid !important;
-  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-
-  width: 100% !important;
-  max-width: 1050px !important;
-
-  gap: clamp(12px, 2.5vw, 28px) !important;
-
-  margin: 0 auto !important;
-  box-sizing: border-box;
-}
-
-/* KAD */
-
-.vocab-card {
-  width: 100%;
-  min-width: 0;
-  box-sizing: border-box;
-
-  padding: clamp(10px, 1.8vw, 20px)
-           clamp(6px, 1.5vw, 15px)
-           3px;
-}
-
-/* HURUF */
-
-.vocab-letter {
-  font-size: clamp(25px, 3.5vw, 42px) !important;
-  margin-bottom: 5px;
-}
-
-/* GAMBAR */
-
-.vocab-card img {
-  width: clamp(90px, 13vw, 180px) !important;
-  height: clamp(90px, 13vw, 180px) !important;
-
-  max-width: 100%;
-  object-fit: contain;
-  display: block;
-  margin: 0 auto 4px;
-}
-
-/* NAMA PERKATAAN */
-
-.vocab-word {
-  width: calc(100% + 20px);
-  margin: 0 -10px;
-
-  height: clamp(28px, 4vw, 42px) !important;
-
-  font-size: clamp(13px, 1.8vw, 20px) !important;
-
-  box-sizing: border-box;
-}
-
-/* BUTTON BACK */
-
-button {
-  touch-action: manipulation;
-  max-width: 100%;
-}
-
-/* LANDSCAPE - BOLEH SCROLL */
-
-@media (orientation: landscape) {
-  html,
-  body {
-    overflow-x: hidden !important;
-    overflow-y: auto !important;
-  }
-
-  #game-card {
-    min-height: 0 !important;
-    height: auto !important;
-  }
-}
-
-/* HP KECIL */
-
-@media (max-width: 380px) {
-  #game-card {
-    width: 98% !important;
-    padding-left: 6px !important;
-    padding-right: 6px !important;
-  }
-
-  #animal-list {
-    gap: 10px !important;
-  }
-
-  .vocab-card img {
-    width: clamp(75px, 23vw, 100px) !important;
-    height: clamp(75px, 23vw, 100px) !important;
-  }
-}
-
-/* TABLET PORTRAIT */
-
-@media (min-width: 601px) and (max-width: 1024px) {
-  #game-card {
-    width: 96% !important;
-    max-width: 1000px !important;
-  }
-
-  #animal-list {
-    max-width: 950px !important;
-    gap: 20px !important;
-  }
-
-  .vocab-card img {
-    width: clamp(120px, 16vw, 180px) !important;
-    height: clamp(120px, 16vw, 180px) !important;
-  }
-}
-
-/* ========================================
-   FIX ALPHABET CARD
-   KOTAK BIRU + SAIZ TEKS
-   ======================================== */
-
-/* KOTAK BIRU NAMA HAIWAN */
-
-.vocab-word {
-  width: calc(100% - 20px) !important;
-  margin: 0 auto !important;
-
-  height: 28px !important;
-
-  font-size: 18px !important;
-  font-weight: 900 !important;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  box-sizing: border-box;
-  border-radius: 10px;
-}
-
-/* HURUF Aa Bb Cc */
-
-.vocab-letter {
-  font-size: 32px !important;
-  font-weight: 900 !important;
-  margin-bottom: 5px;
-}
-
-/* GAMBAR */
-
-.vocab-card img {
-  object-fit: contain;
-  display: block;
-  margin: 0 auto 2px;
-}
-
-/* KAD PUTIH */
-
-.vocab-card {
-  overflow: hidden;
-}
-.title-box h1 {
-  font-size: 42px !important;
-}
-
-.vocab-letter {
-  font-size: 32px !important;
-}
-
-.vocab-word {
-  font-size: 18px !important;
-}
-/* TABLET - BESARKAN TEKS */
-
-@media (min-width: 601px) {
-  .title-box h1 {
-    font-size: 52px !important;
-  }
-  
-  .vocab-letter {
-    font-size: 40px !important;
-  }
-  
-  .vocab-word {
-    font-size: 22px !important;
-    height: 36px !important;
-  }
-}
     </style>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js" type="text/javascript"></script>
   <script src="/_sdk/935a53bc2e11fb8d.data_sdk.js" type="text/javascript" integrity="sha512-qr2oyPnEys1WebcOABaRh6hG77r5PWpqeWW6JTKbRJqly/INsfBi31CVNlTmHqjgeLpkVmmHZJUdxSx/32tOFQ=="></script>
