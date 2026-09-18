@@ -367,43 +367,36 @@ button:active{
 
 
 /* =========================
-   HONOR PAD - TINGGI & SMART
+   HONOR PAD - SEMUA TENGAH
 ========================= */
 
 @media (min-width: 600px) {
-
-.container {
-    max-width: 680px !important;
-    height: 680px !important;
-    min-height: 680px !important;
     
-    padding: 75px 55px !important;
-    box-sizing: border-box !important;
-}
-
-    h1 {
-        font-size: 34px !important;
-        margin-bottom: 35px !important;
+    body {
+        min-height: 100vh !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        padding: 20px 0 !important;
+        box-sizing: border-box !important;
     }
-
-    input {
-        height: 76px !important;
-        font-size: 26px !important;
+    
+    .container {
+        max-width: 680px !important;
+        height: 680px !important;
+        min-height: 680px !important;
+        
+        padding: 55px !important;
+        box-sizing: border-box !important;
+        
+        margin: 0 auto !important;
+        transform: none !important;
+        
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
     }
-
-    .buttons {
-        gap: 22px !important;
-    }
-
-    button {
-        font-size: 27px !important;
-        min-height: 88px !important;
-    }
-
-    #forgotPassword {
-        font-size: 23px !important;
-    }
-
+    
 }
 
 
