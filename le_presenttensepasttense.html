@@ -265,6 +265,25 @@ body {
     }
 }
 
+/* 1. TAJUK SAHAJA */
+.tense-main-title {
+  font-size: clamp(38px, 6vw, 52px) !important;
+}
+
+/* 2. iPAD SAHAJA - GAME CARD LEBIH LEBAR */
+@media (min-width: 768px) {
+  
+  #game-card {
+    width: 94vw !important;
+    max-width: 1100px !important;
+  }
+  
+  #game-card::before {
+    left: -25px !important;
+    right: -25px !important;
+  }
+}
+
     </style>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js" type="text/javascript"></script>
   <script src="/_sdk/935a53bc2e11fb8d.data_sdk.js" type="text/javascript" integrity="sha512-qr2oyPnEys1WebcOABaRh6hG77r5PWpqeWW6JTKbRJqly/INsfBi31CVNlTmHqjgeLpkVmmHZJUdxSx/32tOFQ=="></script>
