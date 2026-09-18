@@ -364,7 +364,7 @@ body {
 
     margin: 0 -5px;
 
-    height: clamp(48px, 5vw, 62px);
+    height: clamp(50px, 5vw, 64px);
 
     font-size: clamp(38px, 3.5vw, 40px);
 
@@ -449,7 +449,7 @@ body {
 
     .vocab-word {
         font-size: 22px;
-        height: 44px;
+        height: 42px;
     }
 
 }
@@ -505,14 +505,6 @@ body {
   
 }
 
-/* ICE CREAM - PORTRAIT SAHAJA */
-@media (max-width: 767px) and (orientation: portrait) {
-    
-    .vocab-word.ice-cream {
-        font-size: 16px !important;
-    }
-    
-}
 
     </style>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js" type="text/javascript"></script>
@@ -740,9 +732,7 @@ animalList.innerHTML += `
   
       <img src="${item.image}" alt="${item.word}">
       
-    <div class="vocab-word ${item.word === 'ICE CREAM' ? 'ice-cream' : ''}">
-    ${item.word}
-</div>
+      <div class="vocab-word">${item.word}</div>
       
       </div>
       `;
