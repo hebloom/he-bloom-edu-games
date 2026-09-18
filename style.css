@@ -366,17 +366,17 @@ button:active{
 }
 
 
-
-
 /* =========================
-   HONOR PAD - FINAL
+   HONOR PAD - TINGGI & SMART
 ========================= */
 
 @media (min-width: 600px) {
 
     .container {
         max-width: 680px !important;
+        min-height: 580px !important;
         padding: 75px 55px !important;
+        box-sizing: border-box !important;
     }
 
     h1 {
