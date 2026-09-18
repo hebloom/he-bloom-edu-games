@@ -446,10 +446,11 @@ body {
     }
 
 /* GRASSHOPPER - PORTRAIT HP SAHAJA */
-@media (max-width: 380px) and (orientation: portrait) {
+@media (max-width: 767px) and (orientation: portrait) {
     
-    .vocab-word.grasshopper-word {
+    .vocab-word.grasshopper {
         font-size: 14px !important;
+        white-space: nowrap;
     }
     
 }
@@ -692,7 +693,7 @@ animals.forEach(animal => {
   animalList.innerHTML += `
     <div class="vocab-card">
       <img src="${animal.image}" alt="${animal.word}">
-<div class="vocab-word ${animal.word === 'GRASSHOPPER' ? 'grasshopper-word' : ''}">
+<div class="vocab-word ${animal.word === 'GRASSHOPPER' ? 'grasshopper' : ''}">
     ${animal.word}
 </div>
  
