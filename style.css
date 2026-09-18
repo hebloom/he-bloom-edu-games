@@ -313,9 +313,8 @@ button:active{
 }
 
 
-/* =========================
-   PASSWORD EYE BUTTON
-========================= */
+
+/* KUNCI MANGGA PASSWORD */
 
 .password-wrapper {
     position: relative;
@@ -323,40 +322,45 @@ button:active{
     margin-bottom: 24px;
 }
 
-/* KOTAK PASSWORD */
-
 .password-wrapper input {
     width: 100%;
     margin-bottom: 0;
     padding-right: 60px;
 }
 
-/* SIMBOL KUNCI MANGGA */
+/* BUTANG KUNCI */
 
 .password-wrapper .eye-btn {
-    position: absolute;
-    right: 12px;
-    top: 50%;
+    position: absolute !important;
+    right: 12px !important;
+    top: 50% !important;
 
-    transform: translateY(-50%);
+    transform: translateY(-50%) !important;
 
-    width: 40px;
-    min-height: 40px;
+    width: 40px !important;
+    height: 40px !important;
+    min-height: 40px !important;
+    flex: none !important;
 
-    padding: 0;
-    border: none;
+    padding: 0 !important;
+    margin: 0 !important;
 
-    background: transparent;
-    box-shadow: none;
+    border: none !important;
+    border-radius: 50% !important;
 
-    font-size: 22px;
-    color: #777;
+    background: transparent !important;
+    box-shadow: none !important;
+
+    font-size: 22px !important;
+    line-height: 1 !important;
+
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
 
     cursor: pointer;
 }
 
-/* TEKAN KUNCI MANGGA */
-
 .password-wrapper .eye-btn:active {
-    transform: translateY(-50%);
+    transform: translateY(-50%) !important;
 }
