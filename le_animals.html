@@ -445,7 +445,14 @@ body {
         height: clamp(100px, 20vh, 160px);
     }
 
-
+/* GRASSHOPPER - PORTRAIT HP SAHAJA */
+@media (max-width: 767px) and (orientation: portrait) {
+    
+    .vocab-word.grasshopper-word {
+        font-size: 18px !important;
+    }
+    
+}
 
     </style>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js" type="text/javascript"></script>
@@ -685,7 +692,9 @@ animals.forEach(animal => {
   animalList.innerHTML += `
     <div class="vocab-card">
       <img src="${animal.image}" alt="${animal.word}">
-      <div class="vocab-word">${animal.word}</div>
+<div class="vocab-word ${animal.word === 'GRASSHOPPER' ? 'grasshopper-word' : ''}">
+    ${animal.word}
+</div>
  
     </div>
   `;
