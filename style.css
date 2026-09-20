@@ -463,17 +463,19 @@ body {
 ========================= */
 
 @media (min-width: 600px) {
-
+    
     .container {
         transform: translateY(-25px) !important;
     }
-
+    
     h1 {
-        font-size: 32px !important;
+        font-size: 36px !important;
         margin-bottom: 28px !important;
         white-space: nowrap;
+        
+        /* TEKS HE BLOOM NAIK ATAS */
+        transform: translateY(-20px) !important;
     }
-
+    
 }
-
 
