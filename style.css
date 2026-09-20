@@ -450,7 +450,7 @@ body {
     .container {
         position: relative !important;
         
-        transform: translateY(-20px) !important;
+        transform: translateY(-10px) !important;
         
         margin: 0 auto !important;
     }
