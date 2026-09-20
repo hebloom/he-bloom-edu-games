@@ -366,68 +366,69 @@ button:active{
 }
 
 
-
 /* =========================
-   LOGIN POSITION FINAL
+   HONOR PAD - SEMUA TENGAH
 ========================= */
 
-/* HP */
-@media (max-width: 599px) {
-
-    .container {
-        transform: translateY(75px) !important;
-    }
-
-}
-
-
-/* HONOR PAD */
 @media (min-width: 600px) {
-
+    
     body {
+        min-height: 100vh !important;
+        display: flex !important;
+        justify-content: center !important;
         align-items: center !important;
         padding: 20px 0 !important;
+        box-sizing: border-box !important;
     }
-
+    
     .container {
         max-width: 680px !important;
         height: 680px !important;
         min-height: 680px !important;
-
-        padding: 90px 55px 40px !important;
-
+        
+        padding: 55px !important;
+        box-sizing: border-box !important;
+        
+        margin: 0 auto !important;
+        transform: none !important;
+        
         display: flex !important;
         flex-direction: column !important;
-        justify-content: flex-start !important;
-
-        transform: translateY(-35px) !important;
+        justify-content: center !important;
     }
-
-    h1 {
-        font-size: 28px !important;
-        margin-top: 0 !important;
-        margin-bottom: 38px !important;
-    }
-
-    input {
-        height: 64px !important;
-        font-size: 22px !important;
-        margin-bottom: 26px !important;
-    }
-
-    .buttons {
-        gap: 20px !important;
-        margin-top: 10px !important;
-    }
-
-    button {
-        min-height: 80px !important;
-        font-size: 24px !important;
-    }
-
-    #forgotPassword {
-        margin-top: 24px !important;
-        font-size: 20px !important;
-    }
-
+    
 }
+
+
+/* =========================
+   BACKGROUND CLEAN
+   HP + HONOR PAD
+========================= */
+
+html,
+body {
+    width: 100%;
+    min-width: 0;
+    min-height: 100%;
+    
+    margin: 0;
+    padding: 0;
+    
+    background: #f5f0ff !important;
+}
+
+/* BUANG CAHAYA TAMBAHAN */
+
+body::before,
+body::after {
+    display: none !important;
+    content: none !important;
+}
+
+body {
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+}
+
+
+
