@@ -429,3 +429,23 @@ body {
     overflow-x: hidden !important;
     overflow-y: auto !important;
 }
+
+
+/* =========================
+   POSISI LOGIN UNIVERSAL
+   HP + HONOR PAD
+========================= */
+
+/* HP - TURUNKAN SEDIKIT */
+.container {
+    transform: translateY(clamp(20px, 5vh, 55px)) !important;
+}
+
+/* HONOR PAD - NAIKKAN SEDIKIT */
+@media (min-width: 600px) {
+
+    .container {
+        transform: translateY(clamp(-100px, -5vh, -35px)) !important;
+    }
+
+}
