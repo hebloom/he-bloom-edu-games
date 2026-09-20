@@ -476,7 +476,7 @@ body {
 @media (min-width: 600px) {
     
     .container {
-        transform: translateY(-25px) !important;
+        transform: translateY(-30px) !important;
     }
     
     h1 {
