@@ -430,5 +430,14 @@ body {
     overflow-y: auto !important;
 }
 
+/* TURUNKAN LOGIN BOX - PORTRAIT HP SAHAJA */
+
+@media (max-width: 599px) and (orientation: portrait) {
+    
+    .container {
+        transform: translateY(200px) !important;
+    }
+    
+}
 
 
