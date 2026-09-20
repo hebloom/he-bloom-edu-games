@@ -515,7 +515,7 @@ body {
     }
 
  .success-message {
-     font-size: 22px !important;
+     font-size: 23px !important;
      margin-top: 18px !important;
     }
     
@@ -527,7 +527,7 @@ body {
     
     /* BACK TO LOGIN */
     #back-login {
-        font-size: 22px !important;
+        font-size: 23px !important;
         margin-top: 18px !important;
     }    
 }
