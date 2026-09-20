@@ -99,10 +99,10 @@ h1 {
     
     text-align: center;
     
-    font-size: 22px;
+    font-size: 24px;
     font-weight: 900;
     
-    margin-top: 1px;
+    margin-top: 2px;
     margin-bottom: 28px;
     
     white-space: nowrap;
@@ -458,6 +458,17 @@ body {
 }
 
 
+/* FORGOT PASSWORD - HP */
+
+@media (max-width: 599px) and (orientation: portrait) {
+    
+    #forgotPassword {
+        transform: translateY(10px) !important;
+    }
+    
+}
+
+
 /* =========================
    HONOR PAD - NAIK & TAJUK BESAR
 ========================= */
@@ -474,8 +485,17 @@ body {
         white-space: nowrap;
         
         /* TEKS HE BLOOM NAIK ATAS */
-        transform: translateY(-20px) !important;
+        transform: translateY(-26px) !important;
     }
     
 }
 
+/* FORGOT PASSWORD - HONOR PAD */
+
+@media (min-width: 600px) {
+    
+    #forgotPassword {
+        transform: translateY(10px) !important;
+    }
+    
+}
