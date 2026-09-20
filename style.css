@@ -514,21 +514,6 @@ body {
         transform: translateY(20px) !important;
     }
 
-.success-message {
-    font-size: 24px !important;
-    margin-top: 22px !important;
-}
 
-#reset-btn {
-    font-size: 24px !important;
-    padding: 18px 24px !important;
-}
-
-#back-login {
-    font-size: 24px !important;
-    margin-top: 22px !important;
-}
-} 
-    
 
     
