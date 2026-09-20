@@ -431,21 +431,75 @@ body {
 }
 
 
-/* =========================
-   POSISI LOGIN UNIVERSAL
-   HP + HONOR PAD
-========================= */
-
-/* HP - TURUNKAN SEDIKIT */
-.container {
-    transform: translateY(clamp(20px, 5vh, 55px)) !important;
-}
 
 /* HONOR PAD - NAIKKAN SEDIKIT */
 @media (min-width: 600px) {
 
     .container {
         transform: translateY(clamp(-100px, -5vh, -35px)) !important;
+    }
+
+}
+
+/* =================================
+   PEMBETULAN LOGIN HP + HONOR PAD
+================================= */
+
+
+/* ================================
+   HP - TURUNKAN KOTAK LAGI
+================================ */
+
+@media (max-width: 599px) {
+
+    .container {
+        transform: translateY(200px) !important;
+    }
+
+}
+
+
+/* ================================
+   HONOR PAD - BESARKAN & JARAKKAN ISI
+================================ */
+
+@media (min-width: 600px) {
+
+    /* TAJUK HE BLOOM */
+    h1 {
+        font-size: 28px !important;
+        margin-bottom: 34px !important;
+    }
+
+    /* NAIKKAN SEMUA ISI SEDIKIT */
+    .container > * {
+        position: relative;
+        top: -35px;
+    }
+
+    /* INPUT EMAIL & PASSWORD */
+    input {
+        height: 64px !important;
+        font-size: 22px !important;
+        margin-bottom: 26px !important;
+    }
+
+    /* JARAK BUTTON */
+    .buttons {
+        gap: 20px !important;
+        margin-top: 12px !important;
+    }
+
+    /* BESARKAN BUTTON */
+    button {
+        min-height: 80px !important;
+        font-size: 24px !important;
+    }
+
+    /* FORGOT PASSWORD */
+    #forgotPassword {
+        margin-top: 22px !important;
+        font-size: 20px !important;
     }
 
 }
