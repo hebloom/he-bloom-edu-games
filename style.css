@@ -476,7 +476,7 @@ body {
 @media (min-width: 600px) {
     
     .container {
-        transform: translateY(-40px) !important;
+        transform: translateY(-50px) !important;
     }
     
     h1 {
@@ -517,13 +517,4 @@ body {
 }
 
 
-/* DASHBOARD - HP KECIL SEDIKIT */
 
-@media (max-width: 599px) and (orientation: portrait) {
-
-    .dashboard-page .container {
-        transform: scale(0.94) !important;
-        transform-origin: top center;
-    }
-
-}
