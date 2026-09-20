@@ -499,22 +499,24 @@ body {
 
     /* EMAIL & PASSWORD */
     input {
-        font-size: 23px !important;
+        font-size: 26px !important;
     }
 
     /* CREATE ACCOUNT & LOGIN */
     #registerBtn,
     #loginBtn {
-        font-size: 26px !important;
+        font-size: 30px !important;
     }
 
     /* FORGOT PASSWORD */
     #forgotPassword {
-        font-size: 20px !important;
+        font-size: 24px !important;
         transform: translateY(20px) !important;
     }
 
+ .success-message {
+     font-size: 22px !important;
+     margin-top: 18px !important;
+    }
 }
-
-
 
