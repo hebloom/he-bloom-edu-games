@@ -434,27 +434,27 @@ body {
 /* CENTER LOGIN BOX - PORTRAIT HP SAHAJA */
 
 @media (max-width: 599px) and (orientation: portrait) {
-
+    
     body {
         min-height: 100vh !important;
         min-height: 100dvh !important;
-
+        
         display: flex !important;
         justify-content: center !important;
         align-items: center !important;
-
+        
         padding: 20px !important;
         box-sizing: border-box !important;
     }
-
+    
     .container {
         position: relative !important;
-
-        transform: translateY(80px) !important;
-
+        
+        transform: translateY(0) !important;
+        
         margin: 0 auto !important;
     }
-
+    
 }
 
 
