@@ -300,43 +300,11 @@ h1 {
 }
 
 
+
 /* =========================
-   MOBILE
-========================= */
-
-@media(max-width:380px){
-
-    h1{
-        font-size:34px;
-    }
-
-    .menu-text{
-        font-size:18px;
-    }
-
-    .menu-icon{
-        width:62px;
-        margin-right:12px;
-    }
-
-    .arrow{
-        font-size:34px;
-    }
-
-}
-/* =====================================================
-   RESPONSIVE FINAL - ALL DEVICES
+   RESPONSIVE FINAL
    PHONE + TABLET + COMPUTER
-   PORTRAIT + LANDSCAPE
-
-   MENU ASAL KEKAL
-   HANYA SESUAIKAN DENGAN SKRIN
-   ===================================================== */
-
-
-/* ==============================
-   ASAS SEMUA DEVICE
-   ============================== */
+========================= */
 
 html,
 body {
@@ -350,36 +318,47 @@ body {
     min-height: 100vh;
 }
 
-
-/* ==============================
+/* =========================
    PHONE KECIL
-   ============================== */
+========================= */
 
 @media (max-width: 380px) {
-    
+
     body {
         padding-left: 8px;
         padding-right: 8px;
     }
-    
+
+    h1 {
+        font-size: 30px;
+    }
+
     .container {
         width: 100%;
         max-width: 380px;
         margin-left: auto;
         margin-right: auto;
-        
-        /*
-         * Mengecilkan keseluruhan dashboard
-         * secara berkadar supaya menu tidak
-         * terkeluar daripada skrin.
-         */
-        zoom: calc(100vw / 380);
+        box-sizing: border-box;
     }
-    
+
     .menu {
         width: 100%;
     }
+
+    .menu-text {
+        font-size: 18px;
+    }
+
+    .menu-icon {
+        width: 55px;
+        margin-right: 10px;
+    }
+
+    .arrow {
+        font-size: 30px;
+    }
 }
+
 
 
 
@@ -410,7 +389,6 @@ body {
 }
 
 
-
 /* ===== KEKALKAN LOG OUT SEPERTI ASAL ===== */
 
 .logout {
@@ -418,6 +396,193 @@ body {
     margin-left: auto !important;
     margin-right: auto !important;
 }
+
+
+<style>
+/* ===== DASHBOARD ===== */
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(
+        135deg,
+        #f8efff,
+        #e8eaff,
+        #dffaff
+    );
+
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+/* CONTAINER TENGAH */
+.dashboard-container {
+    width: min(92%, 850px);
+    margin: 0 auto;
+    padding: 35px 0 30px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    box-sizing: border-box;
+}
+
+/* TAJUK */
+.dashboard-title {
+    color: #ed4b9a;
+    font-size: clamp(22px, 3vw, 34px);
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 2px 2px #b8edff;
+
+    margin-bottom: 18px;
+}
+
+/* WELCOME */
+.welcome-btn {
+    width: min(280px, 80%);
+    padding: 10px;
+
+    border-radius: 30px;
+    border: 2px solid white;
+
+    background: linear-gradient(
+        90deg,
+        #f879b5,
+        #e9a9d8,
+        #a6d8ff
+    );
+
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+
+    box-shadow: 0 4px 15px #e6a9df;
+    margin-bottom: 28px;
+}
+
+/* MENU */
+.dashboard-menu {
+    width: 100%;
+    max-width: 700px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+}
+
+/* BUTTON */
+.dashboard-menu button {
+    width: 100%;
+    min-height: 78px;
+
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    padding: 12px 20px;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    border: 3px solid #f29acb;
+    border-radius: 22px;
+
+    color: #17223f;
+    font-size: clamp(18px, 2.5vw, 25px);
+    font-weight: bold;
+
+    box-sizing: border-box;
+    cursor: pointer;
+
+    box-shadow: 0 3px 10px rgba(240, 140, 205, 0.3);
+
+    transition: transform 0.15s ease;
+}
+
+/* ICON */
+.dashboard-menu button .icon {
+    width: 62px;
+    height: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 14px;
+    background: #fbd7e8;
+
+    font-size: 32px;
+}
+
+/* TEXT */
+.dashboard-menu button .text {
+    flex: 1;
+    text-align: left;
+}
+
+/* ARROW */
+.dashboard-menu button .arrow {
+    color: #e34899;
+    font-size: 36px;
+}
+
+/* LOGOUT */
+.logout-btn {
+    width: 250px !important;
+    margin-top: 10px;
+    justify-content: center;
+}
+
+/* VERSI */
+.version-text {
+    margin-top: 18px;
+    color: #6236b8;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* RESPONSIVE PAD */
+@media (min-width: 768px) {
+
+    .dashboard-container {
+        max-width: 850px;
+        padding-top: 45px;
+    }
+
+    .dashboard-menu {
+        max-width: 700px;
+        gap: 16px;
+    }
+
+    .dashboard-menu button {
+        min-height: 88px;
+        padding: 14px 24px;
+    }
+}
+
+/* LANDSCAPE */
+@media (orientation: landscape) and (max-height: 600px) {
+
+    .dashboard-container {
+        padding-top: 20px;
+        padding-bottom: 25px;
+    }
+
+    .dashboard-menu {
+        gap: 10px;
+    }
+
+    .dashboard-menu button {
+        min-height: 65px;
+    }
+}
+</style>
+
 </style>
 </head>
 
