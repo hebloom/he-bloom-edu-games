@@ -518,5 +518,21 @@ body {
      font-size: 22px !important;
      margin-top: 18px !important;
     }
+    
+    /* SEND RESET LINK */
+    #reset-btn {
+        font-size: 24px !important;
+        padding: 16px 20px !important;
+    }
+    
+    /* BACK TO LOGIN */
+    #back-login {
+        font-size: 22px !important;
+        margin-top: 18px !important;
+    }    
 }
 
+
+    
+
+    
