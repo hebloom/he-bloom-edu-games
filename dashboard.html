@@ -337,44 +337,46 @@ body {
 }
 
 /* =========================
-   PHONE KECIL
+   FIX MOBILE PHONE
 ========================= */
 
-@media (max-width: 360px) {
-
-    body {
-        padding-left: 6px;
-        padding-right: 6px;
-    }
-
-    h1 {
-        font-size: 28px;
-    }
-
+@media (max-width: 767px) {
+    
     .container {
         width: 100%;
-        max-width: 360px;
-        margin-left: auto;
-        margin-right: auto;
-        box-sizing: border-box;
+        max-width: 380px;
+        margin: 0 auto;
+        
+        transform: translateY(-40px) scale(1);
+        transform-origin: top center;
     }
-
+    
     .menu {
         width: 100%;
+        min-height: 78px;
+        padding: 10px 14px;
+        margin-bottom: 12px;
     }
-
-    .menu-text {
-        font-size: 16px;
-    }
-
+    
     .menu-icon {
-        width: 52px;
-        margin-right: 10px;
+        width: 65px;
+        height: 58px;
+        margin-right: 14px;
+        font-size: 34px;
     }
-
+    
+    .menu-text {
+        font-size: 20px;
+    }
+    
     .arrow {
-        font-size: 28px;
+        font-size: 38px;
     }
+    
+    .logout {
+        width: 80%;
+    }
+    
 }
 
 
