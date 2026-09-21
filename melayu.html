@@ -29,19 +29,16 @@ body{
     overflow-x:hidden;
 }
 
-body::before,
-body::after{
-    content:none;
-}
-
-
-/* =========================
-   CONTAINER
-========================= */
-
-.container{
-    max-width:380px;
-    margin:auto;
+.container {
+    width: 100%;
+    max-width: 380px;
+    
+    margin: 0 auto;
+    
+    text-align: center;
+    
+    transform: translateY(-140px) scale(1.20);
+    transform-origin: top center;
 }
 
 
@@ -54,7 +51,7 @@ body::after{
 h1 {
     color: #d92f87;
     text-align: center;
-    font-size: 44px;
+    font-size: 40px;
     font-weight: 900;
     white-space: nowrap;
     
@@ -100,11 +97,11 @@ h1 {
 
 .card {
     background: rgba(255, 255, 255, .96);
+    min-height:78px;
+    padding: 12px 16px;
+    margin-bottom: 12px;
     
-    padding: 20px;
-    margin-bottom: 8px;
-    
-    border-radius: 20px;
+    border-radius: 22px;
     border: 3px solid #ff9dcc;
     
     box-shadow:
@@ -209,113 +206,34 @@ h1 {
         0 0 12px rgba(255,140,200,.35);
 }
 
+/* =========================
+   HE BLOOM LOGO
+========================= */
+
 .he-bloom-logo {
     position: fixed;
-    width: 100px;
-    height: 100px;
+    
+    width: 80px;
+    height: 80px;
+    
+    right: 18px;
+    bottom: 18px;
+    
     z-index: 9999;
+    
     opacity: .95;
+    
     pointer-events: none;
 }
 
-.bottom-logo {
-    bottom: 18px;
-    right: 18px;
-}
-/* =====================================================
-   RESPONSIVE FINAL - ALL DEVICES
-   PHONE + TABLET + LAPTOP + COMPUTER
-   PORTRAIT + LANDSCAPE
 
-   DESIGN ASAL KEKAL
-   ===================================================== */
-
-
-/* =========================
-   SEMUA DEVICE
-   ========================= */
-
-html,
-body {
-    width: 100%;
-    min-width: 0;
-    overflow-x: hidden;
-}
-
-.container {
-    box-sizing: border-box;
-}
-
-
-/* =========================
-   PHONE KECIL
-   ========================= */
-
-@media (max-width: 379px) {
-    
-    body {
-        overflow-x: hidden;
-        overflow-y: auto;
-    }
-    
-    .container {
-        width: 380px;
-        max-width: 380px;
-        margin-left: auto;
-        margin-right: auto;
-        
-        transform-origin: top center;
-        zoom: 0.90;
+@media (min-width: 768px) {
+    .he-bloom-logo {
+        width: 100px;
+        height: 100px;
     }
 }
 
-
-/* =========================
-   HP SANGAT KECIL
-   ========================= */
-
-@media (max-width: 340px) {
-    
-    .container {
-        zoom: 0.82;
-    }
-}
-
-
-/* =========================
-   LANDSCAPE
-   ========================= */
-
-@media (orientation: landscape) {
-    
-    html,
-    body {
-        overflow-x: hidden;
-        overflow-y: auto;
-    }
-}
-
-
-/* =========================
-   LAPTOP / KOMPUTER
-   ========================= */
-
-@media (min-width: 901px) {
-    
-    html,
-    body {
-        width: 100%;
-        overflow-x: hidden;
-        overflow-y: auto;
-    }
-    
-    .container {
-        width: 380px;
-        max-width: 380px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-}
 </style>
 
 </head>
