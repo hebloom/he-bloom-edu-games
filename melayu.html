@@ -14,7 +14,7 @@
     font-family:Arial,sans-serif;
 }
 
-body{
+body {
     background:
         linear-gradient(
             135deg,
@@ -23,10 +23,11 @@ body{
             #fff3f9 100%
         );
 
-    padding:30px;
-    min-height:100vh;
-    position:relative;
-    overflow-x:hidden;
+    padding: 26px 20px;
+    min-height: 100dvh;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 .container {
@@ -34,11 +35,10 @@ body{
     max-width: 380px;
     
     margin: 0 auto;
+    padding-top: 8px;
     
     text-align: center;
-    
-    transform: translateY(-140px) scale(1.20);
-    transform-origin: top center;
+    transform: none;
 }
 
 
@@ -60,8 +60,9 @@ h1 {
     left: 50%;
     transform: translateX(-50%);
     
-    margin-top: 2px;
-    
+    margin-top: 5px;
+    margin bottom: 18px;
+   
     text-shadow:
         3px 3px 0 #ffffff,
         -2px -2px 0 #ffffff,
@@ -91,15 +92,11 @@ h1 {
 }
 
 
-/* =========================
-   MENU CARD
-========================= */
-
 .card {
     background: rgba(255, 255, 255, .96);
-    min-height:78px;
-    padding: 12px 16px;
-    margin-bottom: 12px;
+    min-height: 60px;
+    padding: 10px 14px;
+    margin-bottom: 10px;
     
     border-radius: 22px;
     border: 3px solid #ff9dcc;
@@ -108,7 +105,7 @@ h1 {
         0 5px 15px rgba(120, 160, 210, .15),
         0 0 12px rgba(255, 130, 190, .20);
     
-    font-size: 21px;
+    font-size: clamp(18px, 3.6vw, 24px);
     font-weight: bold;
     
     cursor: pointer;
@@ -118,8 +115,8 @@ h1 {
     align-items: center;
     justify-content: flex-start;
     
-    gap: 16px;
-    white-space: nowrap;
+    gap: 12px;
+    white-space: normal;
 }
 
 .card:hover{
@@ -127,36 +124,26 @@ h1 {
 }
 
 
-/* =========================
-   ICON
-========================= */
-
-.card .icon{
-    width:45px;
-
-    text-align:center;
-
-    display:inline-flex;
-    justify-content:center;
-    align-items:center;
-
-    flex-shrink:0;
+.card .icon {
+    width: 42px;
+    min-width: 42px;
+    
+    text-align: center;
+    
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    
+    flex-shrink: 0;
 }
 
-
-/* =========================
-   LEVEL BUTTON
-========================= */
-
-.level-btn{
-    width:60%;
-    margin:12px auto;
-
-    padding:14px 0;
-
-    justify-content:center;
+.level-btn {
+    width: 70%;
+    margin: 10px auto;
+    padding: 10px 0;
+    
+    justify-content: center;
 }
-
 
 /* =========================
    BACK BUTTON
@@ -187,7 +174,7 @@ h1 {
         0 6px 16px rgba(255,120,190,.30),
         0 0 18px rgba(120,190,255,.35);
 
-    font-size:25px;
+    font-size:22px;
     font-weight:bold;
 
     text-shadow:
