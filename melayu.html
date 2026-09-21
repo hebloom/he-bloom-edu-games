@@ -223,90 +223,48 @@ h1 {
 
 
 /* =========================
-   KHAS PAD - BESAR & TINGGI
+   KHAS PAD / TABLET
 ========================= */
 
 @media (min-width: 768px) {
     
     .container {
-    max-width: 480px;
-    transform: translateY(-190px) scale(1.20);
-    transform-origin: top center;
-
-
-}
-    
-    .menu {
-        min-height: 95px;
-        padding: 16px 20px;
-        margin-bottom: 14px;
-    }
-    
-    .menu-icon {
-        width: 82px;
-        height: 68px;
-        font-size: 40px;
-        margin-right: 18px;
-    }
-    
-    .menu-text {
-        font-size: 27px;
-    }
-    
-
-/* =========================
-   LANDSCAPE FIX
-   TAJUK + WELCOME KELIHATAN
-========================= */
-
-@media (orientation: landscape) {
-    
-    html,
-    body {
-        width: 100%;
-        min-height: 100%;
-        height: auto;
-        overflow-x: hidden;
-        overflow-y: auto;
-    }
-    
-    body {
-        display: block;
-        padding: 20px 12px;
-    }
-    
-    .container {
-        width: 100%;
-        max-width: 380px;
+        width: 70vw;
+        max-width: 700px;
         margin: 0 auto;
-        
-        transform: none !important;
-        transform-origin: top center;
-        text-align: center;
+        padding-top: 140px;
     }
     
     h1 {
-        margin-top: 0;
-        margin-bottom: 14px;
-        font-size: 28px;
-    }
-}
-
-/* =========================
-   TAJUK DASHBOARD PAD
-========================= */
-
-@media (min-width: 768px) {
-    
-    h1 {
-        font-size: 36px !important;
-        
-        /* NAIK SIKIT */
-        position: relative;
-        top: -15px;
+        font-size: 70px;
     }
     
-}
+    .logo p {
+        font-size: px;
+        margin-bottom: 30px;
+    }
+    
+    /* KOTAK MENU LEBIH TINGGI */
+.card {
+    width: 80;
+    min-height: 120px;
+    padding: 18px 22px;
+    margin-bottom: 14px;
+    font-size: 32px;
+    gap: 14px;
+    
+    .card .icon {
+        width: 45px;
+        min-width: 45px;
+        height: 45px;
+    }
+    
+    .back {
+        width: 40%;
+        min-height: 80px;
+        font-size: 32px;
+    }
+}    
 
    
 </style>
