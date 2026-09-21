@@ -213,12 +213,16 @@ h1 {
     pointer-events: none;
 }
 
+/* =========================
+   KHAS PAD / TABLET
+========================= */
+
 @media (min-width: 768px) {
     
     .container {
-        width: 60vw;
-        max-width: 600px;
-        margin: 0 auto; 
+        width: 85vw;
+        max-width: 800px;
+        margin: 0 auto;
         padding-top: 200px;
     }
     
@@ -231,23 +235,33 @@ h1 {
         margin-bottom: 30px;
     }
     
+    /* KOTAK MENU LEBIH TINGGI */
+    .card {
+        min-height: 95px;
+        padding: 18px 22px;
+        margin-bottom: 14px;
+        font-size: 32px;
+        gap: 14px;
+    }
+    
     .card .icon {
         width: 45px;
         min-width: 45px;
-        height:36px ;
-        min-height :36px;
+        height: 45px;
     }
     
     .back {
         width: 50%;
-        height :40%;
+        min-height: 80px;
         font-size: 32px;
     }
-     .he-bloom-logo {
+    
+    .he-bloom-logo {
         width: 100px;
         height: 100px;
-    }   
+    }
 }
+   
 </style>
 
 </head>
