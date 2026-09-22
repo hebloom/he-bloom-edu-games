@@ -252,6 +252,8 @@ right: 18px;
    TABLET FIX
    - FULL SCREEN
    - ELAK GAME JADI KECIL
+   - NAIK SEDIKIT
+   - FONT LEBIH BESAR
    - HP TIDAK DIKACAU
    ===================================================== */
 
@@ -296,7 +298,8 @@ right: 18px;
         
         box-sizing: border-box !important;
         
-        transform: none !important;
+        /* NAIK SEDIKIT */
+        transform: translateY(-45px) !important;
         zoom: 1 !important;
     }
     
@@ -312,6 +315,14 @@ right: 18px;
         margin-right: 0 !important;
         
         padding: 16px 22px !important;
+        
+        /* FONT BESAR */
+        font-size: 26px !important;
+    }
+    
+    /* FONT SOALAN + MARKAH */
+    #game-card>div.flex.items-center.justify-between span {
+        font-size: 26px !important;
     }
     
     /* GAMBAR */
@@ -339,7 +350,15 @@ right: 18px;
         height: 100px !important;
         min-height: 100px !important;
         
-        font-size: 30px !important;
+        /* FONT DIBESARKAN */
+        font-size: 34px !important;
+        font-weight: 800 !important;
+    }
+    
+    /* KEMBALI */
+    #game-card button[onclick*="melayu.html"] {
+        font-size: 28px !important;
+        font-weight: 800 !important;
     }
 }
 
