@@ -249,11 +249,10 @@ right: 18px;
 }
 
 /* =====================================================
-   TABLET FIX
+   TABLET / PAD FIX
+   - LEBIH BESAR
    - FULL SCREEN
-   - ELAK GAME JADI KECIL
-   - NAIK SEDIKIT
-   - FONT LEBIH BESAR
+   - KEMAS & SEIMBANG
    - HP TIDAK DIKACAU
    ===================================================== */
 
@@ -284,81 +283,90 @@ right: 18px;
         background-position: center center !important;
     }
     
-    /* GAME CARD */
+    /* =================================================
+       GAME CARD - BESARKAN
+       ================================================= */
     #game-card {
-        width: 88% !important;
-        max-width: 900px !important;
+        width: 94% !important;
+        max-width: 1000px !important;
         
-        min-height: 900px !important;
+        min-height: 1000px !important;
         height: auto !important;
         
         margin: 0 auto !important;
         
-        padding: 50px 65px 60px 65px !important;
+        padding: 50px 55px 60px 55px !important;
         
         box-sizing: border-box !important;
         
-        /* NAIK SEDIKIT */
-        transform: translateY(-45px) !important;
+        transform: translateY(-35px) !important;
         zoom: 1 !important;
     }
     
-    /* SCORE */
+    /* =================================================
+       SCORE / SOALAN / MARKAH
+       ================================================= */
     #game-card>div.flex.items-center.justify-between {
         width: 100% !important;
         max-width: none !important;
         
         left: auto !important;
+        
         transform: translateY(-5px) !important;
         
         margin-left: 0 !important;
         margin-right: 0 !important;
         
-        padding: 16px 22px !important;
+        padding: 18px 24px !important;
         
-        /* FONT BESAR */
-        font-size: 26px !important;
+        font-size: 30px !important;
     }
     
-    /* FONT SOALAN + MARKAH */
     #game-card>div.flex.items-center.justify-between span {
-        font-size: 26px !important;
+        font-size: 30px !important;
     }
     
-    /* GAMBAR */
+    /* =================================================
+       GAMBAR - BESARKAN
+       ================================================= */
     #question-image {
-        width: 300px !important;
-        height: 300px !important;
+        width: 320px !important;
+        height: 320px !important;
         
         margin-left: auto !important;
         margin-right: auto !important;
     }
     
-    /* JAWAPAN */
+    /* =================================================
+       JAWAPAN - BESAR & LEBAR
+       ================================================= */
     #answers {
         width: 100% !important;
-        max-width: 820px !important;
+        max-width: 900px !important;
         
         margin-left: auto !important;
         margin-right: auto !important;
         
-        gap: 22px !important;
+        gap: 24px !important;
     }
     
     #answers .btn-answer {
         width: 100% !important;
-        height: 100px !important;
-        min-height: 100px !important;
+        height: 110px !important;
+        min-height: 110px !important;
         
-        /* FONT DIBESARKAN */
-        font-size: 34px !important;
+        font-size: 38px !important;
         font-weight: 800 !important;
     }
     
-    /* KEMBALI */
+    /* =================================================
+       KEMBALI
+       ================================================= */
     #game-card button[onclick*="melayu.html"] {
-        font-size: 28px !important;
+        font-size: 32px !important;
         font-weight: 800 !important;
+        
+        padding: 14px 30px !important;
     }
 }
 
