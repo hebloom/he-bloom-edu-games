@@ -37,11 +37,6 @@ body::after{
     content:none;
 }
 
-.container{
-    max-width:360px;
-    margin:auto;
-}
-
 
 /* =========================
    TAJUK
@@ -50,11 +45,12 @@ body::after{
 h1 {
     color: #d92f87;
     text-align: center;
-    font-size: 44px;
+    font-size: 36px;
     font-weight: 900;
     white-space: nowrap;
 
-    width: 100%;
+    width: 100vw;
+    position: relative;
     margin: 2px auto 0 auto;
 
     text-shadow:
@@ -104,7 +100,7 @@ h1 {
         0 5px 15px rgba(120,160,210,.15),
         0 0 12px rgba(255,130,190,.20);
 
-    font-size:21px;
+    font-size: clamp(18,3.6vw, 24px);
     font-weight:bold;
 
     cursor:pointer;
@@ -128,8 +124,9 @@ h1 {
 ========================= */
 
 .card .icon{
-    width:45px;
-
+    width:42px;
+    min-width: 42px;
+    
     text-align:center;
 
     display:inline-flex;
@@ -139,7 +136,13 @@ h1 {
     flex-shrink:0;
 }
 
-
+.level-btn {
+    width: 60px;
+    margin: 10px auto;
+    padding: 10px 0;
+    
+    justify-content: center;
+    
 /* =========================
    BACK BUTTON
 ========================= */
@@ -169,7 +172,7 @@ h1 {
         0 6px 16px rgba(255,120,190,.30),
         0 0 18px rgba(120,190,255,.35);
 
-    font-size:25px;
+    font-size:22px;
     font-weight:bold;
 
     text-shadow:
