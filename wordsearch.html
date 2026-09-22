@@ -50,8 +50,8 @@ h1 {
     font-size: 36px;
     font-weight: 900;
     white-space: nowrap;
-
-    width: 100vw;
+    
+    width: 100%;
     position: relative;
     margin: 2px auto 0 auto;
 
@@ -102,7 +102,7 @@ h1 {
         0 5px 15px rgba(120,160,210,.15),
         0 0 12px rgba(255,130,190,.20);
 
-    font-size: 30px;
+    font-size: 26px;
     font-weight:bold;
 
     cursor:pointer;
@@ -203,6 +203,63 @@ h1 {
 .bottom-logo {
     bottom: 18px;
     right: 18px;
+}
+
+/* =========================
+   KHAS PAD / TABLET
+   WORD SEARCH
+========================= */
+
+@media (min-width: 768px) {
+    
+    .container {
+        width: 100%;
+        max-width: 700px;
+        margin: 0 auto;
+        transform: translateY(40px);
+    }
+    
+    /* TAJUK */
+    h1 {
+        width: 100%;
+        font-size: 48px;
+        margin-bottom: 30px;
+    }
+    
+    /* SUBTITLE */
+    .subtitle {
+        font-size: 34px;
+        margin-bottom: 38px;
+    }
+    
+    /* MENU */
+    .card {
+        width: 82%;
+        min-height: 90px;
+        margin: 0 auto 14px auto;
+        padding: 18px 25px;
+        
+        font-size: 28px;
+        
+        justify-content: flex-start;
+        text-align: left;
+    }
+    
+    /* EMOJI KEKAL */
+    .card .icon {
+        display: inline-flex;
+        width: 55px;
+        min-width: 55px;
+        font-size: 34px;
+    }
+    
+    /* BACK SAHAJA LEBIH PENDEK */
+    .back {
+        width: 40%;
+        min-height: 70px;
+        margin: 28px auto;
+        font-size: 28px;
+    }
 }
 
 </style>
