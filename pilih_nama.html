@@ -769,6 +769,13 @@ function shuffle(arr) {
     });
 }
 
+// Paparan nama: Huruf pertama besar, selebihnya kecil
+function formatNama(text) {
+    return text
+        .toLowerCase()
+        .replace(/\b\w/g, huruf => huruf.toUpperCase());
+}
+
         function renderQuestion() {
     answered = false;
     firstTry = true;
@@ -815,7 +822,7 @@ const options = shuffle([
 btn.style.boxShadow =
     "0 0 0 3px rgba(255,255,255,0.85), 0 0 15px rgba(255,255,255,0.55), 0 8px 18px rgba(0,0,0,0.20)";
         
-        btn.textContent = opt;
+        btn.textContent = formatNama(opt);
 
         
         btn.onclick = () => checkAnswer(opt, correct, btn);

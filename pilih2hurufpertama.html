@@ -724,7 +724,7 @@ const options = q.options;
 btn.style.boxShadow =
     "0 0 0 3px rgba(255,255,255,0.85), 0 0 15px rgba(255,255,255,0.55), 0 8px 18px rgba(0,0,0,0.20)";
         
-        btn.textContent = opt;
+        btn.textContent = opt.charAt(0) + opt.slice(1).toLowerCase();
 
         
         btn.onclick = () => checkAnswer(opt, correct, btn);
