@@ -35,9 +35,10 @@ body::after{
     content:none;
 }
 
-.container{
-    max-width:300px;
-    margin:auto;
+.container {
+    max-width: 300px;
+    margin: auto;
+    transform: translateY(30px);
 }
 
 
@@ -244,6 +245,52 @@ h1 {
     font-size:21px;
 
     justify-content:center;
+}
+
+/* =========================
+   KHAS PAD / TABLET
+========================= */
+
+@media (min-width: 768px) {
+    
+    .container {
+        max-width: 600px;
+        margin: 0 auto;
+        transform: translateY(54px);
+    }
+    
+    h1 {
+        font-size: 58px !important;
+        margin-top: 0 !important;
+        margin-bottom: 54px !important;
+    }
+    
+    .subtitle {
+        color: #5b32d6 !important;
+        font-size: 40px !important;
+        font-weight: 800 !important;
+        margin-top: 0 !important;
+        margin-bottom: 44px !important;
+    }
+    
+    .card {
+        min-height: 95px;
+        padding: 16px 20px;
+        margin-bottom: 14px;
+        font-size: 27px;
+    }
+    
+    .card .icon {
+        width: 68px;
+        min-width: 68px;
+        font-size: 40px;
+    }
+    
+    .back {
+        width: 40%;
+        font-size: 27px;
+        margin-top: 40px;
+    }
 }
 
 </style>
