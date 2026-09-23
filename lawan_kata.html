@@ -304,8 +304,8 @@ body {
         min-height: 1100px !important;
         height: auto !important;
 
-        /* Kekal hampir tengah */
-        margin: 0 auto !important;
+        /* NAIK SEDIKIT */
+        margin: -15px auto 0 auto !important;
 
         /* Jarak dalam card */
         padding: 30px 55px 70px !important;
@@ -318,14 +318,21 @@ body {
 
     /* =====================================
        SOALAN + MARKAH
-       Tidak terlalu jauh dari border atas
+       KOTAK LEBIH TINGGI
        ===================================== */
     #game-card > div.flex.items-center.justify-between {
         width: 100% !important;
         max-width: 100% !important;
 
+        min-height: 78px !important;
+
+        padding: 18px 24px !important;
+
         margin-left: 0 !important;
         margin-right: 0 !important;
+
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
 
         left: auto !important;
         transform: none !important;
@@ -334,9 +341,23 @@ body {
     }
 
 
+    /* TEXT SOALAN + MARKAH */
+    #game-card > div.flex.items-center.justify-between .font-black {
+        font-size: 30px !important;
+        line-height: 1.1 !important;
+    }
+
+
+    /* ICON BUKU */
+    #game-card > div.flex.items-center.justify-between .text-3xl {
+        font-size: 30px !important;
+    }
+
+
     /* =====================================
        KOTAK KATA LAWAN / GAMBAR
-       Ada jarak sedikit dari Soalan/Markah
+       TURUN KE BAWAH
+       SUPAYA ADA JARAK DARI SOALAN
        ===================================== */
     #question-image {
         width: 60% !important;
@@ -345,7 +366,8 @@ body {
         min-height: 260px !important;
         height: auto !important;
 
-        margin-top: 30px !important;
+        /* TURUNKAN KOTAK */
+        margin-top: 50px !important;
         margin-bottom: 35px !important;
 
         margin-left: auto !important;
@@ -359,10 +381,23 @@ body {
 
 
     /* =====================================
+       TEXT "KATA LAWAN"
+       BESAR
+       ===================================== */
+    #question-image p:first-child {
+        font-size: 40px !important;
+        line-height: 1.2 !important;
+        margin-bottom: 12px !important;
+    }
+
+
+    /* =====================================
        PERKATAAN
+       BESAR MACAM GAMBAr KEDUA
        ===================================== */
     #question-word {
-        font-size: 42px !important;
+        font-size: 60px !important;
+        line-height: 1.1 !important;
     }
 
 
@@ -376,7 +411,7 @@ body {
         margin-left: auto !important;
         margin-right: auto !important;
 
-        gap: 18px !important;
+        gap: 20px !important;
 
         box-sizing: border-box !important;
     }
@@ -384,31 +419,44 @@ body {
 
     #answers button {
         width: 100% !important;
-        min-height: 80px !important;
+        min-height: 100px !important;
 
-        font-size: 30px !important;
+        font-size: 36px !important;
 
         box-sizing: border-box !important;
     }
 
 
-    /* =====================================
-       BUTANG KEMBALI
-       ===================================== */
-    #game-card > div.flex.flex-col.items-center {
-        margin-top: 35px !important;
-        margin-bottom: 5px !important;
-    }
+/* =====================================
+   BUTANG KEMBALI
+   ===================================== */
+
+#game-card>div.flex.flex-col.items-center {
+    margin-top: 35px !important;
+    margin-bottom: 5px !important;
+}
 
 
-    /* =====================================
-       LOGO HE BLOOM
-       BAWAH KANAN DALAM CARD
-       ===================================== */
-    .bottom-logo {
-        bottom: 25px !important;
-        right: 25px !important;
-    }
+/* KEMBALI - KHAS BUTANG MELAYU */
+#game-card button[onclick*="melayu.html"] {
+    font-size: 32px !important;
+    font-weight: 800 !important;
+    
+    padding: 14px 30px !important;
+    
+    position: relative !important;
+    top: 30px !important;
+}
+
+
+/* =====================================
+   LOGO HE BLOOM
+   BAWAH KANAN DALAM CARD
+   ===================================== */
+
+.bottom-logo {
+    bottom: 25px !important;
+    right: 25px !important;
 }
     
 
