@@ -158,75 +158,143 @@ body {
 }
 
 /* =====================================================
-   IPAD / TABLET FIX
-   HP KEKAL SEPERTI ASAL
+   SUSUN HURUF - PAD / TABLET
+   CARD TINGGI + BUTANG VERTICAL TIDAK TERLALU PANJANG
+   HP TIDAK DIKACAU
    ===================================================== */
 
-@media (min-width: 768px) and (max-width: 1200px) {
+@media (min-width: 768px) {
     
+    html,
     body {
-        padding: 24px !important;
-        align-items: flex-start !important;
+        width: 100% !important;
+        min-width: 100% !important;
+        max-width: none !important;
+        
+        overflow-x: hidden !important;
         overflow-y: auto !important;
     }
     
+    body {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+    }
+    
+    /* ==============================
+       GAME CARD - TINGGIKAN
+       ============================== */
+    
     #game-card {
-        width: min(88vw, 900px) !important;
+        width: 92% !important;
         max-width: 900px !important;
         
-        margin: 100px auto 30px !important;
-        padding: 55px 60px 45px !important;
+        min-height: 1050px !important;
+        height: auto !important;
+        
+        margin: 70px auto 40px !important;
+        
+        padding: 55px 50px 60px !important;
         
         box-sizing: border-box !important;
+        
+        transform: none !important;
+        zoom: 1 !important;
     }
     
-    /* BAR SOALAN + MARKAH */
+    /* ==============================
+       SCORE
+       ============================== */
+    
     #game-card>div:first-child {
         width: 100% !important;
+        
         margin-left: auto !important;
         margin-right: auto !important;
-        transform: translateY(-15px) !important;
+        
+        transform: none !important;
+        
+        padding: 16px 22px !important;
+        box-sizing: border-box !important;
+        
+        font-size: 26px !important;
     }
     
-    /* SOALAN SUSUN HURUF */
+    /* ==============================
+       PERKATAAN SUSUN HURUF
+       ============================== */
+    
     #question-area {
-        margin-bottom: 28px !important;
+        width: 100% !important;
+        
+        margin-top: 45px !important;
+        margin-bottom: 35px !important;
+        
+        text-align: center !important;
     }
     
     #question-text {
-        font-size: clamp(38px, 5vw, 58px) !important;
-        line-height: 1.15 !important;
-        white-space: nowrap !important;
+        font-size: 52px !important;
+        line-height: 1.2 !important;
+        
         letter-spacing: 3px !important;
+        
+        white-space: nowrap !important;
     }
     
-    /* BUTANG JAWAPAN */
+    /* ==============================
+       4 BUTANG
+       SATU-SATU KE BAWAH
+       TIDAK TERLALU PANJANG
+       ============================== */
+    
     #answers {
-        width: 90% !important;
-        max-width: 720px !important;
+        width: 75% !important;
+        max-width: 650px !important;
+        
         margin-left: auto !important;
         margin-right: auto !important;
         
-        gap: 16px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        
+        gap: 18px !important;
     }
     
     #answers .btn-answer {
         width: 100% !important;
-        min-height: 82px !important;
-        height: 82px !important;
         
-        font-size: 24px !important;
-        padding: 14px 20px !important;
+        height: 85px !important;
+        min-height: 85px !important;
         
-        border-width: 4px !important;
-        border-radius: 30px !important;
+        padding: 12px 20px !important;
         
+        font-size: 28px !important;
+        font-weight: 800 !important;
+        
+        border-radius: 28px !important;
         box-sizing: border-box !important;
     }
     
-    /* KEMBALI */
-    #game-card>div:last-of-type {
-        margin-top: 28px !important;
+    /* ==============================
+       KEMBALI
+       ============================== */
+    
+    #game-card button[onclick*="melayu.html"] {
+        width: 230px !important;
+        min-width: 230px !important;
+        
+        height: 70px !important;
+        min-height: 70px !important;
+        
+        font-size: 30px !important;
+        font-weight: 800 !important;
+        
+        padding: 12px 20px !important;
+        
+        box-sizing: border-box !important;
     }
 }
 
