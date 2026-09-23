@@ -170,6 +170,213 @@ right: 18px;
     white-space: nowrap !important;
     flex-shrink: 0 !important;
 }
+
+/* =========================================
+   PAD SAHAJA
+   GAME CARD + SEMUA BUTANG
+   TENGAH & SEIMBANG
+   HP TIDAK DIKACAU
+   ========================================= */
+
+@media (min-width: 768px) {
+    
+    html,
+    body {
+        width: 100% !important;
+        min-width: 100% !important;
+        
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+    }
+    
+    body {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        
+        box-sizing: border-box !important;
+    }
+    
+    
+    /* =========================================
+       GAME CARD / BORDER
+       NAIK SEDIKIT KE ATAS
+       ========================================= */
+    
+    #game-card {
+        width: 94% !important;
+        max-width: 1000px !important;
+        
+        height: 1200px !important;
+        min-height: 1200px !important;
+        
+        margin: 0 auto !important;
+        
+        padding: 55px 55px 70px 55px !important;
+        
+        box-sizing: border-box !important;
+        
+        /* NAIKKAN BORDER */
+        transform: translateY(-70px) !important;
+        
+        zoom: 1 !important;
+    }
+    
+    
+    /* =========================================
+       SCORE + SOALAN
+       MASUK SEPENUHNYA DALAM BORDER
+       LEBAR KEKAL NGAM
+       ========================================= */
+    
+    #game-card>div.flex.items-center.justify-between {
+        width: 100% !important;
+        max-width: 100% !important;
+        
+        margin-left: auto !important;
+        margin-right: auto !important;
+        
+        left: auto !important;
+        right: auto !important;
+        
+        transform: translateY(-24px) !important;
+        font-size: 28px !important;
+        font-weight: 700 !important;
+        
+        box-sizing: border-box !important;
+    }
+    
+    
+    /* =========================================
+       GAMBAR SOALAN
+       ========================================= */
+    
+    #question-image {
+        width: 320px !important;
+        height: 320px !important;
+        
+        margin-left: auto !important;
+        margin-right: auto !important;
+        
+        box-sizing: border-box !important;
+    }
+    
+    
+    /* =========================================
+       KOTAK TEMPAT ISI AYAT
+       TEXT DIBESARKAN
+       ========================================= */
+    
+    #sentenceBox {
+        width: 100% !important;
+        max-width: 700px !important;
+        
+        height: 140px !important;
+        
+        margin-left: auto !important;
+        margin-right: auto !important;
+        
+        /* BESARKAN TULISAN */
+        font-size: 34px !important;
+        font-weight: 700 !important;
+        line-height: 1.3 !important;
+        
+        box-sizing: border-box !important;
+    }
+    
+    
+    /* =========================================
+       RUANG SEMUA BUTANG JAWAPAN
+       ========================================= */
+    
+    #answers {
+        width: 100% !important;
+        max-width: 800px !important;
+        
+        min-height: 220px !important;
+        height: auto !important;
+        
+        display: flex !important;
+        flex-wrap: wrap !important;
+        
+        justify-content: center !important;
+        align-items: center !important;
+        
+        gap: 18px !important;
+        
+        margin-left: auto !important;
+        margin-right: auto !important;
+        
+        padding: 15px 10px !important;
+        
+        box-sizing: border-box !important;
+        
+        overflow: visible !important;
+    }
+    
+    
+    /* =========================================
+   BUTANG PERKATAAN
+   IKUT PANJANG PERKATAAN
+   TIDAK ZOOM
+   ========================================= */
+    
+    #answers .btn-answer {
+        width: auto !important;
+        min-width: 0 !important;
+        max-width: none !important;
+        
+        min-height: 70px !important;
+        
+        padding: 14px 24px !important;
+        
+        font-size: 30px !important;
+        line-height: 1.1 !important;
+        
+        box-sizing: border-box !important;
+        
+        /* JANGAN ZOOM */
+        transform: none !important;
+        
+        /* ikut saiz perkataan */
+        flex: 0 0 auto !important;
+    }
+    
+    
+    /* JANGAN ZOOM BILA SENTUH / TEKAN */
+    #answers .btn-answer:hover,
+    #answers .btn-answer:active,
+    #answers .btn-answer:focus {
+        transform: none !important;
+    }
+    
+    /* =========================================
+       BUTANG PADAM
+       ========================================= */
+    
+    #game-card button[onclick*="removeWord"] {
+        font-size: 26px !important;
+        
+        padding: 12px 28px !important;
+        
+        transform: none !important;
+    }
+    
+    
+    /* =========================================
+       BUTANG KEMBALI
+       ========================================= */
+    
+    #game-card button[onclick*="melayu.html"] {
+        font-size: 28px !important;
+        
+        padding: 14px 30px !important;
+        
+        transform: none !important;
+    }
+    
+}
 </style>
 
 

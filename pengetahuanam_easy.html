@@ -156,7 +156,103 @@ body {
     margin-right: auto;
 }
 
+/* =========================================
+   PAD SAHAJA
+   GAME CARD LEBIH TINGGI + LEBIH LEBAR
+   TIADA ZOOM PADA BUTANG
+   HP TIDAK DIKACAU
+   ========================================= */
 
+@media (min-width: 768px) {
+  
+  /* GAME CARD */
+  #game-card {
+    width: 740px !important;
+    max-width: 740px !important;
+    
+    min-height: 900px !important;
+    height: 900px !important;
+    
+    margin-left: auto !important;
+    margin-right: auto !important;
+    
+    padding: 70px 55px 80px 55px !important;
+    
+    box-sizing: border-box !important;
+    
+    transform: none !important;
+    zoom: 1 !important;
+  }
+  
+  
+  /* SCORE + SOALAN */
+  #game-card>div.flex.items-center.justify-between {
+    width: 100% !important;
+    max-width: 100% !important;
+    
+    margin-left: auto !important;
+    margin-right: auto !important;
+    
+    left: auto !important;
+    right: auto !important;
+    
+    transform: translateY(-45px) !important;
+    
+    box-sizing: border-box !important;
+  }
+  
+  
+  /* KOTAK SOALAN */
+  #question-area {
+    margin-bottom: 24px !important;
+  }
+  
+  #question-area>div {
+    width: 100% !important;
+    max-width: 100% !important;
+    
+    left: auto !important;
+    transform: none !important;
+    
+    box-sizing: border-box !important;
+  }
+  
+  
+  /* BUTANG JAWAPAN */
+  #answers {
+    width: 100% !important;
+    max-width: 100% !important;
+    
+    left: auto !important;
+    transform: none !important;
+    
+    margin-left: auto !important;
+    margin-right: auto !important;
+    
+    box-sizing: border-box !important;
+  }
+  
+  
+  /* =========================================
+       MATIKAN ZOOM BUTANG
+       ========================================= */
+  
+  #answers .btn-answer,
+  #answers .btn-answer:hover,
+  #answers .btn-answer:active,
+  #answers .btn-answer:focus,
+  #answers .btn-answer:focus-visible {
+    transform: none !important;
+    scale: 1 !important;
+  }
+  
+  
+  /* KEMBALI */
+  #game-card button[onclick*="melayu.html"] {
+    transform: none !important;
+  }
+  
+}
     </style>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js" type="text/javascript"></script>
   <script src="/_sdk/935a53bc2e11fb8d.data_sdk.js" type="text/javascript" integrity="sha512-qr2oyPnEys1WebcOABaRh6hG77r5PWpqeWW6JTKbRJqly/INsfBi31CVNlTmHqjgeLpkVmmHZJUdxSx/32tOFQ=="></script>
