@@ -137,6 +137,177 @@ body {
     margin-left: auto;
     margin-right: auto;
 }
+
+#game-card {
+  width: 860px !important;
+  max-width: 860px !important;
+  
+  min-height: 1120px !important;
+  height: 1120px !important;
+  
+  margin-left: auto !important;
+  margin-right: auto !important;
+  
+  padding: 110px 65px 110px 65px !important;
+  
+  box-sizing: border-box !important;
+  
+  position: relative !important;
+  top: -70px !important;
+  
+  transform: none !important;
+  zoom: 1 !important;
+  
+  background: rgba(255, 255, 255, 0.20) !important;
+  backdrop-filter: blur(1px) !important;
+  -webkit-backdrop-filter: blur(1px) !important;
+  
+  border: 1px solid rgba(255, 255, 255, 0.95) !important;
+  border-radius: 30px !important;
+  
+  box-shadow: 0 15px 15px rgba(0, 0, 0, 0.18) !important;
+}
+
+/* =====================================
+   SOALAN + MARKAH
+   NAIK TAPI MASIH DALAM BORDER
+   ===================================== */
+#game-card > div.flex.items-center.justify-between {
+    width: 100% !important;
+    max-width: 100% !important;
+
+    margin-left: auto !important;
+    margin-right: auto !important;
+
+    left: auto !important;
+    right: auto !important;
+
+    transform: translateY(-80px) !important;
+
+    box-sizing: border-box !important;
+
+    font-size: 28px !important;
+}
+
+
+/* ICON BUKU */
+#game-card > div.flex.items-center.justify-between .text-3xl {
+    font-size: 32px !important;
+}
+
+
+/* SOALAN */
+#game-card > div.flex.items-center.justify-between
+span.font-black.text-blue-600 {
+    font-size: 28px !important;
+}
+
+
+/* MARKAH */
+#game-card > div.flex.items-center.justify-between
+span.font-black.text-pink-600 {
+    font-size: 28px !important;
+}
+
+
+/* =====================================
+   KOTAK SOALAN
+   ===================================== */
+#question-area {
+    margin-bottom: 30px !important;
+}
+
+#question-area > div {
+    width: 100% !important;
+    max-width: 100% !important;
+
+    height: 225px !important;
+    min-height: 225px !important;
+
+    left: auto !important;
+    transform: none !important;
+
+    box-sizing: border-box !important;
+}
+
+
+/* TEKS SOALAN */
+#question-text {
+    font-size: 34px !important;
+    line-height: 1.25 !important;
+
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+}
+
+
+/* =====================================
+   RUANG BUTANG JAWAPAN
+   ===================================== */
+#answers {
+    width: 100% !important;
+    max-width: 100% !important;
+
+    left: auto !important;
+    transform: none !important;
+
+    margin-left: auto !important;
+    margin-right: auto !important;
+
+    gap: 20px !important;
+
+    box-sizing: border-box !important;
+}
+
+
+/* =====================================
+   BUTANG JAWAPAN
+   TIADA ZOOM
+   ===================================== */
+#answers .btn-answer {
+    width: 100% !important;
+
+    height: 105px !important;
+    min-height: 105px !important;
+
+    padding: 15px 25px !important;
+
+    font-size: 34px !important;
+    line-height: 1.1 !important;
+
+    box-sizing: border-box !important;
+
+    transform: none !important;
+    scale: 1 !important;
+    transition: none !important;
+}
+
+
+/* MATIKAN ZOOM */
+#answers .btn-answer:hover,
+#answers .btn-answer:active,
+#answers .btn-answer:focus,
+#answers .btn-answer:focus-visible {
+    transform: none !important;
+    scale: 1 !important;
+}
+
+
+/* BUTANG KEMBALI */
+#game-card button[onclick*="melayu.html"] {
+    font-size: 26px !important;
+
+    padding: 16px 32px !important;
+
+    transform: none !important;
+    scale: 1 !important;
+}
+
+#game-card button[onclick*="melayu.html"]:hover,
+#game-card button[onclick*="melayu.html"]:active {
+    transform: none !important;
+    scale: 1 !important;
+}
     </style>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js" type="text/javascript"></script>
   <script src="/_sdk/935a53bc2e11fb8d.data_sdk.js" type="text/javascript" integrity="sha512-qr2oyPnEys1WebcOABaRh6hG77r5PWpqeWW6JTKbRJqly/INsfBi31CVNlTmHqjgeLpkVmmHZJUdxSx/32tOFQ=="></script>
