@@ -157,6 +157,79 @@ body {
     overflow-y: auto !important;
 }
 
+/* =====================================================
+   IPAD / TABLET FIX
+   HP KEKAL SEPERTI ASAL
+   ===================================================== */
+
+@media (min-width: 768px) and (max-width: 1200px) {
+    
+    body {
+        padding: 24px !important;
+        align-items: flex-start !important;
+        overflow-y: auto !important;
+    }
+    
+    #game-card {
+        width: min(88vw, 900px) !important;
+        max-width: 900px !important;
+        
+        margin: 100px auto 30px !important;
+        padding: 55px 60px 45px !important;
+        
+        box-sizing: border-box !important;
+    }
+    
+    /* BAR SOALAN + MARKAH */
+    #game-card>div:first-child {
+        width: 100% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        transform: translateY(-15px) !important;
+    }
+    
+    /* SOALAN SUSUN HURUF */
+    #question-area {
+        margin-bottom: 28px !important;
+    }
+    
+    #question-text {
+        font-size: clamp(38px, 5vw, 58px) !important;
+        line-height: 1.15 !important;
+        white-space: nowrap !important;
+        letter-spacing: 3px !important;
+    }
+    
+    /* BUTANG JAWAPAN */
+    #answers {
+        width: 90% !important;
+        max-width: 720px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        
+        gap: 16px !important;
+    }
+    
+    #answers .btn-answer {
+        width: 100% !important;
+        min-height: 82px !important;
+        height: 82px !important;
+        
+        font-size: 24px !important;
+        padding: 14px 20px !important;
+        
+        border-width: 4px !important;
+        border-radius: 30px !important;
+        
+        box-sizing: border-box !important;
+    }
+    
+    /* KEMBALI */
+    #game-card>div:last-of-type {
+        margin-top: 28px !important;
+    }
+}
+
 
     </style>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js" type="text/javascript"></script>
