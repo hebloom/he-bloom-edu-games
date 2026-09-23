@@ -159,8 +159,12 @@ body {
 
 /* =====================================================
    SUSUN HURUF - PAD / TABLET
-   CARD TINGGI + BUTANG VERTICAL TIDAK TERLALU PANJANG
-   HP TIDAK DIKACAU
+   - CARD TINGGI
+   - SCORE BETUL-BETUL TENGAH
+   - 4 BUTANG ATAS KE BAWAH
+   - BUTANG TIDAK TERLALU PANJANG
+   - TEXT JAWAPAN BESAR
+   - HP TIDAK DIKACAU
    ===================================================== */
 
 @media (min-width: 768px) {
@@ -183,7 +187,7 @@ body {
     }
     
     /* ==============================
-       GAME CARD - TINGGIKAN
+       GAME CARD
        ============================== */
     
     #game-card {
@@ -199,27 +203,51 @@ body {
         
         box-sizing: border-box !important;
         
+        left: auto !important;
+        right: auto !important;
+        
         transform: none !important;
         zoom: 1 !important;
     }
     
+    
     /* ==============================
-       SCORE
+       SCORE / SOALAN / MARKAH
        ============================== */
     
     #game-card>div:first-child {
         width: 100% !important;
+        max-width: none !important;
         
         margin-left: auto !important;
         margin-right: auto !important;
         
+        left: auto !important;
+        right: auto !important;
+        
         transform: none !important;
         
-        padding: 16px 22px !important;
+        position: relative !important;
+        
+        padding: 18px 24px !important;
+        
         box-sizing: border-box !important;
         
-        font-size: 26px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        
+        font-size: 28px !important;
     }
+    
+    #game-card>div:first-child span {
+        font-size: 28px !important;
+    }
+    
+    #game-card>div:first-child .text-3xl {
+        font-size: 30px !important;
+    }
+    
     
     /* ==============================
        PERKATAAN SUSUN HURUF
@@ -243,10 +271,9 @@ body {
         white-space: nowrap !important;
     }
     
+    
     /* ==============================
-       4 BUTANG
-       SATU-SATU KE BAWAH
-       TIDAK TERLALU PANJANG
+       4 BUTANG JAWAPAN
        ============================== */
     
     #answers {
@@ -271,12 +298,15 @@ body {
         
         padding: 12px 20px !important;
         
-        font-size: 28px !important;
+        /* TEXT JAWAPAN BESAR */
+        font-size: 34px !important;
         font-weight: 800 !important;
         
         border-radius: 28px !important;
+        
         box-sizing: border-box !important;
     }
+    
     
     /* ==============================
        KEMBALI
@@ -296,6 +326,7 @@ body {
         
         box-sizing: border-box !important;
     }
+    
 }
 
 
