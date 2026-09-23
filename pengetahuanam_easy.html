@@ -158,100 +158,191 @@ body {
 
 /* =========================================
    PAD SAHAJA
-   GAME CARD LEBIH TINGGI + LEBIH LEBAR
-   TIADA ZOOM PADA BUTANG
+   PENGETAHUAN AM
+   LEBIH LEBAR + LEBIH TINGGI
+   SEMUA TEKS DIBESARKAN
+   TIADA ZOOM BUTANG
    HP TIDAK DIKACAU
    ========================================= */
 
 @media (min-width: 768px) {
-  
-  /* GAME CARD */
-  #game-card {
-    width: 740px !important;
-    max-width: 740px !important;
-    
-    min-height: 900px !important;
-    height: 900px !important;
-    
-    margin-left: auto !important;
-    margin-right: auto !important;
-    
-    padding: 70px 55px 80px 55px !important;
-    
-    box-sizing: border-box !important;
-    
-    transform: none !important;
-    zoom: 1 !important;
-  }
-  
-  
-  /* SCORE + SOALAN */
-  #game-card>div.flex.items-center.justify-between {
-    width: 100% !important;
-    max-width: 100% !important;
-    
-    margin-left: auto !important;
-    margin-right: auto !important;
-    
-    left: auto !important;
-    right: auto !important;
-    
-    transform: translateY(-45px) !important;
-    
-    box-sizing: border-box !important;
-  }
-  
-  
-  /* KOTAK SOALAN */
-  #question-area {
-    margin-bottom: 24px !important;
-  }
-  
-  #question-area>div {
-    width: 100% !important;
-    max-width: 100% !important;
-    
-    left: auto !important;
-    transform: none !important;
-    
-    box-sizing: border-box !important;
-  }
-  
-  
-  /* BUTANG JAWAPAN */
-  #answers {
-    width: 100% !important;
-    max-width: 100% !important;
-    
-    left: auto !important;
-    transform: none !important;
-    
-    margin-left: auto !important;
-    margin-right: auto !important;
-    
-    box-sizing: border-box !important;
-  }
-  
-  
-  /* =========================================
-       MATIKAN ZOOM BUTANG
-       ========================================= */
-  
-  #answers .btn-answer,
-  #answers .btn-answer:hover,
-  #answers .btn-answer:active,
-  #answers .btn-answer:focus,
-  #answers .btn-answer:focus-visible {
-    transform: none !important;
-    scale: 1 !important;
-  }
-  
-  
-  /* KEMBALI */
-  #game-card button[onclick*="melayu.html"] {
-    transform: none !important;
-  }
-  
+
+    /* =====================================
+       GAME CARD
+       ===================================== */
+    #game-card {
+        width: 820px !important;
+        max-width: 820px !important;
+
+        min-height: 1050px !important;
+        height: 1050px !important;
+
+        margin-left: auto !important;
+        margin-right: auto !important;
+
+        padding: 85px 55px 95px 55px !important;
+
+        box-sizing: border-box !important;
+
+        transform: none !important;
+        zoom: 1 !important;
+    }
+
+
+    /* =====================================
+       SOALAN + MARKAH
+       MASUK DALAM BORDER
+       DAN NAIK KE ATAS
+       ===================================== */
+    #game-card > div.flex.items-center.justify-between {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        margin-left: auto !important;
+        margin-right: auto !important;
+
+        left: auto !important;
+        right: auto !important;
+
+        transform: translateY(-70px) !important;
+
+        box-sizing: border-box !important;
+
+        font-size: 28px !important;
+    }
+
+    /* ICON BUKU */
+    #game-card > div.flex.items-center.justify-between .text-3xl {
+        font-size: 32px !important;
+    }
+
+    /* SOALAN */
+    #game-card > div.flex.items-center.justify-between
+    span.font-black.text-blue-600 {
+        font-size: 28px !important;
+    }
+
+    /* MARKAH */
+    #game-card > div.flex.items-center.justify-between
+    span.font-black.text-pink-600 {
+        font-size: 28px !important;
+    }
+
+
+    /* =====================================
+       KOTAK SOALAN
+       LEBIH BESAR
+       ===================================== */
+    #question-area {
+        margin-bottom: 30px !important;
+    }
+
+    #question-area > div {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        height: 185px !important;
+        min-height: 185px !important;
+
+        left: auto !important;
+        transform: none !important;
+
+        box-sizing: border-box !important;
+    }
+
+    /* TEKS SOALAN */
+    #question-text {
+        font-size: 34px !important;
+        line-height: 1.25 !important;
+
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+
+
+    /* =====================================
+       RUANG BUTANG JAWAPAN
+       ===================================== */
+    #answers {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        left: auto !important;
+        transform: none !important;
+
+        margin-left: auto !important;
+        margin-right: auto !important;
+
+        gap: 20px !important;
+
+        box-sizing: border-box !important;
+    }
+
+
+    /* =====================================
+       BUTANG JAWAPAN
+       BESAR + JELAS
+       ===================================== */
+    #answers .btn-answer {
+        width: 100% !important;
+
+        height: 105px !important;
+        min-height: 105px !important;
+
+        padding: 15px 25px !important;
+
+        font-size: 34px !important;
+        line-height: 1.1 !important;
+
+        box-sizing: border-box !important;
+
+        transform: none !important;
+        scale: 1 !important;
+    }
+
+
+    /* =====================================
+       MATIKAN ZOOM SEPENUHNYA
+       ===================================== */
+    #answers .btn-answer:hover,
+    #answers .btn-answer:active,
+    #answers .btn-answer:focus,
+    #answers .btn-answer:focus-visible {
+        transform: none !important;
+        scale: 1 !important;
+    }
+
+
+    /* =====================================
+       PADAM / BUTANG LAIN JIKA ADA
+       ===================================== */
+    #game-card button[onclick*="removeWord"] {
+        font-size: 28px !important;
+        padding: 14px 30px !important;
+
+        transform: none !important;
+        scale: 1 !important;
+    }
+
+
+    /* =====================================
+       BUTANG KEMBALI
+       ===================================== */
+    #game-card button[onclick*="melayu.html"] {
+        font-size: 26px !important;
+
+        padding: 16px 32px !important;
+
+        transform: none !important;
+        scale: 1 !important;
+    }
+
+    #game-card button[onclick*="melayu.html"]:hover,
+    #game-card button[onclick*="melayu.html"]:active {
+        transform: none !important;
+        scale: 1 !important;
+    }
+
 }
     </style>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js" type="text/javascript"></script>
