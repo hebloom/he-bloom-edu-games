@@ -392,23 +392,19 @@ right: 18px;
     }
     
     
-    /* =========================================
-       KEMBALI
-       TENGAH-TENGAH
-       DI ATAS PARAS LOGO
-       ========================================= */
-    
+/* BUTANG KEMBALI - NAIK SIKIT
+   SUPAYA TIDAK BERTINDIH DENGAN LOGO */
+
 #game-card>div.flex.flex-col.items-center.mt-8.mb-2 {
     position: absolute !important;
+    
     left: 50% !important;
-    bottom: 110px !important;
+    bottom: 90px !important;
     
     transform: translateX(-50%) !important;
     
-    width: auto !important;
     margin: 0 !important;
-    padding: 0 !important;
-    z-index: 10000 !important;
+    z-index: 10001 !important;
 }
     
     
@@ -424,14 +420,19 @@ right: 18px;
     }
 
 /* =========================================
-   LOGO HE BLOOM - KANAN BAWAH
+   LOGO HE BLOOM - KANAN BAWAH GAME CARD
    ========================================= */
+
+#game-card {
+    position: relative !important;
+}
 
 #game-card .he-bloom-logo {
     position: absolute !important;
     
     width: 70px !important;
     height: 70px !important;
+    object-fit: contain !important;
     
     right: 18px !important;
     bottom: 18px !important;
@@ -442,7 +443,11 @@ right: 18px;
     transform: none !important;
     z-index: 10000 !important;
     pointer-events: none !important;
+    opacity: .95;
 }
+
+
+
     
 
 </style>
