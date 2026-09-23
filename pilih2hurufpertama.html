@@ -249,11 +249,8 @@ right: 18px;
 }
 
 /* =====================================================
-   TABLET / PAD FIX
-   - LEBIH BESAR
-   - FULL SCREEN
-   - KEMAS & SEIMBANG
-   - HP TIDAK DIKACAU
+   PAD / TABLET - FINAL
+   HP TIDAK DIKACAU
    ===================================================== */
 
 @media (min-width: 768px) {
@@ -263,6 +260,7 @@ right: 18px;
         width: 100% !important;
         min-width: 100% !important;
         max-width: none !important;
+        
         margin: 0 !important;
         padding: 0 !important;
         
@@ -275,27 +273,26 @@ right: 18px;
         flex-direction: column !important;
         align-items: center !important;
         justify-content: center !important;
-    }
-    
-    /* BACKGROUND PENUH SKRIN */
-    body {
+        
         background-size: cover !important;
         background-position: center center !important;
     }
     
-    /* =================================================
-       GAME CARD - BESARKAN
-       ================================================= */
+    
+    /* =========================================
+       GAME CARD
+       ========================================= */
+    
     #game-card {
         width: 94% !important;
         max-width: 1000px !important;
         
-        min-height: 1000px !important;
+        min-height: 1100px !important;
         height: auto !important;
         
         margin: 0 auto !important;
         
-        padding: 50px 55px 60px 55px !important;
+        padding: 50px 55px 140px 55px !important;
         
         box-sizing: border-box !important;
         
@@ -303,43 +300,76 @@ right: 18px;
         zoom: 1 !important;
     }
     
-    /* =================================================
-       SCORE / SOALAN / MARKAH
-       ================================================= */
+    
+    /* =========================================
+       BORDER TRANSPARENT
+       BAGI RUANG LEBIH TINGGI
+       ========================================= */
+    
+    #game-card::before {
+        top: -70px !important;
+        bottom: -90px !important;
+        
+        left: 0 !important;
+        right: 0 !important;
+        
+        border: 2px solid rgba(255, 255, 255, 0.9) !important;
+        border-radius: 35px !important;
+        
+        box-sizing: border-box !important;
+        pointer-events: none !important;
+    }
+    
+    
+    /* =========================================
+       SOALAN / MARKAH
+       ========================================= */
+    
     #game-card>div.flex.items-center.justify-between {
         width: 100% !important;
         max-width: none !important;
-        
-        left: auto !important;
-        
-        transform: translateY(-5px) !important;
         
         margin-left: 0 !important;
         margin-right: 0 !important;
         
         padding: 18px 24px !important;
         
+        transform: translateY(-5px) !important;
+        
         font-size: 30px !important;
+        
+        box-sizing: border-box !important;
     }
     
     #game-card>div.flex.items-center.justify-between span {
         font-size: 30px !important;
     }
     
-    /* =================================================
-       GAMBAR - BESARKAN
-       ================================================= */
+    
+    /* =========================================
+       GAMBAR
+       TURUN SIKIT
+       ========================================= */
+    
     #question-image {
         width: 320px !important;
         height: 320px !important;
         
         margin-left: auto !important;
         margin-right: auto !important;
+        
+        margin-top: 55px !important;
+        margin-bottom: 25px !important;
+        
+        display: block !important;
     }
     
-    /* =================================================
-       JAWAPAN - BESAR & LEBAR
-       ================================================= */
+    
+    /* =========================================
+       4 BUTANG JAWAPAN
+       TURUN SIKIT + TINGGI
+       ========================================= */
+    
     #answers {
         width: 100% !important;
         max-width: 900px !important;
@@ -348,29 +378,75 @@ right: 18px;
         margin-right: auto !important;
         
         gap: 24px !important;
+        
+        transform: translateY(45px) !important;
+        
+        box-sizing: border-box !important;
     }
+    
     
     #answers .btn-answer {
         width: 100% !important;
+        
         height: 110px !important;
         min-height: 110px !important;
         
+        margin: 0 auto !important;
+        
         font-size: 38px !important;
         font-weight: 800 !important;
+        
+        box-sizing: border-box !important;
     }
     
-   /* ==============================
-   KEMBALI - PAD
-   ============================== */
-
-#game-card button[onclick*="melayu.html"] {
-    font-size: 32px !important;
-    font-weight: 800 !important;
     
-    padding: 14px 30px !important;
+    /* =========================================
+       KEMBALI
+       TENGAH-TENGAH
+       DI ATAS PARAS LOGO
+       ========================================= */
     
-    position: relative !important;
-    top: 30px !important;
+    #game-card>div.flex.flex-col.items-center.mt-8.mb-2 {
+        position: fixed !important;
+        
+        left: 50% !important;
+        bottom: 90px !important;
+        
+        transform: translateX(-50%) !important;
+        
+        width: auto !important;
+        
+        margin: 0 !important;
+        padding: 0 !important;
+        
+        z-index: 10000 !important;
+    }
+    
+    
+    #game-card button[onclick*="melayu.html"] {
+        font-size: 32px !important;
+        font-weight: 800 !important;
+        
+        padding: 14px 35px !important;
+        
+        margin: 0 !important;
+        
+        white-space: nowrap !important;
+    }
+    
+    /* =========================================
+       LOGO HE BLOOM
+       KEKAL KANAN BAWAH
+       ========================================= */
+    
+    .he-bloom-logo {
+        width: 80px !important;
+        height: 80px !important;
+        
+        right: 18px !important;
+        bottom: 18px !important;
+    }
+    
 }
 
     </style>
