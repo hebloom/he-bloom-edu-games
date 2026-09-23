@@ -304,33 +304,20 @@ body {
     height: auto !important;
     
     margin: 0 auto !important;
-    padding: 50px 55px 60px 55px !important;
+    padding: 50px 55px 60px 60px !important;
     
     box-sizing: border-box !important;
     
     transform: translateY(-35px) !important;
     zoom: 1 !important;
-    position: relative !important;
+    position: absolute;
     
     /* BORDER */
     border: none !important;
+    
 }
 
-/* BORDER TRANSPARENT - PAD SAHAJA */
-#game-card::before {
-    content: "";
-    position: absolute;
-    top: -70px;
-    bottom: -70px;
-    left: 0;
-    right: 0;
-    
-    border: 2px solid rgba(255, 255, 255, 0.9);
-    border-radius: 35px;
-    
-    pointer-events: none;
-    box-sizing: border-box;
-}
+
     
     /* ==============================
        SCORE
