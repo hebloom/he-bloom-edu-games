@@ -186,6 +186,31 @@ body {
 
         transform: none !important;
         zoom: 1 !important;
+
+        position: relative !important;
+    }
+
+
+    /* =====================================
+       BORDER PAD
+       ATAS & BAWAH LEBIH TINGGI
+       LEBAR KIRI / KANAN KEKAL
+       ===================================== */
+    #game-card::before {
+        content: "";
+        position: absolute;
+
+        top: -125px;
+        bottom: -125px;
+
+        left: 0;
+        right: 0;
+
+        border: 1px solid rgba(255, 255, 255, 0.9);
+        border-radius: 30px;
+
+        pointer-events: none;
+        box-sizing: border-box;
     }
 
 
@@ -211,16 +236,19 @@ body {
         font-size: 28px !important;
     }
 
+
     /* ICON BUKU */
     #game-card > div.flex.items-center.justify-between .text-3xl {
         font-size: 32px !important;
     }
+
 
     /* SOALAN */
     #game-card > div.flex.items-center.justify-between
     span.font-black.text-blue-600 {
         font-size: 28px !important;
     }
+
 
     /* MARKAH */
     #game-card > div.flex.items-center.justify-between
@@ -231,7 +259,8 @@ body {
 
     /* =====================================
        KOTAK SOALAN
-       LEBIH BESAR
+       LEBIH TINGGI ATAS & BAWAH
+       LEBAR KEKAL
        ===================================== */
     #question-area {
         margin-bottom: 30px !important;
@@ -241,14 +270,15 @@ body {
         width: 100% !important;
         max-width: 100% !important;
 
-        height: 185px !important;
-        min-height: 185px !important;
+        height: 225px !important;
+        min-height: 225px !important;
 
         left: auto !important;
         transform: none !important;
 
         box-sizing: border-box !important;
     }
+
 
     /* TEKS SOALAN */
     #question-text {
@@ -282,6 +312,7 @@ body {
     /* =====================================
        BUTANG JAWAPAN
        BESAR + JELAS
+       TIADA ZOOM
        ===================================== */
     #answers .btn-answer {
         width: 100% !important;
@@ -298,6 +329,7 @@ body {
 
         transform: none !important;
         scale: 1 !important;
+        transition: none !important;
     }
 
 
@@ -336,6 +368,7 @@ body {
         transform: none !important;
         scale: 1 !important;
     }
+
 
     #game-card button[onclick*="melayu.html"]:hover,
     #game-card button[onclick*="melayu.html"]:active {
