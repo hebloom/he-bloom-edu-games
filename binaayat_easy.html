@@ -238,7 +238,9 @@ body {
         right: auto !important;
         
         transform: translateY(-24px) !important;
-        
+        font-size: 28px !important;
+    font-weight: 700 !important;
+
         box-sizing: border-box !important;
     }
     
@@ -311,37 +313,41 @@ body {
     }
     
     
-    /* =========================================
-       SEMUA BUTANG JAWAPAN
-       ========================================= */
+/* =========================================
+   BUTANG PERKATAAN
+   IKUT PANJANG PERKATAAN
+   TIDAK ZOOM
+   ========================================= */
+
+#answers .btn-answer {
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: none !important;
     
-    #answers .btn-answer {
-        width: auto !important;
-        
-        min-width: 150px !important;
-        min-height: 70px !important;
-        
-        padding: 14px 24px !important;
-        
-        font-size: 30px !important;
-        line-height: 1.1 !important;
-        
-        box-sizing: border-box !important;
-        
-        transform: none !important;
-    }
+    min-height: 70px !important;
     
+    padding: 14px 24px !important;
     
-    /* =========================================
-       JANGAN ZOOM BILA TEKAN BUTANG
-       ========================================= */
+    font-size: 30px !important;
+    line-height: 1.1 !important;
     
-    #answers .btn-answer:active,
-    .btn-answer:active {
-        transform: none !important;
-    }
+    box-sizing: border-box !important;
     
+    /* JANGAN ZOOM */
+    transform: none !important;
     
+    /* ikut saiz perkataan */
+    flex: 0 0 auto !important;
+}
+
+
+/* JANGAN ZOOM BILA SENTUH / TEKAN */
+#answers .btn-answer:hover,
+#answers .btn-answer:active,
+#answers .btn-answer:focus {
+    transform: none !important;
+}
+   
     /* =========================================
        BUTANG PADAM
        ========================================= */
