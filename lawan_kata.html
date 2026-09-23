@@ -286,34 +286,56 @@ body {
     }
 }
 
-/* =====================================================
-   PAD / TABLET SAHAJA - LAWAN KATA
-   - KATA LAWAN + PERKATAAN BETUL-BETUL TENGAH
-   - SAIZ FONT SEIMBANG
-   - PERKATAAN BESAR TAPI TIDAK TERLALU BESAR
-   - HP TIDAK DIKACAU
-   ===================================================== */
 
+    
 @media (min-width: 768px) {
     
-/* GAME CARD - PAD SAHAJA */
-#game-card {
-    width: 94% !important;
-    max-width: 1000px !important;
-    min-height: 1000px !important;
-    height: auto !important;
+    /* GAME CARD */
+    #game-card {
+        width: 94% !important;
+        max-width: 1000px !important;
+        
+        min-height: 1000px !important;
+        height: auto !important;
+        
+        margin: 0 auto !important;
+        
+        padding: 50px 55px 60px 60px !important;
+        
+        box-sizing: border-box !important;
+        
+        transform: translateY(-35px) !important;
+        zoom: 1 !important;
+        
+        position: relative !important;
+        
+        border: none !important;
+        overflow: visible !important;
+    }
     
-    margin: 0 auto !important;
-    padding: 50px 55px 60px 60px !important;
     
-    box-sizing: border-box !important;
-    
-    transform: translateY(-35px) !important;
-    zoom: 1 !important;
-    position: absolute;
-    
-    /* BORDER */
-    border: none !important;
+    /* BORDER TRANSPARENT — TINGGI ATAS & BAWAH */
+    #game-card::before {
+        content: "" !important;
+        
+        position: absolute !important;
+        
+        top: -60px !important;
+        bottom: -60px !important;
+        
+        left: 0 !important;
+        right: 0 !important;
+        
+        border: 2px solid rgba(255, 255, 255, 0.85) !important;
+        
+        border-radius: 35px !important;
+        
+        box-sizing: border-box !important;
+        
+        pointer-events: none !important;
+        
+        z-index: 0 !important;
+    }
     
 }
 
