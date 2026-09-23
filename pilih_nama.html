@@ -244,125 +244,171 @@ right: 18px;
    TABLET / PAD FIX
    - LEBIH BESAR
    - FULL SCREEN
-   - KEMAS & SEIMBANG
+   - BORDER LEBIH TINGGI
+   - GAMBAR TURUN SIKIT
+   - 4 BUTANG TURUN SIKIT
    - HP TIDAK DIKACAU
    ===================================================== */
 
 @media (min-width: 768px) {
-    
+
     html,
     body {
         width: 100% !important;
         min-width: 100% !important;
         max-width: none !important;
+
         margin: 0 !important;
         padding: 0 !important;
-        
+
         overflow-x: hidden !important;
         overflow-y: auto !important;
     }
-    
+
     body {
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
         justify-content: center !important;
     }
-    
-    /* BACKGROUND PENUH SKRIN */
+
+    /* =========================================
+       BACKGROUND PENUH SKRIN
+       ========================================= */
+
     body {
         background-size: cover !important;
         background-position: center center !important;
     }
-    
-    /* =================================================
-       GAME CARD - BESARKAN
-       ================================================= */
+
+
+    /* =========================================
+       GAME CARD / BORDER TRANSPARENT
+       ========================================= */
+
     #game-card {
         width: 94% !important;
         max-width: 1000px !important;
-        
-        min-height: 1000px !important;
+
+        /* BORDER LEBIH TINGGI */
+        min-height: 1100px !important;
         height: auto !important;
-        
+
         margin: 0 auto !important;
-        
-        padding: 50px 55px 60px 55px !important;
-        
+
+        padding:
+            50px
+            55px
+            90px
+            55px !important;
+
         box-sizing: border-box !important;
-        
+
         transform: translateY(-35px) !important;
         zoom: 1 !important;
     }
-    
-    /* =================================================
+
+
+    /* =========================================
        SCORE / SOALAN / MARKAH
-       ================================================= */
-    #game-card>div.flex.items-center.justify-between {
+       ========================================= */
+
+    #game-card > div.flex.items-center.justify-between {
         width: 100% !important;
         max-width: none !important;
-        
+
         left: auto !important;
-        
+
         transform: translateY(-5px) !important;
-        
+
         margin-left: 0 !important;
         margin-right: 0 !important;
-        
+
         padding: 18px 24px !important;
-        
+
+        font-size: 30px !important;
+
+        box-sizing: border-box !important;
+    }
+
+    #game-card > div.flex.items-center.justify-between span {
         font-size: 30px !important;
     }
-    
-    #game-card>div.flex.items-center.justify-between span {
-        font-size: 30px !important;
+
+
+    /* =========================================
+       KOTAK GAMBAR
+       TURUN SIKIT DARI KOTAK SOALAN
+       ========================================= */
+
+    #question-area {
+        margin-top: 30px !important;
+        margin-bottom: 20px !important;
+
+        transform: none !important;
     }
-    
-    /* =================================================
-       GAMBAR - BESARKAN
-       ================================================= */
+
     #question-image {
         width: 320px !important;
         height: 320px !important;
-        
+
         margin-left: auto !important;
         margin-right: auto !important;
+
+        margin-bottom: 25px !important;
     }
-    
-    /* =================================================
-       JAWAPAN - BESAR & LEBAR
-       ================================================= */
+
+
+    /* =========================================
+       4 BUTANG JAWAPAN
+       TURUN SEDIKIT
+       ========================================= */
+
     #answers {
         width: 100% !important;
         max-width: 900px !important;
-        
+
         margin-left: auto !important;
         margin-right: auto !important;
-        
+
         gap: 24px !important;
+
+        transform: translateY(20px) !important;
     }
-    
+
+
+    /* =========================================
+       SAIZ BUTANG JAWAPAN
+       ========================================= */
+
     #answers .btn-answer {
         width: 100% !important;
+
         height: 110px !important;
         min-height: 110px !important;
-        
+
         font-size: 38px !important;
         font-weight: 800 !important;
-    }
-    
-/* ==============================
-   KEMBALI - PAD
-   ============================== */
 
-#game-card button[onclick*="melayu.html"] {
-    font-size: 32px !important;
-    font-weight: 800 !important;
-    
-    padding: 14px 30px !important;
-    
-    position: relative !important;
-    top: 30px !important;
+        box-sizing: border-box !important;
+    }
+
+
+    /* =========================================
+       KEMBALI - PAD
+       ========================================= */
+
+    #game-card button[onclick*="melayu.html"] {
+        font-size: 32px !important;
+        font-weight: 800 !important;
+
+        padding: 14px 30px !important;
+
+        position: relative !important;
+
+        top: 30px !important;
+    }
+
 }
 
 </style>
