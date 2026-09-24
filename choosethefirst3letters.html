@@ -330,76 +330,65 @@ right: 18px;
     }
     
     
-    /* ==============================
-       BUTANG JAWAPAN
-       KUNCI SAIZ - TIADA ZOOM/KECIL
-       ============================== */
-    #answers .btn-answer,
-    .btn-answer {
-        transform: none !important;
-        scale: 1 !important;
-    }
-    
-    #answers .btn-answer:hover,
-    #answers .btn-answer:active,
-    #answers .btn-answer:focus,
-    #answers .btn-answer:focus-visible {
-        transform: none !important;
-        scale: 1 !important;
-    }
-    
-    
-    /* ==============================
-       BUTANG BACK
-       BESARKAN MACAM FAIL LAIN
-       ============================== */
-    #game-card button[onclick*="english.html"] {
-        font-size: 34px !important;
-        font-weight: 800 !important;
-        
-        padding: 16px 32px !important;
-        
-        min-height: 68px !important;
-        
-        white-space: nowrap !important;
-        
-        transform: none !important;
-        scale: 1 !important;
-        
-        box-sizing: border-box !important;
-    }
-    
-    #game-card button[onclick*="english.html"]:hover,
-    #game-card button[onclick*="english.html"]:active,
-    #game-card button[onclick*="english.html"]:focus {
-        transform: none !important;
-        scale: 1 !important;
-    }
-    
+/* ==============================
+   BUTANG JAWAPAN
+   KUNCI SAIZ - TIADA ZOOM/KECIL
+   ============================== */
+
+#answers .btn-answer {
+    transform: none !important;
+    -webkit-transform: none !important;
+    scale: 1 !important;
+    zoom: 1 !important;
+    transition: none !important;
 }
 
-#answers .btn-answer,
 #answers .btn-answer:hover,
 #answers .btn-answer:active,
 #answers .btn-answer:focus,
 #answers .btn-answer:focus-visible {
-    
     transform: none !important;
     -webkit-transform: none !important;
-    
     scale: 1 !important;
     zoom: 1 !important;
-    
     transition: none !important;
 }
 
-/* MATIKAN ANIMASI SHAKE PADA PAD */
+/* MATIKAN ANIMASI SHAKE */
 #answers .btn-answer.shake {
     animation: none !important;
+}
+
+
+/* ==============================
+   BUTANG BACK
+   BESARKAN MACAM FAIL LAIN
+   ============================== */
+
+#game-card button[onclick*="english.html"] {
+    font-size: 34px !important;
+    font-weight: 800 !important;
+    
+    padding: 16px 32px !important;
+    min-height: 68px !important;
+    
+    white-space: nowrap !important;
+    
     transform: none !important;
     -webkit-transform: none !important;
+    scale: 1 !important;
+    
+    box-sizing: border-box !important;
 }
-} 
+
+#game-card button[onclick*="english.html"]:hover,
+#game-card button[onclick*="english.html"]:active,
+#game-card button[onclick*="english.html"]:focus {
+    transform: none !important;
+    -webkit-transform: none !important;
+    scale: 1 !important;
+}
+
     </style>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js" type="text/javascript"></script>
   <script src="/_sdk/935a53bc2e11fb8d.data_sdk.js" type="text/javascript" integrity="sha512-qr2oyPnEys1WebcOABaRh6hG77r5PWpqeWW6JTKbRJqly/INsfBi31CVNlTmHqjgeLpkVmmHZJUdxSx/32tOFQ=="></script>
