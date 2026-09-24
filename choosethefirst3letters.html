@@ -398,7 +398,9 @@ right: 18px;
 #answers .btn-answer:hover,
 #answers .btn-answer:active,
 #answers .btn-answer:focus,
-#answers .btn-answer:focus-visible {
+#answers .btn-answer:focus-visible, 
+#answers .btn-answer.shake {
+    
     width: 100% !important;
     height: 110px !important;
     min-height: 110px !important;
@@ -420,58 +422,9 @@ right: 18px;
     touch-action: manipulation !important;
 }
 
-/* Jangan bagi class SHAKE ubah button */
-#answers .btn-answer.shake {
-    width: 100% !important;
-    height: 110px !important;
-    min-height: 110px !important;
-    max-height: 110px !important;
-    
-    transform: none !important;
-    -webkit-transform: none !important;
-    scale: 1 !important;
-    animation: none !important;
-}
 
-/* =========================================
-   CHOOSE - BESARKAN BUTTON IKUT PENGETAHUAN AM
-   ========================================= */
 
-#answers {
-    width: 120% !important;
-    max-width: 900px !important;
-    
-    margin-left: auto !important;
-    margin-right: auto !important;
-    
-    display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
-    
-    gap: 18px !important;
-    
-    box-sizing: border-box !important;
-}
-
-#answers .btn-answer {
-    width: 100% !important;
-    
-    height: 110px !important;
-    min-height: 110px !important;
-    max-height: 110px !important;
-    
-    font-size: 34px !important;
-    font-weight: 800 !important;
-    
-    transform: none !important;
-    -webkit-transform: none !important;
-    scale: 1 !important;
-    zoom: 1 !important;
-    
-    animation: none !important;
-    transition: none !important;
-    
-    box-sizing: border-box !important;
-} 
+ 
     </style>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js" type="text/javascript"></script>
   <script src="/_sdk/935a53bc2e11fb8d.data_sdk.js" type="text/javascript" integrity="sha512-qr2oyPnEys1WebcOABaRh6hG77r5PWpqeWW6JTKbRJqly/INsfBi31CVNlTmHqjgeLpkVmmHZJUdxSx/32tOFQ=="></script>
