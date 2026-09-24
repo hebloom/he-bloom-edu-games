@@ -162,36 +162,59 @@ body {
 
 /* =========================================
    PAD SAHAJA
-   KAD LEBIH LEBAR + TINGGI
-   DUDUK DI TENGAH
+   IKUT STRUKTUR FAIL LENGKAPKAN
+   TIDAK ZOOM / TIDAK MENGECIL
    HP TIDAK DIKACAU
    ========================================= */
 
 @media (min-width: 768px) {
   
-  /* GAME CARD PAD */
-  #game-card {
-    width: 90% !important;
-min-width:90%;
+  html,
+  body {
+    width: 100% !important;
+    min-width: 100% !important;
     max-width: none !important;
     
-    height: 1120px !important;
-    min-height: 1120px !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+  }
+  
+  body {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  
+  /* BACKGROUND */
+  body {
+    background-size: cover !important;
+    background-position: center center !important;
+  }
+  
+  
+  /* =====================================
+       GAME CARD PAD
+       IKUT FAIL LENGKAPKAN
+       ===================================== */
+  
+  #game-card {
+    width: 90% !important;
+    max-width: 1000px !important;
     
-    margin-left: auto !important;
-    margin-right: auto !important;
+    min-height: 1200px !important;
+    height: auto !important;
     
-    padding: 110px 65px !important;
+    margin: 0 auto !important;
     
-    position: relative !important;
-    transform: translateY(-90px) !important;
+    padding: 50px 55px 90px 55px !important;
     
     box-sizing: border-box !important;
-   
-    scale: 1 !important;
-    zoom: 1 !important;
+    
+    transform: translateY(-80px) !important;
     
     background: rgba(255, 255, 255, 0.20) !important;
+    
     backdrop-filter: blur(1px) !important;
     -webkit-backdrop-filter: blur(1px) !important;
     
@@ -200,30 +223,35 @@ min-width:90%;
     
     box-shadow:
       0 15px 15px rgba(0, 0, 0, 0.18) !important;
-    
   }
   
   
-  /* SOALAN + MARKAH */
+  /* =====================================
+       SOALAN + MARKAH
+       ===================================== */
+  
   #game-card>div.flex.items-center.justify-between {
     width: 100% !important;
-    max-width: 100% !important;
+    max-width: none !important;
     
-    margin-left: auto !important;
-    margin-right: auto !important;
-    
-    left: auto !important;
-    right: auto !important;
-    
-    transform: translateY(-40px) !important;
+    padding: 18px 24px !important;
     
     font-size: 30px !important;
     
     box-sizing: border-box !important;
+    
+    transform: translateY(-40px) !important;
+  }
+  
+  #game-card>div.flex.items-center.justify-between span {
+    font-size: 30px !important;
   }
   
   
-  /* KOTAK SOALAN */
+  /* =====================================
+       KOTAK SOALAN
+       ===================================== */
+  
   #question-area {
     width: 100% !important;
     margin-bottom: 30px !important;
@@ -244,93 +272,86 @@ min-width:90%;
   }
   
   
-  /* 4 BUTANG */
+  /* =====================================
+       4 BUTANG JAWAPAN
+       ===================================== */
+  
   #answers {
     width: 100% !important;
-    max-width: 100% !important;
-    
-    display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
-    
-    gap: 20px !important;
+    max-width: 900px !important;
     
     margin-left: auto !important;
     margin-right: auto !important;
     
-    left: auto !important;
-    transform: none !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    
+    gap: 24px !important;
     
     box-sizing: border-box !important;
+    
+    transform: none !important;
   }
   
   
-  /* KUNCI 4 BUTANG
-       TIDAK BOLEH ZOOM / MENGECIL */
-  #answers .btn-answer,
-  #answers .btn-answer:hover,
-  #answers .btn-answer:active,
-  #answers .btn-answer:focus,
-  #answers .btn-answer:focus-visible,
-  #answers .btn-answer.shake {
-    
+  /* =====================================
+       BUTANG
+       IKUT CARA FAIL LENGKAPKAN
+       ===================================== */
+  
+  #answers .btn-answer {
     width: 100% !important;
     
-    height: 105px !important;
-    min-height: 105px !important;
-    max-height: 105px !important;
+    height: 110px !important;
+    min-height: 110px !important;
     
-    padding: 15px 25px !important;
+    font-size: 38px !important;
+    font-weight: 800 !important;
     
     box-sizing: border-box !important;
     
     transform: none !important;
     -webkit-transform: none !important;
     
-    scale: 1 !important;
-    zoom: 1 !important;
-    
     transition: none !important;
-    animation: none !important;
-    
-    touch-action: manipulation !important;
-    -webkit-tap-highlight-color: transparent !important;
+  }
+  
+  #answers .btn-answer:hover,
+  #answers .btn-answer:active,
+  #answers .btn-answer:focus,
+  #answers .btn-answer:focus-visible {
+    transform: none !important;
+    -webkit-transform: none !important;
   }
   
   
-  /* TEKS SOALAN PAD */
+  /* =====================================
+       TEKS SOALAN
+       ===================================== */
+  
   #question-text {
     font-size: 34px !important;
     line-height: 1.25 !important;
   }
   
   
-  /* TEKS BUTANG PAD */
-  #answers .btn-answer {
-    font-size: 34px !important;
-    line-height: 1.1 !important;
+  /* =====================================
+       KEMBALI
+       ===================================== */
+  
+  #game-card button[onclick*="melayu.html"] {
+    font-size: 32px !important;
+    font-weight: 800 !important;
+    
+    padding: 14px 30px !important;
+    
+    position: relative !important;
+    top: 30px !important;
+    
+    transform: none !important;
+    -webkit-transform: none !important;
   }
   
-  
-  /* KEMBALI */
-#game-card button[onclick*="melayu.html"],
-#game-card button[onclick*="melayu.html"]:hover,
-#game-card button[onclick*="melayu.html"]:active,
-#game-card button[onclick*="melayu.html"]:focus {
-  
-  font-size: 30px !important;
-  
-  padding: 16px 35px !important;
-  
-  transform: none !important;
-  -webkit-transform: none !important;
-  
-  scale: 1 !important;
-  zoom: 1 !important;
-  
-  transition: none !important;
-  animation: none !important;
-}
-
 }
     </style>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js" type="text/javascript"></script>
@@ -1155,12 +1176,15 @@ questions = shuffle([...questionBank]).slice(0, 15);
                     else renderQuestion();
                 }, 1000);
             } else {
-  firstTry = false;
-  playWrongSound();
-  
-  /* PAD: TIADA SHAKE / ZOOM / RESIZE */
-  showFeedback('❌ CUBA LAGI', 'text-red-500');
-}
+                firstTry = false;
+                playWrongSound();
+                btn.classList.add('shake');
+                showFeedback('❌ CUBA LAGI', 'text-red-500');
+                setTimeout(() => {
+                    hideFeedback();
+                    btn.classList.remove('shake');
+                }, 800);
+            }
         }
 
 function showFeedback(text, cls) {
