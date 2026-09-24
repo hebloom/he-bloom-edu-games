@@ -308,7 +308,7 @@ body {
         height: auto !important;
 
         /* NAIK SEDIKIT */
-        margin: -100px auto 0 auto !important;
+        margin: -110px auto 0 auto !important;
 
         /* Jarak dalam card */
         padding: 30px 55px 70px !important;
@@ -449,7 +449,7 @@ body {
    KEMBALI - SAMA SAIZ LENGKAPKAN
    ===================================== */
 
-#game-card button[onclick*="melayu.html"] {
+#game-card button[onclick*="english.html"] {
     font-size: 32px !important;
     font-weight: 800 !important;
     
@@ -923,6 +923,8 @@ function capitalizeWord(word) {
     
     btn.className =
     `btn-answer ${btnColors[i]} w-[90%] mx-auto text-white font-bold text-2xl py-4 px-6 rounded-3xl shadow-md`;
+    
+     btn.style.border = "3px solid #ffffff";
     
     btn.textContent = capitalizeWord(opt);
     
