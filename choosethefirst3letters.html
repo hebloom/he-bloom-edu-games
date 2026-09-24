@@ -384,20 +384,40 @@ right: 18px;
 }
 
 /* =========================================
-   PAD - BUTANG JAWAPAN
+   FINAL FIX - BUTTON TAK BOLEH MENGECIL
    ========================================= */
 
-#answers .btn-answer {
+#answers .btn-answer,
+#answers .btn-answer:hover,
+#answers .btn-answer:active,
+#answers .btn-answer:focus,
+#answers .btn-answer:focus-visible, 
+#answers .btn-answer.shake {
+    
     width: 100% !important;
     height: 110px !important;
     min-height: 110px !important;
+    max-height: 110px !important;
     
-    font-size: 38px !important;
-    font-weight: 800 !important;
+    transform: none !important;
+    -webkit-transform: none !important;
+    
+    scale: 1 !important;
+    zoom: 1 !important;
+    
+    animation: none !important;
+    transition: none !important;
     
     box-sizing: border-box !important;
+    
+    outline: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+    touch-action: manipulation !important;
 }
 
+
+
+ 
     </style>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js" type="text/javascript"></script>
   <script src="/_sdk/935a53bc2e11fb8d.data_sdk.js" type="text/javascript" integrity="sha512-qr2oyPnEys1WebcOABaRh6hG77r5PWpqeWW6JTKbRJqly/INsfBi31CVNlTmHqjgeLpkVmmHZJUdxSx/32tOFQ=="></script>
@@ -478,9 +498,8 @@ style="box-shadow:
 <div id="answers" class="grid grid-cols-2 gap-4 w-full max-w-sm mx-auto mt-8">
 </div>
       
-   </div><!-- Feedback -->
-   <div id="feedback" class="hidden absolute inset-0 rounded-1xl flex items-center justify-center /9000 backdrop-blur">
-       <p id="feedback-text" class="text-3xl sm:text-4xl font-bold text-center zoom-in"></p>
+   <div id="feedback" class="hidden absolute inset-0 flex items-center justify-center">
+    <p id="feedback-text" class="text-3xl sm:text-4xl font-bold text-center zoom-in"></p>
    </div>
    
    <div class="flex flex-col items-center mt-20 mb-2">
