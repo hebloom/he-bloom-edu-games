@@ -359,6 +359,166 @@ span.font-black.text-pink-600 {
   scale: 1 !important;
   animation: none !important;
 }
+
+/* =========================================
+   KHAS TELEFON / HP
+   PAD & DESKTOP TIDAK DIUBAH
+   ========================================= */
+@media (max-width: 768px) {
+
+    body {
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+        padding: 10px !important;
+        align-items: flex-start !important;
+    }
+
+    /* GAME CARD - IKUT SAIZ SKRIN HP */
+    #game-card {
+        width: calc(100vw - 20px) !important;
+        max-width: calc(100vw - 20px) !important;
+
+        height: auto !important;
+        min-height: auto !important;
+
+        margin: 20px auto 30px auto !important;
+        padding: 75px 12px 35px 12px !important;
+
+        top: 0 !important;
+        position: relative !important;
+
+        box-sizing: border-box !important;
+
+        transform: none !important;
+        zoom: 1 !important;
+    }
+
+    /* SOALAN + MARKAH */
+    #game-card > div.flex.items-center.justify-between {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        transform: none !important;
+        left: auto !important;
+        right: auto !important;
+
+        margin-left: auto !important;
+        margin-right: auto !important;
+
+        font-size: 17px !important;
+        box-sizing: border-box !important;
+    }
+
+    #game-card > div.flex.items-center.justify-between .text-3xl {
+        font-size: 20px !important;
+    }
+
+    #game-card > div.flex.items-center.justify-between
+    span.font-black.text-blue-600,
+    #game-card > div.flex.items-center.justify-between
+    span.font-black.text-pink-600 {
+        font-size: 17px !important;
+    }
+
+    /* KOTAK SOALAN */
+    #question-area {
+        width: 100% !important;
+        margin-bottom: 20px !important;
+    }
+
+    #question-area > div {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        height: 145px !important;
+        min-height: 145px !important;
+
+        left: auto !important;
+        transform: none !important;
+
+        box-sizing: border-box !important;
+    }
+
+    #question-text {
+        font-size: 21px !important;
+        line-height: 1.25 !important;
+
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+
+    /* 4 BUTANG */
+    #answers {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+
+        gap: 12px !important;
+
+        margin-left: auto !important;
+        margin-right: auto !important;
+
+        left: auto !important;
+        transform: none !important;
+
+        box-sizing: border-box !important;
+    }
+
+    #answers .btn-answer {
+        width: 100% !important;
+
+        height: 72px !important;
+        min-height: 72px !important;
+        max-height: 72px !important;
+
+        padding: 8px 6px !important;
+
+        font-size: 20px !important;
+        line-height: 1.1 !important;
+
+        box-sizing: border-box !important;
+
+        /* TIADA ZOOM */
+        transform: none !important;
+        -webkit-transform: none !important;
+        scale: 1 !important;
+        zoom: 1 !important;
+
+        transition: none !important;
+        animation: none !important;
+    }
+
+    #answers .btn-answer:hover,
+    #answers .btn-answer:active,
+    #answers .btn-answer:focus,
+    #answers .btn-answer:focus-visible,
+    #answers .btn-answer.shake {
+        transform: none !important;
+        -webkit-transform: none !important;
+        scale: 1 !important;
+        zoom: 1 !important;
+        animation: none !important;
+    }
+
+    /* BUTANG KEMBALI */
+    #game-card button[onclick*="melayu.html"] {
+        font-size: 18px !important;
+        padding: 10px 22px !important;
+
+        transform: none !important;
+        scale: 1 !important;
+    }
+
+    /* LOGO */
+    .bottom-logo {
+        width: 60px !important;
+        height: 60px !important;
+        right: 10px !important;
+        bottom: 10px !important;
+    }
+}
     </style>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js" type="text/javascript"></script>
   <script src="/_sdk/935a53bc2e11fb8d.data_sdk.js" type="text/javascript" integrity="sha512-qr2oyPnEys1WebcOABaRh6hG77r5PWpqeWW6JTKbRJqly/INsfBi31CVNlTmHqjgeLpkVmmHZJUdxSx/32tOFQ=="></script>
