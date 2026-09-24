@@ -350,11 +350,22 @@ right: 18px;
    ============================== */
 
 #answers .btn-answer {
+    width: 100% !important;
+    
     transform: none !important;
     -webkit-transform: none !important;
+    
     scale: 1 !important;
     zoom: 1 !important;
+    
     transition: none !important;
+    animation: none !important;
+    
+    -webkit-tap-highlight-color: transparent !important;
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    
+    touch-action: manipulation !important;
 }
 
 #answers .btn-answer:hover,
@@ -363,14 +374,22 @@ right: 18px;
 #answers .btn-answer:focus-visible {
     transform: none !important;
     -webkit-transform: none !important;
+    
     scale: 1 !important;
     zoom: 1 !important;
+    
     transition: none !important;
+    animation: none !important;
+    
+    outline: none !important;
 }
 
-/* MATIKAN ANIMASI SHAKE */
+/* MATIKAN SHAKE DI SEMUA SKRIN */
 #answers .btn-answer.shake {
     animation: none !important;
+    transform: none !important;
+    -webkit-transform: none !important;
+    scale: 1 !important;
 }
 
 
