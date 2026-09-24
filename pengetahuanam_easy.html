@@ -167,12 +167,13 @@ body {
    HP TIDAK DIKACAU
    ========================================= */
 
-@media (min-width: 769px) {
+@media (min-width: 768px) {
   
   /* GAME CARD PAD */
   #game-card {
-    width: 860px !important;
-    max-width: 860px !important;
+    width: 100% !important;
+min-width:100%;
+    max-width: none !important;
     
     height: 1120px !important;
     min-height: 1120px !important;
@@ -183,7 +184,7 @@ body {
     padding: 110px 65px !important;
     
     position: relative !important;
-    top: 0 !important;
+    top: -70 !important;
     
     box-sizing: border-box !important;
     
@@ -216,7 +217,9 @@ body {
     left: auto !important;
     right: auto !important;
     
-    transform: translateY(-20px) !important;
+    transform: translateY(-40px) !important;
+    
+    font-size: 30px !important;
     
     box-sizing: border-box !important;
   }
@@ -311,20 +314,25 @@ body {
   
   
   /* KEMBALI */
-  #game-card button[onclick*="melayu.html"],
-  #game-card button[onclick*="melayu.html"]:hover,
-  #game-card button[onclick*="melayu.html"]:active,
-  #game-card button[onclick*="melayu.html"]:focus {
-    
-    transform: none !important;
-    -webkit-transform: none !important;
-    
-    scale: 1 !important;
-    zoom: 1 !important;
-    
-    transition: none !important;
-    animation: none !important;
-  }
+#game-card button[onclick*="melayu.html"],
+#game-card button[onclick*="melayu.html"]:hover,
+#game-card button[onclick*="melayu.html"]:active,
+#game-card button[onclick*="melayu.html"]:focus {
+  
+  font-size: 30px !important;
+  
+  padding: 16px 35px !important;
+  
+  transform: none !important;
+  -webkit-transform: none !important;
+  
+  scale: 1 !important;
+  zoom: 1 !important;
+  
+  transition: none !important;
+  animation: none !important;
+}
+
 }
     </style>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js" type="text/javascript"></script>
