@@ -60,9 +60,9 @@ body {
         .shake { animation: shake 0.4s ease-out; }
         .fade-in { animation: fadeIn 0.4s ease-out; }
         
-        .btn-answer { transition: transform 0.15s, box-shadow 0.15s; }
+       .btn-answer { transition: transform 0.15s, box-shadow 0.15s; }
         .btn-answer:hover { transform: scale(1.05); }
-        .btn-answer:active { transform: scale(0.95); }
+    .btn-answer:active { transform: scale(0.95); }
 #game-card {
     width: min(94vw, 800px);
     max-width: 800px;
@@ -167,6 +167,145 @@ body {
     white-space: nowrap;
 }
 
+/* LOGO */
+.he-bloom-logo {
+    width: clamp(55px, 9vw, 80px) !important;
+    height: clamp(55px, 9vw, 80px) !important;
+}
+
+
+/* =====================================================
+   TABLET / PAD - LENGKAPKAN PERKATAAN
+   SEMUA DIBESARKAN
+   HP TIDAK DIKACAU
+   ===================================================== */
+
+@media (min-width: 768px) {
+    
+    html,
+    body {
+        width: 100% !important;
+        min-width: 100% !important;
+        max-width: none !important;
+        
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+    }
+    
+    body {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    
+    /* BACKGROUND */
+    body {
+        background-size: cover !important;
+        background-position: center center !important;
+    }
+    
+/* GAME CARD - TINGGI + TENGAH */
+#game-card {
+    width: 94% !important;
+    max-width: 1000px !important;
+    
+    min-height: 1200px !important;
+    height: auto !important;
+    
+    margin: 0 auto !important;
+    
+    padding: 50px 55px 90px 55px !important;
+    
+    box-sizing: border-box !important;
+    
+    transform: translateY(-70px) !important;
+    zoom: 1 !important;
+}
+    
+    /* =================================================
+       SOALAN + MARKAH
+       ================================================= */
+    
+    #game-card>div.flex.items-center.justify-between {
+        width: 100% !important;
+        max-width: none !important;
+        
+        padding: 18px 24px !important;
+        
+        font-size: 30px !important;
+    }
+    
+    #game-card>div.flex.items-center.justify-between span {
+        font-size: 30px !important;
+    }
+    
+    /* =================================================
+       GAMBAR
+       ================================================= */
+    
+  /* KOTAK GAMBAR - TURUN DARI SOALAN/MARKAH */
+#question-image {
+    width: 320px !important;
+    height: 320px !important;
+    
+    margin-top: 50px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+    
+    /* =================================================
+       PERKATAAN YANG PERLU DILENGKAPKAN
+       ================================================= */
+    
+    #question-word {
+        font-size: 52px !important;
+        font-weight: 900 !important;
+        
+        margin-top: 20px !important;
+        margin-bottom: 20px !important;
+        
+        line-height: 1.2 !important;
+    }
+    
+    /* =================================================
+       JAWAPAN
+       ================================================= */
+    
+    #answers {
+        width: 100% !important;
+        max-width: 900px !important;
+        
+        margin-left: auto !important;
+        margin-right: auto !important;
+        
+        gap: 24px !important;
+    }
+    
+    #answers .btn-answer {
+        width: 100% !important;
+        
+        height: 110px !important;
+        min-height: 110px !important;
+        
+        font-size: 38px !important;
+        font-weight: 800 !important;
+    }
+    
+/* ==============================
+   KEMBALI - PAD
+   ============================== */
+
+#game-card button[onclick*="english.html"] {
+    font-size: 32px !important;
+    font-weight: 800 !important;
+    
+    padding: 14px 30px !important;
+    
+    position: relative !important;
+top: 30px !important;
+}
+
     </style>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js" type="text/javascript"></script>
   <script src="/_sdk/935a53bc2e11fb8d.data_sdk.js" type="text/javascript" integrity="sha512-qr2oyPnEys1WebcOABaRh6hG77r5PWpqeWW6JTKbRJqly/INsfBi31CVNlTmHqjgeLpkVmmHZJUdxSx/32tOFQ=="></script>
@@ -238,7 +377,7 @@ style="box-shadow:
  <p class="text-3xl font-bold text-gray-700"
    style="text-shadow: 0 0 3px rgba(255,255,255,.9),
                       0 0 8px rgba(255,255,255,.6);">
-    Complete the Words
+    Complete the Words ?
 </p>
 
 </div>
@@ -257,9 +396,9 @@ style="text-shadow:2px 2px 4px #000;"></p>
     <p id="feedback-text" class="text-3xl sm:text-4xl font-bold text-center zoom-in"></p>
    </div>
    
-   <div class="flex flex-col items-center mt-20 mb-2">
+   <div class="flex flex-col items-center mt-8 mb-2">
 
-<button onclick="window.location.href='english.html'"
+<button onclick="window.location.href='melayu.html'"
 class="bg-violet-600 hover:bg-violet-700 text-white font-bold px-6 py-2 rounded-full shadow-lg mb-6"
 style="box-shadow:0 0 0 3px rgba(255,255,255,.85),0 0 15px rgba(255,255,255,.55),0 8px 18px rgba(0,0,0,.2);">
     🔙 BACK 
