@@ -226,56 +226,38 @@ body {
   }
   
   
-  /* =====================================
-       SOALAN + MARKAH
-       ===================================== */
+/* SOALAN + MARKAH
+   MASUK DALAM BORDER */
+#game-card>div.flex.items-center.justify-between {
+  width: 100% !important;
+  max-width: 100% !important;
   
-  #game-card>div.flex.items-center.justify-between {
-    width: 100% !important;
-    max-width: none !important;
-    
-    padding: 18px 24px !important;
-    
-    font-size: 30px !important;
-    
-    box-sizing: border-box !important;
-    
-    transform: translateY(-40px) !important;
-  }
+  margin-left: auto !important;
+  margin-right: auto !important;
   
-  #game-card>div.flex.items-center.justify-between span {
-    font-size: 30px !important;
-  }
+  left: auto !important;
+  
+  transform: translateY(-24px) !important;
+  
+  box-sizing: border-box !important;
+}
   
   
   /* =====================================
        KOTAK SOALAN
        ===================================== */
   
-  #question-area {
-    width: 100% !important;
-    margin-bottom: 30px !important;
-  }
-  
-  #question-area>div {
-    width: 100% !important;
-    max-width: 100% !important;
-    
-    height: 225px !important;
-    min-height: 225px !important;
-    max-height: 225px !important;
-    
-    left: auto !important;
-    transform: none !important;
-    
-    box-sizing: border-box !important;
-  }
-  
-  
-/* =====================================
-   4 BUTANG JAWAPAN
-   TURUN SEDIKIT + MASUK DALAM BORDER
-   ===================================== */
+#question-area {
+  width: 100% !important;
+  margin-top: 20px !important;
+  margin-bottom: 30px !important;
+}
+
+#question-area>div {
+  height: 250px !important;
+  min-height: 250px !important;
+  max-height: 250px !important;
+}
 
 #answers {
   width: 100% !important;
@@ -351,7 +333,7 @@ body {
     padding: 14px 30px !important;
     
     position: relative !important;
-    top: 30px !important;
+    top: 40px !important;
     
     transform: none !important;
     -webkit-transform: none !important;
