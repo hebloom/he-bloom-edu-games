@@ -171,8 +171,8 @@ body {
   
   /* GAME CARD PAD */
   #game-card {
-    width: 100% !important;
-min-width:100%;
+    width: 90% !important;
+min-width:90%;
     max-width: none !important;
     
     height: 1120px !important;
@@ -184,7 +184,7 @@ min-width:100%;
     padding: 110px 65px !important;
     
     position: relative !important;
-    top: -70 !important;
+    transform: translateY(-70px) !important;
     
     box-sizing: border-box !important;
     
@@ -202,7 +202,9 @@ min-width:100%;
     box-shadow:
       0 15px 15px rgba(0, 0, 0, 0.18) !important;
     
-    overflow: visible !important;
+    overflow-x: hidden !important;
+overflow-y: auto !important;
+}
   }
   
   
