@@ -297,33 +297,26 @@ right: 18px;
     white-space: nowrap;
 }
 
-/* =========================================
-   PAD SAHAJA
-   768px KE ATAS
-   HP TIDAK DIKACAU
-   ========================================= */
-@media (min-width: 768px) {
-    
     /* ==============================
        GAME CARD
        LEBARKAN TIDAK DIUBAH
        TINGGIKAN BORDER ATAS + BAWAH
        ============================== */
+@media (min-width: 768px) {
     #game-card {
-        width: min(94vw, 800px) !important;
-        max-width: 900px !important;
-        
-        min-height: 1050px !important;
-        height: 1050px !important;
-        
+        width: 94% !important;
+        max-width: 1000px !important;
+        min-height: 1200px !important;
+        height: auto !important;
         margin: 0 auto !important;
         
-        box-sizing: border-box !important;
+        padding: 70px 55px 90px 55px !important;
         
+        box-sizing: border-box !important;
         transform: translateY(-70px) !important;
-
         zoom: 1 !important;
     }
+}
     
     
     /* ==============================
@@ -391,40 +384,20 @@ right: 18px;
 }
 
 /* =========================================
-   FINAL FIX - BUTTON TAK BOLEH MENGECIL
+   PAD - BUTANG JAWAPAN
    ========================================= */
 
-#answers .btn-answer,
-#answers .btn-answer:hover,
-#answers .btn-answer:active,
-#answers .btn-answer:focus,
-#answers .btn-answer:focus-visible, 
-#answers .btn-answer.shake {
-    
+#answers .btn-answer {
     width: 100% !important;
     height: 110px !important;
     min-height: 110px !important;
-    max-height: 110px !important;
     
-    transform: none !important;
-    -webkit-transform: none !important;
-    
-    scale: 1 !important;
-    zoom: 1 !important;
-    
-    animation: none !important;
-    transition: none !important;
+    font-size: 38px !important;
+    font-weight: 800 !important;
     
     box-sizing: border-box !important;
-    
-    outline: none !important;
-    -webkit-tap-highlight-color: transparent !important;
-    touch-action: manipulation !important;
 }
 
-
-
- 
     </style>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js" type="text/javascript"></script>
   <script src="/_sdk/935a53bc2e11fb8d.data_sdk.js" type="text/javascript" integrity="sha512-qr2oyPnEys1WebcOABaRh6hG77r5PWpqeWW6JTKbRJqly/INsfBi31CVNlTmHqjgeLpkVmmHZJUdxSx/32tOFQ=="></script>
