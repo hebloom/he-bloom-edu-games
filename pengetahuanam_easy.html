@@ -301,19 +301,6 @@ span.font-black.text-pink-600 {
 }
 
 
-/* MATIKAN ZOOM / BESAR / KECIL */
-#answers .btn-answer,
-#answers .btn-answer:hover,
-#answers .btn-answer:active,
-#answers .btn-answer:focus,
-#answers .btn-answer:focus-visible {
-  transform: none !important;
-  scale: 1 !important;
-  zoom: 1 !important;
-  transition: none !important;
-}
-
-
 /* BUTANG KEMBALI */
 #game-card button[onclick*="melayu.html"] {
     font-size: 26px !important;
@@ -328,6 +315,49 @@ span.font-black.text-pink-600 {
 #game-card button[onclick*="melayu.html"]:active {
     transform: none !important;
     scale: 1 !important;
+}
+
+/* =========================================
+   MATIKAN TERUS KESAN BUTANG MEMBESAR / MENGECIL
+   ========================================= */
+
+#answers .btn-answer,
+#answers .btn-answer:hover,
+#answers .btn-answer:active,
+#answers .btn-answer:focus,
+#answers .btn-answer:focus-visible,
+#answers .btn-answer.shake {
+  
+  /* SAIZ KEKAL */
+  width: 100% !important;
+  height: 105px !important;
+  min-height: 105px !important;
+  max-height: 105px !important;
+  
+  /* TIADA ZOOM / KECIL / BESAR */
+  transform: none !important;
+  -webkit-transform: none !important;
+  scale: 1 !important;
+  zoom: 1 !important;
+  
+  /* TIADA ANIMASI */
+  transition: none !important;
+  animation: none !important;
+  
+  /* KEKAL BENTUK */
+  box-sizing: border-box !important;
+  
+  /* TELEFON */
+  -webkit-tap-highlight-color: transparent !important;
+  touch-action: manipulation !important;
+}
+
+/* MATIKAN KESAN SHAKE JIKA JAWAPAN SALAH */
+#answers .btn-answer.shake {
+  transform: none !important;
+  -webkit-transform: none !important;
+  scale: 1 !important;
+  animation: none !important;
 }
     </style>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js" type="text/javascript"></script>
