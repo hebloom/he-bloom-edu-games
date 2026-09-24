@@ -322,48 +322,63 @@ span.font-black.text-pink-600 {
 }
 
 /* =========================================
-   MATIKAN TERUS KESAN BUTANG MEMBESAR / MENGECIL
+   PAD SAHAJA
+   MATIKAN TERUS KESAN BUTANG
+   MEMBESAR / MENGECIL
+   HP TIDAK DIKACAU
    ========================================= */
 
-#answers .btn-answer,
-#answers .btn-answer:hover,
-#answers .btn-answer:active,
-#answers .btn-answer:focus,
-#answers .btn-answer:focus-visible,
-#answers .btn-answer.shake {
+@media (min-width: 769px) {
   
-  /* SAIZ KEKAL */
-  width: 100% !important;
-  height: 105px !important;
-  min-height: 105px !important;
-  max-height: 105px !important;
+  #answers .btn-answer,
+  #answers .btn-answer:hover,
+  #answers .btn-answer:active,
+  #answers .btn-answer:focus,
+  #answers .btn-answer:focus-visible,
+  #answers .btn-answer.shake {
+    
+    /* SAIZ KEKAL */
+    width: 100% !important;
+    
+    height: 105px !important;
+    min-height: 105px !important;
+    max-height: 105px !important;
+    
+    /* TIADA ZOOM / KECIL / BESAR */
+    transform: none !important;
+    -webkit-transform: none !important;
+    
+    scale: 1 !important;
+    zoom: 1 !important;
+    
+    transform-origin: center center !important;
+    -webkit-transform-origin: center center !important;
+    
+    /* TIADA ANIMASI */
+    transition: none !important;
+    animation: none !important;
+    
+    /* KEKAL BENTUK */
+    box-sizing: border-box !important;
+    
+    /* PAD */
+    -webkit-tap-highlight-color: transparent !important;
+    touch-action: manipulation !important;
+  }
   
-  /* TIADA ZOOM / KECIL / BESAR */
-  transform: none !important;
-  -webkit-transform: none !important;
-  scale: 1 !important;
-  zoom: 1 !important;
   
-  /* TIADA ANIMASI */
-  transition: none !important;
-  animation: none !important;
-  
-  /* KEKAL BENTUK */
-  box-sizing: border-box !important;
-  
-  /* TELEFON */
-  -webkit-tap-highlight-color: transparent !important;
-  touch-action: manipulation !important;
+  /* MATIKAN KESAN SHAKE */
+  #answers .btn-answer.shake {
+    
+    transform: none !important;
+    -webkit-transform: none !important;
+    
+    scale: 1 !important;
+    zoom: 1 !important;
+    
+    animation: none !important;
+  }
 }
-
-/* MATIKAN KESAN SHAKE JIKA JAWAPAN SALAH */
-#answers .btn-answer.shake {
-  transform: none !important;
-  -webkit-transform: none !important;
-  scale: 1 !important;
-  animation: none !important;
-}
-
 /* =========================================
    HP SAHAJA
    RINGKAS - TIADA ZOOM
@@ -379,7 +394,7 @@ span.font-black.text-pink-600 {
         min-height: auto !important;
 
         position: relative !important;
-        top: 70px !important;
+        top: 40px !important;
 
         margin-left: auto !important;
         margin-right: auto !important;
@@ -398,7 +413,7 @@ span.font-black.text-pink-600 {
         transform: none !important;
         left: auto !important;
         right: auto !important;
-
+top: 20px !important;
         font-size: 17px !important;
     }
 
@@ -454,7 +469,7 @@ span.font-black.text-pink-600 {
         min-height: 72px !important;
         max-height: 72px !important;
 
-        font-size: 20px !important;
+        font-size: 14px !important;
 
         transform: none !important;
         -webkit-transform: none !important;
