@@ -449,7 +449,7 @@ body {
    KEMBALI - SAMA SAIZ LENGKAPKAN
    ===================================== */
 
-#game-card button[onclick*="melayu.html"] {
+#game-card button[onclick*="english.html"] {
     font-size: 32px !important;
     font-weight: 800 !important;
     
@@ -553,11 +553,38 @@ relative left-1/2 -translate-x-1/2"
 
 </div>
 </div>
+   <!-- Question -->
+  <div id="question-area" class="text-center mb-6">
+
+   <div id="question-image"
+class="w-full max-w-sm mx-auto mb-5
+bg-white/100
+border-4 border-black
+rounded-3xl
+flex items-center justify-center
+px-6 py-8
+relative left-1/2 -translate-x-1/2"
+
+  <div style="display:block !important; width:100% !important; text-align:center !important;">
+
+    <p class="text-xl font-bold text-gray-500"
+       style="display:block !important; width:100% !important; margin:0 0 10px 0 !important;">
+        KATA LAWAN
+    </p>
+
+    <p id="question-word"
+       class="text-4xl sm:text-5xl font-black text-blue-600"
+       style="display:block !important; width:100% !important; margin:0 !important; text-align:center !important; text-shadow:0 2px 3px rgba(0,0,0,.15);">
+        BESAR
+    </p>
+
+</div>
+</div>
 
    </div><!-- Answer Buttons -->
    
-   <div id="answers" class="grid grid-cols-2 gap-4 w-full max-w-md mx-auto">
-   </div>
+<div id="answers" class="grid grid-cols-2 gap-4 w-full max-w-md mx-auto">
+</div>
       
    </div><!-- Feedback -->
    <div id="feedback" class="hidden absolute inset-0 rounded-1xl flex items-center justify-center /9000 backdrop-blur">
@@ -566,10 +593,9 @@ relative left-1/2 -translate-x-1/2"
    
    <div class="flex flex-col items-center mt-8 mb-2">
 
-<button
-onclick="window.location.href='english.html'"
-class="bg-violet-600 hover:bg-violet-700 text-white font-bold px-8 py-2 rounded-full mb-6 shadow-lg ring-4 ring-white/70 border-2 border-white"
-style="box-shadow:0 0 10px rgba(255,255,255,0.8), 0 6px 12px rgba(0,0,0,0.3);">
+<button onclick="window.location.href='english.html'"
+class="bg-violet-600 hover:bg-violet-700 text-white font-bold px-6 py-2 rounded-full shadow-lg mb-6"
+style="box-shadow:0 0 0 3px rgba(255,255,255,.85),0 0 15px rgba(255,255,255,.55),0 8px 18px rgba(0,0,0,.2);">
 ⬅️ BACK
 </button>
 
