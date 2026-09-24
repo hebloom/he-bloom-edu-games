@@ -45,9 +45,27 @@ body {
         @keyframes beeFly { 0%,100%{ transform: translate(0,0) } 25%{ transform: translate(30px,-20px) } 50%{ transform: translate(-10px,-30px) } 75%{ transform: translate(20px,10px) } }
         @keyframes sway { 0%,100%{ transform: rotate(-2deg) } 50%{ transform: rotate(2deg) } }
         @keyframes sunPulse { 0%,100%{ transform: scale(1) } 50%{ transform: scale(1.05) } }
-        @keyframes zoomIn { 0%{ transform: scale(0.5); opacity:0 } 100%{ transform: scale(1); opacity:1 } }
+      @keyframes zoomIn {
+  0% {
+    opacity: 0;
+    transform: none;
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
         @keyframes shake { 0%,100%{ transform: translateX(0) } 20%{ transform: translateX(-8px) } 40%{ transform: translateX(8px) } 60%{ transform: translateX(-5px) } 80%{ transform: translateX(5px) } }
-        @keyframes fadeIn { from{ opacity:0; transform:translateY(10px) } to{ opacity:1; transform:translateY(0) } }
+     @keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: none;
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
         
         .float { animation: float 3s ease-in-out infinite; }
         .float-slow { animation: floatSlow 4s ease-in-out infinite; }
@@ -495,8 +513,7 @@ style="box-shadow:
 <div id="answers" class="grid grid-cols-2 gap-4 w-full max-w-sm mx-auto mt-8">
 </div>
       
-   </div><!-- Feedback -->
-   <div id="feedback" class="hidden absolute inset-0 rounded-1xl flex items-center justify-center /9000 backdrop-blur">
+   <div id="feedback" class="hidden absolute inset-0 flex items-center justify-center">
     <p id="feedback-text" class="text-3xl sm:text-4xl font-bold text-center zoom-in"></p>
    </div>
    
