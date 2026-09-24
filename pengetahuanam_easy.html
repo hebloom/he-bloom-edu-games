@@ -160,7 +160,172 @@ body {
     margin-right: auto;
 }
 
+/* =========================================
+   PAD SAHAJA
+   KAD LEBIH LEBAR + TINGGI
+   DUDUK DI TENGAH
+   HP TIDAK DIKACAU
+   ========================================= */
 
+@media (min-width: 769px) {
+  
+  /* GAME CARD PAD */
+  #game-card {
+    width: 860px !important;
+    max-width: 860px !important;
+    
+    height: 1120px !important;
+    min-height: 1120px !important;
+    
+    margin-left: auto !important;
+    margin-right: auto !important;
+    
+    padding: 110px 65px !important;
+    
+    position: relative !important;
+    top: 0 !important;
+    
+    box-sizing: border-box !important;
+    
+    transform: none !important;
+    scale: 1 !important;
+    zoom: 1 !important;
+    
+    background: rgba(255, 255, 255, 0.20) !important;
+    backdrop-filter: blur(1px) !important;
+    -webkit-backdrop-filter: blur(1px) !important;
+    
+    border: 1px solid rgba(255, 255, 255, 0.95) !important;
+    border-radius: 30px !important;
+    
+    box-shadow:
+      0 15px 15px rgba(0, 0, 0, 0.18) !important;
+    
+    overflow: visible !important;
+  }
+  
+  
+  /* SOALAN + MARKAH */
+  #game-card>div.flex.items-center.justify-between {
+    width: 100% !important;
+    max-width: 100% !important;
+    
+    margin-left: auto !important;
+    margin-right: auto !important;
+    
+    left: auto !important;
+    right: auto !important;
+    
+    transform: translateY(-20px) !important;
+    
+    box-sizing: border-box !important;
+  }
+  
+  
+  /* KOTAK SOALAN */
+  #question-area {
+    width: 100% !important;
+    margin-bottom: 30px !important;
+  }
+  
+  #question-area>div {
+    width: 100% !important;
+    max-width: 100% !important;
+    
+    height: 225px !important;
+    min-height: 225px !important;
+    max-height: 225px !important;
+    
+    left: auto !important;
+    transform: none !important;
+    
+    box-sizing: border-box !important;
+  }
+  
+  
+  /* 4 BUTANG */
+  #answers {
+    width: 100% !important;
+    max-width: 100% !important;
+    
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    
+    gap: 20px !important;
+    
+    margin-left: auto !important;
+    margin-right: auto !important;
+    
+    left: auto !important;
+    transform: none !important;
+    
+    box-sizing: border-box !important;
+  }
+  
+  
+  /* KUNCI 4 BUTANG
+       TIDAK BOLEH ZOOM / MENGECIL */
+  #answers .btn-answer,
+  #answers .btn-answer:hover,
+  #answers .btn-answer:active,
+  #answers .btn-answer:focus,
+  #answers .btn-answer:focus-visible,
+  #answers .btn-answer.shake {
+    
+    width: 100% !important;
+    
+    height: 105px !important;
+    min-height: 105px !important;
+    max-height: 105px !important;
+    
+    padding: 15px 25px !important;
+    
+    box-sizing: border-box !important;
+    
+    transform: none !important;
+    -webkit-transform: none !important;
+    
+    scale: 1 !important;
+    zoom: 1 !important;
+    
+    transition: none !important;
+    animation: none !important;
+    
+    touch-action: manipulation !important;
+    -webkit-tap-highlight-color: transparent !important;
+  }
+  
+  
+  /* TEKS SOALAN PAD */
+  #question-text {
+    font-size: 34px !important;
+    line-height: 1.25 !important;
+  }
+  
+  
+  /* TEKS BUTANG PAD */
+  #answers .btn-answer {
+    font-size: 34px !important;
+    line-height: 1.1 !important;
+  }
+  
+  
+  /* KEMBALI */
+  #game-card button[onclick*="melayu.html"],
+  #game-card button[onclick*="melayu.html"]:hover,
+  #game-card button[onclick*="melayu.html"]:active,
+  #game-card button[onclick*="melayu.html"]:focus {
+    
+    transform: none !important;
+    -webkit-transform: none !important;
+    
+    scale: 1 !important;
+    zoom: 1 !important;
+    
+    transition: none !important;
+    animation: none !important;
+  }
+}
     </style>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js" type="text/javascript"></script>
   <script src="/_sdk/935a53bc2e11fb8d.data_sdk.js" type="text/javascript" integrity="sha512-qr2oyPnEys1WebcOABaRh6hG77r5PWpqeWW6JTKbRJqly/INsfBi31CVNlTmHqjgeLpkVmmHZJUdxSx/32tOFQ=="></script>
