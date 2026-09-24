@@ -66,7 +66,7 @@ body {
         .shake { animation: shake 0.4s ease-out; }
         .fade-in { animation: fadeIn 0.4s ease-out; }
         
-       .btn-answer {
+         .btn-answer {
     transition: transform 0.15s, box-shadow 0.15s;
     border: 3px solid #ffffff;
     box-shadow:
@@ -75,12 +75,16 @@ body {
         0 8px 15px rgba(0, 0, 0, 0.25);
 }
 
-.btn-answer:hover {
-    transform: scale(1.05);
-}
-
-.btn-answer:active {
-    transform: scale(0.95);
+.btn-answer,
+.btn-answer:hover,
+.btn-answer:active,
+.btn-answer:focus,
+.btn-answer:focus-visible {
+  transform: none !important;
+  -webkit-transform: none !important;
+  scale: 1 !important;
+  zoom: 1 !important;
+  transition: none !important;
 }
 #game-card {
   width: min(96%, 700px);
@@ -138,175 +142,206 @@ body {
     margin-right: auto;
 }
 
-#game-card {
-  width: 860px !important;
-  max-width: 860px !important;
+/* =========================================
+   PAD SAHAJA
+   IKUT STRUKTUR FAIL LENGKAPKAN
+   TIDAK ZOOM / TIDAK MENGECIL
+   HP TIDAK DIKACAU
+   ========================================= */
+
+@media (min-width: 768px) {
   
-  min-height: 1120px !important;
-  height: 1120px !important;
+  html,
+  body {
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: none !important;
+    
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+  }
+  
+  body {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  
+  /* BACKGROUND */
+  body {
+    background-size: cover !important;
+    background-position: center center !important;
+  }
+  
+  
+  /* =====================================
+       GAME CARD PAD
+       IKUT FAIL LENGKAPKAN
+       ===================================== */
+  
+  #game-card {
+    width: 90% !important;
+    max-width: 1000px !important;
+    
+    min-height: 1200px !important;
+    height: auto !important;
+    
+    margin: 0 auto !important;
+    
+    padding: 50px 55px 90px 55px !important;
+    
+    box-sizing: border-box !important;
+    
+    transform: translateY(-70px) !important;
+    
+    background: rgba(255, 255, 255, 0.20) !important;
+    
+    backdrop-filter: blur(1px) !important;
+    -webkit-backdrop-filter: blur(1px) !important;
+    
+    border: 1px solid rgba(255, 255, 255, 0.95) !important;
+    border-radius: 30px !important;
+    
+    box-shadow:
+      0 15px 15px rgba(0, 0, 0, 0.18) !important;
+  }
+  
+  
+/* SOALAN + MARKAH
+   MASUK DALAM BORDER */
+#game-card>div.flex.items-center.justify-between {
+  width: 100% !important;
+  max-width: 100% !important;
+  
+  height: 80px !important;
+  min-height: 80px !important;
   
   margin-left: auto !important;
   margin-right: auto !important;
   
-  padding: 110px 65px 110px 65px !important;
+  left: auto !important;
+  
+  transform: translateY(-24px) !important;
+  
+  padding: 0 28px !important;
   
   box-sizing: border-box !important;
   
-  position: relative !important;
-  top: -70px !important;
+  font-size: 30px !important;
+  line-height: 1.1 !important;
+}
+
+/* BESARKAN TEKS SOALAN + MARKAH */
+#game-card>div.flex.items-center.justify-between span {
+  font-size: 30px !important;
+  font-weight: 800 !important;
+  line-height: 1.1 !important;
+}
   
-  transform: none !important;
-  zoom: 1 !important;
   
-  background: rgba(255, 255, 255, 0.20) !important;
-  backdrop-filter: blur(1px) !important;
-  -webkit-backdrop-filter: blur(1px) !important;
-  
-  border: 1px solid rgba(255, 255, 255, 0.95) !important;
-  border-radius: 30px !important;
-  
-  box-shadow: 0 15px 15px rgba(0, 0, 0, 0.18) !important;
-}
-
-/* =====================================
-   SOALAN + MARKAH
-   NAIK TAPI MASIH DALAM BORDER
-   ===================================== */
-#game-card > div.flex.items-center.justify-between {
-    width: 100% !important;
-    max-width: 100% !important;
-
-    margin-left: auto !important;
-    margin-right: auto !important;
-
-    left: auto !important;
-    right: auto !important;
-
-    transform: translateY(-80px) !important;
-
-    box-sizing: border-box !important;
-
-    font-size: 28px !important;
-}
-
-
-/* ICON BUKU */
-#game-card > div.flex.items-center.justify-between .text-3xl {
-    font-size: 32px !important;
-}
-
-
-/* SOALAN */
-#game-card > div.flex.items-center.justify-between
-span.font-black.text-blue-600 {
-    font-size: 28px !important;
-}
-
-
-/* MARKAH */
-#game-card > div.flex.items-center.justify-between
-span.font-black.text-pink-600 {
-    font-size: 28px !important;
-}
-
-
 /* =====================================
    KOTAK SOALAN
    ===================================== */
+
 #question-area {
-    margin-bottom: 30px !important;
+  width: 100% !important;
+  margin-top: 30px !important;
+  margin-bottom: 30px !important;
 }
 
-#question-area > div {
+#question-area>div {
+  width: 100% !important;
+  
+  height: 280px !important;
+  min-height: 280px !important;
+  max-height: 280px !important;
+  
+  left: auto !important;
+  transform: none !important;
+  
+  box-sizing: border-box !important;
+}
+
+#answers {
+  width: 100% !important;
+  max-width: 900px !important;
+  
+  margin-left: auto !important;
+  margin-right: auto !important;
+  
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  
+  gap: 24px !important;
+  
+  box-sizing: border-box !important;
+  
+  /* TURUNKAN BUTANG */
+  transform: translateY(35px) !important;
+  
+  /* PAKSA KE TENGAH */
+  position: relative !important;
+  left: 0 !important;
+}
+  /* =====================================
+       BUTANG
+       IKUT CARA FAIL LENGKAPKAN
+       ===================================== */
+  
+  #answers .btn-answer {
     width: 100% !important;
-    max-width: 100% !important;
-
-    height: 225px !important;
-    min-height: 225px !important;
-
-    left: auto !important;
-    transform: none !important;
-
+    
+    height: 110px !important;
+    min-height: 110px !important;
+    
+    font-size: 38px !important;
+    font-weight: 800 !important;
+    
     box-sizing: border-box !important;
-}
-
-
-/* TEKS SOALAN */
-#question-text {
+    
+    transform: none !important;
+    -webkit-transform: none !important;
+    
+    transition: none !important;
+  }
+  
+  #answers .btn-answer:hover,
+  #answers .btn-answer:active,
+  #answers .btn-answer:focus,
+  #answers .btn-answer:focus-visible {
+    transform: none !important;
+    -webkit-transform: none !important;
+  }
+  
+  
+  /* =====================================
+       TEKS SOALAN
+       ===================================== */
+  
+  #question-text {
     font-size: 34px !important;
     line-height: 1.25 !important;
-
-    padding-left: 20px !important;
-    padding-right: 20px !important;
-}
-
-
-/* =====================================
-   RUANG BUTANG JAWAPAN
-   ===================================== */
-#answers {
-    width: 100% !important;
-    max-width: 100% !important;
-
-    left: auto !important;
+  }
+  
+  
+  /* =====================================
+       KEMBALI
+       ===================================== */
+  
+  #game-card button[onclick*="melayu.html"] {
+    font-size: 32px !important;
+    font-weight: 800 !important;
+    
+    padding: 14px 30px !important;
+    
+    position: relative !important;
+    top: 40px !important;
+    
     transform: none !important;
-
-    margin-left: auto !important;
-    margin-right: auto !important;
-
-    gap: 20px !important;
-
-    box-sizing: border-box !important;
-}
-
-
-/* =====================================
-   BUTANG JAWAPAN
-   TIADA ZOOM
-   ===================================== */
-#answers .btn-answer {
-    width: 100% !important;
-
-    height: 105px !important;
-    min-height: 105px !important;
-
-    padding: 15px 25px !important;
-
-    font-size: 34px !important;
-    line-height: 1.1 !important;
-
-    box-sizing: border-box !important;
-
-    transform: none !important;
-    scale: 1 !important;
-    transition: none !important;
-}
-
-
-/* MATIKAN ZOOM */
-#answers .btn-answer:hover,
-#answers .btn-answer:active,
-#answers .btn-answer:focus,
-#answers .btn-answer:focus-visible {
-    transform: none !important;
-    scale: 1 !important;
-}
-
-
-/* BUTANG KEMBALI */
-#game-card button[onclick*="melayu.html"] {
-    font-size: 26px !important;
-
-    padding: 16px 32px !important;
-
-    transform: none !important;
-    scale: 1 !important;
-}
-
-#game-card button[onclick*="melayu.html"]:hover,
-#game-card button[onclick*="melayu.html"]:active {
-    transform: none !important;
-    scale: 1 !important;
+    -webkit-transform: none !important;
+  }
+  
 }
     </style>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js" type="text/javascript"></script>
