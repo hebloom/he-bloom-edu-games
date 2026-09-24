@@ -60,9 +60,23 @@ body {
         .shake { animation: shake 0.4s ease-out; }
         .fade-in { animation: fadeIn 0.4s ease-out; }
         
-        .btn-answer { transition: transform 0.15s, box-shadow 0.15s; }
-        .btn-answer:hover { transform: scale(1.05); }
-        .btn-answer:active { transform: scale(0.95); }
+/* =====================================
+   KUNCI BUTANG JAWAPAN
+   IKUT FAIL YANG SUDAH OK
+   ===================================== */
+
+.btn-answer,
+.btn-answer:hover,
+.btn-answer:active,
+.btn-answer:focus,
+.btn-answer:focus-visible {
+    transform: none !important;
+    -webkit-transform: none !important;
+    scale: 1 !important;
+    zoom: 1 !important;
+    transition: none !important;
+}
+
 #game-card {
 width: 100%;
 max-width: 800px;
