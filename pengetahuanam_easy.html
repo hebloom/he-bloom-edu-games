@@ -211,7 +211,7 @@ body {
     
     box-sizing: border-box !important;
     
-    transform: translateY(-80px) !important;
+    transform: translateY(-70px) !important;
     
     background: rgba(255, 255, 255, 0.20) !important;
     
@@ -272,27 +272,32 @@ body {
   }
   
   
-  /* =====================================
-       4 BUTANG JAWAPAN
-       ===================================== */
+/* =====================================
+   4 BUTANG JAWAPAN
+   TURUN SEDIKIT + MASUK DALAM BORDER
+   ===================================== */
+
+#answers {
+  width: 100% !important;
+  max-width: 900px !important;
   
-  #answers {
-    width: 100% !important;
-    max-width: 900px !important;
-    
-    margin-left: auto !important;
-    margin-right: auto !important;
-    
-    display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
-    
-    gap: 24px !important;
-    
-    box-sizing: border-box !important;
-    
-    transform: none !important;
-  }
+  margin-left: auto !important;
+  margin-right: auto !important;
   
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  
+  gap: 24px !important;
+  
+  box-sizing: border-box !important;
+  
+  /* TURUNKAN BUTANG */
+  transform: translateY(35px) !important;
+  
+  /* PAKSA KE TENGAH */
+  position: relative !important;
+  left: 0 !important;
+}
   
   /* =====================================
        BUTANG
