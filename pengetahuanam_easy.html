@@ -184,7 +184,7 @@ min-width:90%;
     padding: 110px 65px !important;
     
     position: relative !important;
-    transform: translateY(-100px) !important;
+    transform: translateY(-90px) !important;
     
     box-sizing: border-box !important;
    
@@ -1155,15 +1155,12 @@ questions = shuffle([...questionBank]).slice(0, 15);
                     else renderQuestion();
                 }, 1000);
             } else {
-                firstTry = false;
-                playWrongSound();
-                btn.classList.add('shake');
-                showFeedback('❌ CUBA LAGI', 'text-red-500');
-                setTimeout(() => {
-                    hideFeedback();
-                    btn.classList.remove('shake');
-                }, 800);
-            }
+  firstTry = false;
+  playWrongSound();
+  
+  /* PAD: TIADA SHAKE / ZOOM / RESIZE */
+  showFeedback('❌ CUBA LAGI', 'text-red-500');
+}
         }
 
 function showFeedback(text, cls) {
