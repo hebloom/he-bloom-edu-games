@@ -171,7 +171,116 @@ body {
     }
 }
 
+/* =====================================================
+   PAD + LAPTOP + KOMPUTER
+   BESARKAN ISI + TINGGIKAN BORDER
+   LEBAR KEKAL
+   BOLEH SCROLL
+   ===================================================== */
 
+@media (min-width: 768px) {
+    
+    html,
+    body {
+        height: auto !important;
+        min-height: 100% !important;
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+    }
+    
+    body {
+        min-height: 100vh !important;
+    }
+    
+    
+    /* =========================
+       GAME CARD / BORDER
+       ========================= */
+    
+    #game-card {
+        width: 100% !important;
+        max-width: 800px !important;
+        
+        /* TINGGIKAN BORDER */
+        min-height: 1100px !important;
+        
+        height: auto !important;
+        
+        padding-top: 70px !important;
+        padding-bottom: 100px !important;
+        
+        box-sizing: border-box !important;
+    }
+    
+    
+    /* =========================
+       QUESTION + SCORE
+       ========================= */
+    
+    #status-bar {
+        width: 120% !important;
+        
+        padding: 8px 10px !important;
+        
+        transform: translate(-50%, -48px) !important;
+    }
+    
+    #status-bar .text-3xl {
+        font-size: 38px !important;
+    }
+    
+    #status-bar .font-black {
+        font-size: 24px !important;
+    }
+    
+    
+    /* =========================
+       SOAL
+       ========================= */
+    
+    #question-area {
+        margin-top: 30px !important;
+        margin-bottom: 40px !important;
+    }
+    
+    #question-text {
+        font-size: 52px !important;
+        line-height: 1.2 !important;
+    }
+    
+    
+    /* =========================
+       BUTANG JAWAPAN
+       ========================= */
+    
+    #answers {
+        gap: 18px !important;
+    }
+    
+    #answers .btn-answer {
+        min-height: 105px !important;
+        font-size: 34px !important;
+        
+        padding: 18px 20px !important;
+        
+        border-radius: 22px !important;
+    }
+    
+    #answers .btn-answer span {
+        font-size: 34px !important;
+    }
+    
+    
+    /* =========================
+       BUTANG BACK
+       ========================= */
+    
+    #game-card button[onclick*="mathematics"] {
+        font-size: 32px !important;
+        padding: 14px 32px !important;
+        margin-top: 35px !important;
+    }
+}
 
     </style>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js" type="text/javascript"></script>
