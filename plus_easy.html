@@ -301,122 +301,181 @@ body {
     }
 }
 /* =====================================================
-   HP PORTRAIT - FINAL
-   SEMUA SETTING HP DALAM SATU BLOCK
+   FINAL FIX HP SAHAJA
+   HP KEKAL KEMAS MACAM GAMBAR KEDUA
+   PAD TIDAK DISENTUH
    ===================================================== */
 
-@media (orientation: portrait) and (max-width: 480px) {
+@media (orientation: portrait) and (max-width: 767px) {
     
     /* =========================
-       SOALAN + MARKAH
-       CODE ASAL HP
+       GAME CARD HP
+       ========================= */
+    
+    #game-card {
+        width: 90% !important;
+        max-width: 620px !important;
+        
+        padding: 40px 18px 35px !important;
+        
+        box-sizing: border-box !important;
+        
+        background: rgba(255, 255, 255, 0.08) !important;
+        
+        border: 1px solid rgba(255, 255, 255, 0.75) !important;
+        border-radius: 35px !important;
+        
+        box-shadow: none !important;
+        
+        transform: none !important;
+        
+        overflow: visible !important;
+    }
+    
+    
+    /* =========================
+       STATUS QUESTION + SCORE
        ========================= */
     
     #status-bar {
-        width: 100% !important;
-        max-width: 100% !important;
+        width: 82% !important;
+        max-width: 500px !important;
+        
+        min-height: 58px !important;
+        
+        padding: 6px 8px !important;
+        
+        margin-left: auto !important;
+        margin-right: auto !important;
+        
+        left: auto !important;
+        
+        transform: translateY(-15px) !important;
+        
         box-sizing: border-box !important;
         
-        left: 0 !important;
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-        
-        transform: translateY(-12px) !important;
-        
-        padding-left: 4px !important;
-        padding-right: 4px !important;
-        
-        gap: 2px !important;
-        overflow: hidden !important;
+        border-radius: 14px !important;
     }
     
     #status-bar>div {
-        min-width: 0 !important;
         gap: 3px !important;
-    }
-    
-    #status-bar>div:first-child {
-        flex: 1 1 0 !important;
-    }
-    
-    #status-bar>div:nth-child(2) {
-        flex: 0 0 1px !important;
-        margin-left: 2px !important;
-        margin-right: 2px !important;
-    }
-    
-    #status-bar>div:last-child {
-        flex: 1 1 0 !important;
-        justify-content: flex-end !important;
+        min-width: 0 !important;
     }
     
     #status-bar .text-3xl {
-        font-size: 20px !important;
+        font-size: 22px !important;
         line-height: 1 !important;
     }
     
     #status-bar .font-black {
-        font-size: 10px !important;
+        font-size: 11px !important;
         line-height: 1.1 !important;
         white-space: nowrap !important;
-        letter-spacing: -0.35px !important;
+        letter-spacing: -0.3px !important;
+    }
+    
+    
+    /* =========================
+       SOALAN
+       ========================= */
+    
+    #question-area {
+        margin-top: 45px !important;
+        margin-bottom: 28px !important;
+        
+        min-height: 60px !important;
+        
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    
+    #question-text {
+        font-size: 42px !important;
+        line-height: 1.15 !important;
+        
+        margin: 0 !important;
     }
     
     
     /* =========================
        4 BUTANG JAWAPAN
-       2 x 2 - KECIL
+       HP = SATU KOLUM
+       TAPI TIDAK TERLALU BESAR
        ========================= */
     
     #answers {
         display: grid !important;
+        grid-template-columns: 1fr !important;
         
-        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        width: 72% !important;
+        max-width: 480px !important;
         
-        width: 68% !important;
+        gap: 14px !important;
         
-        gap: 10px !important;
-        
-        margin-top: 15px !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
-    }
-    
-    #answers .btn-answer {
-        width: 100% !important;
-        
-        min-height: 58px !important;
-        
-        padding: 6px 6px !important;
-        
-        font-size: 18px !important;
-        
-        border-radius: 15px !important;
+        margin: 0 auto !important;
         
         box-sizing: border-box !important;
     }
     
+    
+    #answers .btn-answer,
+    #answers .btn-answer:hover,
+    #answers .btn-answer:active,
+    #answers .btn-answer:focus,
+    #answers .btn-answer:focus-visible,
+    #answers .btn-answer.shake {
+        
+        width: 100% !important;
+        
+        min-width: 0 !important;
+        min-height: 82px !important;
+        
+        padding: 10px 12px !important;
+        
+        margin: 0 !important;
+        
+        font-size: 24px !important;
+        
+        line-height: 1.1 !important;
+        
+        border-radius: 20px !important;
+        
+        box-sizing: border-box !important;
+        
+        transform: none !important;
+        -webkit-transform: none !important;
+        
+        scale: 1 !important;
+    }
+    
+    
     #answers .btn-answer span {
-        font-size: 18px !important;
+        font-size: 24px !important;
     }
     
     
     /* =========================
        BACK
-       KECIL
        ========================= */
     
     #game-card button[onclick*="mathematics"] {
-        margin-top: 25px !important;
         
-        font-size: 18px !important;
+        margin-top: 32px !important;
+        margin-bottom: 8px !important;
         
-        padding: 6px 20px !important;
+        font-size: 20px !important;
+        
+        padding: 8px 25px !important;
+        
+        min-height: 44px !important;
         
         border-radius: 999px !important;
+        
+        transform: none !important;
     }
-    
 }
+
     </style>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js" type="text/javascript"></script>
   <script src="/_sdk/935a53bc2e11fb8d.data_sdk.js" type="text/javascript" integrity="sha512-qr2oyPnEys1WebcOABaRh6hG77r5PWpqeWW6JTKbRJqly/INsfBi31CVNlTmHqjgeLpkVmmHZJUdxSx/32tOFQ=="></script>
