@@ -545,22 +545,7 @@ body {
   <script src="/_sdk/6030e540d4419216.resizing_sdk.js" type="text/javascript" integrity="sha512-b5KWzyoXsbWP4smq4sftIi6Kts4YVBpBsz0BwCViwbBJkK64a3/Z6ZMdWA+qnplNcXw4mhZeqvQi3mOosiRJdA=="></script>
  </head>
  <body data-template-id="__page-root" class="w-full min-h-screen overflow-hidden relative flex items-center justify-center p-4"><!-- Background elements -->
-  <div class="fixed inset-0 pointer-events-none overflow-hidden" aria-hidden="true"><!-- Sun -->
-   <div class="sun-pulse absolute top-6 left-6 text-10xl sm:text-10xl">
-    🌞
-   </div><!-- Rainbow -->
-   <div class="absolute top-10 right-10 text-10xl float-slow opacity-70">
-    🌈
-   </div><!-- Clouds -->
-   <div class="absolute top-[12%] left-[20%] text-10xl float" style="animation-delay:0.5s">
-    ☁️
-    </div>
-   <div class="absolute top-[8%] left-[55%] text-20xl float" style="animation-delay:1.5s">
-    ☁️
-   </div>
-   <div class="absolute top-[18%] right-[15%] text-20xl float" style="animation-delay:2.5s">
-    ☁️
-   </div><!-- Birds -->
+ </div><!-- Birds -->
    <div class="bird absolute top-[3%] text-5xl">
     🦜 
    </div>
@@ -573,10 +558,16 @@ body {
    <div class="bee absolute top-[45%] right-[2%] text-6xl" style="animation-delay:2s">
     🐝
    </div><!-- Ground -->
-   <div class="absolute bottom-0 left-0 right-0 flex justify-around items-end"><span class="sway text-4xl">🌹 </span> <span class="float-slow text-2xl" style="animation-delay:0.3s">🌸</span> <span class="sway text-4xl" style="animation-delay:1.0s">🌹 </span> <span class="float-slow text-2xl" style="animation-delay:0.7s">🌺</span> <span class="sway text-4xl" style="animation-delay:1.0s">🌹 </span> <span class="float-slow text-2xl" style="animation-delay:1.2s">🌸 </span> <span class="sway text-4xl" style="animation-delay:1.0s">🌹 </span>
+   <div class="absolute bottom-0 left-0 right-0 flex justify-around items-end"><span class="sway text-4xl">🌸 </span> <span class="float-slow text-2xl" style="animation-delay:0.3s">🌺 </span> <span class="sway text-4xl" style="animation-delay:1.0s">🌸 </span> <span class="float-slow text-2xl" style="animation-delay:0.7s">🌺</span> <span class="sway text-4xl" style="animation-delay:1.0s">🌸 </span> <span class="float-slow text-2xl" style="animation-delay:1.2s">🌺 </span> <span class="sway text-4xl" style="animation-delay:1.0s">🌸  </span>
    </div>
-   
-  </div><!-- Music toggle --> <button id="music-btn" onclick="toggleMusic()" class="fixed top-4 right-4 z-50 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center text-2xl float" aria-label="Toggle music"> 🎵
+
+</div><!-- Music toggle -->
+<button id="music-btn"
+        onclick="toggleMusic()"
+        class="absolute top-4 right-4 z-50 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center text-2xl"
+        aria-label="Toggle music">
+    🎵
+
   
   </button> <!-- Game Card -->
 <main id="game-card"

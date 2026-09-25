@@ -250,7 +250,7 @@ h1{
 
 .level-btn{
     width:60%;
-    mapxrgin:12px auto;
+    margin:12px auto;
 
     padding:14px 0;
 
@@ -311,23 +311,34 @@ h1{
    HE BLOOM LOGO
 ========================= */
 
-.he-bloom-logo{
-    position:fixed;
-    width:100px;
-    height:100px;
-    z-index:9999;
-    opacity:.95;
-    pointer-events:none;
+.he-bloom-logo {
+    position: fixed;
+    
+    width: 80px;
+    height: 80px;
+    
+    right: 18px;
+    bottom: 18px;
+    
+    z-index: 9999;
+    
+    opacity: .95;
+    
+    pointer-events: none;
 }
 
-.bottom-logo{
-    bottom:18px;
-    right:18px;
-}
 /* Sembunyikan logo semasa masukkan nama */
 body.keyboard-open .he-bloom-logo {
     display: none;
 }
+} 
+
+@media (min-width: 768px) {
+    .he-bloom-logo {
+        width: 110px;
+        height: 110px;
+    }
+
 
 /* =========================
    KHAS PAD / TABLET SAHAJA
