@@ -64,8 +64,8 @@ body {
         .btn-answer:hover { transform: scale(1.05); }
         .btn-answer:active { transform: scale(0.95); }
 #game-card{
-    width: 90%;
-    max-width: 700px;
+    width: 100%;
+    max-width: 800px;
     padding: 70px 70px;
     background: rgba(255,255,255,0.20);
     backdrop-filter: blur(1px);
@@ -87,6 +87,34 @@ body {
 .bottom-logo {
     bottom: 18px;
     right: 18px;
+}
+/* =====================================================
+   LANDSCAPE - BOLEH SCROLL
+   DESIGN ASAL KEKAL
+   ===================================================== */
+@media (orientation: landscape) and (max-height: 600px) {
+    
+    html,
+    body {
+        width: 100%;
+        min-width: 0;
+        min-height: 100%;
+        height: auto;
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+    }
+    
+    body {
+        align-items: flex-start;
+        justify-content: center;
+    }
+    
+    #game-card {
+        height: auto;
+        min-height: 100vh;
+        margin-top: 20px;
+        margin-bottom: 40px;
+    }
 }
 /* FIX KHAS HP PORTRAIT SAHAJA */
 
@@ -141,7 +169,311 @@ body {
         white-space: nowrap !important;
         letter-spacing: -0.35px !important;
     }
+}
+
+/* =====================================================
+   PAD + LAPTOP + KOMPUTER
+   PLUS EASY - FINAL SIZE
+   ===================================================== */
+
+@media (min-width: 768px) {
     
+    /* =========================
+       BOLEH SCROLL
+       ========================= */
+    
+    html,
+    body {
+        height: auto !important;
+        min-height: 100% !important;
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+    }
+    
+    body {
+        min-height: 100vh !important;
+    }
+    
+    
+    /* =========================
+       GAME CARD
+       LEBAR + TINGGI
+       ========================= */
+    
+    #game-card {
+        width: 110% !important;
+        max-width: 880px !important;
+        
+        min-height: 1150px !important;
+        height: auto !important;
+        
+        padding-top: 70px !important;
+        padding-bottom: 70px !important;
+    
+    transform: translateY(-70px) !important;
+        box-sizing: border-box !important;
+    }
+    
+    
+    /* =========================
+       SOALAN + MARKAH
+       BESAR & PANJANG
+       ========================= */
+    
+    #status-bar {
+        width: 106% !important;
+        min-height: 90px !important;
+        
+        padding: 10px 18px !important;
+        
+        transform: translate(-50%, -28px) !important;
+        
+        box-sizing: border-box !important;
+    }
+    
+    #status-bar .text-3xl {
+        font-size: 44px !important;
+    }
+    
+    #status-bar .font-black {
+        font-size: 32px !important;
+    }
+    
+    
+    /* =========================
+       SOALAN MATEMATIK
+       ========================= */
+    
+    #question-area {
+        margin-top: 84px !important;
+        margin-bottom: 50px !important;
+    }
+    
+    #question-text {
+        font-size: 80px !important;
+        line-height: 1.2 !important;
+    }
+    
+    
+    /* =========================
+       4 BUTANG JAWAPAN
+       PANJANG & BESAR
+       ========================= */
+    
+    #answers {
+        width: 100% !important;
+        gap: 20px !important;
+        
+        margin-top: 60px !important;
+}
+    
+    
+    #answers .btn-answer {
+        width: 100% !important;
+        min-height: 115px !important;
+        
+        padding: 20px 25px !important;
+        
+        font-size: 40px !important;
+        
+        border-radius: 22px !important;
+        box-sizing: border-box !important;
+    }
+    
+    #answers .btn-answer span {
+        font-size: 38px !important;
+    }
+    
+    
+    /* =========================
+       BACK
+       TURUN KE BAWAH
+       ========================= */
+    
+    #game-card button[onclick*="mathematics"] {
+        margin-top: 100px !important;
+        
+        font-size: 34px !important;
+        
+        padding: 15px 36px !important;
+        
+        border-radius: 999px !important;
+    }
+}
+/* =====================================================
+   FINAL FIX HP SAHAJA
+   HP KEKAL KEMAS MACAM GAMBAR KEDUA
+   PAD TIDAK DISENTUH
+   ===================================================== */
+
+@media (orientation: portrait) and (max-width: 767px) {
+    
+    /* =========================
+       GAME CARD HP
+       ========================= */
+    
+    #game-card {
+        width: 98% !important;
+        max-width: 620px !important;
+        
+        padding: 40px 18px 35px !important;
+        
+        box-sizing: border-box !important;
+        
+        background: rgba(255, 255, 255, 0.08) !important;
+        
+        border: 1px solid rgba(255, 255, 255, 0.75) !important;
+        border-radius: 35px !important;
+        
+        box-shadow: none !important;
+        
+        transform: translateY(-15px) !important;
+        
+        overflow: visible !important;
+    }
+    
+    
+    /* =========================
+       STATUS QUESTION + SCORE
+       ========================= */
+    
+    #status-bar {
+        width: 82% !important;
+        max-width: 500px !important;
+        
+        min-height: 58px !important;
+        
+        padding: 6px 8px !important;
+        
+        margin-left: auto !important;
+        margin-right: auto !important;
+        
+        left: auto !important;
+        
+        transform: translateY(-15px) !important;
+        
+        box-sizing: border-box !important;
+        
+        border-radius: 14px !important;
+    }
+    
+    #status-bar>div {
+        gap: 3px !important;
+        min-width: 0 !important;
+    }
+    
+    #status-bar .text-3xl {
+        font-size: 22px !important;
+        line-height: 1 !important;
+    }
+    
+    #status-bar .font-black {
+        font-size: 18px !important;
+        line-height: 1.1 !important;
+        white-space: nowrap !important;
+        letter-spacing: -0.3px !important;
+    }
+    
+    
+    /* =========================
+       SOALAN
+       ========================= */
+    
+    #question-area {
+        margin-top: 45px !important;
+        margin-bottom: 28px !important;
+        
+        min-height: 60px !important;
+        
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    
+    #question-text {
+        font-size: 42px !important;
+        line-height: 1.15 !important;
+        
+        margin: 0 !important;
+    }
+    
+    
+    /* =========================
+       4 BUTANG JAWAPAN
+       HP = SATU KOLUM
+       TAPI TIDAK TERLALU BESAR
+       ========================= */
+    
+    #answers {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        
+        width: 72% !important;
+        max-width: 480px !important;
+        
+        gap: 14px !important;
+        
+        margin: 0 auto !important;
+        
+        box-sizing: border-box !important;
+    }
+    
+    
+    #answers .btn-answer,
+    #answers .btn-answer:hover,
+    #answers .btn-answer:active,
+    #answers .btn-answer:focus,
+    #answers .btn-answer:focus-visible,
+    #answers .btn-answer.shake {
+        
+        width: 100% !important;
+        
+        min-width: 0 !important;
+        min-height: 82px !important;
+        
+        padding: 10px 12px !important;
+        
+        margin: 0 !important;
+        
+        font-size: 24px !important;
+        
+        line-height: 1.1 !important;
+        
+        border-radius: 20px !important;
+        
+        box-sizing: border-box !important;
+        
+        transform: none !important;
+        -webkit-transform: none !important;
+        
+        scale: 1 !important;
+    }
+    
+    
+    #answers .btn-answer span {
+        font-size: 24px !important;
+    }
+    
+    
+    /* =========================
+       BACK
+       ========================= */
+    
+    #game-card button[onclick*="mathematics"] {
+        
+        margin-top: 32px !important;
+        margin-bottom: 8px !important;
+        
+        font-size: 20px !important;
+        
+        padding: 8px 25px !important;
+        
+        min-height: 44px !important;
+        
+        border-radius: 999px !important;
+        
+        transform: none !important;
+    }
 }
     </style>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js" type="text/javascript"></script>
@@ -196,12 +528,10 @@ mb-4">
         </span>
     </div>
     
-    <!-- Garisan Tengah -->
-    <div class="w-px h-12 bg-gray-300"></div>
     
     <!-- SCORE DI SEBELAH KANAN -->
     <div class="flex items-center gap-2">
-        <span class="text-3xl">⭐</span>
+      
         <span class="font-black text-pink-600 text-1xl whitespace-nowrap">
             SCORE :
         </span>
