@@ -233,16 +233,30 @@ min-height:60px;
 #multiplyMenu .card,
 #divideMenu .card{
 
-    width:60%;
-    margin:12px auto;
+    width: 60%;
+    margin: 12px auto;
+    padding: 14px 0;
 
-    padding:14px 0;
+    font-size: 21px;   /* HP */
 
-    font-size:27px;
-
-    justify-content:center;
+    justify-content: center;
 }
 
+
+/* =========================
+   PAD / TABLET
+========================= */
+
+@media (min-width: 768px) {
+
+    #plusMenu .card,
+    #minusMenu .card,
+    #multiplyMenu .card,
+    #divideMenu .card {
+
+        font-size: 27px !important;   /* PAD */
+    }
+}
 /* =========================
    KHAS PAD / TABLET
 ========================= */
