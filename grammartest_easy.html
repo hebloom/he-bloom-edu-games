@@ -319,120 +319,142 @@ body {
     }
 }
 
-/* =========================================
-   iPAD SAHAJA
-   HP JANGAN DIUBAH
-   ========================================= */
+/* =====================================================
+   TABLET / PAD - GRAMMAR TEST
+   HP TIDAK DIKACAU
+   ===================================================== */
 
 @media (min-width: 768px) {
     
-    /* =========================
+    html,
+    body {
+        width: 100% !important;
+        min-width: 100% !important;
+        max-width: none !important;
+        
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+    }
+    
+    body {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    
+    
+    /* ==============================
        GAME CARD
-       LEBAR + TINGGI + TENGAH
-       ========================= */
+       ============================== */
+    
     #game-card {
-        width: 90% !important;
-        max-width: 850px !important;
+        width: 94% !important;
+        max-width: 1000px !important;
         
+        min-height: 1050px !important;
         height: auto !important;
-        min-height: 85vh !important;
         
-        margin-left: auto !important;
-        margin-right: auto !important;
+        margin: 0 auto !important;
         
-        padding: 50px 60px 70px !important;
+        padding: 60px 55px 80px 55px !important;
+        
+        box-sizing: border-box !important;
+        
+        transform: translateY(-30px) !important;
+        zoom: 1 !important;
+    }
+    
+    
+    /* ==============================
+       QUESTION + SCORE
+       ============================== */
+    
+    #game-card>div.flex.items-center.justify-between {
+        width: 100% !important;
+        max-width: none !important;
+        
+        padding: 18px 24px !important;
+        
+        font-size: 30px !important;
         
         box-sizing: border-box !important;
     }
     
-    
-    /* =========================
-       QUESTION + SCORE
-       ========================= */
-    #game-card>div.flex.items-center.justify-between {
-        width: 100% !important;
-        max-width: 100% !important;
-        
-        margin-left: auto !important;
-        margin-right: auto !important;
-        
-        left: auto !important;
-        transform: none !important;
+    #game-card>div.flex.items-center.justify-between span {
+        font-size: 30px !important;
     }
     
     
-    /* =========================
-       QUESTION BOX
-       ========================= */
+    /* ==============================
+       KOTAK SOALAN
+       ============================== */
+    
     #question-area>div {
         width: 100% !important;
         max-width: 100% !important;
         
-        left: auto !important;
-        transform: none !important;
-        
         box-sizing: border-box !important;
     }
     
+    #question-text {
+        font-size: 30px !important;
+        line-height: 1.25 !important;
+    }
     
-    /* =========================
+    
+    /* ==============================
        3 BUTANG JAWAPAN
-       TENGAH + TAK TERLALU LEBAR
-       ========================= */
+       LEBAR KEKAL NGAM
+       TINGGI DIBESARKAN
+       ============================== */
+    
     #answers {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        
-        gap: 18px !important;
-        
         width: 100% !important;
-        max-width: 100% !important;
+        max-width: 900px !important;
         
         margin-left: auto !important;
         margin-right: auto !important;
         
-        left: auto !important;
-        transform: none !important;
+        margin-top: 35px !important;
+        
+        gap: 20px !important;
+        
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
         
         box-sizing: border-box !important;
     }
-    
     
     #answers .btn-answer {
         width: 85% !important;
         max-width: 650px !important;
-        min-width: 0 !important;
+        
+        height: 110px !important;
+        min-height: 110px !important;
+        
+        font-size: 38px !important;
+        font-weight: 800 !important;
         
         box-sizing: border-box !important;
-        
-        font-size: 32px !important;
-        padding: 16px 25px !important;
-        
-        white-space: nowrap !important;
     }
     
     
-    /* =========================
+    /* ==============================
        BACK
-       SAIZ MACAM BUTANG LAIN
-       FONT 32
-       ========================= */
+       ============================== */
+    
     #game-card button[onclick*="english.html"] {
-        width: auto !important;
-        min-width: 0 !important;
-        
-        height: auto !important;
-        
         font-size: 32px !important;
-        font-weight: 700 !important;
+        font-weight: 800 !important;
         
         padding: 14px 30px !important;
         
-        white-space: nowrap !important;
-        
-        box-sizing: border-box !important;
+        position: relative !important;
+        top: 45px !important;
     }
+    
 }
 
     </style>
@@ -521,7 +543,7 @@ class="relative -mt-50 z-50 w-full max-w-xl mx-auto bg-transparent rounded-none 
 onclick="window.location.href='english.html'"
 class="bg-violet-600 hover:bg-violet-700 text-white font-bold px-8 py-2 rounded-full mb-6 shadow-lg ring-4 ring-white/70 border-2 border-white"
 style="box-shadow:0 0 10px rgba(255,255,255,0.8), 0 6px 12px rgba(0,0,0,0.3);">
-⬅️   BACK
+🔙 BACK
 </button>
 
 <!-- HE BLOOM LOGO -->
