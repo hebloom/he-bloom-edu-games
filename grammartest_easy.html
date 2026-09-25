@@ -344,20 +344,20 @@ body {
     }
     
     
-    /* ==============================
+    /* =================================
        GAME CARD
-       ============================== */
+       ================================= */
     
     #game-card {
         width: 94% !important;
         max-width: 1000px !important;
         
-        min-height: 1050px !important;
-        height: auto !important;
+        height: 90% !important;
+        min-height: 0 !important;
         
         margin: 0 auto !important;
         
-        padding: 60px 55px 80px 55px !important;
+        padding: 60px 55px 100px !important;
         
         box-sizing: border-box !important;
         
@@ -366,9 +366,9 @@ body {
     }
     
     
-    /* ==============================
+    /* =================================
        QUESTION + SCORE
-       ============================== */
+       ================================= */
     
     #game-card>div.flex.items-center.justify-between {
         width: 100% !important;
@@ -378,6 +378,9 @@ body {
         
         font-size: 30px !important;
         
+        position: relative !important;
+        top: 18px !important;
+        
         box-sizing: border-box !important;
     }
     
@@ -386,28 +389,52 @@ body {
     }
     
     
-    /* ==============================
+    /* =================================
        KOTAK SOALAN
-       ============================== */
+       ================================= */
+    
+    #question-area {
+        margin-top: 55px !important;
+        margin-bottom: 0 !important;
+    }
     
     #question-area>div {
-        width: 100% !important;
-        max-width: 100% !important;
+        width: 90% !important;
+        max-width: 780px !important;
+        
+        min-height: 115px !important;
+        
+        padding: 25px 35px !important;
+        
+        margin-left: auto !important;
+        margin-right: auto !important;
         
         box-sizing: border-box !important;
+        
+        position: relative !important;
+        top: 18px !important;
+        
+        left: auto !important;
+        transform: none !important;
+        
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
     }
     
     #question-text {
         font-size: 30px !important;
-        line-height: 1.25 !important;
+        line-height: 1.35 !important;
+        
+        max-width: 90% !important;
+        
+        text-align: center !important;
     }
     
     
-    /* ==============================
+    /* =================================
        3 BUTANG JAWAPAN
-       LEBAR KEKAL NGAM
-       TINGGI DIBESARKAN
-       ============================== */
+       ================================= */
     
     #answers {
         width: 100% !important;
@@ -416,7 +443,7 @@ body {
         margin-left: auto !important;
         margin-right: auto !important;
         
-        margin-top: 35px !important;
+        margin-top: 30px !important;
         
         gap: 20px !important;
         
@@ -438,24 +465,21 @@ body {
         font-weight: 800 !important;
         
         box-sizing: border-box !important;
+        
+        white-space: nowrap !important;
     }
     
     
-    /* ==============================
+    /* =================================
        BACK
-       ============================== */
+       ================================= */
+    
+    #game-card>div.flex.flex-col.items-center.mt-8.mb-2 {
+        margin-top: 70px !important;
+    }
     
     #game-card button[onclick*="english.html"] {
-        font-size: 32px !important;
-        font-weight: 800 !important;
-        
-        padding: 14px 30px !important;
-        
-        position: relative !important;
-        top: 45px !important;
-    }
-    
-}
+        font-size:
 
     </style>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js" type="text/javascript"></script>
