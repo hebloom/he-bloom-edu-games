@@ -752,6 +752,58 @@ button {
     touch-action: manipulation !important;
 }
 
+/* =========================================
+   KUNCI PAPARAN - JANGAN BERUBAH BILA TAP
+========================================= */
+
+html {
+    width: 100% !important;
+    min-width: 100% !important;
+    overflow-x: hidden !important;
+}
+
+body {
+    width: 100% !important;
+    min-width: 100% !important;
+    overflow-x: hidden !important;
+    
+    zoom: 1 !important;
+    transform: none !important;
+    
+    -webkit-text-size-adjust: 100% !important;
+    text-size-adjust: 100% !important;
+}
+
+/* CARD KEKAL DI TENGAH */
+#game-card {
+    position: relative !important;
+    left: auto !important;
+    right: auto !important;
+    
+    margin-left: auto !important;
+    margin-right: auto !important;
+    
+    transform: none !important;
+    scale: 1 !important;
+    zoom: 1 !important;
+    
+    animation: none !important;
+    transition: none !important;
+}
+
+/* BILA TEKAN APA-APA BUTTON */
+button,
+button:active,
+button:focus,
+button:focus-visible {
+    transform: none !important;
+    scale: 1 !important;
+    zoom: 1 !important;
+    animation: none !important;
+    transition: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+}
+
     </style>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js" type="text/javascript"></script>
   <script src="/_sdk/935a53bc2e11fb8d.data_sdk.js" type="text/javascript" integrity="sha512-qr2oyPnEys1WebcOABaRh6hG77r5PWpqeWW6JTKbRJqly/INsfBi31CVNlTmHqjgeLpkVmmHZJUdxSx/32tOFQ=="></script>
