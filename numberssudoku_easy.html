@@ -355,24 +355,27 @@ body {
 
 
 /* =========================================
-   JANGAN ZOOM / KECIL BILA TEKAN
+   KUNCI BUTANG - JANGAN ZOOM / KECIL
 ========================================= */
 
-#game-card,
-#sudoku-grid,
-#sudoku-grid button,
 #answers,
-#answers button {
+#answers button,
+#answers button span {
     transform: none !important;
+    scale: 1 !important;
+    animation: none !important;
+    transition: none !important;
 }
 
-#sudoku-grid button:hover,
-#sudoku-grid button:active,
 #answers button:hover,
-#answers button:active {
+#answers button:active,
+#answers button:focus,
+#answers button:focus-visible {
     transform: none !important;
+    scale: 1 !important;
+    animation: none !important;
+    transition: none !important;
 }
-
 
 /* =========================================
    BUTANG NOMBOR 1 2 3 4
@@ -667,7 +670,7 @@ body {
 
 .he-bloom-logo,
 .bottom-logo {
-    position: fixed !important;
+    position: absolute !important;
     
     width: 60px !important;
     height: 60px !important;
