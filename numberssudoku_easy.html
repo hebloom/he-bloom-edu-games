@@ -529,7 +529,7 @@ body {
 
 
     .player-number {
-        font-size: 34px !important;
+        font-size: 44px !important;
     }
 
 
@@ -599,7 +599,7 @@ body {
         max-width: 850px !important;
 
         /* TURUNKAN LEBIH BANYAK */
-        margin: 150px auto 50px !important;
+        margin: 180px auto 50px !important;
 
         padding:
             30px
@@ -654,9 +654,16 @@ body {
 
 
     #bottom-buttons {
-        margin-top: 12px !important;
+        margin-top: 20px !important;
     }
 
+#delete-btn,
+#back-btn {
+    width: 140px !important;
+    height: 62px !important;
+    
+    font-size: 20px !important;
+}
 
     .he-bloom-logo,
     .bottom-logo {
@@ -668,7 +675,38 @@ body {
     }
 }
 
+/* =========================================
+   KUNCI ZOOM / SCALE - HP + TABLET
+   ========================================= */
 
+html,
+body {
+    touch-action: manipulation !important;
+    -webkit-text-size-adjust: 100% !important;
+}
+
+#game-card,
+#sudoku-grid,
+#sudoku-grid button,
+#answers,
+#answers button,
+#bottom-buttons,
+#delete-btn,
+#back-btn {
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+    scale: 1 !important;
+}
+
+/* Bila ditekan - JANGAN KECIL / BESAR */
+#sudoku-grid button:active,
+#answers button:active,
+#delete-btn:active,
+#back-btn:active {
+    transform: none !important;
+    scale: 1 !important;
+}
     </style>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js" type="text/javascript"></script>
   <script src="/_sdk/935a53bc2e11fb8d.data_sdk.js" type="text/javascript" integrity="sha512-qr2oyPnEys1WebcOABaRh6hG77r5PWpqeWW6JTKbRJqly/INsfBi31CVNlTmHqjgeLpkVmmHZJUdxSx/32tOFQ=="></script>
