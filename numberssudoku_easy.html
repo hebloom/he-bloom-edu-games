@@ -185,21 +185,21 @@ body {
         .fade-in { animation: fadeIn 0.4s ease-out; }
 
 /* =========================================
-   GAME CARD - TABLET / UNIVERSAL
+   GAME CARD - UNIVERSAL
 ========================================= */
 
 #game-card {
     position: relative;
 
-    width: min(92vw, 800px);
-    max-width: 800px;
+    width: min(94vw, 850px) !important;
+    max-width: 850px !important;
 
-    height: auto;
-    min-height: 0;
+    height: auto !important;
+    min-height: 0 !important;
 
-    margin: 20px auto 30px;
+    margin: 70px auto 40px !important;
 
-    padding: 30px 40px 30px;
+    padding: 30px 35px 90px !important;
 
     box-sizing: border-box;
 
@@ -208,58 +208,57 @@ body {
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
 
-    border: 3px solid rgba(255, 255, 255, 0.85);
+    border: 3px solid rgba(255,255,255,0.85);
     border-radius: 25px;
 
     box-shadow:
-        0 0 0 3px rgba(255, 255, 255, 0.25),
-        0 12px 35px rgba(70, 130, 120, 0.18);
+        0 0 0 3px rgba(255,255,255,0.25),
+        0 12px 35px rgba(70,130,120,0.18);
 
     flex-shrink: 0;
 
-    /* JANGAN TURUNKAN CARD */
+    /* TIADA ZOOM */
     transform: none !important;
+
+    /* TIADA ANIMASI ZOOM */
+    animation: none !important;
 }
 
 
 /* =========================================
-   TIMER
+   ROUND + TIMER
 ========================================= */
 
-#timer {
-    font-size: 28px !important;
-    line-height: 1.1;
-}
-
-
-/* =========================================
-   ROUND
-========================================= */
-
+#timer,
 #question-number {
     font-size: 28px !important;
-    line-height: 1.1;
+    line-height: 1.1 !important;
 }
 
 
 /* =========================================
-   GRID SUDOKU 4x4
+   SUDOKU GRID 4x4
 ========================================= */
 
 #sudoku-grid {
-    width: 100%;
-    max-width: 680px;
+    width: 100% !important;
+    max-width: 700px !important;
 
-    margin: 0 auto;
+    margin-left: auto !important;
+    margin-right: auto !important;
 
-    background: rgba(255, 255, 255, 0.82);
+    box-sizing: border-box;
+
+    background: rgba(255,255,255,0.82);
 
     border: 5px solid #f3a6bb;
     border-radius: 32px;
 
     box-shadow:
-        0 8px 20px rgba(0, 0, 0, 0.12),
-        inset 0 0 0 2px rgba(255, 255, 255, 0.8);
+        0 8px 20px rgba(0,0,0,0.12),
+        inset 0 0 0 2px rgba(255,255,255,0.8);
+
+    transform: none !important;
 }
 
 
@@ -270,21 +269,31 @@ body {
 #sudoku-grid button {
     position: relative;
 
-    background: rgba(255, 255, 255, 0.72);
+    height: 110px !important;
+
+    background: rgba(255,255,255,0.72);
 
     border: 1px solid #efc2ce;
 
-    transition: none !important;
-
-    height: 110px;
+    box-sizing: border-box;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    box-sizing: border-box;
+    transition: none !important;
 
     transform: none !important;
+}
+
+
+/* =========================================
+   NOMBOR DALAM GRID
+========================================= */
+
+#sudoku-grid button span {
+    background: transparent !important;
+    box-shadow: none !important;
 }
 
 
@@ -297,6 +306,7 @@ body {
 
     font-size: 44px !important;
     font-weight: 800 !important;
+
     line-height: 1 !important;
 
     color: #7e22ce !important;
@@ -304,8 +314,7 @@ body {
 
 
 /* =========================================
-   NOKTAH KECIL
-   - Untuk nombor yang pemain isi
+   NOKTAH NOMBOR PEMAIN
 ========================================= */
 
 .medium-hint-dot {
@@ -324,22 +333,10 @@ body {
 
 
 /* =========================================
-   JANGAN ZOOM / KECIL BILA TEKAN
+   GARISAN MERAH 4x4
 ========================================= */
 
-#answers button:active,
-#sudoku-grid button:active,
-#answers button:hover,
-#sudoku-grid button:hover {
-    transform: none !important;
-}
-
-
-/* =========================================
-   GARISAN MERAH SUDOKU 4x4
-========================================= */
-
-/* GARISAN MENEGAK - TENGAH */
+/* GARIS MENEGAK TENGAH */
 #sudoku-grid button:nth-child(2),
 #sudoku-grid button:nth-child(6),
 #sudoku-grid button:nth-child(10),
@@ -348,7 +345,7 @@ body {
 }
 
 
-/* GARISAN MELINTANG - TENGAH */
+/* GARIS MELINTANG TENGAH */
 #sudoku-grid button:nth-child(5),
 #sudoku-grid button:nth-child(6),
 #sudoku-grid button:nth-child(7),
@@ -358,19 +355,27 @@ body {
 
 
 /* =========================================
-   BULATAN / SPAN DALAM PETAK
+   JANGAN ZOOM / KECIL BILA TEKAN
 ========================================= */
 
-#sudoku-grid button span {
-    box-shadow: none !important;
-    background: transparent !important;
+#game-card,
+#sudoku-grid,
+#sudoku-grid button,
+#answers,
+#answers button {
+    transform: none !important;
+}
+
+#sudoku-grid button:hover,
+#sudoku-grid button:active,
+#answers button:hover,
+#answers button:active {
+    transform: none !important;
 }
 
 
 /* =========================================
-   BUTANG NOMBOR
-   1 2
-   3 4
+   BUTANG NOMBOR 1 2 3 4
 ========================================= */
 
 #answers {
@@ -378,35 +383,38 @@ body {
 
     grid-template-columns: repeat(2, 1fr) !important;
 
-    gap: 8px !important;
+    gap: 10px !important;
 
-    width: 80% !important;
+    width: 100% !important;
+    max-width: 520px !important;
 
-    max-width: 500px !important;
-
-    margin: 6px auto 0 !important;
+    margin: 12px auto 0 !important;
 
     box-sizing: border-box !important;
 }
 
 
 /* =========================================
-   BUTANG NOMBOR 1-4
+   NOMBOR DALAM BUTANG
+   SAIZ SAMA DENGAN GRID
 ========================================= */
 
 #answers button {
-    min-height: 60px !important;
-    height: 60px !important;
+    width: 100% !important;
 
-    border-radius: 16px !important;
+    height: 70px !important;
+    min-height: 70px !important;
 
-    background: rgba(255, 255, 255, 0.90) !important;
+    border-radius: 17px !important;
+
+    background: rgba(255,255,255,0.90) !important;
 
     color: #7e22ce !important;
 
-    font-size: 32px !important;
-
+    font-size: 44px !important;
     font-weight: 800 !important;
+
+    line-height: 1 !important;
 
     display: flex !important;
 
@@ -422,21 +430,40 @@ body {
 
 
 /* =========================================
-   JANGAN ZOOM BUTANG NOMBOR
+   DELETE + BACK
 ========================================= */
 
-#answers button:hover,
-#answers button:active {
-    transform: none !important;
+#bottom-buttons {
+    display: flex !important;
+
+    justify-content: center !important;
+    align-items: center !important;
+
+    gap: 10px !important;
+
+    margin-top: 12px !important;
+
+    flex-wrap: nowrap !important;
+}
+
+
+#delete-btn,
+#back-btn {
+    width: 120px !important;
+    height: 55px !important;
+
+    flex-shrink: 0 !important;
+
+    font-size: 14px !important;
 }
 
 
 /* =========================================
    LOGO HE BLOOM
-   KECIL DI BAWAH KANAN
 ========================================= */
 
-.he-bloom-logo {
+.he-bloom-logo,
+.bottom-logo {
     position: absolute !important;
 
     width: 60px !important;
@@ -449,44 +476,33 @@ body {
 
     z-index: 9999;
 
-    opacity: 0.95;
-
     pointer-events: none;
+
+    opacity: 0.95;
 }
 
 
 /* =========================================
-   BOTTOM LOGO
-========================================= */
-
-.bottom-logo {
-    position: absolute !important;
-
-    right: 18px !important;
-
-    bottom: 18px !important;
-}
-
-
-/* =========================================
-   RESPONSIVE - TELEFON
+   HP / TELEFON
 ========================================= */
 
 @media (max-width: 767px) {
 
     #game-card {
-        width: 94vw;
+        width: 94vw !important;
+        max-width: none !important;
+
+        /* TURUN SEDIKIT SAHAJA */
+        margin: 38px auto 30px !important;
 
         padding:
-            24px
-            14px
-            28px;
+            25px
+            12px
+            85px !important;
 
-        margin:
-            15px auto
-            25px;
+        transform: none !important;
 
-        border-radius: 25px;
+        animation: none !important;
     }
 
 
@@ -496,8 +512,10 @@ body {
     }
 
 
+    /* GRID HP */
     #sudoku-grid {
-        width: 100%;
+        width: 100% !important;
+        max-width: none !important;
 
         border-width: 4px;
 
@@ -506,7 +524,7 @@ body {
 
 
     #sudoku-grid button {
-        height: 80px;
+        height: 82px !important;
     }
 
 
@@ -524,29 +542,44 @@ body {
     }
 
 
+    /* BUTANG 1-4 HP */
     #answers {
-        width: 82% !important;
+        width: 94% !important;
+        max-width: 430px !important;
 
-        max-width: 380px !important;
+        gap: 9px !important;
 
-        gap: 8px !important;
+        margin-top: 10px !important;
     }
 
 
     #answers button {
+        height: 65px !important;
+        min-height: 65px !important;
+
+        /* SAMA KELUARGA SAIZ GRID */
+        font-size: 34px !important;
+
+        border-radius: 16px !important;
+    }
+
+
+    #bottom-buttons {
+        margin-top: 10px !important;
+    }
+
+
+    #delete-btn,
+    #back-btn {
+        width: 120px !important;
         height: 55px !important;
-        min-height: 55px !important;
-
-        font-size: 28px !important;
-
-        border-radius: 14px !important;
     }
 
 
     .he-bloom-logo,
     .bottom-logo {
-        width: 55px !important;
-        height: 55px !important;
+        width: 52px !important;
+        height: 52px !important;
 
         right: 12px !important;
         bottom: 12px !important;
@@ -555,13 +588,44 @@ body {
 
 
 /* =========================================
-   RESPONSIVE - TABLET
+   iPAD / TABLET
 ========================================= */
 
 @media (min-width: 768px) {
 
+    #game-card {
+        /* BESARKAN CARD */
+        width: min(90vw, 850px) !important;
+        max-width: 850px !important;
+
+        /* TURUNKAN LEBIH BANYAK */
+        margin: 115px auto 50px !important;
+
+        padding:
+            30px
+            40px
+            100px !important;
+
+        transform: none !important;
+
+        animation: none !important;
+    }
+
+
+    #timer,
+    #question-number {
+        font-size: 28px !important;
+    }
+
+
+    #sudoku-grid {
+        width: 100% !important;
+        max-width: 700px !important;
+    }
+
+
     #sudoku-grid button {
-        height: 110px;
+        height: 110px !important;
     }
 
 
@@ -571,13 +635,23 @@ body {
 
 
     #answers {
-        width: 80% !important;
-        max-width: 500px !important;
+        width: 75% !important;
+        max-width: 520px !important;
+
+        gap: 10px !important;
     }
 
 
     #answers button {
-        height: 60px !important;
+        height: 70px !important;
+        min-height: 70px !important;
+
+        font-size: 44px !important;
+    }
+
+
+    #bottom-buttons {
+        margin-top: 12px !important;
     }
 
 
@@ -585,60 +659,11 @@ body {
     .bottom-logo {
         width: 60px !important;
         height: 60px !important;
+
+        right: 18px !important;
+        bottom: 18px !important;
     }
 }
-
-
-/* =========================================
-   LANDSCAPE TELEFON
-========================================= */
-
-@media (max-height: 600px) and (orientation: landscape) {
-
-    #game-card {
-        width: 92vw;
-
-        padding:
-            20px
-            30px
-            25px;
-
-        margin:
-            10px auto
-            20px;
-    }
-
-
-    #timer,
-    #question-number {
-        font-size: 22px !important;
-    }
-
-
-    #sudoku-grid button {
-        height: 70px;
-    }
-
-
-    .player-number {
-        font-size: 32px !important;
-    }
-
-
-    #answers {
-        width: 60% !important;
-        max-width: 450px !important;
-    }
-
-
-    #answers button {
-        height: 50px !important;
-        min-height: 50px !important;
-
-        font-size: 26px !important;
-    }
-}
-
 
 
     </style>
