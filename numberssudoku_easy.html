@@ -186,7 +186,7 @@ body {
 
 /* =========================================
    GAME CARD - TABLET
-   ========================================= */
+========================================= */
 
 #game-card {
     position: relative;
@@ -197,11 +197,11 @@ body {
     height: auto;
     min-height: 0;
     
-    /* TURUNKAN CARD KE TENGAH */
-    margin: 100px auto 60px;
+    /* Kedudukan asal */
+    margin: 20px auto 40px;
     
-    /* KEKALKAN LEBAR, TAMBAH RUANG BAWAH */
-    padding: 35px 40px 160px;
+    /* Lebar kekal, ruang bawah ditambah */
+    padding: 45px 40px 170px;
     
     box-sizing: border-box;
     
@@ -220,12 +220,12 @@ body {
     
     flex-shrink: 0;
     
-    /* JANGAN BAGI CARD MEMBESAR/KECIL */
-    transform: none !important;
+    /* TURUNKAN SEMUA CARD */
+    transform: translateY(70px) !important;
 }
 
 #timer {
-    font-size: 22px !important;
+    font-size: 28px !important;
     line-height: 1.1;
 }
 
@@ -253,6 +253,21 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    
+    /* NOMBOR PEMAIN */
+.player-number {
+    font-size: 44px !important;
+    font-weight: 800 !important;
+    line-height: 1 !important;
+
+/* JANGAN ZOOM / KECIL BILA TEKAN */
+
+#answers button:active,
+#sudoku-grid button:active,
+#answers button:hover,
+#sudoku-grid button:hover {
+    transform: none !important;
+}
 }
 
 /* Garisan tengah 2x2 */
@@ -316,20 +331,30 @@ padding: 0 !important;
     transform: scale(0.96);
 }
 
+/* =========================
+   HE BLOOM LOGO
+========================= */
+
 .he-bloom-logo {
-    position: fixed;
+    position: absolute;
+    
     width: 60px;
     height: 60px;
+    
+    right: 18px;
+    bottom: 18px;
+    
     z-index: 9999;
+    
     opacity: .95;
+    
     pointer-events: none;
 }
 
-
 @media (min-width: 768px) {
     .he-bloom-logo {
-        width: 110px;
-        height: 110px;
+        width: 100px;
+        height: 100px;
     }
 }
 
