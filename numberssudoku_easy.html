@@ -185,7 +185,7 @@ body {
         .fade-in { animation: fadeIn 0.4s ease-out; }
 
 /* =========================================
-   GAME CARD - TABLET
+   GAME CARD - TABLET / UNIVERSAL
 ========================================= */
 
 #game-card {
@@ -197,17 +197,14 @@ body {
     height: auto;
     min-height: 0;
     
-    /* Kedudukan asal */
-    margin: 20px auto 40px;
+    margin: 20px auto 30px;
     
-    /* Lebar kekal, ruang bawah ditambah */
-    padding: 45px 40px 170px;
+    padding: 30px 40px 30px;
     
     box-sizing: border-box;
     
     background: rgba(235, 255, 250, 0.10);
     
-    /* JANGAN ZOOM / BLUR */
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
     
@@ -220,11 +217,17 @@ body {
     
     flex-shrink: 0;
     
-    /* TURUNKAN SEMUA CARD */
-    transform: translateY(70px) !important;
+    /* JANGAN TURUNKAN CARD */
+    transform: none !important;
 }
 
 #timer {
+    font-size: 28px !important;
+    line-height: 1.1;
+}
+
+/* ROUND */
+#question-number {
     font-size: 28px !important;
     line-height: 1.1;
 }
@@ -351,12 +354,7 @@ padding: 0 !important;
     bottom: 18px !important;
 }
 
-@media (min-width: 768px) {
-    .he-bloom-logo {
-        width: 110px !important;
-        height: 110px !important;
-    }
-}
+
 
 
 
