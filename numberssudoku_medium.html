@@ -259,12 +259,17 @@ body {
 #sudoku-grid {
     width: 100% !important;
     max-width: 680px !important;
-
+    
     margin: 0 auto 16px !important;
-
+    
+    border: 5px solid #f3a6bb !important;
+    border-radius: 32px !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+    
     transform: none !important;
     scale: 1 !important;
-
+    
     animation: none !important;
     transition: none !important;
 }
@@ -272,9 +277,13 @@ body {
 #sudoku-grid button {
     transform: none !important;
     scale: 1 !important;
-
+    
     animation: none !important;
     transition: none !important;
+    
+    border: 1px solid #efc2ce !important;
+    background: rgba(255, 255, 255, 0.72) !important;
+    box-sizing: border-box !important;
 }
 
 
@@ -641,7 +650,7 @@ body {
         max-width: 850px !important;
 
         margin:
-            180px auto 50px !important;
+            20px auto 50px !important;
 
         padding:
             30px
@@ -768,7 +777,7 @@ body {
   
   </button> <!-- Game Card -->
 <main id="game-card"
-class="relative -mt-50 z-50 w-full max-w-x1 mx-auto bg-transparent rounded-none shadow-none pt-2 px-0 pb-8 fade-in">
+class="relative -mt-50 z-50 w-full max-w-x1 mx-auto bg-transparent rounded-none shadow-none pt-2 px-0 pb-8">
 
 <div class="text-center mb-2">
     <div class="flex justify-between items-center max-w-xl mx-auto">
