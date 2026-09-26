@@ -210,6 +210,9 @@ body {
     box-shadow:
         0 0 0 3px rgba(255, 255, 255, 0.25),
         0 12px 35px rgba(70, 130, 120, 0.18);
+        
+        position: relative;
+top: -20px;
 }
 
 /* Grid Sudoku */
@@ -318,19 +321,34 @@ padding: 0 !important;
     font-weight: 800;
     padding: 0 !important;
 }
+/* =========================
+   HE BLOOM LOGO
+========================= */
+
 .he-bloom-logo {
     position: fixed;
-    width: 60px;
-    height: 60px;
+    
+    width: 50px;
+    height: 50px;
+    
+    right: 18px;
+    bottom: 18px;
+    
     z-index: 9999;
+    
     opacity: .95;
+    
     pointer-events: none;
 }
 
-.bottom-logo {
-    bottom: 18px;
-    right: 18px;
+
+@media (min-width: 768px) {
+    .he-bloom-logo {
+        width: 110px;
+        height: 110px;
+    }
 }
+
 /* =====================================================
    LANDSCAPE - BOLEH SCROLL
    DESIGN ASAL KEKAL
@@ -401,33 +419,37 @@ body {
     min-height: 100vh !important;
 }
 /* =========================================
-   FIX KHAS PAD / TABLET
-   GAME CARD JANGAN TERLALU KECIL
-   ========================================= */
+   FIX PAD / TABLET
+   BESARKAN + TENGAH
+========================================= */
 
 @media (min-width: 641px) and (max-width: 1024px) {
     
     #game-card {
-        width: 82% !important;
-        max-width: 650px !important;
+        width: 94% !important;
+        max-width: 760px !important;
         
         height: auto !important;
         min-height: 800px !important;
         
         margin: 0 auto !important;
-        padding: 30px 24px 50px !important;
+        padding: 30px 30px 50px !important;
         
         box-sizing: border-box !important;
     }
     
     #sudoku-grid {
         width: 100% !important;
-        max-width: 680px !important;
+        max-width: 700px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
     }
     
     #answers {
-        width: 80% !important;
-        max-width: 600px !important;
+        width: 90% !important;
+        max-width: 650px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
     }
 }
     </style>

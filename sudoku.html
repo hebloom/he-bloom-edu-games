@@ -340,11 +340,6 @@ body.keyboard-open .he-bloom-logo {
     }
 
 
-/* =========================
-   KHAS PAD / TABLET SAHAJA
-   BESAR + TURUN KE TENGAH
-========================= */
-
 @media (min-width: 768px) {
     
     .container {
@@ -352,32 +347,11 @@ body.keyboard-open .he-bloom-logo {
         max-width: 600px;
         margin: 0 auto;
         
-        /* TURUNKAN SEMUA */
-        transform: translateY(200px);
+        transform: translateY(54px);
+        transform-origin: top center;
     }
     
-    /* TAJUK */
-    h1 {
-        font-size: 58px !important;
-        margin-top: 0 !important;
-        margin-bottom: 45px !important;
-    }
-    
-    /* SET PLAYER + LEADERBOARD */
-    .set-player-name {
-        font-size: 27px;
-        margin-top: 25px;
-        margin-bottom: 18px;
-    }
-    
-    /* CHOOSE SUDOKU TYPE */
-    .subtitle {
-        font-size: 40px !important;
-        margin-top: 30px !important;
-        margin-bottom: 44px !important;
-    }
-    
-    /* KOTAK MENU */
+    /* MENU UTAMA */
     .card {
         min-height: 95px;
         padding: 16px 20px;
@@ -385,14 +359,26 @@ body.keyboard-open .he-bloom-logo {
         font-size: 27px;
     }
     
-    /* IKON */
     .card .icon {
         width: 68px;
         min-width: 68px;
         font-size: 40px;
     }
     
-    /* BUTANG BACK */
+    /* LEVEL: EASY / MEDIUM / HARD */
+    .level-btn {
+        width: 60% !important;
+        min-height: 95px !important;
+        margin: 14px auto !important;
+        padding: 16px 20px !important;
+        font-size: 27px !important;
+    }
+    
+    h1 {
+        font-size: 58px !important;
+        margin-bottom: 54px !important;
+    }
+    
     .back {
         width: 40%;
         font-size: 27px;
