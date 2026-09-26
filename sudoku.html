@@ -338,51 +338,115 @@ body.keyboard-open .he-bloom-logo {
         width: 110px;
         height: 110px;
     }
+} 
 
+/* =========================
+   KHAS PAD / TABLET SAHAJA
+   BESAR + TENGAH
+========================= */
 
 @media (min-width: 768px) {
     
+    /* CONTAINER UTAMA */
     .container {
-        width: 100%;
-        max-width: 600px;
-        margin: 0 auto;
+        width: 100% !important;
+        max-width: 700px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
         
+        /* TURUNKAN SEDIKIT */
         transform: translateY(54px);
         transform-origin: top center;
     }
     
-    /* MENU UTAMA */
-    .card {
-        min-height: 95px;
-        padding: 16px 20px;
-        margin-bottom: 14px;
-        font-size: 27px;
-    }
-    
-    .card .icon {
-        width: 68px;
-        min-width: 68px;
-        font-size: 40px;
-    }
-    
-    /* LEVEL: EASY / MEDIUM / HARD */
-    .level-btn {
-        width: 60% !important;
-        min-height: 95px !important;
-        margin: 14px auto !important;
-        padding: 16px 20px !important;
-        font-size: 27px !important;
-    }
+    /* =========================
+       TAJUK
+    ========================= */
     
     h1 {
         font-size: 58px !important;
+        text-align: center !important;
         margin-bottom: 54px !important;
     }
     
+    /* =========================
+       PLAYER NAME + LEADERBOARD
+    ========================= */
+    
+    .set-player-name {
+        margin-left: auto !important;
+        margin-right: auto !important;
+        
+        font-size: 27px !important;
+        text-align: center !important;
+    }
+    
+    /* =========================
+       SUBTAJUK
+    ========================= */
+    
+    .subtitle {
+        font-size: 32px !important;
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    
+    /* =========================
+       KOTAK NUMBERS + COLOURS
+    ========================= */
+    
+    .card {
+        width: 100% !important;
+        min-height: 95px !important;
+        
+        padding: 16px 20px !important;
+        margin: 14px auto !important;
+        
+        font-size: 27px !important;
+        
+        justify-content: center !important;
+        text-align: center !important;
+    }
+    
+    /* IKON */
+    .card .icon {
+        width: 68px !important;
+        min-width: 68px !important;
+        
+        font-size: 40px !important;
+    }
+    
+    /* =========================
+       EASY / MEDIUM / HARD
+    ========================= */
+    
+    .level-btn {
+        width: 60% !important;
+        min-height: 95px !important;
+        
+        margin: 14px auto !important;
+        padding: 16px 20px !important;
+        
+        font-size: 27px !important;
+        
+        justify-content: center !important;
+        text-align: center !important;
+    }
+    
+    /* =========================
+       BUTANG BACK
+    ========================= */
+    
     .back {
-        width: 40%;
-        font-size: 27px;
-        margin-top: 40px;
+        width: 40% !important;
+        
+        margin: 40px auto !important;
+        
+        font-size: 27px !important;
+        
+        justify-content: center !important;
+        text-align: center !important;
     }
 }
 
