@@ -184,35 +184,40 @@ body {
         .shake { animation: shake 0.4s ease-out; }
         .fade-in { animation: fadeIn 0.4s ease-out; }
 
-/* ===== COLOUR SUDOKU STYLE ===== */
+/* =========================================
+   GAME CARD - TABLET STABLE
+   ========================================= */
 
 #game-card {
-    width: 90%;
+    position: relative;
+    
+    width: min(92vw, 800px);
     max-width: 800px;
     
-    height: 800px;
-    min-height: 800px;
+    height: auto;
+    min-height: 0;
     
-    margin: 0 auto;
-    padding: 60px 24px;
+    margin: 20px auto 40px;
+    
+    padding: 35px 40px 45px;
     
     box-sizing: border-box;
     
     background: rgba(235, 255, 250, 0.10);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
+    
+    /* Kurangkan kesan blur/zoom */
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
     
     border: 3px solid rgba(255, 255, 255, 0.85);
-    border-radius: 10px;
+    border-radius: 25px;
     
     box-shadow:
         0 0 0 3px rgba(255, 255, 255, 0.25),
         0 12px 35px rgba(70, 130, 120, 0.18);
     
-    position: relative;
-    top: -20px;
+    flex-shrink: 0;
 }
-
 /* Grid Sudoku */
 #sudoku-grid {
     width: 100%;
@@ -299,7 +304,27 @@ padding: 0 !important;
 #answers button:active {
     transform: scale(0.96);
 }
-} 
+
+.he-bloom-logo {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    z-index: 9999;
+    opacity: .95;
+    pointer-events: none;
+}
+
+.bottom-logo {
+    bottom: 18px;
+    right: 18px;
+}
+
+@media (min-width: 768px) {
+    .he-bloom-logo {
+        width: 110px;
+        height: 110px;
+    }
+}
 
 
 
@@ -312,7 +337,7 @@ padding: 0 !important;
   <script src="/_sdk/935a53bc2e11fb8d.data_sdk.js" type="text/javascript" integrity="sha512-qr2oyPnEys1WebcOABaRh6hG77r5PWpqeWW6JTKbRJqly/INsfBi31CVNlTmHqjgeLpkVmmHZJUdxSx/32tOFQ=="></script>
   <script src="/_sdk/6030e540d4419216.resizing_sdk.js" type="text/javascript" integrity="sha512-b5KWzyoXsbWP4smq4sftIi6Kts4YVBpBsz0BwCViwbBJkK64a3/Z6ZMdWA+qnplNcXw4mhZeqvQi3mOosiRJdA=="></script>
  </head>
- <body data-template-id="__page-root" class="w-full min-h-screen overflow-hidden relative flex items-center justify-center p-4"><!-- Background elements -->
+<body data-template-id="__page-root" class="w-full min-h-screen overflow-x-hidden overflow-y-auto relative p-4"><!-- Background elements -->
   </div><!-- Birds -->
    <div class="bird absolute top-[3%] text-5xl">
     🦜 
