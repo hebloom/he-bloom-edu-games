@@ -521,7 +521,187 @@ body {
         margin-right: auto !important;
     }
 }
+/* =====================================================
+   FINAL PAD / TABLET FIX
+   NUMBERS SUDOKU EASY
+   ===================================================== */
 
+@media (min-width: 641px) and (max-width: 1200px) {
+    
+    /* =========================
+       PAGE - BOLEH SCROLL
+       ========================= */
+    
+    html,
+    body {
+        width: 100% !important;
+        height: auto !important;
+        min-height: 100% !important;
+        
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+    }
+    
+    body {
+        display: block !important;
+        padding: 20px !important;
+    }
+    
+    
+    /* =========================
+       GAME CARD
+       ========================= */
+    
+    #game-card {
+        width: min(94vw, 760px) !important;
+        max-width: 760px !important;
+        
+        height: auto !important;
+        min-height: 0 !important;
+        
+        margin: 20px auto 30px auto !important;
+        
+        padding: 30px 30px 45px !important;
+        
+        position: relative !important;
+        top: 0 !important;
+        left: auto !important;
+        right: auto !important;
+        
+        transform: none !important;
+        
+        box-sizing: border-box !important;
+    }
+    
+    
+    /* =========================
+       ROUND + TIMER
+       ========================= */
+    
+    #game-card>div:first-child {
+        width: 100% !important;
+        max-width: 700px !important;
+        
+        margin-left: auto !important;
+        margin-right: auto !important;
+        
+        box-sizing: border-box !important;
+    }
+    
+    
+    /* =========================
+       WHITE BOX AROUND SUDOKU
+       ========================= */
+    
+    #game-card>div.bg-white\/80 {
+        width: 100% !important;
+        max-width: 700px !important;
+        
+        margin-left: auto !important;
+        margin-right: auto !important;
+        
+        box-sizing: border-box !important;
+    }
+    
+    
+    /* =========================
+       SUDOKU GRID
+       ========================= */
+    
+    #sudoku-grid {
+        width: 100% !important;
+        max-width: 700px !important;
+        
+        margin-left: auto !important;
+        margin-right: auto !important;
+        
+        box-sizing: border-box !important;
+    }
+    
+    
+    #sudoku-grid button {
+        height: clamp(85px, 10vw, 110px) !important;
+        
+        box-sizing: border-box !important;
+    }
+    
+    
+    /* =========================
+       NOMBOR 1 2 3 4
+       ========================= */
+    
+    #answers {
+        width: 90% !important;
+        max-width: 650px !important;
+        
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        
+        gap: 12px !important;
+        
+        margin: 10px auto 0 auto !important;
+        
+        box-sizing: border-box !important;
+    }
+    
+    
+    #answers button {
+        width: 100% !important;
+        
+        min-width: 0 !important;
+        min-height: 80px !important;
+        height: 80px !important;
+        
+        font-size: 42px !important;
+        
+        box-sizing: border-box !important;
+        
+        transform: none !important;
+    }
+    
+    
+    /* Jangan mengecil bila tekan */
+    #answers button:active,
+    #answers button:focus,
+    #answers button:focus-visible {
+        transform: none !important;
+    }
+    
+    
+    /* =========================
+       DELETE + BACK
+       ========================= */
+    
+    #bottom-buttons {
+        width: 100% !important;
+        
+        display: flex !important;
+        
+        justify-content: center !important;
+        align-items: center !important;
+        
+        gap: 10px !important;
+        
+        margin: 15px auto 0 auto !important;
+        
+        box-sizing: border-box !important;
+    }
+    
+    
+    #delete-btn,
+    #back-btn {
+        width: 120px !important;
+        min-width: 120px !important;
+        
+        height: 55px !important;
+        min-height: 55px !important;
+        
+        flex: 0 0 120px !important;
+        
+        box-sizing: border-box !important;
+    }
+    
+}
 
     </style>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js" type="text/javascript"></script>
