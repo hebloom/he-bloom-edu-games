@@ -185,7 +185,7 @@ body {
         .fade-in { animation: fadeIn 0.4s ease-out; }
 
 /* =========================================
-   GAME CARD - TABLET STABLE
+   GAME CARD - TABLET
    ========================================= */
 
 #game-card {
@@ -197,17 +197,19 @@ body {
     height: auto;
     min-height: 0;
     
-    margin: 20px auto 40px;
+    /* TURUNKAN CARD KE TENGAH */
+    margin: 100px auto 60px;
     
-    padding: 35px 40px 45px;
+    /* KEKALKAN LEBAR, TAMBAH RUANG BAWAH */
+    padding: 35px 40px 160px;
     
     box-sizing: border-box;
     
     background: rgba(235, 255, 250, 0.10);
     
-    /* Kurangkan kesan blur/zoom */
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
+    /* JANGAN ZOOM / BLUR */
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
     
     border: 3px solid rgba(255, 255, 255, 0.85);
     border-radius: 25px;
@@ -217,7 +219,16 @@ body {
         0 12px 35px rgba(70, 130, 120, 0.18);
     
     flex-shrink: 0;
+    
+    /* JANGAN BAGI CARD MEMBESAR/KECIL */
+    transform: none !important;
 }
+
+#timer {
+    font-size: 22px !important;
+    line-height: 1.1;
+}
+
 /* Grid Sudoku */
 #sudoku-grid {
     width: 100%;
@@ -314,10 +325,6 @@ padding: 0 !important;
     pointer-events: none;
 }
 
-.bottom-logo {
-    bottom: 18px;
-    right: 18px;
-}
 
 @media (min-width: 768px) {
     .he-bloom-logo {
@@ -364,7 +371,7 @@ padding: 0 !important;
   
   </button> <!-- Game Card -->
 <main id="game-card"
-class="relative -mt-50 z-50 w-full max-w-x1 mx-auto bg-transparent rounded-none shadow-none pt-2 px-0 pb-8 fade-in">
+class="relative z-50 w-full mx-auto" bg-transparent rounded-none shadow-none pt-2 px-0 pb-8 fade-in">
 
 <div class="text-center mb-2">
     <div class="flex justify-between items-center max-w-xl mx-auto">
