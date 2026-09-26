@@ -665,48 +665,51 @@ body {
     font-size: 20px !important;
 }
 
-    .he-bloom-logo,
-    .bottom-logo {
-        width: 60px !important;
-        height: 60px !important;
-
-        right: 18px !important;
-        bottom: 18px !important;
-    }
+.he-bloom-logo,
+.bottom-logo {
+    position: fixed !important;
+    
+    width: 60px !important;
+    height: 60px !important;
+    
+    right: 18px !important;
+    bottom: 18px !important;
+    
+    object-fit: contain !important;
+    
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 0.95;
 }
 
 /* =========================================
-   KUNCI ZOOM / SCALE - HP + TABLET
-   ========================================= */
+   MATIKAN ANIMASI YANG BOLEH BUAT CARD
+   BERGERAK / ZOOM
+========================================= */
 
-html,
-body {
-    touch-action: manipulation !important;
-    -webkit-text-size-adjust: 100% !important;
-}
-
-#game-card,
-#sudoku-grid,
-#sudoku-grid button,
+#game-card.fade-in,
+#game-card.zoom-in,
+#game-card.shake,
 #answers,
-#answers button,
-#bottom-buttons,
-#delete-btn,
-#back-btn {
-    transform: none !important;
+#answers button {
     animation: none !important;
-    transition: none !important;
+    transform: none !important;
     scale: 1 !important;
 }
 
-/* Bila ditekan - JANGAN KECIL / BESAR */
-#sudoku-grid button:active,
+#answers button {
+    transition: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+}
+
 #answers button:active,
-#delete-btn:active,
-#back-btn:active {
+#answers button:focus,
+#answers button:focus-visible {
+    animation: none !important;
     transform: none !important;
     scale: 1 !important;
 }
+
     </style>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js" type="text/javascript"></script>
   <script src="/_sdk/935a53bc2e11fb8d.data_sdk.js" type="text/javascript" integrity="sha512-qr2oyPnEys1WebcOABaRh6hG77r5PWpqeWW6JTKbRJqly/INsfBi31CVNlTmHqjgeLpkVmmHZJUdxSx/32tOFQ=="></script>
