@@ -355,18 +355,42 @@ body {
 
 
 /* =========================================
-   KUNCI BUTANG - JANGAN ZOOM / KECIL
+   KUNCI SAIZ - JANGAN ZOOM BILA TEKAN
+   HP + TABLET
 ========================================= */
 
-#answers,
-#answers button,
-#answers button span {
+html,
+body {
+    zoom: 1 !important;
     transform: none !important;
-    scale: 1 !important;
+}
+
+/* GAME CARD KEKAL */
+#game-card {
+    transform: none !important;
     animation: none !important;
     transition: none !important;
 }
 
+/* GRID KEKAL */
+#sudoku-grid,
+#sudoku-grid button {
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+}
+
+/* BUTANG NOMBOR 1-4 */
+#answers,
+#answers button,
+#answers button span {
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+    scale: 1 !important;
+}
+
+/* MATIKAN HOVER / ACTIVE YANG LAMA */
 #answers button:hover,
 #answers button:active,
 #answers button:focus,
@@ -374,7 +398,19 @@ body {
     transform: none !important;
     scale: 1 !important;
     animation: none !important;
-    transition: none !important;
+}
+
+/* NOMBOR PEMAIN */
+#sudoku-grid .player-number {
+    transform: none !important;
+    animation: none !important;
+    scale: 1 !important;
+}
+
+/* JANGAN BAGI TAP TOUCH UBAH SAIZ */
+button {
+    -webkit-tap-highlight-color: transparent !important;
+    touch-action: manipulation !important;
 }
 
 /* =========================================
