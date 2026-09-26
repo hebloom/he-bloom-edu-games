@@ -359,64 +359,7 @@ margin-right: auto !important;
 }
 
 
-/* =========================================
-   KUNCI SAIZ - JANGAN ZOOM BILA TEKAN
-   HP + TABLET
-========================================= */
 
-html,
-body {
-    zoom: 1 !important;
-    transform: none !important;
-}
-
-/* GAME CARD KEKAL */
-#game-card {
-    transform: none !important;
-    animation: none !important;
-    transition: none !important;
-}
-
-/* GRID KEKAL */
-#sudoku-grid,
-#sudoku-grid button {
-    transform: none !important;
-    animation: none !important;
-    transition: none !important;
-}
-
-/* BUTANG NOMBOR 1-4 */
-#answers,
-#answers button,
-#answers button span {
-    transform: none !important;
-    animation: none !important;
-    transition: none !important;
-    scale: 1 !important;
-}
-
-/* MATIKAN HOVER / ACTIVE YANG LAMA */
-#answers button:hover,
-#answers button:active,
-#answers button:focus,
-#answers button:focus-visible {
-    transform: none !important;
-    scale: 1 !important;
-    animation: none !important;
-}
-
-/* NOMBOR PEMAIN */
-#sudoku-grid .player-number {
-    transform: none !important;
-    animation: none !important;
-    scale: 1 !important;
-}
-
-/* JANGAN BAGI TAP TOUCH UBAH SAIZ */
-button {
-    -webkit-tap-highlight-color: transparent !important;
-    touch-action: manipulation !important;
-}
 
 /* =========================================
    BUTANG NOMBOR 1 2 3 4
@@ -727,32 +670,37 @@ button {
 }
 
 /* =========================================
-   MATIKAN ANIMASI YANG BOLEH BUAT CARD
-   BERGERAK / ZOOM
+   JANGAN UBAH SAIZ / ZOOM BILA TEKAN
 ========================================= */
 
-#game-card.fade-in,
-#game-card.zoom-in,
-#game-card.shake,
-#answers,
-#answers button {
-    animation: none !important;
-    transform: none !important;
-    scale: 1 !important;
+html,
+body {
+    touch-action: manipulation !important;
+    -webkit-text-size-adjust: 100% !important;
+    text-size-adjust: 100% !important;
 }
 
-#answers button {
+#game-card,
+#sudoku-grid,
+#answers,
+#answers button,
+#sudoku-grid button {
+    transform: none !important;
+    animation: none !important;
     transition: none !important;
-    -webkit-tap-highlight-color: transparent !important;
 }
 
 #answers button:active,
 #answers button:focus,
 #answers button:focus-visible {
-    animation: none !important;
     transform: none !important;
-    scale: 1 !important;
+    animation: none !important;
 }
+
+button {
+    -webkit-tap-highlight-color: transparent !important;
+}
+
 
     </style>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js" type="text/javascript"></script>
