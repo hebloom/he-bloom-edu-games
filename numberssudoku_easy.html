@@ -701,6 +701,56 @@ button {
     -webkit-tap-highlight-color: transparent !important;
 }
 
+/* =========================================
+   KUNCI SAIZ GAME CARD
+   JANGAN KECIL / BESAR BILA TEKAN NOMBOR
+========================================= */
+
+html,
+body {
+    zoom: 1 !important;
+    -webkit-text-size-adjust: 100% !important;
+    text-size-adjust: 100% !important;
+}
+
+#game-card {
+    width: min(94vw, 850px) !important;
+    max-width: 850px !important;
+    transform: none !important;
+    scale: 1 !important;
+    animation: none !important;
+    transition: none !important;
+}
+
+#game-card:active,
+#game-card:focus,
+#game-card:focus-within {
+    transform: none !important;
+    scale: 1 !important;
+}
+
+#sudoku-grid,
+#answers,
+#answers button,
+#sudoku-grid button {
+    transform: none !important;
+    scale: 1 !important;
+    animation: none !important;
+    transition: none !important;
+}
+
+#answers button:active,
+#answers button:focus,
+#answers button:focus-visible {
+    transform: none !important;
+    scale: 1 !important;
+    animation: none !important;
+}
+
+button {
+    -webkit-tap-highlight-color: transparent !important;
+    touch-action: manipulation !important;
+}
 
     </style>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js" type="text/javascript"></script>
