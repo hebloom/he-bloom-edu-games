@@ -2,7 +2,7 @@
 <html lang="ms">
  <head><script>window["__codeletBootstrap__"]=JSON.parse('{"A":"A","B":"20260730-05-6814160","C":{"Abril Fatface":"YACgEZbkUVE,0","Alfa Slab One":"YACgEYS9sJU,0","Anton":"YACgEcYqQ-A,0","Archivo":"YAHO2-t-jNE,0","Arial":"YAGyDvJ_4Ts,0","Bebas Neue":"YACgESME5ew,0","Broken Glyph":"YADZ-exUkv0,0","Canva Sans":"YAFdJjTk5UU,0","Caveat":"YALBs2ploWQ,0","Comic Sans MS":"YAHO2VMiyZo,0","Cormorant Garamond":"YAFdJhX-538,0","Courier New":"YAGzXiGs0_8,0","DM Sans":"YAD1aU3sLnI,0","DM Serif Display":"YAD1aYG82rc,0","Forum":"YACgEcnnqB4,0","Fraunces":"YAEul-FRQw4,0","Georgia":"YAGzXkO0pEM,0","Ghost Mono":"YAHO2EIdDP0,0","Helvetica Neue":"YAFcf6CtJfI,0","Impact":"YAFcfnjI7Vk,0","Inter":"YAFdJvSyp_k,3","Iowan Old Style":"YAGNIFa8j9o,0","Jacques Francois":"YAHO2a5g66Q,0","JetBrains Mono":"YADy3sAhvXQ,0","Oleo Script":"YACgEQQ14jI,0","Playfair Display":"YAFdJhem5V8,1","Poppins":"YAE5fPSY9qM,0","Press Start 2P":"YAFyGr-8pmQ,0","Source Sans 3":"YAG4lO1Mj10,0","Space Grotesk":"YAHO2sjPCSM,0","Times New Roman":"YAGzXW3gftg,0","Times":"YAGzXW3gftg,0","Trebuchet MS":"YAFcfrglpVA,0","Verdana":"YAGzXTctYtQ,0","Work Sans":"YAGXhLOKv44,0","Yellowtail":"YACgEYG4kG4,0"}}');</script><script src="/_sdk/a27874207e105461.telemetry_sdk.js" integrity="sha512-wgI5N9F7oA2h3vH+benMYIv4wGqTct4nKWakqgvfgRyBLmfYq8q/fi6gkfWKd2hMsyN+VQ/qOAOpxybwkcoxlA=="></script>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Numbers Sudoku_Medium</title>
   <script src="https://cdn.tailwindcss.com/3.4.17"></script>
   <script type="module">
@@ -185,73 +185,118 @@ body {
         .fade-in { animation: fadeIn 0.4s ease-out; }
         
 
-/* ===== COLOUR SUDOKU STYLE ===== */
+/* =====================================================
+   MEDIUM SUDOKU 6x6
+   STYLE SAMA MACAM EASY - SAIZ DIKECILKAN SEDIKIT
+===================================================== */
 
-#game-card {
-    width: 60%;
-    max-width: 500px;
-    
-    height: 800px;
-    min-height: 800px;
-    
-    margin: 0 auto;
-    padding: 60px 24px;
-    
-    box-sizing: border-box;
-    
-    background: rgba(235, 255, 250, 0.18);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    
-    border: 3px solid rgba(255, 255, 255, 0.85);
-    border-radius: 10px;
-    
-    box-shadow:
-        0 0 0 3px rgba(255, 255, 255, 0.25),
-        0 12px 35px rgba(70, 130, 120, 0.18);
+/* ===== ASAS ===== */
+
+html {
+    width: 100% !important;
+    min-width: 100% !important;
+    overflow-x: hidden !important;
 }
 
-/* Grid Sudoku */
+body {
+    width: 100% !important;
+    min-width: 100% !important;
+
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+
+    zoom: 1 !important;
+    transform: none !important;
+
+    -webkit-text-size-adjust: 100% !important;
+    text-size-adjust: 100% !important;
+
+    touch-action: manipulation !important;
+}
+
+
+/* =====================================================
+   GAME CARD
+===================================================== */
+
+#game-card {
+    width: min(94vw, 850px) !important;
+    max-width: 850px !important;
+
+    height: auto !important;
+    min-height: auto !important;
+
+    margin: 0 auto !important;
+
+    padding:
+        28px
+        30px
+        50px !important;
+
+    box-sizing: border-box !important;
+
+    background: rgba(255, 255, 255, 0.16) !important;
+
+    backdrop-filter: blur(6px) !important;
+    -webkit-backdrop-filter: blur(6px) !important;
+
+    border: 3px solid rgba(255, 255, 255, 0.85) !important;
+
+    border-radius: 28px !important;
+
+    transform: none !important;
+    scale: 1 !important;
+
+    animation: none !important;
+    transition: none !important;
+}
+
+
+/* =====================================================
+   SUDOKU GRID 6x6
+===================================================== */
+
 #sudoku-grid {
-    width: 100%;
-    max-width: 680px;
-    margin: 0 auto;
-    
-    background: rgba(255, 255, 255, 0.82);
-    border: 5px solid #f3a6bb;
-    border-radius: 32px;
-    
-    box-shadow:
-        0 8px 20px rgba(0, 0, 0, 0.12),
-        inset 0 0 0 2px rgba(255, 255, 255, 0.8);
+    width: 100% !important;
+    max-width: 680px !important;
+
+    margin: 0 auto 16px !important;
+
+    transform: none !important;
+    scale: 1 !important;
+
+    animation: none !important;
+    transition: none !important;
 }
 
 #sudoku-grid button {
-  background: rgba(255, 255, 255, 0.72);
-  border: 1px solid #efc2ce;
-  transition: all 0.15s ease;
-  height: 65px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    transform: none !important;
+    scale: 1 !important;
+
+    animation: none !important;
+    transition: none !important;
 }
-    
 
 
-/* ===== GARISAN BLOK SUDOKU 6x6 ===== */
-/* Blok = 2 baris × 3 kolum */
+/* =====================================================
+   GARISAN BLOK 6x6
+   BLOK = 2 BARIS × 3 KOLUM
+===================================================== */
 
 /* Garisan menegak selepas kolum ke-3 */
+
 #sudoku-grid button:nth-child(3),
 #sudoku-grid button:nth-child(9),
 #sudoku-grid button:nth-child(15),
 #sudoku-grid button:nth-child(21),
 #sudoku-grid button:nth-child(27),
 #sudoku-grid button:nth-child(33) {
-    border-right: 4px solid #f06b91;
+    border-right: 4px solid #f06b91 !important;
 }
 
+
 /* Garisan melintang selepas baris ke-2 */
+
 #sudoku-grid button:nth-child(13),
 #sudoku-grid button:nth-child(14),
 #sudoku-grid button:nth-child(15),
@@ -260,158 +305,437 @@ body {
 #sudoku-grid button:nth-child(18),
 
 /* Garisan melintang selepas baris ke-4 */
+
 #sudoku-grid button:nth-child(25),
 #sudoku-grid button:nth-child(26),
 #sudoku-grid button:nth-child(27),
 #sudoku-grid button:nth-child(28),
 #sudoku-grid button:nth-child(29),
 #sudoku-grid button:nth-child(30) {
-    border-top: 4px solid #f06b91;
+    border-top: 4px solid #f06b91 !important;
 }
 
-#sudoku-grid button:hover {
-    background: #fff5f8;
-    transform: scale(1.02);
-}
 
-/* Bulatan warna */
-#sudoku-grid button span {
-    box-shadow: none !important;
-    background: transparent !important;
-}
-/* Butang warna */
-#answers {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 6px;
-    width: 100%;
-    max-width: 700px;
-    margin: 6px auto 0;
-}
-
-#answers button {
-    min-height: 55px;
-    height: 55px;
-    border-radius: 16px;
-    
-    background: rgba(255, 255, 255, 0.90);
-    color: #7e22ce !important;
-    
-    font-size: 26px;
-    font-weight: 800;
-    
-    border: 3px solid rgba(255, 255, 255, 0.95);
-    
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    
-    padding: 0 !important;
-    
-    box-shadow:
-        0 5px 9px rgba(0, 0, 0, 0.16),
-        inset 0 2px 4px rgba(255, 255, 255, 0.35);
-    
-    transition: transform 0.15s ease;
-}
-
-#answers button:active {
-    transform: scale(0.96);
-}
-
-/* Telefon */
-@media (max-width: 640px) {
-    
-    #game-card {
-        width: 96%;
-        padding: 12px 12px 22px;
-        border-radius: 28px;
-    }
-    
-   @media (max-width: 640px) {
-    
-    #answers {
-        width: 96%;
-        gap: 7px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    
-    #answers button {
-        min-height: 55px;
-        height: 55px;
-        font-size: 35px;
-        padding: 4px;
-    }
-}
-.he-bloom-logo {
-    position: fixed;
-    width: 80px;
-    height: 80px;
-    z-index: 9999;
-    opacity: .95;
-    pointer-events: none;
-}
-
-.bottom-logo {
-    bottom: 18px;
-    right: 18px;
-}
 /* =====================================================
-   LANDSCAPE - BOLEH SCROLL
-   DESIGN ASAL KEKAL
-   ===================================================== */
-@media (orientation: landscape) and (max-height: 600px) {
-    
-    html,
-    body {
-        width: 100%;
-        min-width: 0;
-        height: auto;
-        min-height: 100%;
-        overflow-x: hidden !important;
-        overflow-y: auto !important;
-    }
-    
-    body {
-        align-items: flex-start;
-        justify-content: center;
-        padding-top: 0 !important;
-        padding-bottom: 20px !important;
-    }
-    
-    #game-card {
-        height: auto !important;
-        min-height: 0 !important;
-        
-        margin-top: 0 !important;
-        margin-bottom: 20px !important;
-        
-        padding: 20px 24px 50px !important;
-        
-        box-sizing: border-box;
-    }
-}
-
-/* ===== NOMBOR PEMAIN + PETANDA MEDIUM ===== */
+   NOMBOR PEMAIN
+===================================================== */
 
 .player-number {
     position: relative;
+
     display: inline-block;
+
     font-size: 36px;
+
     font-weight: 800;
+
     line-height: 1;
+
     color: #7e22ce !important;
+
+    transform: none !important;
+    scale: 1 !important;
+
+    animation: none !important;
 }
+
+
+/* Titik petanda Medium */
 
 .medium-hint-dot {
     position: absolute;
+
     width: 7px;
     height: 7px;
+
     background: #000000 !important;
+
     border-radius: 50%;
+
     top: -2px;
     right: -7px;
+
+    transform: none !important;
+    scale: 1 !important;
+
+    animation: none !important;
+}
+
+
+/* =====================================================
+   BUTANG NOMBOR 1 - 6
+   3 ATAS + 3 BAWAH
+===================================================== */
+
+#answers {
+    display: grid !important;
+
+    grid-template-columns:
+        repeat(3, 1fr) !important;
+
+    gap: 9px !important;
+
+    width: 94% !important;
+
+    max-width: 520px !important;
+
+    margin:
+        10px auto 0 !important;
+
+    transform: none !important;
+    scale: 1 !important;
+
+    animation: none !important;
+    transition: none !important;
+}
+
+
+#answers button {
+    height: 60px !important;
+    min-height: 60px !important;
+
+    border-radius: 16px !important;
+
+    background:
+        rgba(255, 255, 255, 0.90) !important;
+
+    color: #7e22ce !important;
+
+    /* SEDIKIT LEBIH KECIL DARI EASY */
+
+    font-size: 38px !important;
+
+    font-weight: 800 !important;
+
+    border:
+        3px solid rgba(255, 255, 255, 0.95) !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    padding: 0 !important;
+
+    box-sizing: border-box !important;
+
+    box-shadow:
+        0 5px 9px rgba(0, 0, 0, 0.16),
+        inset 0 2px 4px rgba(255, 255, 255, 0.35);
+
+    transform: none !important;
+    scale: 1 !important;
+
+    animation: none !important;
+    transition: none !important;
+
+    -webkit-tap-highlight-color:
+        transparent !important;
+
+    touch-action: manipulation !important;
+}
+
+
+/* =====================================================
+   JANGAN ZOOM BILA TEKAN
+===================================================== */
+
+#game-card:active,
+#game-card:focus,
+#game-card:focus-within,
+
+#sudoku-grid button:hover,
+#sudoku-grid button:active,
+#sudoku-grid button:focus,
+#sudoku-grid button:focus-visible,
+
+#answers button:hover,
+#answers button:active,
+#answers button:focus,
+#answers button:focus-visible {
+    transform: none !important;
+    scale: 1 !important;
+    animation: none !important;
+}
+
+
+/* =====================================================
+   BOTTOM BUTTONS
+===================================================== */
+
+#bottom-buttons {
+    margin-top: 12px !important;
+
+    display: flex !important;
+
+    justify-content: center !important;
+
+    align-items: center !important;
+
+    gap: 10px !important;
+
+    flex-wrap: nowrap !important;
+}
+
+
+#delete-btn,
+#back-btn {
+    width: 120px !important;
+    height: 55px !important;
+
+    flex-shrink: 0 !important;
+
+    font-size: 16px !important;
+}
+
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+.he-bloom-logo,
+.bottom-logo {
+    position: absolute !important;
+
+    width: 60px !important;
+    height: 60px !important;
+
+    right: 18px !important;
+    bottom: 18px !important;
+
+    object-fit: contain !important;
+
+    z-index: 9999;
+
+    pointer-events: none;
+
+    opacity: 0.95;
+}
+
+
+/* =====================================================
+   HP / TELEFON
+===================================================== */
+
+@media (max-width: 767px) {
+
+    #game-card {
+        width: 94vw !important;
+        max-width: none !important;
+
+        margin:
+            38px auto 30px !important;
+
+        padding:
+            25px
+            12px
+            85px !important;
+
+        transform: none !important;
+        animation: none !important;
+    }
+
+
+    #timer,
+    #question-number {
+        font-size: 24px !important;
+    }
+
+
+    /* GRID 6x6 HP */
+
+    #sudoku-grid {
+        width: 100% !important;
+        max-width: none !important;
+
+        border-width: 4px !important;
+
+        border-radius: 25px !important;
+    }
+
+
+    #sudoku-grid button {
+        height: 68px !important;
+    }
+
+
+    /* NOMBOR GRID - LEBIH KECIL DARI EASY */
+
+    .player-number {
+        font-size: 38px !important;
+    }
+
+
+    .medium-hint-dot {
+        width: 6px;
+        height: 6px;
+
+        top: -3px;
+        right: -7px;
+    }
+
+
+    /* BUTANG 1-6 */
+
+    #answers {
+        width: 94% !important;
+
+        max-width: 430px !important;
+
+        grid-template-columns:
+            repeat(3, 1fr) !important;
+
+        gap: 8px !important;
+
+        margin-top: 10px !important;
+    }
+
+
+    #answers button {
+        height: 58px !important;
+        min-height: 58px !important;
+
+        font-size: 36px !important;
+
+        border-radius: 15px !important;
+    }
+
+
+    /* DELETE + BACK */
+
+    #bottom-buttons {
+        margin-top: 10px !important;
+    }
+
+
+    #delete-btn,
+    #back-btn {
+        width: 120px !important;
+        height: 55px !important;
+
+        font-size: 14px !important;
+    }
+
+
+    /* LOGO */
+
+    .he-bloom-logo,
+    .bottom-logo {
+        width: 52px !important;
+        height: 52px !important;
+
+        right: 12px !important;
+        bottom: 12px !important;
+    }
+}
+
+
+/* =====================================================
+   iPAD / TABLET
+===================================================== */
+
+@media (min-width: 768px) {
+
+    #game-card {
+        width: min(90vw, 850px) !important;
+        max-width: 850px !important;
+
+        margin:
+            180px auto 50px !important;
+
+        padding:
+            30px
+            40px
+            100px !important;
+
+        transform: none !important;
+        animation: none !important;
+    }
+
+
+    #timer,
+    #question-number {
+        font-size: 28px !important;
+    }
+
+
+    /* GRID */
+
+    #sudoku-grid {
+        width: 100% !important;
+        max-width: 700px !important;
+    }
+
+
+    #sudoku-grid button {
+        height: 95px !important;
+    }
+
+
+    /* NOMBOR MEDIUM */
+
+    .player-number {
+        font-size: 44px !important;
+    }
+
+
+    #sudoku-grid button span {
+        font-size: 44px !important;
+    }
+
+
+    /* BUTANG 1-6 */
+
+    #answers {
+        width: 75% !important;
+
+        max-width: 520px !important;
+
+        grid-template-columns:
+            repeat(3, 1fr) !important;
+
+        gap: 10px !important;
+    }
+
+
+    #answers button {
+        height: 65px !important;
+        min-height: 65px !important;
+
+        /* LEBIH KECIL DARIPADA EASY */
+
+        font-size: 44px !important;
+    }
+
+
+    /* DELETE + BACK */
+
+    #bottom-buttons {
+        margin-top: 15px !important;
+    }
+
+
+    #delete-btn,
+    #back-btn {
+        width: 140px !important;
+        height: 62px !important;
+
+        font-size: 18px !important;
+    }
+
+
+    /* LOGO */
+
+    .he-bloom-logo,
+    .bottom-logo {
+        position: absolute !important;
+
+        width: 60px !important;
+        height: 60px !important;
+
+        right: 18px !important;
+        bottom: 18px !important;
+    }
 }
     </style>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js" type="text/javascript"></script>
