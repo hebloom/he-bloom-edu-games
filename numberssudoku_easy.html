@@ -183,8 +183,36 @@ body {
         .zoom-in { animation: zoomIn 0.3s ease-out; }
         .shake { animation: shake 0.4s ease-out; }
         .fade-in { animation: fadeIn 0.4s ease-out; }
-        
-        
+
+/* ===== COLOUR SUDOKU STYLE ===== */
+
+#game-card {
+    width: 60%;
+    max-width: 500px;
+    
+    height: 800px;
+    min-height: 800px;
+    
+    margin: 0 auto;
+    padding: 60px 24px;
+    
+    box-sizing: border-box;
+    
+    background: rgba(235, 255, 250, 0.10);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    
+    border: 3px solid rgba(255, 255, 255, 0.85);
+    border-radius: 10px;
+    
+    box-shadow:
+        0 0 0 3px rgba(255, 255, 255, 0.25),
+        0 12px 35px rgba(70, 130, 120, 0.18);
+    
+    position: relative;
+    top: -20px;
+}
+
 /* Grid Sudoku */
 #sudoku-grid {
     width: 100%;
@@ -271,152 +299,12 @@ padding: 0 !important;
 #answers button:active {
     transform: scale(0.96);
 }
-
-/* Telefon */
-@media (max-width: 640px) {
-    
-    #game-card {
-        width: 96%;
-        padding: 12px 12px 22px;
-        border-radius: 28px;
-    }
-    
-    #answers {
-        gap: 8px;
-    }
-    
-#answers button {
-    min-height: 70px;
-    font-size: 46px !important;
-    font-weight: 800;
-    padding: 0 !important;
-}
-/* =========================
-   HE BLOOM LOGO
-========================= */
-
-.he-bloom-logo {
-    position: fixed;
-    
-    width: 50px;
-    height: 50px;
-    
-    right: 18px;
-    bottom: 18px;
-    
-    z-index: 9999;
-    
-    opacity: .95;
-    
-    pointer-events: none;
-}
-
-
-@media (min-width: 768px) {
-    .he-bloom-logo {
-        width: 110px;
-        height: 110px;
-    }
-}
-
-/* ===== COLOUR SUDOKU STYLE ===== */
-
-#game-card {
-    width: 60%;
-    max-width: 500px;
-    
-    height: 800px;
-    min-height: 800px;
-    
-    margin: 0 auto;
-    padding: 60px 24px;
-    
-    box-sizing: border-box;
-    
-    background: rgba(235, 255, 250, 0.10);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    
-    border: 3px solid rgba(255, 255, 255, 0.85);
-    border-radius: 10px;
-    
-    box-shadow:
-        0 0 0 3px rgba(255, 255, 255, 0.25),
-        0 12px 35px rgba(70, 130, 120, 0.18);
-    
-    position: relative;
-    top: -20px;
-}
-
-/* =========================================
-   FIX PAD / TABLET
-   BESARKAN GAME CARD
-   ========================================= */
-
-@media (min-width: 641px) {
-    
-    #game-card {
-        width: 72% !important;
-        max-width: 650px !important;
-        
-        height: auto !important;
-        min-height: 800px !important;
-        
-        padding: 60px 32px !important;
-        
-        margin-left: auto !important;
-        margin-right: auto !important;
-        
-        box-sizing: border-box !important;
-    }
- 
- #sudoku-grid {
-    width: 100% !important;
-    max-width: 560px !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-}
-
-#sudoku-grid button {
-    height: 105px !important;
-}
-
-#answers {
-    width: 82% !important;
-    max-width: 560px !important;
-    
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 10px !important;
-    
-    margin-left: auto !important;
-    margin-right: auto !important;
-}
-
-/* =========================================
-   FIX PAD / TABLET
-   DELETE + BACK
-   ========================================= */
-
-#answers button {
-    min-height: 75px !important;
-    height: 75px !important;
-    
-    font-size: 40px !important;
-}
-
-    #bottom-buttons {
-        gap: 10px !important;
-        margin-top: 10px !important;
-    }
-
-    #delete-btn,
-    #back-btn {
-        width: 120px !important;
-        height: 55px !important;
-        font-size: 14px !important;
-    }
 } 
-}   
+
+
+
+
+
 
 
     </style>
