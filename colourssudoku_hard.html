@@ -579,172 +579,202 @@ body {
    ===================================================== */
 
 @media (max-width: 767px) {
-
+    
     body {
         padding: 6px !important;
-
+        
         overflow-x: hidden !important;
         overflow-y: auto !important;
     }
-
-
-    /* GAME CARD */
-
+    
+    
+    /* ===== GAME CARD ===== */
     #game-card {
         width: 96% !important;
         max-width: 96% !important;
-
+        
         top: -22px !important;
-
-        padding: 12px 12px 85px !important;
-
+        
+        padding: 12px 12px 65px !important;
+        
         border-radius: 28px !important;
-
+        
         box-sizing: border-box !important;
-
+        
         transform: none !important;
         scale: 1 !important;
-
+        
         animation: none !important;
         transition: none !important;
     }
-
-
-    /* GRID 9 × 9 */
-
+    
+    
+    /* ===== KOTAK PUTIH DI BELAKANG GRID ===== */
+    #sudoku-grid-wrapper {
+        width: 100% !important;
+        max-width: 100% !important;
+        
+        margin-left: auto !important;
+        margin-right: auto !important;
+        
+        padding: 8px !important;
+        
+        box-sizing: border-box !important;
+    }
+    
+    
+    /* ===== GRID 9 × 9 ===== */
     #sudoku-grid {
         width: 100% !important;
         max-width: 100% !important;
-
+        min-width: 0 !important;
+        
+        margin-left: auto !important;
+        margin-right: auto !important;
+        
+        display: grid !important;
+        grid-template-columns: repeat(9, minmax(0, 1fr)) !important;
+        
         border-width: 4px !important;
         border-radius: 25px !important;
-
+        
         box-sizing: border-box !important;
-
+        overflow: hidden !important;
+        
         transform: none !important;
         scale: 1 !important;
+        animation: none !important;
     }
-
-
+    
+    
+    /* ===== SETIAP KOTAK GRID ===== */
     #sudoku-grid button {
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: none !important;
+        
         height: 42px !important;
         min-height: 42px !important;
-
+        
         aspect-ratio: 1 / 1 !important;
-
+        
         box-sizing: border-box !important;
-
+        
         transform: none !important;
         scale: 1 !important;
-
+        
         animation: none !important;
         transition: none !important;
     }
-
-
-    /* BULATAN WARNA KEKAL */
-
+    
+    
+    /* ===== BULATAN WARNA KEKAL ===== */
     #sudoku-grid button span {
         width: 65% !important;
         height: 65% !important;
-
+        
         max-width: 28px !important;
         max-height: 28px !important;
-
+        
         transform: none !important;
         scale: 1 !important;
     }
-
-
-    /* BUTANG WARNA */
-
+    
+    
+    /* ===== BUTANG WARNA ===== */
     #answers {
         width: 82% !important;
         max-width: 430px !important;
-
+        
         gap: 6px !important;
-
+        
         margin-top: 7px !important;
-
+        
         box-sizing: border-box !important;
-
+        
         transform: none !important;
         scale: 1 !important;
     }
-
-
+    
+    
     #answers button {
         min-height: 50px !important;
         height: 50px !important;
-
+        
         padding: 2px !important;
-
+        
         border-radius: 14px !important;
-
+        
         font-size: 10px !important;
-
+        
         transform: none !important;
         scale: 1 !important;
-
+        
         animation: none !important;
         transition: none !important;
     }
-
-
-    /* PERTANDA PUTIH KEKAL */
-
+    
+    
+    /* ===== PERTANDA PUTIH KEKAL ===== */
     #answers button span:first-child {
         width: 8px !important;
         height: 8px !important;
-
+        
         transform: none !important;
         scale: 1 !important;
     }
-
-
-    /* DELETE + BACK */
-
+    
+    
+    /* ===== DELETE + BACK ===== */
     #bottom-buttons {
         gap: 4px !important;
-
+        
         margin-top: 12px !important;
-
+        
         display: flex !important;
         justify-content: center !important;
         align-items: center !important;
-
+        
         flex-wrap: nowrap !important;
     }
-
-
+    
+    
     #delete-btn,
     #back-btn {
         width: 100px !important;
         height: 46px !important;
-
+        
         font-size: 14px !important;
-
+        
         border-radius: 9px !important;
-
+        
         flex-shrink: 0 !important;
-
+        
         transform: none !important;
         scale: 1 !important;
     }
-
-
-    /* LOGO */
-
+    
+    
+    /* ===== LOGO — BAWAH KANAN ===== */
     .he-bloom-logo,
     .bottom-logo {
+        position: fixed !important;
+        
         width: 50px !important;
         height: 50px !important;
-
+        
         right: 18px !important;
         bottom: 18px !important;
+        
+        left: auto !important;
+        top: auto !important;
+        
+        margin: 0 !important;
+        
+        z-index: 9999 !important;
     }
+    
 }
-
 
 /* =====================================================
    FINAL ANTI-ZOOM / ANTI-SHRINK
