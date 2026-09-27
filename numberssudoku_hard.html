@@ -490,13 +490,13 @@ body {
    PHONE
    ===================================================== */
 
-@media (max-width: 640px) {
+@media (max-width: 767px) {
     
     #game-card {
         width: 96% !important;
         max-width: 96% !important;
         
-        top: -40px !important;
+        top: -20px !important;
         
         padding: 12px 12px 85px !important;
         
@@ -590,73 +590,6 @@ body {
      
 }
 
-
-/* ===== PAD LANDSCAPE ===== */
-@media (orientation: landscape) and (max-height: 600px) {
-    
-    html,
-    body {
-        height: auto !important;
-        overflow-y: auto !important;
-        overflow-x: hidden !important;
-    }
-    
-   #game-card {
-    width: 90% !important;
-    max-width: 850px !important;
-    min-height: 960px !important;
-    margin: -40px auto 50px !important;
-    padding: 70px 40px 170px !important;
-    box-sizing: border-box !important;
-}
-
-/* ROUND + TIMER */
-#question-number,
-#timer {
-    font-size: 28px !important;
-}
-    
-    /* GRID 9x9 */
-    #sudoku-grid {
-        max-width: 650px !important;
-    }
-    
-    #sudoku-grid button {
-        height: 50px !important;
-    }
-    
-    #sudoku-grid button>span,
-    .player-number {
-        font-size: 27px !important;
-    }
-    
-    /* BUTANG 1-9 */
-    #answers {
-        width: 72% !important;
-        max-width: 500px !important;
-        gap: 8px !important;
-    }
-    
-    #answers .number-answer-button {
-        height: 52px !important;
-        min-height: 52px !important;
-    }
-    
-    #answers .number-answer-button>span {
-        font-size: 28px !important;
-    }
-    
-/* DELETE + BACK */
-#delete-btn,
-#back-btn {
-    width: 140px !important;
-    height: 62px !important;
-    font-size: 18px !important;
-    border-radius: 12px !important;
-}
-}
-
-
 /* =====================================================
    ANTI ZOOM / ANTI SHRINK
    ===================================================== */
@@ -712,7 +645,117 @@ button:focus-visible {
     touch-action: manipulation !important;
 }
 
+/* =====================================================
+   PAD / TABLET HARD
+   768px KE ATAS
+   ===================================================== */
 
+@media (min-width: 768px) {
+    
+    #game-card {
+        width: 92% !important;
+        max-width: 850px !important;
+        min-height: 1050px !important;
+        
+        margin: -60px auto 50px !important;
+        
+        padding: 45px 40px 140px !important;
+        
+        box-sizing: border-box !important;
+    }
+    
+    
+    /* ROUND + TIMER */
+    #question-number,
+    #timer {
+        font-size: 30px !important;
+    }
+    
+    
+    /* =========================
+       GRID HARD 9x9
+       ========================= */
+    
+    #sudoku-grid {
+        width: 100% !important;
+        max-width: 700px !important;
+        
+        margin-left: auto !important;
+        margin-right: auto !important;
+        
+        box-sizing: border-box !important;
+    }
+    
+    #sudoku-grid button {
+        height: 100px !important;
+        min-height: 100px !important;
+        
+        box-sizing: border-box !important;
+        
+        transform: none !important;
+        scale: 1 !important;
+        animation: none !important;
+        transition: none !important;
+    }
+    
+    #sudoku-grid button>span,
+    .player-number {
+        font-size: 40px !important;
+        line-height: 1 !important;
+    }
+    
+    
+    /* =========================
+       BUTANG 1 - 9
+       ========================= */
+    
+    #answers {
+        width: 75% !important;
+        max-width: 520px !important;
+        gap: 10px !important;
+    }
+    
+    #answers .number-answer-button {
+        height: 65px !important;
+        min-height: 65px !important;
+        
+        font-size: 44px !important;
+    }
+    
+    #answers .number-answer-button>span {
+        font-size: 44px !important;
+    }
+    
+    
+    /* =========================
+       DELETE + BACK
+       ========================= */
+    
+    #bottom-buttons {
+        margin-top: 15px !important;
+    }
+    
+    #delete-btn,
+    #back-btn {
+        width: 145px !important;
+        height: 64px !important;
+        font-size: 19px !important;
+    }
+    
+    
+    /* =========================
+       LOGO
+       ========================= */
+    
+    .he-bloom-logo,
+    .bottom-logo {
+        width: 60px !important;
+        height: 60px !important;
+        
+        right: 18px !important;
+        bottom: 18px !important;
+    }
+}
 
 
     </style>
