@@ -639,109 +639,71 @@ body {
 }
 
 
-/* =====================================================
-   iPAD / TABLET
-===================================================== */
-
 @media (min-width: 768px) {
-
+    
     #game-card {
-        width: min(90vw, 850px) !important;
+        width: 92% !important;
         max-width: 850px !important;
-
-        margin:
-            -80px auto 50px !important;
-
-        padding:
-            30px
-            40px
-            100px !important;
-
-        transform: none !important;
-        animation: none !important;
+        min-height: 1050px !important;
+        
+        margin: -60px auto 50px !important;
+        
+        padding: 45px 40px 140px !important;
+        
+        box-sizing: border-box !important;
     }
-
-
-    #timer,
-    #question-number {
-        font-size: 28px !important;
+    
+    /* ROUND + TIMER */
+    #question-number,
+    #timer {
+        font-size: 30px !important;
     }
-
-
-    /* GRID */
-
+    
+    /* GRID HARD 9x9 */
     #sudoku-grid {
         width: 100% !important;
         max-width: 700px !important;
     }
-
-
+    
     #sudoku-grid button {
-        height: 95px !important;
+        height: 70px !important;
     }
-
-
-    /* NOMBOR MEDIUM */
-
+    
+    #sudoku-grid button>span,
     .player-number {
-        font-size: 44px !important;
+        font-size: 40px !important;
     }
-
-
-    #sudoku-grid button span {
-        font-size: 44px !important;
-    }
-
-
-    /* BUTANG 1-6 */
-
+    
+    /* BUTANG 1-9 */
     #answers {
         width: 75% !important;
-
         max-width: 520px !important;
-
-        grid-template-columns:
-            repeat(3, 1fr) !important;
-
         gap: 10px !important;
     }
-
-
-    #answers button {
+    
+    #answers .number-answer-button {
         height: 65px !important;
         min-height: 65px !important;
-
-        /* LEBIH KECIL DARIPADA EASY */
-
         font-size: 44px !important;
     }
-
-
+    
     /* DELETE + BACK */
-
     #bottom-buttons {
         margin-top: 15px !important;
     }
-
-
+    
     #delete-btn,
     #back-btn {
-        width: 140px !important;
-        height: 62px !important;
-
-        font-size: 18px !important;
+        width: 145px !important;
+        height: 64px !important;
+        font-size: 19px !important;
     }
-
-
+    
     /* LOGO */
-
     .he-bloom-logo,
     .bottom-logo {
-        position: absolute !important;
-
         width: 60px !important;
         height: 60px !important;
-
         right: 18px !important;
         bottom: 18px !important;
     }
