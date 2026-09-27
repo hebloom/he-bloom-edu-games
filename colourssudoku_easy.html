@@ -365,89 +365,115 @@ body {
 
 
 /* =====================================================
-   TABLET
+   PAD / TABLET
    ===================================================== */
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
 
     body {
         padding: 10px !important;
     }
 
     #game-card {
-        width: calc(100vw - 20px) !important;
-        max-width: 700px !important;
-        padding: 18px 18px 24px;
+        width: 850px !important;
+        max-width: 850px !important;
+
+        padding:
+            30px
+            40px
+            100px !important;
+
+        margin: 40px auto 50px !important;
+
+        box-sizing: border-box !important;
     }
 
     #sudoku-grid {
-        max-width: 100% !important;
+        width: 100% !important;
+        max-width: 680px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    #sudoku-grid button {
+        height: 110px !important;
+        min-height: 110px !important;
     }
 
     #answers {
-        gap: 8px !important;
+        width: 100% !important;
+        max-width: 700px !important;
+        gap: 12px !important;
     }
 
     #answers button {
-        font-size: 17px !important;
+        min-height: 70px !important;
+        font-size: 22px !important;
+    }
+
+    #delete-btn,
+    #back-btn {
+        width: 120px !important;
+        height: 55px !important;
+        font-size: 14px !important;
     }
 }
 
 
 /* =====================================================
-   TELEFON PORTRAIT
+   TELEFON
    ===================================================== */
 
-@media (max-width: 480px) {
-
+@media (max-width: 767px) {
+    
     body {
         padding: 6px !important;
     }
-
+    
     #game-card {
         width: calc(100vw - 12px) !important;
         max-width: none !important;
         padding: 14px 10px 20px;
     }
-
+    
     #sudoku-grid {
         width: 100% !important;
         max-width: 100% !important;
     }
-
+    
     #sudoku-grid button {
         height: 72px !important;
     }
-
+    
     #sudoku-grid button span {
         width: 48px !important;
         height: 48px !important;
     }
-
+    
     #answers {
         width: 100% !important;
         gap: 6px !important;
     }
-
+    
     #answers button {
         min-height: 62px !important;
         font-size: 14px !important;
         padding: 6px !important;
         border-radius: 18px !important;
     }
-
+    
     #answers button span:first-child {
         width: 25px !important;
         height: 25px !important;
     }
-
+    
     #delete-btn,
     #back-btn {
         width: 110px !important;
         height: 48px !important;
         font-size: 13px !important;
     }
-
+    
     .he-bloom-logo {
         width: 60px !important;
         height: 60px !important;
@@ -457,173 +483,7 @@ body {
 }
 
 
-/* =====================================================
-   TELEFON LANDSCAPE
-   KECIL, TIDAK TERLALU LEBAR
-   ===================================================== */
 
-@media (max-width: 900px) and (orientation: landscape) {
-
-    html,
-    body {
-        height: auto !important;
-        min-height: 100% !important;
-        overflow-x: hidden !important;
-        overflow-y: auto !important;
-    }
-
-    body {
-        padding: 8px !important;
-        align-items: flex-start !important;
-    }
-
-    #game-card {
-        width: min(700px, calc(100vw - 16px)) !important;
-        max-width: 700px !important;
-        min-height: auto !important;
-        height: auto !important;
-        padding: 12px 22px 20px !important;
-        margin: 8px auto 0 !important;
-        overflow: visible !important;
-    }
-
-    /* ROUND + TIMER */
-    #game-card .text-center {
-        margin-bottom: 6px !important;
-    }
-
-
-    /* GRID DIKECILKAN */
-    #sudoku-grid {
-        width: 100% !important;
-        max-width: 520px !important;
-        margin: 0 auto 10px !important;
-    }
-
-    #sudoku-grid button {
-        height: 62px !important;
-    }
-
-    #sudoku-grid button span {
-        width: 44px !important;
-        height: 44px !important;
-    }
-
-    /* BUTANG WARNA */
-    #answers {
-        width: 100% !important;
-        max-width: 540px !important;
-        gap: 7px !important;
-        margin: 6px auto 0 !important;
-    }
-
-    #answers button {
-        min-height: 54px !important;
-        font-size: 15px !important;
-        padding: 5px !important;
-        border-radius: 17px !important;
-        border-width: 3px !important;
-    }
-
-    #answers button span:first-child {
-        width: 24px !important;
-        height: 24px !important;
-    }
-
-    /* DELETE + BACK */
-    #bottom-buttons {
-        margin-top: 6px !important;
-    }
-
-    #delete-btn,
-    #back-btn {
-        width: 105px !important;
-        height: 44px !important;
-        font-size: 12px !important;
-    }
-
-    /* LOGO */
-    .he-bloom-logo {
-        width: 50px !important;
-        height: 50px !important;
-        right: 8px !important;
-        bottom: 8px !important;
-    }
-
-    body {
-        padding-bottom: 16px !important;
-    }
-}
-
-
-/* =====================================================
-   SKRIN SANGAT KECIL
-   ===================================================== */
-
-@media (max-width: 360px) {
-
-    #game-card {
-        padding: 12px 7px 18px !important;
-    }
-
-    #sudoku-grid button {
-        height: 64px !important;
-    }
-
-    #sudoku-grid button span {
-        width: 42px !important;
-        height: 42px !important;
-    }
-
-    #answers button {
-        min-height: 58px !important;
-        font-size: 13px !important;
-        padding: 5px !important;
-    }
-}
-
-
-/* =====================================================
-   SKRIN BESAR
-   ===================================================== */
-
-@media (min-width: 1200px) {
-
-    #game-card {
-        width: 700px !important;
-        max-width: 700px !important;
-    }
-
-    #sudoku-grid {
-        max-width: 560px !important;
-    }
-
-    #answers {
-        max-width: 580px !important;
-    }
-}
-
-
-/* =====================================================
-   LANDSCAPE
-   SCROLL JIKA TINGGI TAK CUKUP
-   ===================================================== */
-
-@media (orientation: landscape) {
-
-    html,
-    body {
-        height: auto !important;
-        overflow-y: auto !important;
-        overflow-x: hidden !important;
-    }
-
-    #game-card {
-        height: auto !important;
-        min-height: 0 !important;
-        overflow: visible !important;
-    }
-}
     </style>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js" type="text/javascript"></script>
   <script src="/_sdk/935a53bc2e11fb8d.data_sdk.js" type="text/javascript" integrity="sha512-qr2oyPnEys1WebcOABaRh6hG77r5PWpqeWW6JTKbRJqly/INsfBi31CVNlTmHqjgeLpkVmmHZJUdxSx/32tOFQ=="></script>
