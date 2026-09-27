@@ -302,12 +302,12 @@ body {
         max-width: 850px !important;
         
         height: auto !important;
-        min-height: 900px !important;
+        min-height: 980px !important;
         
         /* TURUNKAN CARD */
-        margin: 20px auto 50px !important;
+        margin: 45px auto 50px !important;
         
-        padding: 38px 40px 75px !important;
+        padding: 40px 40px 80px !important;
         
         box-sizing: border-box !important;
         overflow: visible !important;
@@ -316,18 +316,16 @@ body {
         scale: 1 !important;
         
         animation: none !important;
+        transition: none !important;
     }
     
     
     /* ===== TAJUK ANIMALS CROSSWORD ===== */
     
-    #game-card .text-black {
-        font-size: 32px !important;
+    #game-card .inline-flex>div {
+        font-size: 34px !important;
         line-height: 1.1 !important;
-    }
-    
-    #game-card .text-xl {
-        font-size: 22px !important;
+        margin-bottom: 0 !important;
     }
     
     
@@ -335,13 +333,13 @@ body {
     
     #crossword-grid {
         width: 100% !important;
-        max-width: 700px !important;
+        max-width: 720px !important;
         
-        height: 600px !important;
-        min-height: 600px !important;
+        height: 680px !important;
+        min-height: 680px !important;
         max-height: none !important;
         
-        margin: 20px auto 12px !important;
+        margin: 22px auto 14px !important;
         
         box-sizing: border-box !important;
         overflow: hidden !important;
@@ -349,6 +347,7 @@ body {
         transform: none !important;
         scale: 1 !important;
         animation: none !important;
+        transition: none !important;
     }
     
     
@@ -368,6 +367,9 @@ body {
         
         transform: none !important;
         scale: 1 !important;
+        
+        animation: none !important;
+        transition: none !important;
     }
     
     
@@ -375,11 +377,11 @@ body {
     
     #answers {
         width: 100% !important;
-        max-width: 620px !important;
+        max-width: 650px !important;
         
-        margin: 8px auto 0 !important;
+        margin: 10px auto 0 !important;
         
-        gap: 5px !important;
+        gap: 6px !important;
         
         box-sizing: border-box !important;
     }
@@ -387,11 +389,11 @@ body {
     #answers button {
         width: 100% !important;
         
-        height: 48px !important;
-        min-height: 48px !important;
-        max-height: 48px !important;
+        height: 54px !important;
+        min-height: 54px !important;
+        max-height: 54px !important;
         
-        font-size: 20px !important;
+        font-size: 23px !important;
         font-weight: 700 !important;
         
         padding: 0 !important;
@@ -400,13 +402,16 @@ body {
         
         transform: none !important;
         scale: 1 !important;
+        
+        animation: none !important;
+        transition: none !important;
     }
     
     
     /* ===== DELETE + BACK KEKAL ===== */
     
     #bottom-buttons {
-        margin-top: 18px !important;
+        margin-top: 20px !important;
         
         display: flex !important;
         justify-content: center !important;
@@ -617,31 +622,6 @@ body {
         scale: 1 !important;
     }
 
-
-    /* ===== LOGO HP ===== */
-
-    .he-bloom-logo,
-    .bottom-logo {
-        position: fixed !important;
-
-        width: 50px !important;
-        height: 50px !important;
-
-        right: 18px !important;
-        bottom: 18px !important;
-
-        left: auto !important;
-        top: auto !important;
-
-        margin: 0 !important;
-
-        z-index: 99999 !important;
-
-        transform: none !important;
-        scale: 1 !important;
-    }
-
-
     /* ===== ANTI ZOOM ===== */
 
     #game-card,
@@ -672,6 +652,29 @@ body {
     }
 }
 
+/* ===== LOGO HP — BETUL-BETUL BAWAH KANAN SKRIN ===== */
+@media (max-width: 767px) {
+    
+    .he-bloom-logo,
+    .bottom-logo {
+        position: fixed !important;
+        
+        width: 42px !important;
+        height: 42px !important;
+        
+        right: 18px !important;
+        bottom: 18px !important;
+        
+        left: auto !important;
+        top: auto !important;
+        
+        margin: 0 !important;
+        transform: none !important;
+        scale: 1 !important;
+        
+        z-index: 99999 !important;
+    }
+}
     </style>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js" type="text/javascript"></script>
   <script src="/_sdk/935a53bc2e11fb8d.data_sdk.js" type="text/javascript" integrity="sha512-qr2oyPnEys1WebcOABaRh6hG77r5PWpqeWW6JTKbRJqly/INsfBi31CVNlTmHqjgeLpkVmmHZJUdxSx/32tOFQ=="></script>
