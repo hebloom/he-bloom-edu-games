@@ -414,6 +414,16 @@ body {
         transition: none !important;
     }
    
+   /* KOTAK PUTIH DI BELAKANG GRID */
+#sudoku-grid-wrapper {
+    width: 108% !important;
+    max-width: none !important;
+    
+    margin-left: auto !important;
+    margin-right: auto !important;
+    
+    box-sizing: border-box !important;
+}
 
     /* ROUND + TIMER */
 
@@ -520,12 +530,14 @@ body {
         flex-wrap: nowrap !important;
     }
     
-    #sudoku-grid {
+#sudoku-grid {
         width: 108% !important;
         max-width: none !important;
-        margin-left: -4% !important;
-        margin-right: -4% !important;
+
+        margin-left: auto !important;
+        margin-right: auto !important;
     }
+
     
 
     #delete-btn,
@@ -839,7 +851,7 @@ class="relative -mt-50 z-50 w-full max-w-x1 mx-auto bg-transparent rounded-none 
     </div>
 </div>
 
-<div class="bg-white/80 rounded-3xl p-3 mb-3 max-w-2xl mx-auto">
+<div id="sudoku-grid-wrapper" class="bg-white/80 rounded-3xl p-3 mb-3 max-w-2xl mx-auto">
 
   <div id="sudoku-grid"
      class="grid grid-cols-9 gap-0 w-full max-w-2xl mx-auto mb-4">
