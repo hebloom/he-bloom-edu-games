@@ -383,20 +383,12 @@ body {
 
 
 /* =====================================================
-   COLOURS SUDOKU
-   FINAL RESPONSIVE
-   PAD = 768px KE ATAS
-   HP  = 767px KE BAWAH
-   ===================================================== */
-
-
-/* =====================================================
    PAD / TABLET
    768px KE ATAS
    RUJUKAN NUMBERS SUDOKU HARD
    ===================================================== */
 
- @media (min-width: 768px) {
+@media (min-width: 768px) {
     
     #game-card {
         width: 96% !important;
@@ -413,157 +405,145 @@ body {
         animation: none !important;
         transition: none !important;
     }
-   
-   /* KOTAK PUTIH DI BELAKANG GRID */
-#sudoku-grid-wrapper {
-    width: 108% !important;
-    max-width: none !important;
     
-    margin-left: auto !important;
-    margin-right: auto !important;
     
-    box-sizing: border-box !important;
-}
-
+    /* KOTAK PUTIH DI BELAKANG GRID */
+    #sudoku-grid-wrapper {
+        width: fit-content !important;
+        max-width: 100% !important;
+        
+        margin-left: auto !important;
+        margin-right: auto !important;
+        
+        padding: 12px !important;
+        
+        box-sizing: border-box !important;
+    }
+    
+    
     /* ROUND + TIMER */
-
     #question-number,
     #timer {
         font-size: 30px !important;
     }
-
-
-
+    
+    
     /* GRID 9 × 9 */
-
     #sudoku-grid {
-        width: 100% !important;
-        max-width: 700px !important;
-
+        width: 700px !important;
+        max-width: 100% !important;
+        
         margin-left: auto !important;
         margin-right: auto !important;
-
+        
         box-sizing: border-box !important;
-
+        
         transform: none !important;
         scale: 1 !important;
         animation: none !important;
     }
-
-
+    
+    
     #sudoku-grid button {
         height: 90px !important;
         min-height: 90px !important;
-
+        
         box-sizing: border-box !important;
-
+        
         transform: none !important;
         scale: 1 !important;
-
+        
         animation: none !important;
         transition: none !important;
     }
-
-
+    
+    
     /* BULATAN WARNA KEKAL */
-
     #sudoku-grid button span {
         transform: none !important;
         scale: 1 !important;
     }
-
-
+    
+    
     /* BUTANG WARNA */
-
     #answers {
         width: 70% !important;
         max-width: 420px !important;
-
+        
         gap: 10px !important;
-
+        
         margin: 8px auto 0 !important;
-
+        
         transform: none !important;
         scale: 1 !important;
     }
-
-
+    
+    
     #answers button {
         min-height: 55px !important;
         height: 55px !important;
-
+        
         padding: 2px !important;
-
+        
         border-radius: 9px !important;
-
+        
         font-size: 10px !important;
-
+        
         transform: none !important;
         scale: 1 !important;
-
+        
         animation: none !important;
         transition: none !important;
     }
-
-
+    
+    
     /* PERTANDA PUTIH KEKAL */
-
     #answers button span:first-child {
         width: 8px !important;
         height: 8px !important;
-
+        
         transform: none !important;
         scale: 1 !important;
     }
-
-
+    
+    
     /* DELETE + BACK */
-
     #bottom-buttons {
         margin-top: 25px !important;
-
+        
         display: flex !important;
         justify-content: center !important;
         align-items: center !important;
-
+        
         gap: 4px !important;
         flex-wrap: nowrap !important;
     }
     
-#sudoku-grid {
-        width: 108% !important;
-        max-width: none !important;
-
-        margin-left: auto !important;
-        margin-right: auto !important;
-    }
-
     
-
     #delete-btn,
     #back-btn {
         width: 145px !important;
         height: 64px !important;
-
+        
         font-size: 19px !important;
-
+        
         flex-shrink: 0 !important;
-
+        
         transform: none !important;
         scale: 1 !important;
     }
-
-
+    
+    
     /* LOGO */
-
     .he-bloom-logo,
     .bottom-logo {
         width: 60px !important;
         height: 60px !important;
-
+        
         right: 18px !important;
         bottom: 18px !important;
     }
+    
 }
 
 
