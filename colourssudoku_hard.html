@@ -436,328 +436,404 @@ body {
 
 
 /* =====================================================
-   TABLET / DEVICE KECIL
+   COLOURS SUDOKU
+   FINAL RESPONSIVE
+   PAD = 768px KE ATAS
+   HP  = 767px KE BAWAH
    ===================================================== */
-
-@media (max-width: 768px) {
-
-    body {
-        padding: 6px !important;
-    }
-
-    #game-card {
-        width: calc(100vw - 12px) !important;
-        max-width: 500px !important;
-        min-height: 0 !important;
-        padding: 20px 14px 18px !important;
-    }
-
-    #sudoku-grid {
-        width: 100% !important;
-        max-width: 100% !important;
-    }
-
-    #sudoku-grid button {
-        aspect-ratio: 1 / 1;
-    }
-
-    #sudoku-grid button span {
-        width: 70% !important;
-        height: 70% !important;
-        max-width: 32px;
-        max-height: 32px;
-    }
-
-    #answers {
-        width: 72% !important;
-        max-width: 360px !important;
-        gap: 5px !important;
-    }
-
-    #answers button {
-        min-height: 40px !important;
-        font-size: 10px !important;
-    }
-
-    #bottom-buttons {
-        gap: 5px !important;
-    }
-
-    #delete-btn,
-    #back-btn {
-        width: 90px !important;
-        height: 36px !important;
-        font-size: 10px !important;
-    }
-
-    .he-bloom-logo {
-        width: 60px !important;
-        height: 60px !important;
-        right: 6px !important;
-        bottom: 6px !important;
-    }
-}
 
 
 /* =====================================================
-   TELEFON PORTRAIT
+   PAD / TABLET
+   768px KE ATAS
+   RUJUKAN NUMBERS SUDOKU HARD
    ===================================================== */
 
-@media (max-width: 480px) and (orientation: portrait) {
-
-    body {
-        padding: 4px !important;
-    }
+@media (min-width: 768px) {
 
     #game-card {
-        width: calc(100vw - 8px) !important;
-        max-width: 500px !important;
-        min-height: 0 !important;
-        padding: 14px 10px 16px !important;
+        width: 92% !important;
+        max-width: 850px !important;
+
+        min-height: 980px !important;
+
+        margin: -96px auto 50px !important;
+
+        padding: 40px 40px 110px !important;
+
+        box-sizing: border-box !important;
+
+        transform: none !important;
+        scale: 1 !important;
+
+        animation: none !important;
+        transition: none !important;
     }
+
+
+    /* ROUND + TIMER */
+
+    #question-number,
+    #timer {
+        font-size: 30px !important;
+    }
+
+
+    /* GRID 9 × 9 */
 
     #sudoku-grid {
         width: 100% !important;
-        max-width: 100% !important;
-        border-width: 4px !important;
-        border-radius: 22px !important;
+        max-width: 700px !important;
+
+        margin-left: auto !important;
+        margin-right: auto !important;
+
+        box-sizing: border-box !important;
+
+        transform: none !important;
+        scale: 1 !important;
+        animation: none !important;
     }
+
 
     #sudoku-grid button {
-        aspect-ratio: 1 / 1;
+        height: 90px !important;
+        min-height: 90px !important;
+
+        box-sizing: border-box !important;
+
+        transform: none !important;
+        scale: 1 !important;
+
+        animation: none !important;
+        transition: none !important;
     }
+
+
+    /* BULATAN WARNA KEKAL */
 
     #sudoku-grid button span {
-        width: 65% !important;
-        height: 65% !important;
-        max-width: 28px;
-        max-height: 28px;
+        transform: none !important;
+        scale: 1 !important;
     }
+
+
+    /* BUTANG WARNA */
 
     #answers {
-        width: 76% !important;
-        max-width: 340px !important;
-        gap: 4px !important;
-        margin-top: 2px !important;
+        width: 70% !important;
+        max-width: 420px !important;
+
+        gap: 10px !important;
+
+        margin: 8px auto 0 !important;
+
+        transform: none !important;
+        scale: 1 !important;
     }
 
+
     #answers button {
-        min-height: 38px !important;
-        font-size: 9px !important;
+        min-height: 55px !important;
+        height: 55px !important;
+
         padding: 2px !important;
-        border-radius: 8px !important;
+
+        border-radius: 9px !important;
+
+        font-size: 10px !important;
+
+        transform: none !important;
+        scale: 1 !important;
+
+        animation: none !important;
+        transition: none !important;
     }
+
+
+    /* PERTANDA PUTIH KEKAL */
 
     #answers button span:first-child {
         width: 8px !important;
         height: 8px !important;
+
+        transform: none !important;
+        scale: 1 !important;
     }
+
+
+    /* DELETE + BACK */
 
     #bottom-buttons {
+        margin-top: 25px !important;
+
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+
         gap: 4px !important;
-        margin-top: 3px !important;
+        flex-wrap: nowrap !important;
     }
+
 
     #delete-btn,
     #back-btn {
-        width: 88px !important;
-        height: 34px !important;
-        font-size: 9px !important;
+        width: 145px !important;
+        height: 64px !important;
+
+        font-size: 19px !important;
+
+        flex-shrink: 0 !important;
+
+        transform: none !important;
+        scale: 1 !important;
     }
 
-    .he-bloom-logo {
-        width: 55px !important;
-        height: 55px !important;
-        right: 5px !important;
-        bottom: 5px !important;
+
+    /* LOGO */
+
+    .he-bloom-logo,
+    .bottom-logo {
+        width: 60px !important;
+        height: 60px !important;
+
+        right: 18px !important;
+        bottom: 18px !important;
     }
 }
 
 
 /* =====================================================
-   SKRIN SANGAT KECIL
+   HP / TELEFON
+   767px KE BAWAH
    ===================================================== */
 
-@media (max-width: 360px) and (orientation: portrait) {
+@media (max-width: 767px) {
 
-    #game-card {
-        width: calc(100vw - 6px) !important;
-        padding: 10px 7px 14px !important;
-    }
-
-    #sudoku-grid {
-        border-width: 3px !important;
-        border-radius: 18px !important;
-    }
-
-    #sudoku-grid button span {
-        width: 62% !important;
-        height: 62% !important;
-        max-width: 24px;
-        max-height: 24px;
-    }
-
-    #answers {
-        width: 82% !important;
-        gap: 3px !important;
-    }
-
-    #answers button {
-        min-height: 36px !important;
-        font-size: 8px !important;
-    }
-
-    #delete-btn,
-    #back-btn {
-        width: 82px !important;
-        height: 32px !important;
-        font-size: 8px !important;
-    }
-}
-
-
-/* =====================================================
-   TELEFON LANDSCAPE
-   ===================================================== */
-
-@media (max-width: 900px) and (orientation: landscape) {
-
-    html,
     body {
-        height: auto !important;
-        min-height: 100% !important;
+        padding: 6px !important;
+
         overflow-x: hidden !important;
         overflow-y: auto !important;
     }
 
-    body {
-        padding: 4px !important;
-        align-items: flex-start !important;
-    }
+
+    /* GAME CARD */
 
     #game-card {
-        width: min(500px, calc(100vw - 8px)) !important;
-        max-width: 500px !important;
+        width: 96% !important;
+        max-width: 96% !important;
 
-        height: auto !important;
-        min-height: 0 !important;
+        top: -22px !important;
 
-        margin: 0 auto !important;
+        padding: 12px 12px 85px !important;
 
-        padding: 8px 10px 12px !important;
+        border-radius: 28px !important;
 
-        overflow: visible !important;
+        box-sizing: border-box !important;
+
+        transform: none !important;
+        scale: 1 !important;
+
+        animation: none !important;
+        transition: none !important;
     }
+
+
+    /* GRID 9 × 9 */
 
     #sudoku-grid {
         width: 100% !important;
         max-width: 100% !important;
+
+        border-width: 4px !important;
+        border-radius: 25px !important;
+
+        box-sizing: border-box !important;
+
+        transform: none !important;
+        scale: 1 !important;
     }
+
 
     #sudoku-grid button {
-        aspect-ratio: 1 / 1;
+        height: 42px !important;
+        min-height: 42px !important;
+
+        aspect-ratio: 1 / 1 !important;
+
+        box-sizing: border-box !important;
+
+        transform: none !important;
+        scale: 1 !important;
+
+        animation: none !important;
+        transition: none !important;
     }
+
+
+    /* BULATAN WARNA KEKAL */
 
     #sudoku-grid button span {
-        width: 60% !important;
-        height: 60% !important;
-        max-width: 26px;
-        max-height: 26px;
+        width: 65% !important;
+        height: 65% !important;
+
+        max-width: 28px !important;
+        max-height: 28px !important;
+
+        transform: none !important;
+        scale: 1 !important;
     }
+
+
+    /* BUTANG WARNA */
 
     #answers {
-        width: 70% !important;
-        max-width: 360px !important;
-        gap: 4px !important;
-        margin-top: 1px !important;
+        width: 82% !important;
+        max-width: 430px !important;
+
+        gap: 6px !important;
+
+        margin-top: 7px !important;
+
+        box-sizing: border-box !important;
+
+        transform: none !important;
+        scale: 1 !important;
     }
+
 
     #answers button {
-        min-height: 34px !important;
-        font-size: 9px !important;
-        padding: 1px !important;
+        min-height: 50px !important;
+        height: 50px !important;
+
+        padding: 2px !important;
+
+        border-radius: 14px !important;
+
+        font-size: 10px !important;
+
+        transform: none !important;
+        scale: 1 !important;
+
+        animation: none !important;
+        transition: none !important;
     }
 
+
+    /* PERTANDA PUTIH KEKAL */
+
     #answers button span:first-child {
-        width: 7px !important;
-        height: 7px !important;
+        width: 8px !important;
+        height: 8px !important;
+
+        transform: none !important;
+        scale: 1 !important;
     }
+
+
+    /* DELETE + BACK */
 
     #bottom-buttons {
         gap: 4px !important;
-        margin-top: 2px !important;
-        margin-bottom: 3px !important;
+
+        margin-top: 12px !important;
+
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+
+        flex-wrap: nowrap !important;
     }
+
 
     #delete-btn,
     #back-btn {
-        width: 88px !important;
-        height: 34px !important;
-        font-size: 9px !important;
+        width: 100px !important;
+        height: 46px !important;
+
+        font-size: 14px !important;
+
+        border-radius: 9px !important;
+
+        flex-shrink: 0 !important;
+
+        transform: none !important;
+        scale: 1 !important;
     }
 
-    .he-bloom-logo {
+
+    /* LOGO */
+
+    .he-bloom-logo,
+    .bottom-logo {
         width: 50px !important;
         height: 50px !important;
-        right: 5px !important;
-        bottom: 5px !important;
+
+        right: 18px !important;
+        bottom: 18px !important;
     }
 }
 
 
 /* =====================================================
-   TABLET / LAPTOP LANDSCAPE
+   FINAL ANTI-ZOOM / ANTI-SHRINK
    ===================================================== */
 
-@media (min-width: 901px) and (orientation: landscape) {
+html {
+    width: 100% !important;
+    min-width: 100% !important;
+    overflow-x: hidden !important;
+}
 
-    html,
-    body {
-        height: auto !important;
-        min-height: 100% !important;
-        overflow-x: hidden !important;
-        overflow-y: auto !important;
-    }
+body {
+    width: 100% !important;
+    min-width: 100% !important;
 
-    body {
-        align-items: flex-start !important;
-    }
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
 
-    #game-card {
-        width: min(500px, calc(100vw - 24px)) !important;
-        max-width: 500px !important;
+    zoom: 1 !important;
+    transform: none !important;
 
-        height: auto !important;
-        min-height: 0 !important;
+    -webkit-text-size-adjust: 100% !important;
+    text-size-adjust: 100% !important;
 
-        margin: 0 auto !important;
-
-        padding: 12px 16px 16px !important;
-
-        overflow: visible !important;
-    }
-
-    #sudoku-grid {
-        width: 100% !important;
-    }
+    touch-action: manipulation !important;
 }
 
 
-/* =====================================================
-   SKRIN BESAR
-   ===================================================== */
+#game-card,
+#sudoku-grid,
+#answers,
+#answers button,
+#sudoku-grid button {
+    transform: none !important;
+    scale: 1 !important;
 
-@media (min-width: 1200px) {
-
-    #game-card {
-        width: 500px !important;
-        max-width: 500px !important;
-    }
-
-    #sudoku-grid {
-        max-width: 700px !important;
-    }
+    animation: none !important;
+    transition: none !important;
 }
+
+
+button,
+button:active,
+button:focus,
+button:focus-visible {
+    transform: none !important;
+    scale: 1 !important;
+    zoom: 1 !important;
+
+    animation: none !important;
+    transition: none !important;
+
+    -webkit-tap-highlight-color: transparent !important;
+
+    touch-action: manipulation !important;
+}
+
+
+
     </style>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js" type="text/javascript"></script>
   <script src="/_sdk/935a53bc2e11fb8d.data_sdk.js" type="text/javascript" integrity="sha512-qr2oyPnEys1WebcOABaRh6hG77r5PWpqeWW6JTKbRJqly/INsfBi31CVNlTmHqjgeLpkVmmHZJUdxSx/32tOFQ=="></script>
