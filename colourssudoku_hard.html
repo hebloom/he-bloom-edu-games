@@ -388,8 +388,15 @@ body {
    RUJUKAN NUMBERS SUDOKU HARD
    ===================================================== */
 
+/* =====================================================
+   PAD / TABLET
+   768px KE ATAS
+   RUJUKAN NUMBERS SUDOKU HARD
+   ===================================================== */
+
 @media (min-width: 768px) {
     
+    /* ===== GAME CARD ===== */
     #game-card {
         width: 96% !important;
         max-width: 900px !important;
@@ -407,9 +414,9 @@ body {
     }
     
     
-    /* KOTAK PUTIH DI BELAKANG GRID */
+    /* ===== KOTAK PUTIH DI BELAKANG GRID ===== */
     #sudoku-grid-wrapper {
-        width: fit-content !important;
+        width: 724px !important;
         max-width: 100% !important;
         
         margin-left: auto !important;
@@ -421,22 +428,27 @@ body {
     }
     
     
-    /* ROUND + TIMER */
+    /* ===== ROUND + TIMER ===== */
     #question-number,
     #timer {
         font-size: 30px !important;
     }
     
     
-    /* GRID 9 × 9 */
+    /* ===== GRID 9 × 9 ===== */
     #sudoku-grid {
         width: 700px !important;
         max-width: 100% !important;
+        min-width: 0 !important;
         
         margin-left: auto !important;
         margin-right: auto !important;
         
+        display: grid !important;
+        grid-template-columns: repeat(9, minmax(0, 1fr)) !important;
+        
         box-sizing: border-box !important;
+        overflow: hidden !important;
         
         transform: none !important;
         scale: 1 !important;
@@ -444,7 +456,12 @@ body {
     }
     
     
+    /* ===== SETIAP KOTAK 9 × 9 ===== */
     #sudoku-grid button {
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: none !important;
+        
         height: 90px !important;
         min-height: 90px !important;
         
@@ -458,14 +475,14 @@ body {
     }
     
     
-    /* BULATAN WARNA KEKAL */
+    /* ===== BULATAN WARNA KEKAL ===== */
     #sudoku-grid button span {
         transform: none !important;
         scale: 1 !important;
     }
     
     
-    /* BUTANG WARNA */
+    /* ===== BUTANG WARNA ===== */
     #answers {
         width: 70% !important;
         max-width: 420px !important;
@@ -497,7 +514,7 @@ body {
     }
     
     
-    /* PERTANDA PUTIH KEKAL */
+    /* ===== PERTANDA PUTIH KEKAL ===== */
     #answers button span:first-child {
         width: 8px !important;
         height: 8px !important;
@@ -507,7 +524,7 @@ body {
     }
     
     
-    /* DELETE + BACK */
+    /* ===== DELETE + BACK ===== */
     #bottom-buttons {
         margin-top: 25px !important;
         
@@ -534,14 +551,23 @@ body {
     }
     
     
-    /* LOGO */
+    /* ===== LOGO BETUL-BETUL BAWAH KANAN ===== */
     .he-bloom-logo,
     .bottom-logo {
+        position: fixed !important;
+        
         width: 60px !important;
         height: 60px !important;
         
         right: 18px !important;
         bottom: 18px !important;
+        
+        left: auto !important;
+        top: auto !important;
+        
+        margin: 0 !important;
+        
+        z-index: 9999 !important;
     }
     
 }
