@@ -194,20 +194,22 @@ body {
 /* =====================================================
    PAD / TABLET
    768px KE ATAS
+   RUJUKAN KETINGGIAN COLOURS SUDOKU HARD
    ===================================================== */
 
 @media (min-width: 768px) {
 
+    /* ===== GAME CARD ===== */
     #game-card {
         width: 92% !important;
         max-width: 850px !important;
 
         height: auto !important;
-        min-height: 0 !important;
+        min-height: 980px !important;
 
-        margin: -40px auto 40px !important;
+        margin: -96px auto 50px !important;
 
-        padding: 35px 35px 55px !important;
+        padding: 40px 40px 110px !important;
 
         box-sizing: border-box !important;
 
@@ -219,7 +221,13 @@ body {
     }
 
 
-    /* KOTAK GRID */
+    /* ===== TAJUK ===== */
+    #game-card > div:first-of-type {
+        margin-bottom: 12px !important;
+    }
+
+
+    /* ===== GRID WORD SEARCH ===== */
     #word-search-grid {
         width: 100% !important;
         max-width: 680px !important;
@@ -227,7 +235,9 @@ body {
         height: auto !important;
         max-height: none !important;
 
-        margin: 25px auto 10px !important;
+        margin: 25px auto 12px !important;
+
+        padding: 8px !important;
 
         box-sizing: border-box !important;
 
@@ -240,18 +250,22 @@ body {
 
         transform: none !important;
         scale: 1 !important;
+
+        animation: none !important;
+        transition: none !important;
     }
 
 
-    /* HURUF GRID */
+    /* ===== PETAK HURUF ===== */
     #word-search-grid button {
-        width: 42px !important;
-        height: 42px !important;
+        width: 50px !important;
+        height: 50px !important;
 
-        min-width: 42px !important;
-        min-height: 42px !important;
+        min-width: 50px !important;
+        min-height: 50px !important;
 
-        font-size: 22px !important;
+        font-size: 25px !important;
+        font-weight: 700 !important;
 
         box-sizing: border-box !important;
 
@@ -263,13 +277,15 @@ body {
     }
 
 
-    /* SENARAI HAIWAN */
+    /* ===== SENARAI HAIWAN ===== */
     #word-list {
         width: 100% !important;
         max-width: 680px !important;
 
         margin-left: auto !important;
         margin-right: auto !important;
+
+        padding: 6px !important;
 
         box-sizing: border-box !important;
     }
@@ -282,19 +298,21 @@ body {
         margin-left: auto !important;
         margin-right: auto !important;
 
-        gap: 6px !important;
+        gap: 7px !important;
     }
 
 
     .word-search-item {
-        font-size: 16px !important;
-        padding: 5px 3px !important;
+        font-size: 18px !important;
+        padding: 7px 4px !important;
+
+        border-radius: 10px !important;
     }
 
 
-    /* CLEAR + BACK */
+    /* ===== CLEAR + BACK ===== */
     #bottom-buttons {
-        margin-top: 18px !important;
+        margin-top: 25px !important;
 
         display: flex !important;
         justify-content: center !important;
@@ -309,9 +327,9 @@ body {
     #clear-btn,
     #back-btn {
         width: 145px !important;
-        height: 55px !important;
+        height: 64px !important;
 
-        font-size: 18px !important;
+        font-size: 19px !important;
 
         flex-shrink: 0 !important;
 
@@ -320,7 +338,7 @@ body {
     }
 
 
-    /* LOGO */
+    /* ===== LOGO PAD ===== */
     .he-bloom-logo,
     .bottom-logo {
         position: fixed !important;
@@ -372,7 +390,8 @@ body {
     }
 
 
-    /* GAME CARD */
+    /* ===== GAME CARD
+       NAIK 20px KE ATAS ===== */
     #game-card {
         width: 96% !important;
         max-width: 96% !important;
@@ -380,7 +399,7 @@ body {
         height: auto !important;
         min-height: 0 !important;
 
-        margin: 0 auto 20px !important;
+        margin: -20px auto 20px !important;
 
         padding: 18px 12px 25px !important;
 
@@ -396,13 +415,7 @@ body {
     }
 
 
-    /* TAJUK */
-    #game-card > div:first-of-type {
-        margin-bottom: 8px !important;
-    }
-
-
-    /* GRID */
+    /* ===== GRID ===== */
     #word-search-grid {
         width: 100% !important;
         max-width: 100% !important;
@@ -428,7 +441,7 @@ body {
     }
 
 
-    /* HURUF GRID */
+    /* ===== HURUF ===== */
     #word-search-grid button {
         width: 27px !important;
         height: 27px !important;
@@ -451,7 +464,7 @@ body {
     }
 
 
-    /* SENARAI HAIWAN */
+    /* ===== SENARAI HAIWAN ===== */
     #word-list {
         width: 100% !important;
         max-width: 100% !important;
@@ -484,7 +497,7 @@ body {
     }
 
 
-    /* CLEAR + BACK */
+    /* ===== CLEAR + BACK ===== */
     #bottom-buttons {
         margin-top: 12px !important;
         margin-bottom: 5px !important;
@@ -515,7 +528,8 @@ body {
     }
 
 
-    /* LOGO BAWAH KANAN */
+    /* ===== LOGO HP
+       BETUL-BETUL BAWAH KANAN ===== */
     .he-bloom-logo,
     .bottom-logo {
         position: fixed !important;
@@ -535,7 +549,7 @@ body {
     }
 
 
-    /* ANTI ZOOM / SHRINK */
+    /* ===== ANTI ZOOM / SHRINK ===== */
     #game-card,
     #word-search-grid,
     #word-search-grid button,
