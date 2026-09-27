@@ -196,53 +196,7 @@ body {
     bottom: 18px;
     right: 18px;
 }
-/* Telefon */
-@media (max-width: 640px) {
-    
-    #game-card {
-        width: 96%;
-        padding: 12px 12px 22px;
-        border-radius: 28px;
-    }
-    
-    #answers {
-        gap: 5px;
-    }
-    
-#answers button {
-  width: 32px;
-  height: 42px;
-  min-height: 42px;
-  font-size: 13px;
-  padding: 0;
-}
-}
 
-html,
-body {
-    height: auto !important;
-    overflow-y: auto !important;
-}
-/* =====================================================
-   LANDSCAPE - SCROLL SAHAJA
-   TIDAK UBAH SAIZ / DESIGN / RESPONSIVE
-   ===================================================== */
-
-@media (orientation: landscape) {
-    
-    html {
-        overflow-y: auto !important;
-        overflow-x: hidden !important;
-    }
-    
-    body {
-        overflow-y: auto !important;
-        overflow-x: hidden !important;
-        
-        height: auto !important;
-        min-height: 100vh !important;
-    }
-}
 /* =====================================================
    RESPONSIVE FINAL - ALL DEVICE
    PORTRAIT + LANDSCAPE
@@ -345,110 +299,108 @@ body {
     }
 
 
-    /* ===== GAME CARD ===== */
-
-    #game-card {
-        width: 92% !important;
-        max-width: 850px !important;
-
-        height: auto !important;
-        min-height: 900px !important;
-
-        margin: -96px auto 50px !important;
-
-        padding: 38px 40px 75px !important;
-
-        box-sizing: border-box !important;
-        overflow: visible !important;
-
-        transform: none !important;
-        scale: 1 !important;
-        animation: none !important;
-    }
-
-
-    /* ===== TAJUK ANIMALS CROSSWORD ===== */
-
-    #game-card .text-black {
-        font-size: 32px !important;
-        line-height: 1.1 !important;
-    }
-
-    #game-card .text-xl {
-        font-size: 22px !important;
-    }
+#game-card {
+    width: 92% !important;
+    max-width: 850px !important;
+    
+    height: auto !important;
+    min-height: 900px !important;
+    
+    margin: -30px auto 50px !important;
+    
+    padding: 38px 40px 75px !important;
+    
+    box-sizing: border-box !important;
+    overflow: visible !important;
+    
+    transform: none !important;
+    scale: 1 !important;
+    
+    animation: none !important;
+}
 
 
-    /* ===== CROSSWORD BOX ===== */
+/* ===== TAJUK ANIMALS CROSSWORD ===== */
 
-    #crossword-grid {
-        width: 100% !important;
-        max-width: 700px !important;
+#game-card .text-black {
+    font-size: 32px !important;
+    line-height: 1.1 !important;
+}
 
-        height: 600px !important;
-        min-height: 600px !important;
-        max-height: none !important;
-
-        margin: 20px auto 12px !important;
-
-        box-sizing: border-box !important;
-
-        overflow: hidden !important;
-
-        transform: none !important;
-        scale: 1 !important;
-        animation: none !important;
-    }
+#game-card .text-xl {
+    font-size: 22px !important;
+}
 
 
-    /* ===== PETAK CROSSWORD ===== */
+/* ===== CROSSWORD BOX ===== */
 
-    #crossword-grid button {
-        width: var(--cell-size, 30px) !important;
-        height: var(--cell-size, 30px) !important;
+#crossword-grid {
+    width: 100% !important;
+    max-width: 700px !important;
+    
+    height: 600px !important;
+    min-height: 600px !important;
+    max-height: none !important;
+    
+    margin: 20px auto 12px !important;
+    
+    box-sizing: border-box !important;
+    
+    overflow: hidden !important;
+    
+    transform: none !important;
+    scale: 1 !important;
+    animation: none !important;
+}
 
-        min-width: 0 !important;
-        min-height: 0 !important;
 
-        font-size: var(--cell-font-size, 18px) !important;
+/* ===== PETAK CROSSWORD ===== */
 
-        box-sizing: border-box !important;
+#crossword-grid button {
+    width: var(--cell-size, 30px) !important;
+    height: var(--cell-size, 30px) !important;
+    
+    min-width: 0 !important;
+    min-height: 0 !important;
+    
+    font-size: var(--cell-font-size, 21px) !important;
+    
+    box-sizing: border-box !important;
+    
+    transform: none !important;
+    scale: 1 !important;
+}
 
-        transform: none !important;
-        scale: 1 !important;
-    }
 
+/* ===== KEYBOARD ===== */
 
-    /* ===== KEYBOARD ===== */
+#answers {
+    width: 100% !important;
+    max-width: 620px !important;
+    
+    margin: 8px auto 0 !important;
+    
+    gap: 5px !important;
+    
+    box-sizing: border-box !important;
+}
 
-    #answers {
-        width: 100% !important;
-        max-width: 620px !important;
-
-        margin: 8px auto 0 !important;
-
-        gap: 5px !important;
-
-        box-sizing: border-box !important;
-    }
-
-    #answers button {
-        width: 100% !important;
-
-        height: 42px !important;
-        min-height: 42px !important;
-        max-height: 42px !important;
-
-        font-size: 15px !important;
-
-        padding: 0 !important;
-
-        box-sizing: border-box !important;
-
-        transform: none !important;
-        scale: 1 !important;
-    }
-
+#answers button {
+    width: 100% !important;
+    
+    height: 42px !important;
+    min-height: 42px !important;
+    max-height: 42px !important;
+    
+    font-size: 18px !important;
+    
+    padding: 0 !important;
+    
+    box-sizing: border-box !important;
+    
+    transform: none !important;
+    scale: 1 !important;
+}
 
     /* ===== DELETE + BACK ===== */
 
