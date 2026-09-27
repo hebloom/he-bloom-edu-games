@@ -198,33 +198,34 @@ body {
    ===================================================== */
 
 @media (min-width: 768px) {
-
-#game-card {
-    width: 92% !important;
-    max-width: 850px !important;
     
-    height: auto !important;
-    min-height: 1120px !important;
-    
-    margin: -96px auto 50px !important;
-    
-    padding: 60px 40px 140px !important;
-    
-    box-sizing: border-box !important;
-    
-    transform: none !important;
-    scale: 1 !important;
-    
-    animation: none !important;
-    transition: none !important;
-}
-
+    #game-card {
+        width: 92% !important;
+        max-width: 850px !important;
+        
+        height: auto !important;
+        min-height: 980px !important;
+        
+        margin: -96px auto 50px !important;
+        
+        padding: 40px 40px 110px !important;
+        
+        box-sizing: border-box !important;
+        
+        transform: none !important;
+        scale: 1 !important;
+        
+        animation: none !important;
+        transition: none !important;
+    }
+} 
 
     /* ===== TAJUK ===== */
     #game-card > div:first-of-type {
+        font-size: 24px !important;
         margin-bottom: 12px !important;
-    }
 
+    }
 
 /* ===== PEMBUNGKUS WORD SEARCH PAD ===== */
 #word-search-grid {
@@ -310,6 +311,10 @@ body {
         gap: 7px !important;
     }
 
+/* ===== FIND THE ANIMALS NAMES ===== */
+#word-list h3 {
+    font-size: 16px !important;
+}
 
     .word-search-item {
         font-size: 22px !important;
@@ -499,7 +504,7 @@ body {
 
 
     .word-search-item {
-        font-size: 11px !important;
+        font-size: 12px !important;
 
         padding: 3px 1px !important;
 
@@ -538,27 +543,6 @@ body {
     }
 
 
-    /* ===== LOGO HP
-       BETUL-BETUL BAWAH KANAN ===== */
-    .he-bloom-logo,
-    .bottom-logo {
-        position: fixed !important;
-
-        width: 42px !important;
-        height: 42px !important;
-
-        right: 14px !important;
-        bottom: 14px !important;
-
-        left: auto !important;
-        top: auto !important;
-
-        margin: 0 !important;
-
-        z-index: 9999 !important;
-    }
-
-
     /* ===== ANTI ZOOM / SHRINK ===== */
     #game-card,
     #word-search-grid,
@@ -586,6 +570,30 @@ body {
         -webkit-tap-highlight-color: transparent !important;
 
         touch-action: manipulation !important;
+    }
+}
+
+/* ===== LOGO HP — BETUL-BETUL BAWAH KANAN SKRIN ===== */
+@media (max-width: 767px) {
+    
+    .he-bloom-logo,
+    .bottom-logo {
+        position: fixed !important;
+        
+        width: 42px !important;
+        height: 42px !important;
+        
+        right: 18px !important;
+        bottom: 18px !important;
+        
+        left: auto !important;
+        top: auto !important;
+        
+        margin: 0 !important;
+        transform: none !important;
+        scale: 1 !important;
+        
+        z-index: 99999 !important;
     }
 }
 
