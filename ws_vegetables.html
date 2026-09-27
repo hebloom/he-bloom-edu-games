@@ -184,101 +184,443 @@ body {
     transform: scale(0.96);
 }
 
-/* Telefon */
-@media (max-width: 640px) {
-    
-    #game-card {
-        width: 96%;
-        padding: 12px 12px 22px;
-        border-radius: 28px;
-    }
-    
-    #answers {
-        gap: 5px;
-    }
-    
-#answers button {
-  width: 32px;
-  height: 42px;
-  min-height: 42px;
-  font-size: 13px;
-  padding: 0;
-}
-}
-.he-bloom-logo {
-    position: fixed;
-    width: 60px;
-    height: 60px;
-    z-index: 9999;
-    opacity: .95;
-    pointer-events: none;
-}
-
-.bottom-logo {
-    bottom: 18px;
-    right: 18px;
-}
 /* =====================================================
-   LANDSCAPE - GRID SEMUA HURUF + TIADA RUANG KOSONG
-   PORTRAIT KEKAL ASAL
+   RESPONSIVE ANIMALS WORD SEARCH
+   768px KE ATAS = PAD
+   767px KE BAWAH = HP
    ===================================================== */
-@media (orientation: landscape) and (max-height: 600px) {
+
+
+/* =====================================================
+   PAD / TABLET
+   768px KE ATAS
+   ===================================================== */
+
+@media (min-width: 768px) {
     
-    html,
-    body {
+    /* ===== GAME CARD ===== */
+    #game-card {
+        width: 92% !important;
+        max-width: 850px !important;
+        
+        height: auto !important;
+        min-height: 700px !important;
+        
+        margin: -96px auto 50px !important;
+        
+        padding: 35px 40px 60px !important;
+        
+        box-sizing: border-box !important;
+        
+        overflow: visible !important;
+        
+        transform: none !important;
+        scale: 1 !important;
+        
+        animation: none !important;
+        transition: none !important;
+    }
+    
+   /* ===== TAJUK ANIMALS WORD SEARCH ===== */
+#game-card .inline-flex>div {
+    font-size: 34px !important;
+    line-height: 1.1 !important;
+    margin-bottom: 0 !important;
+}
+    
+    
+    /* ===== PEMBUNGKUS WORD SEARCH PAD ===== */
+    #word-search-grid {
+        width: 100% !important;
+        max-width: 740px !important;
+        
+        height: auto !important;
+        min-height: 600px !important;
+        max-height: none !important;
+        
+        margin: 20px auto 14px !important;
+        
+        padding: 12px 14px !important;
+        
+        box-sizing: border-box !important;
+        
+        display: grid !important;
+        
+        grid-template-columns: repeat(12, minmax(0, 1fr)) !important;
+        grid-template-rows: repeat(12, minmax(0, 1fr)) !important;
+        
+        gap: 2px !important;
+        
+        justify-content: center !important;
+        align-content: center !important;
+        
+        overflow: hidden !important;
+        
+        transform: none !important;
+        scale: 1 !important;
+        
+        animation: none !important;
+        transition: none !important;
+    }
+    
+    
+    /* ===== PETAK HURUF PAD ===== */
+    #word-search-grid button {
+        width: 100% !important;
+        height: auto !important;
+        
+        min-width: 0 !important;
+        min-height: 50px !important;
+        
+        aspect-ratio: 1 / 1 !important;
+        
+        font-size: 30px !important;
+        font-weight: 700 !important;
+        
+        padding: 0 !important;
+        margin: 0 !important;
+        
+        box-sizing: border-box !important;
+        
+        transform: none !important;
+        scale: 1 !important;
+        
+        animation: none !important;
+        transition: none !important;
+    }
+
+    
+    /* ===== SENARAI HAIWAN ===== */
+    #word-list {
+        width: 100% !important;
+        max-width: 680px !important;
+        
+        margin-left: auto !important;
+        margin-right: auto !important;
+        
+        padding: 6px !important;
+        
+        box-sizing: border-box !important;
+    }
+    
+    
+    #words-to-find {
+        width: 100% !important;
+        max-width: 620px !important;
+        
+        margin-left: auto !important;
+        margin-right: auto !important;
+        
+        gap: 7px !important;
+    }
+    
+    
+    /* ===== FIND THE ANIMALS NAMES ===== */
+    #word-list h3 {
+        font-size: 20px !important;
+    }
+    
+    
+    .word-search-item {
+        font-size: 24px !important;
+        padding: 7px 4px !important;
+        
+        border-radius: 10px !important;
+    }
+    
+    
+    /* ===== CLEAR + BACK ===== */
+    #bottom-buttons {
+        margin-top: 20px !important;
+        
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        
+        gap: 6px !important;
+        
+        flex-wrap: nowrap !important;
+    }
+    
+    
+    #clear-btn,
+    #back-btn {
+        width: 145px !important;
+        height: 64px !important;
+        
+        font-size: 19px !important;
+        
+        flex-shrink: 0 !important;
+        
+        transform: none !important;
+        scale: 1 !important;
+    }
+    
+    
+    /* ===== LOGO PAD ===== */
+    .he-bloom-logo,
+    .bottom-logo {
+        position: fixed !important;
+        
+        width: 60px !important;
+        height: 60px !important;
+        
+        right: 18px !important;
+        bottom: 18px !important;
+        
+        left: auto !important;
+        top: auto !important;
+        
+        margin: 0 !important;
+        
+        z-index: 9999 !important;
+    }
+    
+    
+    /* ===== PAD BOLEH SCROLL ===== */
+    html {
         height: auto !important;
         min-height: 100% !important;
+        
         overflow-x: hidden !important;
         overflow-y: auto !important;
     }
     
+    
     body {
-        align-items: flex-start !important;
-        justify-content: center !important;
-    }
-    
-    #game-card {
-        width: 82% !important;
-        max-width: 850px !important;
-        
         height: auto !important;
-        min-height: 0 !important;
+        min-height: 100vh !important;
         
-        margin-top: 0 !important;
-        margin-bottom: 15px !important;
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
         
-        padding-top: 20px !important;
-        padding-bottom: 30px !important;
+        touch-action: pan-y !important;
+        -webkit-overflow-scrolling: touch !important;
     }
     
-    /* GRID HURUF */
+}
+
+/* =====================================================
+   HP / TELEFON
+   767px KE BAWAH
+   ===================================================== */
+
+@media (max-width: 767px) {
+
+    html {
+        width: 100% !important;
+        min-width: 100% !important;
+
+        overflow-x: hidden !important;
+    }
+
+
+    body {
+        width: 100% !important;
+        min-width: 100% !important;
+
+        padding: 6px !important;
+
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+
+        box-sizing: border-box !important;
+
+        -webkit-text-size-adjust: 100% !important;
+        text-size-adjust: 100% !important;
+    }
+
+
+/* ===== GAME CARD HP ===== */
+#game-card {
+    width: 96% !important;
+    max-width: 96% !important;
+    
+    height: auto !important;
+    min-height: 0 !important;
+    
+    /* NAIK 30px */
+    margin: -30px auto 20px !important;
+    
+    /* BAWAH TAMBAH 10px */
+    padding: 18px 12px 35px !important;
+    
+    box-sizing: border-box !important;
+    
+    border-radius: 28px !important;
+    
+    transform: none !important;
+    scale: 1 !important;
+    
+    animation: none !important;
+    transition: none !important;
+}
+
+
+    /* ===== GRID ===== */
     #word-search-grid {
-        height: 370px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+
+        height: auto !important;
         max-height: none !important;
-        
-        margin-top: 20px !important;
-        margin-bottom: 10px !important;
-        
-        overflow: visible !important;
+
+        margin: 18px auto 8px !important;
+
+        padding: 8px !important;
+
+        box-sizing: border-box !important;
+
+        display: grid !important;
+
+        justify-content: center !important;
         align-content: center !important;
+
+        overflow: hidden !important;
+
+        transform: none !important;
+        scale: 1 !important;
     }
-    
-    /* SAIZ HURUF KEKAL */
+
+
+    /* ===== HURUF ===== */
     #word-search-grid button {
         width: 27px !important;
         height: 27px !important;
+
+        min-width: 27px !important;
+        min-height: 27px !important;
+
+        font-size: 15px !important;
+
+        padding: 0 !important;
+        margin: 0 !important;
+
+        box-sizing: border-box !important;
+
+        transform: none !important;
+        scale: 1 !important;
+
+        animation: none !important;
+        transition: none !important;
     }
-    
-    /* SENARAI HAIWAN */
+
+
+    /* ===== SENARAI HAIWAN ===== */
     #word-list {
-        margin-top: 0 !important;
-        margin-bottom: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+
+        margin: 0 auto !important;
+
+        box-sizing: border-box !important;
+
+        padding: 5px !important;
     }
-    
-    /* BUTANG BAWAH */
+
+
+    #words-to-find {
+        width: 100% !important;
+
+        grid-template-columns: 42% 42% !important;
+
+        justify-content: center !important;
+
+        gap: 4px !important;
+    }
+
+
+    .word-search-item {
+        font-size: 12px !important;
+
+        padding: 3px 1px !important;
+
+        border-radius: 8px !important;
+    }
+
+
+    /* ===== CLEAR + BACK ===== */
     #bottom-buttons {
-        margin-top: 8px !important;
+        margin-top: 12px !important;
         margin-bottom: 5px !important;
+
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+
+        gap: 4px !important;
+
+        flex-wrap: nowrap !important;
+    }
+
+
+    #clear-btn,
+    #back-btn {
+        width: 100px !important;
+        height: 46px !important;
+
+        font-size: 14px !important;
+
+        border-radius: 9px !important;
+
+        flex-shrink: 0 !important;
+
+        transform: none !important;
+        scale: 1 !important;
+    }
+
+
+    /* ===== ANTI ZOOM / SHRINK ===== */
+    #game-card,
+    #word-search-grid,
+    #word-search-grid button,
+    #word-list,
+    #bottom-buttons,
+    #clear-btn,
+    #back-btn {
+        transform: none !important;
+        scale: 1 !important;
+    }
+
+
+    button,
+    button:active,
+    button:focus,
+    button:focus-visible {
+        transform: none !important;
+        scale: 1 !important;
+        zoom: 1 !important;
+
+        animation: none !important;
+        transition: none !important;
+
+        -webkit-tap-highlight-color: transparent !important;
+
+        touch-action: manipulation !important;
+    }
+}
+
+/* ===== LOGO HP — BETUL-BETUL BAWAH KANAN SKRIN ===== */
+@media (max-width: 767px) {
+    
+    .he-bloom-logo,
+    .bottom-logo {
+        position: fixed !important;
+        
+        width: 42px !important;
+        height: 42px !important;
+        
+        right: 18px !important;
+        bottom: 18px !important;
+        
+        left: auto !important;
+        top: auto !important;
+        
+        margin: 0 !important;
+        transform: none !important;
+        scale: 1 !important;
+        
+        z-index: 99999 !important;
     }
 }
 
@@ -395,12 +737,14 @@ text-center font-bold text-3xl shadow-2xl">
     ◀️ BACK
 </button>
 
+</div>
+
 <!-- HE BLOOM LOGO -->
 
 <img src="HE_Bloom.png"
      alt="HE Bloom"
      class="he-bloom-logo bottom-logo">
-</div>
+
 
 <!-- END SCREEN -->
 <div id="end-screen"
