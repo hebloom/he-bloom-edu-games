@@ -319,47 +319,323 @@ body {
 
 
 /* =====================================================
-   5. PHONE PORTRAIT
-   ≤ 480px
+   CROSSWORD RESPONSIVE BARU
+   768px KE ATAS = PAD
+   767px KE BAWAH = HP
    ===================================================== */
 
-@media (max-width: 480px) and (orientation: portrait) {
 
-    body {
-        padding: 4px !important;
+/* =====================================================
+   PAD / TABLET
+   768px KE ATAS
+   ===================================================== */
 
+@media (min-width: 768px) {
+
+    html {
+        width: 100% !important;
+        min-height: 100% !important;
+        overflow-x: hidden !important;
         overflow-y: auto !important;
     }
 
-    #game-card {
-        width: calc(100vw - 8px) !important;
-        max-width: 500px !important;
+    body {
+        width: 100% !important;
+        min-height: 100vh !important;
 
-        min-height: auto !important;
-        height: auto !important;
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
 
-        padding-left: 12px;
-        padding-right: 12px;
-
-        margin: 4px auto 25px !important;
+        touch-action: pan-y !important;
+        -webkit-overflow-scrolling: touch !important;
     }
+
+
+    /* ===== GAME CARD PAD ===== */
+
+    #game-card {
+        width: 92% !important;
+        max-width: 850px !important;
+
+        height: auto !important;
+        min-height: 780px !important;
+
+        margin: -96px auto 50px !important;
+
+        padding: 35px 40px 70px !important;
+
+        box-sizing: border-box !important;
+        overflow: visible !important;
+
+        transform: none !important;
+        scale: 1 !important;
+
+        animation: none !important;
+    }
+
+
+    /* ===== TAJUK ===== */
+
+    #game-card > div:first-of-type {
+        margin-bottom: 12px !important;
+    }
+
+
+    /* ===== KOTAK CROSSWORD ===== */
 
     #crossword-grid {
         width: 100% !important;
+        max-width: 700px !important;
 
-        height: clamp(300px, 56vh, 520px) !important;
+        height: 560px !important;
+        min-height: 560px !important;
         max-height: none !important;
+
+        margin: 20px auto 12px !important;
+
+        box-sizing: border-box !important;
+
+        overflow: hidden !important;
+
+        transform: none !important;
+        scale: 1 !important;
+
+        animation: none !important;
+        transition: none !important;
     }
+
+
+    /* ===== PETAK CROSSWORD ===== */
+
+    #crossword-grid button {
+        width: var(--cell-size, 26px) !important;
+        height: var(--cell-size, 26px) !important;
+
+        min-width: 0 !important;
+        min-height: 0 !important;
+
+        font-size: var(--cell-font-size, 16px) !important;
+
+        box-sizing: border-box !important;
+
+        transform: none !important;
+        scale: 1 !important;
+    }
+
+
+    /* ===== KEYBOARD A-Z ===== */
+
+    #answers {
+        width: 100% !important;
+        max-width: 620px !important;
+
+        margin: 8px auto 0 !important;
+
+        gap: 5px !important;
+
+        box-sizing: border-box !important;
+    }
+
+
+    #answers button {
+        width: 100% !important;
+
+        height: 42px !important;
+        min-height: 42px !important;
+        max-height: 42px !important;
+
+        font-size: 15px !important;
+
+        padding: 0 !important;
+
+        box-sizing: border-box !important;
+
+        transform: none !important;
+        scale: 1 !important;
+    }
+
+
+    /* ===== DELETE + BACK ===== */
+
+    #bottom-buttons {
+        margin-top: 18px !important;
+
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+
+        gap: 6px !important;
+
+        flex-wrap: nowrap !important;
+
+        padding-bottom: 5px !important;
+    }
+
+
+    #bottom-buttons button {
+        width: 145px !important;
+        height: 60px !important;
+
+        font-size: 18px !important;
+
+        flex-shrink: 0 !important;
+
+        transform: none !important;
+        scale: 1 !important;
+    }
+
+
+    /* ===== LOGO PAD ===== */
+
+    .he-bloom-logo,
+    .bottom-logo {
+        position: fixed !important;
+
+        width: 60px !important;
+        height: 60px !important;
+
+        right: 18px !important;
+        bottom: 18px !important;
+
+        left: auto !important;
+        top: auto !important;
+
+        margin: 0 !important;
+
+        z-index: 99999 !important;
+
+        transform: none !important;
+        scale: 1 !important;
+    }
+}
+
+
+/* =====================================================
+   HP / TELEFON
+   767px KE BAWAH
+   ===================================================== */
+
+@media (max-width: 767px) {
+
+    html {
+        width: 100% !important;
+        min-width: 100% !important;
+
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+    }
+
+
+    body {
+        width: 100% !important;
+        min-width: 100% !important;
+
+        padding: 6px !important;
+
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+
+        box-sizing: border-box !important;
+
+        -webkit-text-size-adjust: 100% !important;
+        text-size-adjust: 100% !important;
+
+        touch-action: pan-y !important;
+        -webkit-overflow-scrolling: touch !important;
+    }
+
+
+    /* ===== GAME CARD HP ===== */
+
+    #game-card {
+        width: 96% !important;
+        max-width: 96% !important;
+
+        height: auto !important;
+        min-height: 0 !important;
+
+        margin: -30px auto 20px !important;
+
+        padding: 18px 12px 35px !important;
+
+        box-sizing: border-box !important;
+
+        border-radius: 28px !important;
+
+        overflow: visible !important;
+
+        transform: none !important;
+        scale: 1 !important;
+
+        animation: none !important;
+    }
+
+
+    /* ===== TAJUK ===== */
+
+    #game-card > div:first-of-type {
+        margin-bottom: 8px !important;
+    }
+
+
+    /* ===== KOTAK CROSSWORD ===== */
+
+    #crossword-grid {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        height: 430px !important;
+        min-height: 430px !important;
+        max-height: none !important;
+
+        margin: 18px auto 8px !important;
+
+        box-sizing: border-box !important;
+
+        overflow: hidden !important;
+
+        transform: none !important;
+        scale: 1 !important;
+
+        animation: none !important;
+        transition: none !important;
+    }
+
+
+    /* ===== PETAK CROSSWORD ===== */
+
+    #crossword-grid button {
+        width: var(--cell-size, 26px) !important;
+        height: var(--cell-size, 26px) !important;
+
+        min-width: 0 !important;
+        min-height: 0 !important;
+
+        font-size: var(--cell-font-size, 16px) !important;
+
+        box-sizing: border-box !important;
+
+        transform: none !important;
+        scale: 1 !important;
+    }
+
+
+    /* ===== KEYBOARD A-Z ===== */
 
     #answers {
         width: 100% !important;
         max-width: 100% !important;
 
+        margin: 5px auto 0 !important;
+
         grid-template-columns:
-            repeat(13, minmax(0, 1fr));
+            repeat(13, minmax(0, 1fr)) !important;
 
         gap: 4px !important;
+
+        box-sizing: border-box !important;
     }
+
 
     #answers button {
         width: 100% !important;
@@ -368,307 +644,100 @@ body {
         min-height: 38px !important;
         max-height: 38px !important;
 
+        font-size: 12px !important;
+
         padding: 0 !important;
 
-        font-size: 11px !important;
+        box-sizing: border-box !important;
+
+        transform: none !important;
+        scale: 1 !important;
     }
+
+
+    /* ===== DELETE + BACK ===== */
 
     #bottom-buttons {
-        flex-wrap: wrap !important;
+        margin-top: 12px !important;
+        margin-bottom: 5px !important;
 
-        gap: 6px !important;
-    }
-
-    #bottom-buttons button {
-        width: 120px !important;
-        height: 50px !important;
-
-        font-size: 13px !important;
-    }
-
-    .he-bloom-logo {
-        width: 60px !important;
-        height: 60px !important;
-
-        right: 6px !important;
-        bottom: 6px !important;
-    }
-}
-
-
-/* =====================================================
-   6. PHONE SANGAT KECIL
-   ≤ 360px
-   ===================================================== */
-
-@media (max-width: 360px) and (orientation: portrait) {
-
-    #game-card {
-        width: calc(100vw - 8px) !important;
-
-        padding-left: 8px;
-        padding-right: 8px;
-    }
-
-    #crossword-grid {
-        height: 300px !important;
-    }
-
-    #answers {
-        gap: 3px !important;
-    }
-
-    #answers button {
-        height: 35px !important;
-        min-height: 35px !important;
-        max-height: 35px !important;
-
-        font-size: 10px !important;
-    }
-
-    #bottom-buttons button {
-        width: 110px !important;
-        height: 48px !important;
-
-        font-size: 12px !important;
-    }
-}
-
-
-/* =====================================================
-   7. TABLET PORTRAIT
-   481px - 768px
-   ===================================================== */
-
-@media (min-width: 481px) and (max-width: 768px)
-       and (orientation: portrait) {
-
-    body {
-        padding: 8px !important;
-    }
-
-    #game-card {
-        width: min(500px, calc(100vw - 16px)) !important;
-        max-width: 500px !important;
-
-        min-height: 800px;
-
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-
-    #crossword-grid {
-        width: 100% !important;
-    }
-
-    #answers {
-        width: 100% !important;
-        max-width: 500px !important;
-    }
-}
-
-
-/* =====================================================
-   8. PHONE LANDSCAPE
-   ≤ 900px
-   ===================================================== */
-
-@media (max-width: 900px) and (orientation: landscape) {
-
-    html,
-    body {
-        overflow-x: hidden !important;
-        overflow-y: auto !important;
-    }
-
-    body {
-        padding: 6px !important;
-
-        align-items: flex-start !important;
-    }
-
-    #game-card {
-        width: min(700px, calc(100vw - 12px)) !important;
-        max-width: 700px !important;
-
-        height: auto !important;
-        min-height: 0 !important;
-
-        margin: 5px auto 45px !important;
-
-        box-sizing: border-box;
-    }
-
-    #crossword-grid {
-        width: 100% !important;
-
-        height: clamp(280px, 68vh, 500px) !important;
-
-        min-height: 260px !important;
-        max-height: 500px !important;
-    }
-
-    #answers {
-        width: 100% !important;
-        max-width: 650px !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
 
         gap: 4px !important;
+
+        flex-wrap: nowrap !important;
     }
 
-    #answers button {
-        height: 36px !important;
-        min-height: 36px !important;
-        max-height: 36px !important;
-
-        padding: 0 !important;
-
-        font-size: 12px !important;
-    }
-
-    #bottom-buttons {
-        margin-top: 10px !important;
-
-        padding-bottom: 25px !important;
-
-        flex-wrap: wrap !important;
-    }
 
     #bottom-buttons button {
-        width: 120px !important;
-        height: 48px !important;
+        width: 100px !important;
+        height: 46px !important;
 
-        font-size: 13px !important;
+        font-size: 14px !important;
+
+        border-radius: 9px !important;
+
+        flex-shrink: 0 !important;
+
+        transform: none !important;
+        scale: 1 !important;
     }
 
-    .he-bloom-logo {
-        width: 55px !important;
-        height: 55px !important;
 
-        right: 6px !important;
-        bottom: 6px !important;
-    }
-}
+    /* ===== LOGO HP ===== */
 
+    .he-bloom-logo,
+    .bottom-logo {
+        position: fixed !important;
 
-/* =====================================================
-   9. LANDSCAPE TABLET
-   901px - 1199px
-   ===================================================== */
+        width: 50px !important;
+        height: 50px !important;
 
-@media (min-width: 901px) and (max-width: 1199px)
-       and (orientation: landscape) {
+        right: 18px !important;
+        bottom: 18px !important;
 
-    html,
-    body {
-        overflow-x: hidden !important;
-        overflow-y: auto !important;
-    }
+        left: auto !important;
+        top: auto !important;
 
-    body {
-        align-items: flex-start !important;
+        margin: 0 !important;
+
+        z-index: 99999 !important;
+
+        transform: none !important;
+        scale: 1 !important;
     }
 
-    #game-card {
-        width: min(700px, calc(100vw - 30px)) !important;
-        max-width: 700px !important;
 
-        height: auto !important;
-        min-height: 0 !important;
+    /* ===== ANTI ZOOM / SHRINK ===== */
 
-        margin: 10px auto 45px !important;
+    #game-card,
+    #crossword-grid,
+    #crossword-grid button,
+    #answers,
+    #answers button,
+    #bottom-buttons,
+    #bottom-buttons button {
+        transform: none !important;
+        scale: 1 !important;
     }
 
-    #crossword-grid {
-        width: 100% !important;
 
-        height: min(65vh, 540px) !important;
-        max-height: 540px !important;
-    }
+    button,
+    button:active,
+    button:focus,
+    button:focus-visible {
+        transform: none !important;
+        scale: 1 !important;
+        zoom: 1 !important;
 
-    #answers {
-        max-width: 650px !important;
-    }
-}
+        animation: none !important;
+        transition: none !important;
 
+        -webkit-tap-highlight-color: transparent !important;
 
-/* =====================================================
-   10. DESKTOP / LAPTOP
-   ≥ 1200px
-   ===================================================== */
-
-@media (min-width: 1200px) {
-
-    body {
-        overflow-y: auto !important;
-    }
-
-    #game-card {
-        width: 500px !important;
-        max-width: 500px !important;
-
-        min-height: 800px;
-    }
-
-    #crossword-grid {
-        max-width: 680px;
-    }
-
-    #answers {
-        max-width: 500px;
-    }
-}
-
-
-/* =====================================================
-   11. LANDSCAPE SKRIN SANGAT PENDEK
-   Contoh:
-   800×360
-   812×375
-   844×390
-   ===================================================== */
-
-@media (orientation: landscape) and (max-height: 500px) {
-
-    html,
-    body {
-        overflow-x: hidden !important;
-        overflow-y: auto !important;
-    }
-
-    body {
-        align-items: flex-start !important;
-
-        padding-top: 4px !important;
-        padding-bottom: 50px !important;
-    }
-
-    #game-card {
-        height: auto !important;
-        min-height: 0 !important;
-
-        margin-top: 4px !important;
-        margin-bottom: 50px !important;
-
-        padding-top: 8px !important;
-        padding-bottom: 35px !important;
-    }
-
-    #crossword-grid {
-        height: 280px !important;
-
-        min-height: 250px !important;
-    }
-
-    #answers button {
-        height: 34px !important;
-        min-height: 34px !important;
-        max-height: 34px !important;
-
-        font-size: 11px !important;
-    }
-
-    #bottom-buttons {
-        padding-bottom: 30px !important;
+        touch-action: manipulation !important;
     }
 }
 
@@ -678,21 +747,6 @@ body {
   <script src="/_sdk/6030e540d4419216.resizing_sdk.js" type="text/javascript" integrity="sha512-b5KWzyoXsbWP4smq4sftIi6Kts4YVBpBsz0BwCViwbBJkK64a3/Z6ZMdWA+qnplNcXw4mhZeqvQi3mOosiRJdA=="></script>
  </head>
  <body data-template-id="__page-root" class="w-full min-h-screen overflow-hidden relative flex items-center justify-center p-4"><!-- Background elements -->
-  <div class="fixed inset-0 pointer-events-none overflow-hidden" aria-hidden="true"><!-- Sun -->
-   <div class="sun-pulse absolute top-6 left-6 text-10xl sm:text-10xl">
-    🌞
-   </div><!-- Rainbow -->
-   <div class="absolute top-10 right-10 text-10xl float-slow opacity-70">
-    🌈
-   </div><!-- Clouds -->
-   <div class="absolute top-[12%] left-[20%] text-10xl float" style="animation-delay:0.5s">
-    ☁️
-    </div>
-   <div class="absolute top-[8%] left-[55%] text-20xl float" style="animation-delay:1.5s">
-    ☁️
-   </div>
-   <div class="absolute top-[18%] right-[15%] text-20xl float" style="animation-delay:2.5s">
-    ☁️
    </div><!-- Birds -->
    <div class="bird absolute top-[3%] text-5xl">
     🦜 
