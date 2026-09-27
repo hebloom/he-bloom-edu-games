@@ -491,15 +491,15 @@ body {
    ===================================================== */
 
 @media (max-width: 640px) {
-
+    
     #game-card {
         width: 96% !important;
         max-width: 96% !important;
-
-top: -40px !important;
-
-        padding: 12px 12px 22px !important;
-
+        
+        top: -20px !important;
+        
+        padding: 12px 12px 45px !important;
+        
         border-radius: 28px !important;
     }
 
@@ -561,21 +561,20 @@ top: -40px !important;
     }
 
 
-    #delete-btn,
-    #back-btn {
-        width: 90px !important;
-        height: 36px !important;
-
-        font-size: 10px !important;
-        border-radius: 8px !important;
-     }
+#delete-btn,
+#back-btn {
+    width: 100px !important;
+    height: 44px !important;
+    font-size: 11px !important;
+    border-radius: 9px !important;
+}
  
- /* LOGO KEKAL */
+ 
 
 .he-bloom-logo {
     position: fixed;
-    width: 48px;
-    height: 48px;
+    width: 50px;
+    height: 50px;
     
     z-index: 9999;
     
@@ -592,55 +591,68 @@ top: -40px !important;
 }
 
 
-/* =====================================================
-   LANDSCAPE
-   ===================================================== */
-
+/* ===== PAD LANDSCAPE ===== */
 @media (orientation: landscape) and (max-height: 600px) {
-
+    
     html,
     body {
-        width: 100% !important;
-        min-width: 0 !important;
-
         height: auto !important;
-        min-height: 100% !important;
-
-        overflow-x: hidden !important;
         overflow-y: auto !important;
+        overflow-x: hidden !important;
     }
-
-
-    body {
-        padding: 0 !important;
-
-        align-items: flex-start !important;
-        justify-content: flex-start !important;
-    }
-
-
+    
     #game-card {
-        width: 100% !important;
-
-        height: auto !important;
-        min-height: 100vh !important;
-
-        margin-top: 0 !important;
-        margin-bottom: 0 !important;
-
-        padding-top: 0 !important;
-        padding-bottom: 30px !important;
+        width: 92% !important;
+        max-width: 850px !important;
+        
+        min-height: 700px !important;
+        
+        margin: -20px auto 40px !important;
+        
+        padding: 35px 40px 70px !important;
     }
-
-
-    #answers .number-answer-button {
-        min-height: 40px !important;
-        height: 40px !important;
-    }
-
-
-    #answers .number-answer-button > span {
+    
+    /* ROUND + TIMER */
+    #question-number,
+    #timer {
         font-size: 24px !important;
+    }
+    
+    /* GRID 9x9 */
+    #sudoku-grid {
+        max-width: 650px !important;
+    }
+    
+    #sudoku-grid button {
+        height: 50px !important;
+    }
+    
+    #sudoku-grid button>span,
+    .player-number {
+        font-size: 27px !important;
+    }
+    
+    /* BUTANG 1-9 */
+    #answers {
+        width: 72% !important;
+        max-width: 500px !important;
+        gap: 8px !important;
+    }
+    
+    #answers .number-answer-button {
+        height: 52px !important;
+        min-height: 52px !important;
+    }
+    
+    #answers .number-answer-button>span {
+        font-size: 28px !important;
+    }
+    
+    /* DELETE + BACK */
+    #delete-btn,
+    #back-btn {
+        width: 120px !important;
+        height: 50px !important;
     }
 }
 
