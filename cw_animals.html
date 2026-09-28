@@ -297,27 +297,27 @@ body {
     
     /* ===== GAME CARD PAD ===== */
     
-    #game-card {
-        width: 92% !important;
-        max-width: 850px !important;
-        
-        height: auto !important;
-        min-height: 980px !important;
-        
-        /* TURUNKAN CARD */
-        margin: 45px auto 50px !important;
-        
-        padding: 40px 40px 80px !important;
-        
-        box-sizing: border-box !important;
-        overflow: visible !important;
-        
-        transform: none !important;
-        scale: 1 !important;
-        
-        animation: none !important;
-        transition: none !important;
-    }
+#game-card {
+    width: 92% !important;
+    max-width: 850px !important;
+    
+    height: auto !important;
+    min-height: 1060px !important;
+    
+    /* ATAS KEKAL */
+    margin: 45px auto 50px !important;
+    
+    padding: 40px 40px 80px !important;
+    
+    box-sizing: border-box !important;
+    overflow: visible !important;
+    
+    transform: none !important;
+    scale: 1 !important;
+    
+    animation: none !important;
+    transition: none !important;
+}
     
     
     /* ===== TAJUK ANIMALS CROSSWORD ===== */
@@ -329,83 +329,84 @@ body {
     }
     
     
-    /* ===== CROSSWORD BOX PAD ===== */
+/* ===== CROSSWORD BOX PAD ===== */
+
+#crossword-grid {
+    width: 100% !important;
+    max-width: 720px !important;
     
-    #crossword-grid {
-        width: 100% !important;
-        max-width: 720px !important;
-        
-        height: 680px !important;
-        min-height: 680px !important;
-        max-height: none !important;
-        
-        margin: 22px auto 14px !important;
-        
-        box-sizing: border-box !important;
-        overflow: hidden !important;
-        
-        transform: none !important;
-        scale: 1 !important;
-        animation: none !important;
-        transition: none !important;
-    }
+    height: 680px !important;
+    min-height: 680px !important;
+    max-height: none !important;
     
+    margin: 22px auto 14px !important;
     
-    /* ===== PETAK CROSSWORD BESAR ===== */
+    box-sizing: border-box !important;
+    overflow: hidden !important;
     
-    #crossword-grid button {
-        width: var(--cell-size, 38px) !important;
-        height: var(--cell-size, 38px) !important;
-        
-        min-width: 0 !important;
-        min-height: 0 !important;
-        
-        font-size: var(--cell-font-size, 24px) !important;
-        font-weight: 700 !important;
-        
-        box-sizing: border-box !important;
-        
-        transform: none !important;
-        scale: 1 !important;
-        
-        animation: none !important;
-        transition: none !important;
-    }
+    transform: none !important;
+    scale: 1 !important;
+    animation: none !important;
+    transition: none !important;
+}
+
+
+/* ===== PETAK CROSSWORD BESAR ===== */
+
+#crossword-grid button {
+    width: var(--cell-size, 42px) !important;
+    height: var(--cell-size, 42px) !important;
     
+    min-width: 0 !important;
+    min-height: 0 !important;
     
-    /* ===== KEYBOARD PAD ===== */
+    font-size: var(--cell-font-size, 28px) !important;
+    font-weight: 700 !important;
     
-    #answers {
-        width: 100% !important;
-        max-width: 650px !important;
-        
-        margin: 10px auto 0 !important;
-        
-        gap: 6px !important;
-        
-        box-sizing: border-box !important;
-    }
+    box-sizing: border-box !important;
     
-    #answers button {
-        width: 100% !important;
-        
-        height: 54px !important;
-        min-height: 54px !important;
-        max-height: 54px !important;
-        
-        font-size: 23px !important;
-        font-weight: 700 !important;
-        
-        padding: 0 !important;
-        
-        box-sizing: border-box !important;
-        
-        transform: none !important;
-        scale: 1 !important;
-        
-        animation: none !important;
-        transition: none !important;
-    }
+    transform: none !important;
+    scale: 1 !important;
+    
+    animation: none !important;
+    transition: none !important;
+}
+
+
+/* ===== KEYBOARD PAD ===== */
+
+#answers {
+    width: 100% !important;
+    max-width: 650px !important;
+    
+    margin: 10px auto 0 !important;
+    
+    gap: 6px !important;
+    
+    box-sizing: border-box !important;
+}
+
+
+#answers button {
+    width: 100% !important;
+    
+    height: 54px !important;
+    min-height: 54px !important;
+    max-height: 54px !important;
+    
+    font-size: 23px !important;
+    font-weight: 700 !important;
+    
+    padding: 0 !important;
+    
+    box-sizing: border-box !important;
+    
+    transform: none !important;
+    scale: 1 !important;
+    
+    animation: none !important;
+    transition: none !important;
+}
     
     
     /* ===== DELETE + BACK KEKAL ===== */
@@ -1676,7 +1677,7 @@ const cols = maxCol - minCol + 1;
 // Panjang = auto kecil supaya muat
 // ==============================
 
-const maxCellSize = 38;
+const maxCellSize = 42;
 const gapSize = 1;
 
 // Ruang dalam border crossword
@@ -1717,8 +1718,9 @@ grid.style.setProperty("--cell-size", `${cellSize}px`);
 // Font ikut saiz petak
 grid.style.setProperty(
     "--cell-font-size",
-    `${Math.max(12, Math.min(24, Math.floor(cellSize * 0.62)))}px`
+    `${Math.max(12, Math.min(28, Math.floor(cellSize * 0.62)))}px`
 );
+
 // =========================
 // TENTUKAN HURUF CLUE
 // =========================
