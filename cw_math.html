@@ -478,68 +478,69 @@ body {
   }
   
   
-  /* =============================================
-       PETAK MATH
-       CELL = 42px
-       BENTUK TETAP
-       ============================================= */
+/* =============================================
+   PETAK MATH
+   CELL = 42px
+   BENTUK TETAP
+   ============================================= */
+
+#crossword-grid .crossword-cell,
+#crossword-grid button {
+  width: 42px !important;
+  height: 42px !important;
   
-  #crossword-grid .crossword-cell,
-  #crossword-grid button {
-    width: 42px !important;
-    height: 42px !important;
-    
-    min-width: 42px !important;
-    min-height: 42px !important;
-    
-    max-width: 42px !important;
-    max-height: 42px !important;
-    
-    box-sizing: border-box !important;
-    
-    transform: none !important;
-    scale: 1 !important;
-  }
+  min-width: 42px !important;
+  min-height: 42px !important;
   
+  max-width: 42px !important;
+  max-height: 42px !important;
   
-  /* =============================================
-       ISI NOMBOR / SIMBOL DALAM PETAK
-       ============================================= */
+  box-sizing: border-box !important;
   
-  #crossword-grid .crossword-cell {
-    font-size: 26px !important;
-    line-height: 1 !important;
-    font-weight: 700 !important;
-    
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    
-    text-align: center !important;
-    
-    padding: 0 !important;
-    margin: 0 !important;
-    
-    color: #222 !important;
-    
-    box-sizing: border-box !important;
-  }
+  transform: none !important;
+  scale: 1 !important;
+}
+
+
+/* =============================================
+   ISI NOMBOR / SIMBOL DALAM PETAK
+   IKUT WARNA HURUF ANIMALS
+   ============================================= */
+
+#crossword-grid .crossword-cell {
+  font-size: 26px !important;
+  line-height: 1 !important;
+  font-weight: 700 !important;
   
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
   
-  /* =============================================
-       KEYBOARD
-       ============================================= */
+  text-align: center !important;
   
-  #answers {
-    width: 100% !important;
-    max-width: 650px !important;
-    
-    margin: 10px auto 0 !important;
-    
-    box-sizing: border-box !important;
-    
-    gap: 8px !important;
-  }
+  padding: 0 !important;
+  margin: 0 !important;
+  
+  color: #111 !important;
+  
+  box-sizing: border-box !important;
+}
+
+
+/* =============================================
+   KEYBOARD
+   ============================================= */
+
+#answers {
+  width: 100% !important;
+  max-width: 650px !important;
+  
+  margin: 10px auto 0 !important;
+  
+  box-sizing: border-box !important;
+  
+  gap: 8px !important;
+}
   
   
   /* BARIS NOMBOR */
@@ -629,7 +630,56 @@ body {
     transform: none !important;
     scale: 1 !important;
   }
-  
+ 
+     /* ===== LOGO PAD ===== */
+    
+    .he-bloom-logo,
+    .bottom-logo {
+        position: fixed !important;
+        
+        width: 60px !important;
+        height: 60px !important;
+        
+        right: 18px !important;
+        bottom: 18px !important;
+        
+        left: auto !important;
+        top: auto !important;
+        
+        margin: 0 !important;
+        
+        z-index: 99999 !important;
+        
+        transform: none !important;
+        scale: 1 !important;
+    }
+    
+#end-screen button {
+    width: 190px !important;
+    min-width: 190px !important;
+    height: 58px !important;
+    
+    padding: 0 !important;
+    
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    
+    text-align: center !important;
+    white-space: nowrap !important;
+    
+    font-size: 20px !important;
+    line-height: 1 !important;
+    
+    box-sizing: border-box !important;
+    
+    margin-left: auto !important;
+    margin-right: auto !important;
+    
+    transform: none !important;
+}
+}
+ 
 }
 
 
@@ -649,28 +699,29 @@ body {
     }
 
 
-    /* =============================================
-       GAME CARD PHONE
-       ============================================= */
+/* =============================================
+   GAME CARD PHONE
+   LEBIH PENDEK
+   ============================================= */
 
-    #game-card {
-        width: 96% !important;
-        max-width: 96% !important;
-
-        height: auto !important;
-        min-height: 800px !important;
-
-        margin: -15px auto 20px !important;
-
-        padding: 25px 10px 45px !important;
-
-        box-sizing: border-box !important;
-
-        overflow: visible !important;
-
-        transform: none !important;
-        scale: 1 !important;
-    }
+#game-card {
+  width: 96% !important;
+  max-width: 96% !important;
+  
+  height: auto !important;
+  min-height: 700px !important;
+  
+  margin: -15px auto 20px !important;
+  
+  padding: 20px 10px 25px !important;
+  
+  box-sizing: border-box !important;
+  
+  overflow: visible !important;
+  
+  transform: none !important;
+  scale: 1 !important;
+}
 
 
     /* =============================================
@@ -789,6 +840,44 @@ body {
         scale: 1 !important;
     }
 
+.he-bloom-logo,
+.bottom-logo {
+    position: fixed !important;
+    
+    width: 38px !important;
+    height: 38px !important;
+    
+    right: 8px !important;
+    bottom: -28px !important;
+    
+    left: auto !important;
+    top: auto !important;
+    
+    margin: 0 !important;
+    padding: 0 !important;
+    
+    z-index: 999999 !important;
+    
+    transform: none !important;
+    scale: 1 !important;
+    
+    pointer-events: none !important;
+}
+
+#feedback {
+    min-width: 0 !important;
+    width: 180px !important;       /* LEBAR */
+    min-height: 42px !important;   /* TINGGI */
+
+    padding: 9px 10px !important;
+
+    font-size: 16px !important;
+    line-height: 1 !important;
+
+    border-width: 3px !important;
+    border-radius: 18px !important;
+    box-sizing: border-box !important;
+}
 }
 
 
@@ -829,7 +918,81 @@ button:focus-visible {
 
     -webkit-tap-highlight-color: transparent !important;
 }
+} 
 
+/* =====================================================
+   UNIVERSAL BUTTON + TOUCH FIX
+   SEMUA DEVICE
+   PHONE + PAD + LANDSCAPE
+   ===================================================== */
+
+/* KAWASAN UTAMA */
+#game-card,
+#crossword-grid,
+#answers,
+#bottom-buttons {
+  pointer-events: auto !important;
+}
+
+/* KOTAK CROSSWORD */
+#crossword-grid .crossword-cell {
+  pointer-events: auto !important;
+  cursor: pointer !important;
+  touch-action: manipulation !important;
+}
+
+/* SEMUA BUTANG */
+button,
+button:active,
+button:focus,
+button:focus-visible,
+#answers button,
+#answers .letter-btn,
+#bottom-buttons button {
+  pointer-events: auto !important;
+  
+  cursor: pointer !important;
+  
+  touch-action: manipulation !important;
+  
+  -webkit-tap-highlight-color: transparent !important;
+  
+  user-select: none !important;
+  -webkit-user-select: none !important;
+  
+  position: relative !important;
+  z-index: 100 !important;
+}
+
+/* KEYBOARD */
+#answers {
+  position: relative !important;
+  z-index: 90 !important;
+}
+
+/* DELETE + BACK */
+#bottom-buttons {
+  position: relative !important;
+  z-index: 90 !important;
+}
+
+#delete-btn,
+#back-btn {
+  pointer-events: auto !important;
+  position: relative !important;
+  z-index: 101 !important;
+}
+
+/* JANGAN BENARKAN LOGO MENUTUP BUTANG */
+.he-bloom-logo,
+.bottom-logo {
+  pointer-events: none !important;
+}
+
+/* BACKGROUND TIDAK BOLEH MENGHALANG KLIK */
+.fixed.inset-0.pointer-events-none {
+  pointer-events: none !important;
+}
 
   </style>
 </head>
