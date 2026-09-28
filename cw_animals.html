@@ -307,7 +307,7 @@ body {
         min-height: 700px !important;
         
         /* TURUNKAN CARD - SUPAYA SEIMBANG */
-        margin: 90px auto 50px !important;
+        margin: 120px auto 50px !important;
         
         padding: 35px 40px 60px !important;
         
@@ -362,7 +362,9 @@ body {
     min-height: 0 !important;
     
     font-size: var(--cell-font-size, 28px) !important;
-    font-weight: 700 !important;
+    
+    /* JANGAN PAKSA BOLD DI SINI */
+    font-weight: 700;
     
     box-sizing: border-box !important;
     
@@ -466,166 +468,170 @@ body {
    ===================================================== */
 
 @media (max-width: 767px) {
-
+    
     html,
     body {
         width: 100% !important;
         min-width: 100% !important;
-
+        
         overflow-x: hidden !important;
         overflow-y: auto !important;
     }
-
+    
     body {
         padding: 6px !important;
-
+        
         box-sizing: border-box !important;
-
+        
         -webkit-text-size-adjust: 100% !important;
         text-size-adjust: 100% !important;
-
+        
         touch-action: pan-y !important;
     }
-
-
+    
+    
     /* ===== GAME CARD ===== */
-
+    
     #game-card {
         width: 96% !important;
         max-width: 96% !important;
-
+        
         height: auto !important;
         min-height: 0 !important;
-
-        margin: -25px auto 20px !important;
-
-        padding: 18px 12px 35px !important;
-
+        
+        /* TURUN/NAIK CARD */
+        margin: -15px auto 20px !important;
+        
+        /* KURANGKAN TINGGI CARD */
+        padding: 12px 10px 25px !important;
+        
         box-sizing: border-box !important;
-
+        
         border-radius: 28px !important;
-
+        
         overflow: visible !important;
-
+        
         transform: none !important;
         scale: 1 !important;
         animation: none !important;
     }
-
-
+    
+    
     /* ===== TAJUK 32px ===== */
-
+    
     #game-card .text-black {
         font-size: 32px !important;
         line-height: 1.1 !important;
     }
-
+    
     #game-card .text-xl {
         font-size: 20px !important;
     }
-
-
+    
+    
     /* ===== CROSSWORD BOX ===== */
-
+    
     #crossword-grid {
         width: 100% !important;
         max-width: 100% !important;
-
-        height: 450px !important;
-        min-height: 450px !important;
+        
+        /* KURANGKAN TINGGI GRID */
+        height: 400px !important;
+        min-height: 400px !important;
         max-height: none !important;
-
-        margin: 18px auto 8px !important;
-
+        
+        margin: 12px auto 6px !important;
+        
         box-sizing: border-box !important;
-
+        
         overflow: hidden !important;
-
+        
         transform: none !important;
         scale: 1 !important;
-
+        
         animation: none !important;
     }
-
-
+    
+    
     /* ===== PETAK ===== */
-
+    
     #crossword-grid button {
         width: var(--cell-size, 26px) !important;
         height: var(--cell-size, 26px) !important;
-
+        
         min-width: 0 !important;
         min-height: 0 !important;
-
+        
         font-size: var(--cell-font-size, 16px) !important;
-
+        
         box-sizing: border-box !important;
-
+        
         transform: none !important;
         scale: 1 !important;
     }
-
-
+    
+    
     /* ===== KEYBOARD ===== */
-
+    
     #answers {
         width: 100% !important;
         max-width: 100% !important;
-
+        
         margin: 5px auto 0 !important;
-
+        
         grid-template-columns:
             repeat(13, minmax(0, 1fr)) !important;
-
+        
         gap: 4px !important;
     }
-
+    
     #answers button {
         width: 100% !important;
-
+        
         height: 38px !important;
         min-height: 38px !important;
         max-height: 38px !important;
-
+        
         font-size: 12px !important;
-
+        
         padding: 0 !important;
-
+        
         transform: none !important;
         scale: 1 !important;
     }
-
-
+    
+    
     /* ===== DELETE + BACK ===== */
-
+    
     #bottom-buttons {
         margin-top: 12px !important;
-
+        
         display: flex !important;
         justify-content: center !important;
         align-items: center !important;
-
+        
         gap: 4px !important;
-
+        
         flex-wrap: nowrap !important;
     }
-
+    
     #bottom-buttons button {
         width: 100px !important;
         height: 46px !important;
-
+        
         font-size: 14px !important;
-
+        
         border-radius: 9px !important;
-
+        
         flex-shrink: 0 !important;
-
+        
         transform: none !important;
         scale: 1 !important;
     }
-
+    
+    
     /* ===== ANTI ZOOM ===== */
-
+    
     #game-card,
     #crossword-grid,
     #crossword-grid button,
@@ -636,7 +642,7 @@ body {
         transform: none !important;
         scale: 1 !important;
     }
-
+    
     button,
     button:active,
     button:focus,
@@ -644,37 +650,45 @@ body {
         transform: none !important;
         scale: 1 !important;
         zoom: 1 !important;
-
+        
         animation: none !important;
         transition: none !important;
-
+        
         -webkit-tap-highlight-color: transparent !important;
-
+        
         touch-action: manipulation !important;
     }
 }
 
-/* ===== LOGO HP — BETUL-BETUL BAWAH KANAN SKRIN ===== */
+
+/* ===== LOGO HP — KANAN BAWAH SKRIN ===== */
+
 @media (max-width: 767px) {
     
     .he-bloom-logo,
     .bottom-logo {
         position: fixed !important;
         
-        width: 42px !important;
-        height: 42px !important;
+        width: 36px !important;
+        height: 36px !important;
         
-        right: 18px !important;
-        bottom: 18px !important;
+        max-width: 36px !important;
+        max-height: 36px !important;
+        
+        right: 16px !important;
+        bottom: 16px !important;
         
         left: auto !important;
         top: auto !important;
         
         margin: 0 !important;
+        
         transform: none !important;
         scale: 1 !important;
         
         z-index: 99999 !important;
+        
+        pointer-events: none !important;
     }
 }
 
