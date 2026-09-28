@@ -710,7 +710,7 @@ body {
   max-width: 96% !important;
   
   height: auto !important;
-  min-height: 700px !important;
+  min-height: 600px !important;
   
   margin: -15px auto 20px !important;
   
@@ -935,14 +935,23 @@ button:focus-visible {
   pointer-events: auto !important;
 }
 
-/* KOTAK CROSSWORD */
+
+/* =====================================================
+   KOTAK CROSSWORD
+   ===================================================== */
+
 #crossword-grid .crossword-cell {
   pointer-events: auto !important;
   cursor: pointer !important;
   touch-action: manipulation !important;
 }
 
-/* SEMUA BUTANG */
+
+/* =====================================================
+   SEMUA BUTANG GAME
+   JANGAN GANGGU MUSIC
+   ===================================================== */
+
 button,
 button:active,
 button:focus,
@@ -961,17 +970,35 @@ button:focus-visible,
   user-select: none !important;
   -webkit-user-select: none !important;
   
-  position: relative !important;
   z-index: 100 !important;
 }
 
-/* KEYBOARD */
+
+/* =====================================================
+   WARNA TULISAN SISTEM
+   IKUT SISTEM ANIMALS
+   ===================================================== */
+
+#crossword-grid .crossword-cell[data-fixed="true"] {
+  color: #333 !important;
+  font-weight: 500 !important;
+}
+
+
+/* =====================================================
+   KEYBOARD
+   ===================================================== */
+
 #answers {
   position: relative !important;
   z-index: 90 !important;
 }
 
-/* DELETE + BACK */
+
+/* =====================================================
+   DELETE + BACK
+   ===================================================== */
+
 #bottom-buttons {
   position: relative !important;
   z-index: 90 !important;
@@ -984,13 +1011,11 @@ button:focus-visible,
   z-index: 101 !important;
 }
 
-/* JANGAN BENARKAN LOGO MENUTUP BUTANG */
-.he-bloom-logo,
-.bottom-logo {
-  pointer-events: none !important;
-}
 
-/* BACKGROUND TIDAK BOLEH MENGHALANG KLIK */
+/* =====================================================
+   BACKGROUND TIDAK BOLEH HALANG KLIK
+   ===================================================== */
+
 .fixed.inset-0.pointer-events-none {
   pointer-events: none !important;
 }
