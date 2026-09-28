@@ -290,9 +290,9 @@ body {
     }
     
     body {
-        touch-action: pan-y !important;
-        -webkit-overflow-scrolling: touch !important;
-    }
+    touch-action: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+}
     
     
     /* ===== GAME CARD PAD ===== */
@@ -615,7 +615,7 @@ body {
         min-height: 38px !important;
         max-height: 38px !important;
         
-        font-size: 12px !important;
+        font-size: 15px !important;
         
         padding: 0 !important;
         
@@ -656,11 +656,11 @@ body {
 .bottom-logo {
     position: fixed !important;
     
-    width: 36px !important;
-    height: 36px !important;
+    width: 38px !important;
+    height: 38px !important;
     
     right: 8px !important;
-    bottom: -20px !important;
+    bottom: -28px !important;
     
     left: auto !important;
     top: auto !important;
@@ -676,7 +676,16 @@ body {
     pointer-events: none !important;
 }
 
-
+#feedback {
+    min-width: 0 !important;
+    width: auto !important;
+    padding: 8px 18px !important;
+    font-size: 14px !important;
+    line-height: 1 !important;
+    border-width: 3px !important;
+    border-radius: 18px !important;
+    box-sizing: border-box !important;
+}
     
     /* ===== ANTI ZOOM ===== */
     
@@ -704,7 +713,7 @@ body {
         
         -webkit-tap-highlight-color: transparent !important;
         
-        touch-action: manipulation !important;
+        touch-action: auto !important;
     }
 }
 
@@ -720,7 +729,7 @@ body {
     padding-right: 10px !important;
     
     /* NAIKKAN KOTAK END SCREEN */
-    transform: translateY(-90px) !important;
+    transform: translateY(-130px) !important;
     scale: 1 !important;
     
     align-items: flex-start !important;
@@ -769,7 +778,7 @@ body {
 /* ===== TEXT YOU COMPLETED ===== */
 
 #end-screen p {
-    font-size: 4px !important;
+    font-size: 3.5px !important;
     line-height: 1.2 !important;
     
     white-space: nowrap !important;
