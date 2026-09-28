@@ -428,7 +428,7 @@ body {
     height: auto !important;
     min-height: 700px !important;
     
-    margin: 120px auto 50px !important;
+    margin: 130px auto 50px !important;
     
     padding: 35px 40px 60px !important;
     
@@ -702,7 +702,7 @@ body {
 
 /* =============================================
    GAME CARD PHONE
-   LEBIH PENDEK
+   IKUT SAIZ ANIMALS
    ============================================= */
 
 #game-card {
@@ -710,11 +710,11 @@ body {
   max-width: 96% !important;
   
   height: auto !important;
-  min-height: 600px !important;
+  min-height: 0 !important;
   
   margin: -15px auto 20px !important;
   
-  padding: 20px 10px 25px !important;
+  padding: 25px 10px 45px !important;
   
   box-sizing: border-box !important;
   
@@ -722,31 +722,36 @@ body {
   
   transform: none !important;
   scale: 1 !important;
+  
+  animation: none !important;
 }
 
 
-    /* =============================================
-       GRID PHONE
-       ============================================= */
+/* =============================================
+   GRID PHONE
+   KURANGKAN TINGGI SUPAYA CARD TIDAK TERLALU TINGGI
+   ============================================= */
 
-    #crossword-grid {
-        width: 100% !important;
-        max-width: 100% !important;
-
-        height: 520px !important;
-        min-height: 520px !important;
-
-        max-height: none !important;
-
-        margin: 12px auto 6px !important;
-
-        box-sizing: border-box !important;
-
-        overflow: hidden !important;
-
-        transform: none !important;
-        scale: 1 !important;
-    }
+#crossword-grid {
+  width: 100% !important;
+  max-width: 100% !important;
+  
+  height: 400px !important;
+  min-height: 400px !important;
+  
+  max-height: none !important;
+  
+  margin: 12px auto 6px !important;
+  
+  box-sizing: border-box !important;
+  
+  overflow: hidden !important;
+  
+  transform: none !important;
+  scale: 1 !important;
+  
+  animation: none !important;
+}
 
 
     /* =============================================
@@ -1978,6 +1983,10 @@ cell.dataset.correct = correctValue || "";
 if (displayValue !== undefined && displayValue !== null && displayValue !== "") {
   cell.textContent = displayValue;
   cell.dataset.fixed = "true";
+  
+  cell.style.color = "#333";
+cell.style.fontWeight = "500";
+
 } else {
   cell.textContent = "";
   cell.dataset.fixed = "false";
