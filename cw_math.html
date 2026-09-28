@@ -479,21 +479,21 @@ body {
   
   
 /* =============================================
-   PETAK MATH
-   CELL = 42px
+   PETAK MATH PAD
+   CELL = 48px
    BENTUK TETAP
    ============================================= */
 
 #crossword-grid .crossword-cell,
 #crossword-grid button {
-  width: 42px !important;
-  height: 42px !important;
+  width: 48px !important;
+  height: 48px !important;
   
-  min-width: 42px !important;
-  min-height: 42px !important;
+  min-width: 48px !important;
+  min-height: 48px !important;
   
-  max-width: 42px !important;
-  max-height: 42px !important;
+  max-width: 48px !important;
+  max-height: 48px !important;
   
   box-sizing: border-box !important;
   
@@ -504,7 +504,7 @@ body {
 
 /* =============================================
    ISI NOMBOR / SIMBOL DALAM PETAK
-   SISTEM = HITAM BIASA
+   SISTEM = IKUT CW ANIMALS
    PEMAIN = HITAM BOLD
    ============================================= */
 
@@ -521,10 +521,28 @@ body {
   padding: 0 !important;
   margin: 0 !important;
   
+  box-sizing: border-box !important;
+}
+
+
+/* =============================================
+   SISTEM SEDIAKAN
+   IKUT CW ANIMALS
+   ============================================= */
+
+#crossword-grid .crossword-cell[data-fixed="true"] {
   color: #333 !important;
   font-weight: 500 !important;
-  
-  box-sizing: border-box !important;
+}
+
+
+/* =============================================
+   PEMAIN ISI
+   ============================================= */
+
+#crossword-grid .crossword-cell[data-fixed="false"] {
+  color: #111 !important;
+  font-weight: 700 !important;
 }
 
 
@@ -586,7 +604,7 @@ body {
     padding: 0 !important;
     margin: 0 !important;
     
-    font-size: 23px !important;
+    font-size: 25px !important;
     font-weight: 700 !important;
     
     line-height: 1 !important;
@@ -712,7 +730,7 @@ body {
   height: auto !important;
   min-height: 0 !important;
   
-  margin: -15px auto 20px !important;
+  margin: 90px auto 20px !important;
   
   padding: 25px 10px 45px !important;
   
