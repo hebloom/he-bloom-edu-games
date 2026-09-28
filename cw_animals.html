@@ -510,7 +510,7 @@ body {
         -webkit-text-size-adjust: 100% !important;
         text-size-adjust: 100% !important;
         
-        touch-action: pan-y !important;
+        touch-action: auto !important;
     }
     
     
@@ -652,29 +652,29 @@ body {
         scale: 1 !important;
     }
     
-        .he-bloom-logo,
-    .bottom-logo {
-        position: fixed !important;
-        
-        width: 36px !important;
-        height: 36px !important;
-        
-        right: 8px !important;
-        bottom: 8px !important;
-        
-        left: auto !important;
-        top: auto !important;
-        
-        margin: 0 !important;
-        padding: 0 !important;
-        
-        z-index: 999999 !important;
-        
-        transform: none !important;
-        scale: 1 !important;
-        
-        pointer-events: none !important;
-    }
+.he-bloom-logo,
+.bottom-logo {
+    position: fixed !important;
+    
+    width: 36px !important;
+    height: 36px !important;
+    
+    right: 8px !important;
+    bottom: -20px !important;
+    
+    left: auto !important;
+    top: auto !important;
+    
+    margin: 0 !important;
+    padding: 0 !important;
+    
+    z-index: 999999 !important;
+    
+    transform: none !important;
+    scale: 1 !important;
+    
+    pointer-events: none !important;
+}
 
 
     
@@ -719,17 +719,14 @@ body {
     padding-left: 10px !important;
     padding-right: 10px !important;
     
-    /* NAIKKAN SEMUA END SCREEN */
-    align-items: flex-start !important;
-    padding-top: 50% !important;
-}
-
-
-/* ===== KOTAK LUAR ===== */
-
-#end-screen {
+    /* NAIKKAN KOTAK END SCREEN */
     transform: translateY(-90px) !important;
     scale: 1 !important;
+    
+    align-items: flex-start !important;
+    
+    /* BUANG padding-top 50% */
+    padding-top: 0 !important;
 }
 
 
