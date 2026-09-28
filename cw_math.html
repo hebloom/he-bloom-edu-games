@@ -480,20 +480,21 @@ body {
   
 /* =============================================
    PETAK MATH PAD
-   CELL = 48px
-   BENTUK TETAP
+   CELL = 52px
+   LEBIH LEBAR + LEBIH TINGGI
+   BENTUK CROSSWORD TETAP
    ============================================= */
 
 #crossword-grid .crossword-cell,
 #crossword-grid button {
-  width: 48px !important;
-  height: 48px !important;
+  width: 52px !important;
+  height: 52px !important;
   
-  min-width: 48px !important;
-  min-height: 48px !important;
+  min-width: 52px !important;
+  min-height: 52px !important;
   
-  max-width: 48px !important;
-  max-height: 48px !important;
+  max-width: 52px !important;
+  max-height: 52px !important;
   
   box-sizing: border-box !important;
   
@@ -509,7 +510,7 @@ body {
    ============================================= */
 
 #crossword-grid .crossword-cell {
-  font-size: 26px !important;
+  font-size: 28px !important;
   line-height: 1 !important;
   
   display: flex !important;
@@ -730,7 +731,7 @@ body {
   height: auto !important;
   min-height: 0 !important;
   
-  margin: 90px auto 20px !important;
+  margin: 45px auto 20px !important;
   
   padding: 25px 10px 45px !important;
   
@@ -1418,7 +1419,7 @@ function renderCrosswordGrid() {
        SAIZ PETAK
     ================================ */
 
-    const CELL = window.innerWidth >= 768 ? 42 : 32;
+    const CELL = window.innerWidth >= 768 ? 52 : 32;
 
 
     /* ==========================================
