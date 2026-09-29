@@ -26,7 +26,7 @@ import {
 
 import {
     saveSudokuResult
-} from "./sudokuLeaderboard.js";
+} from "./sudokuleaderboard.js";
 
 
 const firebaseConfig = {
@@ -1375,13 +1375,13 @@ if (!timeUp && score === 10) {
     const saveResult = () => {
         
         const name =
-    sessionStorage.getItem("sudokuSelectedPlayer") ||
     localStorage.getItem("sudokuSelectedPlayer") ||
+    sessionStorage.getItem("sudokuSelectedPlayer") ||
     window.firebasePlayerName;
 
 const uid =
-    sessionStorage.getItem("sudokuSelectedPlayerUid") ||
     localStorage.getItem("sudokuSelectedPlayerUid") ||
+    sessionStorage.getItem("sudokuSelectedPlayerUid") ||
     window.firebasePlayerUid;
         
         console.log(
