@@ -1356,10 +1356,14 @@ if (!timeUp && score === 10) {
     const saveResult = () => {
         
         const name =
-            window.firebasePlayerName;
-        
-        const uid =
-            window.firebasePlayerUid;
+    sessionStorage.getItem("sudokuSelectedPlayer") ||
+    localStorage.getItem("sudokuSelectedPlayer") ||
+    window.firebasePlayerName;
+
+const uid =
+    sessionStorage.getItem("sudokuSelectedPlayerUid") ||
+    localStorage.getItem("sudokuSelectedPlayerUid") ||
+    window.firebasePlayerUid;
         
         console.log(
             "Cuba simpan leaderboard:",

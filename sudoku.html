@@ -139,54 +139,222 @@ h1{
     flex-shrink:0;
 }
 
-/* =========================
-   PLAYER NAME
-========================= */
 
-.player-name-box{
+/* =====================================================
+   PLAYER MANAGER
+   1 AKAUN = MAKSIMUM 4 NAMA
+   SEMBUNYI SEHINGGA "SELECT / MANAGE PLAYERS" DITEKAN
+===================================================== */
+
+.player-manager-box{
     display:none;
 
-    background:rgba(255,255,255,.96);
+    width:90% !important;
+    max-width:600px !important;
 
-    padding:18px;
+    margin:15px auto 25px auto !important;
+    padding:18px !important;
 
-    margin:15px 0;
+    background:rgba(255,255,255,.92) !important;
 
-    border-radius:20px;
-
-    border:3px solid #ff9dcc;
+    border:3px solid #ff9dcc !important;
+    border-radius:20px !important;
 
     box-shadow:
         0 5px 15px rgba(120,160,210,.15),
-        0 0 12px rgba(255,130,190,.20);
+        0 0 12px rgba(255,130,190,.20) !important;
 
-    text-align:center;
+    box-sizing:border-box !important;
+
+    text-align:center !important;
 }
 
-.player-name-box input{
-    width:100%;
-    padding:14px;
 
-    border:2px solid #e2e2e2;
-    border-radius:14px;
+/* TAJUK DALAM PLAYER BOX */
 
-    font-size:18px;
-    outline:none;
+.player-manager-title{
+    text-align:center !important;
 
-    margin-bottom:12px;
+    color:#5b32d6 !important;
+
+    font-size:20px !important;
+    font-weight:800 !important;
+
+    margin:0 0 12px 0 !important;
 }
 
-.player-name-box input:focus{
-    border-color:#ff9dcc;
+
+/* PEMAIN YANG SEDANG DIPILIH */
+
+.selected-player-display{
+    width:100% !important;
+
+    box-sizing:border-box !important;
+
+    padding:10px !important;
+
+    margin:0 0 12px 0 !important;
+
+    background:#fff0f6 !important;
+
+    border:2px solid #ff9dcc !important;
+    border-radius:14px !important;
+
+    color:#d92f87 !important;
+
+    font-size:17px !important;
+    font-weight:700 !important;
+
+    text-align:center !important;
 }
 
-.save-name-btn{
-    width:70%;
-    margin:auto;
 
-    padding:12px;
+/* SENARAI PEMAIN */
 
-    border-radius:16px;
+.player-list{
+    display:grid !important;
+
+    gap:8px !important;
+
+    width:100% !important;
+
+    margin:0 0 12px 0 !important;
+}
+
+
+/* SETIAP PEMAIN */
+
+.player-choice{
+    width:100% !important;
+
+    box-sizing:border-box !important;
+
+    display:flex !important;
+
+    align-items:center !important;
+    justify-content:space-between !important;
+
+    gap:8px !important;
+
+    padding:10px 12px !important;
+
+    background:#ffffff !important;
+
+    border:2px solid #eeeeee !important;
+
+    border-radius:14px !important;
+
+    cursor:pointer !important;
+}
+
+
+/* PEMAIN YANG DIPILIH */
+
+.player-choice.selected{
+    border-color:#f06b91 !important;
+
+    background:#fff0f6 !important;
+}
+
+
+/* NAMA PEMAIN */
+
+.player-choice-name{
+    flex:1 !important;
+
+    font-size:17px !important;
+
+    font-weight:700 !important;
+
+    color:#4b5563 !important;
+
+    text-align:left !important;
+
+    cursor:pointer !important;
+}
+
+
+.player-choice.selected .player-choice-name{
+    color:#d94675 !important;
+}
+
+
+/* BUTANG PADAM */
+
+.delete-player{
+    flex-shrink:0 !important;
+
+    border:none !important;
+
+    background:#ef4444 !important;
+
+    color:#ffffff !important;
+
+    border-radius:9px !important;
+
+    padding:6px 9px !important;
+
+    font-size:13px !important;
+
+    font-weight:700 !important;
+
+    cursor:pointer !important;
+}
+
+
+/* BARIS TAMBAH PEMAIN */
+
+.add-player-row{
+    display:flex !important;
+
+    align-items:center !important;
+
+    gap:8px !important;
+
+    width:100% !important;
+}
+
+
+/* INPUT NAMA */
+
+#newPlayerName{
+    flex:1 !important;
+
+    min-width:0 !important;
+
+    height:44px !important;
+
+    padding:0 12px !important;
+
+    box-sizing:border-box !important;
+
+    border:2px solid #ff9dcc !important;
+
+    border-radius:13px !important;
+
+    font-size:16px !important;
+
+    outline:none !important;
+}
+
+
+#newPlayerName:focus{
+    border-color:#f06b91 !important;
+}
+
+
+/* BUTANG ADD */
+
+.add-player-row button{
+    width:95px !important;
+
+    height:44px !important;
+
+    flex-shrink:0 !important;
+
+    border:2px solid #ffffff !important;
+
+    border-radius:13px !important;
 
     background:
         linear-gradient(
@@ -194,55 +362,59 @@ h1{
             #ffb6dc 0%,
             #ff79b8 50%,
             #ff5ca8 100%
-        );
+        ) !important;
 
-    color:white;
+    color:#ffffff !important;
 
-    font-size:19px;
-    font-weight:bold;
+    font-size:14px !important;
 
-    border:3px solid #ffffff;
+    font-weight:700 !important;
 
-    cursor:pointer;
+    cursor:pointer !important;
 }
 
-.player-name-display{
-    text-align:center;
 
-    color:#5b32d6;
+/* STATUS 0/4 */
 
-    font-size:18px;
-    font-weight:bold;
+.player-status{
+    text-align:center !important;
 
-    margin:10px 0;
+    margin:9px 0 0 0 !important;
+
+    color:#6b7280 !important;
+
+    font-size:13px !important;
 }
+
 
 /* =========================
    SET PLAYER NAME LINK
 ========================= */
 
 .set-player-name {
-    width: max-content;
-    margin: 50px auto -20px auto;
-    
-    color: #000000;
-    
-    font-size: 20px;
-    font-weight: bold;
-    
-    text-decoration: underline;
-    text-decoration-color: #ff4f9a;
-    text-decoration-thickness: 3px;
-    text-underline-offset: 5px;
-    
-    cursor: pointer;
-    
-    transition: .2s;
+    width:max-content;
+
+    margin:50px auto -20px auto;
+
+    color:#000000;
+
+    font-size:20px;
+    font-weight:bold;
+
+    text-decoration:underline;
+    text-decoration-color:#ff4f9a;
+    text-decoration-thickness:3px;
+    text-underline-offset:5px;
+
+    cursor:pointer;
+
+    transition:.2s;
 }
 
 .set-player-name:active {
-    transform: scale(.95);
+    transform:scale(.95);
 }
+
 
 /* =========================
    LEVEL BUTTON
@@ -312,142 +484,236 @@ h1{
 ========================= */
 
 .he-bloom-logo {
-    position: fixed;
-    
-    width: 80px;
-    height: 80px;
-    
-    right: 18px;
-    bottom: 18px;
-    
-    z-index: 9999;
-    
-    opacity: .95;
-    
-    pointer-events: none;
+    position:fixed;
+
+    width:80px;
+    height:80px;
+
+    right:18px;
+    bottom:18px;
+
+    z-index:9999;
+
+    opacity:.95;
+
+    pointer-events:none;
 }
+
 
 /* Sembunyikan logo semasa masukkan nama */
+
 body.keyboard-open .he-bloom-logo {
-    display: none;
+    display:none;
 }
 
-@media (min-width: 768px) {
-    .he-bloom-logo {
-        width: 120px;
-        height: 120px;
-    }
-} 
 
-/* =========================
+/* =====================================================
    KHAS PAD / TABLET SAHAJA
-   BESAR + TENGAH
-========================= */
+===================================================== */
 
-@media (min-width: 768px) {
-    
+@media (min-width:768px) {
+
     /* CONTAINER UTAMA */
+
     .container {
-        width: 100% !important;
-        max-width: 700px !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
-        
-        /* TURUNKAN SEDIKIT */
-        transform: translateY(110px);
-        transform-origin: top center;
+        width:100% !important;
+        max-width:700px !important;
+
+        margin-left:auto !important;
+        margin-right:auto !important;
+
+        transform:translateY(110px);
+        transform-origin:top center;
     }
-    
-    /* =========================
-       TAJUK
-    ========================= */
-    
+
+
+    /* TAJUK */
+
     h1 {
-        font-size: 60px !important;
-        text-align: center !important;
-        margin-bottom: 54px !important;
+        font-size:60px !important;
+
+        text-align:center !important;
+
+        margin-bottom:54px !important;
     }
-    
-    /* =========================
-       PLAYER NAME + LEADERBOARD
-    ========================= */
-    
+
+
+    /* PLAYER NAME + LEADERBOARD */
+
     .set-player-name {
-        margin-left: auto !important;
-        margin-right: auto !important;
-        
-        font-size: 27px !important;
-        text-align: center !important;
+        margin-left:auto !important;
+        margin-right:auto !important;
+
+        font-size:27px !important;
+
+        text-align:center !important;
     }
-    
-    /* =========================
-       SUBTAJUK
-    ========================= */
-    
+
+
+    /* PLAYER MANAGER PAD */
+
+    .player-manager-box{
+        width:82% !important;
+
+        max-width:600px !important;
+
+        margin:18px auto 28px auto !important;
+
+        padding:22px !important;
+    }
+
+
+    .player-manager-title{
+        font-size:24px !important;
+    }
+
+
+    .selected-player-display{
+        font-size:20px !important;
+    }
+
+
+    .player-choice-name{
+        font-size:20px !important;
+    }
+
+
+    .delete-player{
+        font-size:14px !important;
+
+        padding:7px 11px !important;
+    }
+
+
+    #newPlayerName{
+        height:48px !important;
+
+        font-size:18px !important;
+    }
+
+
+    .add-player-row button{
+        width:110px !important;
+
+        height:48px !important;
+
+        font-size:16px !important;
+    }
+
+
+    /* SUBTAJUK */
+
     .subtitle {
-        font-size: 35px !important;
-        text-align: center !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
+        font-size:35px !important;
+
+        text-align:center !important;
+
+        margin-left:auto !important;
+        margin-right:auto !important;
     }
-    
-.card {
-    width: 82% !important;
-    min-height: 95px !important;
-    
-    padding: 16px 20px !important;
-    margin: 14px auto !important;
-    
-    font-size: 27px !important;
-    
-    /* TEKS MENU KE SEBELAH */
-    justify-content: flex-start !important;
-    text-align: left !important;
-    
-    gap: 18px !important;
-}
-    
+
+
+    /* MENU CARD */
+
+    .card {
+        width:82% !important;
+
+        min-height:95px !important;
+
+        padding:16px 20px !important;
+
+        margin:14px auto !important;
+
+        font-size:27px !important;
+
+        justify-content:flex-start !important;
+
+        text-align:left !important;
+
+        gap:18px !important;
+    }
+
+
     /* IKON */
+
     .card .icon {
-        width: 68px !important;
-        min-width: 68px !important;
-        
-        font-size: 40px !important;
+        width:68px !important;
+
+        min-width:68px !important;
+
+        font-size:40px !important;
     }
-    
-    /* =========================
-       EASY / MEDIUM / HARD
-    ========================= */
-    
+
+
+    /* EASY / MEDIUM / HARD */
+
     .level-btn {
-        width: 56% !important;
-        min-height: 95px !important;
-        
-        margin: 14px auto !important;
-        padding: 16px 20px !important;
-        
-        font-size: 27px !important;
-        
-        justify-content: center !important;
-        text-align: center !important;
+        width:56% !important;
+
+        min-height:95px !important;
+
+        margin:14px auto !important;
+
+        padding:16px 20px !important;
+
+        font-size:27px !important;
+
+        justify-content:center !important;
+
+        text-align:center !important;
     }
-    
-    /* =========================
-       BUTANG BACK
-    ========================= */
-    
+
+
+    /* BUTANG BACK */
+
     .back {
-        width: 34% !important;
-        
-        margin: 40px auto !important;
-        
-        font-size: 27px !important;
-        
-        justify-content: center !important;
-        text-align: center !important;
+        width:34% !important;
+
+        margin:40px auto !important;
+
+        font-size:27px !important;
+
+        justify-content:center !important;
+
+        text-align:center !important;
+    }
+
+
+    /* LOGO PAD */
+
+    .he-bloom-logo {
+        width:120px;
+        height:120px;
     }
 }
 
+
+/* =====================================================
+   PHONE
+===================================================== */
+
+@media (max-width:767px) {
+
+    .player-manager-box{
+        width:90% !important;
+
+        margin:15px auto 25px auto !important;
+
+        padding:16px !important;
+    }
+
+    .player-manager-title{
+        font-size:19px !important;
+    }
+
+    .selected-player-display{
+        font-size:16px !important;
+    }
+
+    .player-choice-name{
+        font-size:16px !important;
+    }
+}
 
 </style>
 </head>
@@ -463,38 +729,66 @@ body.keyboard-open .he-bloom-logo {
 <!-- PLAYER NAME -->
 
 <div class="set-player-name"
-     onclick="togglePlayerName()">
+     onclick="togglePlayerManager()">
 
-    👤 Set Player Name
+    👤 Select / Manage Players
 
 </div>
+
 <div class="set-player-name"
      onclick="location.href='sudoku_leaderboard.html'">
 
     🏆 Sudoku Leaderboard
 
 </div>
-  <p class="subtitle">Choose Sudoku Type</p>
-  
-<div id="playerNameBox"
-     class="player-name-box">
 
-    <input
-        type="text"
-        id="playerNameInput"
-        placeholder="Enter your player name"
-        maxlength="20">
+<p class="subtitle">Choose Sudoku Type</p>
 
-    <button
-        class="save-name-btn"
-        onclick="savePlayerName()">
 
-        Save
+<!-- PLAYER MANAGER -->
 
-    </button>
+<div id="playerManagerBox"
+     class="player-manager-box">
 
-    <p id="playerNameMessage"
-       class="player-name-display"></p>
+    <div class="player-manager-title">
+        👤 SELECT PLAYER TO PLAY
+    </div>
+
+    <div id="selectedPlayerDisplay"
+         class="selected-player-display">
+
+        No player selected
+
+    </div>
+
+    <div id="playerList"
+         class="player-list">
+    </div>
+
+    <div class="add-player-row">
+
+        <input
+            type="text"
+            id="newPlayerName"
+            maxlength="20"
+            placeholder="Enter player name">
+
+        <button
+            type="button"
+            onclick="addNewPlayer()">
+
+            ＋ ADD
+
+        </button>
+
+    </div>
+
+    <div id="playerStatus"
+         class="player-status">
+
+        0/4 players used
+
+    </div>
 
 </div>
 
@@ -679,199 +973,599 @@ function toggleColoursSudokuMenu(){
         : "none";
 }
 
-async function togglePlayerName() {
-    
+
+/* =====================================================
+   PLAYER MANAGER
+   1 ACCOUNT = MAXIMUM 4 PLAYERS
+===================================================== */
+
+async function getPlayerNamesForAccount(uid){
+
+    if (!uid) return [];
+
+    const playerRef =
+        window.sudokuDoc(
+            window.sudokuDB,
+            "sudokuPlayerNames",
+            uid
+        );
+
+    const playerSnap =
+        await window.sudokuGetDoc(playerRef);
+
+    if (!playerSnap.exists()){
+        return [];
+    }
+
+    const names =
+        playerSnap.data().names || [];
+
+    return Array.isArray(names)
+        ? names.slice(0, 4)
+        : [];
+}
+
+
+/* =====================================================
+   OPEN / CLOSE PLAYER MANAGER
+===================================================== */
+
+async function togglePlayerManager(){
+
     const box =
-        document.getElementById("playerNameBox");
-    
+        document.getElementById(
+            "playerManagerBox"
+        );
+
     if (!box) return;
-    
-    
-    // Tunggu Firebase kenal pasti account
+
+
     const user =
         await window.sudokuAuthReady;
-    
-    
-    // Belum login
-    if (!user) {
-        
+
+
+    if (!user){
+
         alert("Please login first.");
-        
+
         return;
     }
-    
-    
+
+
+    if (box.style.display === "block"){
+
+        box.style.display = "none";
+
+        return;
+    }
+
+
+    box.style.display = "block";
+
+    await renderPlayerList();
+}
+
+
+/* =====================================================
+   DISPLAY PLAYER LIST
+===================================================== */
+
+async function renderPlayerList(){
+
+    const user =
+        await window.sudokuAuthReady;
+
+    if (!user) return;
+
+
+    const list =
+        document.getElementById(
+            "playerList"
+        );
+
+    const status =
+        document.getElementById(
+            "playerStatus"
+        );
+
+    const selectedDisplay =
+        document.getElementById(
+            "selectedPlayerDisplay"
+        );
+
+
+    if (
+        !list ||
+        !status ||
+        !selectedDisplay
+    ){
+
+        return;
+    }
+
+
+    const names =
+        await getPlayerNamesForAccount(
+            user.uid
+        );
+
+
+    /* =================================================
+       AMBIL PEMAIN YANG SEDANG DIPILIH
+    ================================================= */
+
+    const selected =
+        sessionStorage.getItem(
+            "sudokuSelectedPlayer"
+        ) ||
+        localStorage.getItem(
+            "sudokuSelectedPlayer"
+        );
+
+
+    list.innerHTML = "";
+
+
+    names.forEach((name) => {
+
+        const row =
+            document.createElement("div");
+
+        row.className =
+            "player-choice";
+
+
+        /* =============================================
+           PLAYER SEDANG DIPILIH
+        ============================================= */
+
+        if (
+            selected &&
+            selected.toLowerCase() ===
+            name.toLowerCase()
+        ){
+
+            row.classList.add(
+                "selected"
+            );
+
+            selectedDisplay.textContent =
+                "🎮 Selected Player: " +
+                name;
+        }
+
+
+        /* =============================================
+           NAMA PEMAIN
+        ============================================= */
+
+        const nameSpan =
+            document.createElement("span");
+
+        nameSpan.className =
+            "player-choice-name";
+
+        nameSpan.textContent =
+            name;
+
+        nameSpan.onclick =
+            () => selectPlayer(name);
+
+
+        /* =============================================
+           DELETE BUTTON
+        ============================================= */
+
+        const deleteBtn =
+            document.createElement("button");
+
+        deleteBtn.type = "button";
+
+        deleteBtn.className =
+            "delete-player";
+
+        deleteBtn.textContent =
+            "🗑️ DELETE";
+
+
+        deleteBtn.onclick =
+            (event) => {
+
+                event.stopPropagation();
+
+                deletePlayer(name);
+            };
+
+
+        row.appendChild(nameSpan);
+
+        row.appendChild(deleteBtn);
+
+        list.appendChild(row);
+
+    });
+
+
+    /* =============================================
+       TIADA PLAYER
+    ============================================= */
+
+    if (names.length === 0){
+
+        list.innerHTML = `
+            <div class="player-choice">
+
+                <span class="player-choice-name">
+                    No players added yet
+                </span>
+
+            </div>
+        `;
+
+        selectedDisplay.textContent =
+            "No player selected";
+    }
+
+
+    /* =============================================
+       STATUS 0/4, 1/4, 2/4...
+    ============================================= */
+
+    status.textContent =
+        names.length +
+        "/4 players used";
+}
+
+
+/* =====================================================
+   SELECT PLAYER
+===================================================== */
+
+async function selectPlayer(name){
+
+    const user =
+        await window.sudokuAuthReady;
+
+
+    if (!user){
+
+        alert("Please login first.");
+
+        return;
+    }
+
+
+    /* =================================================
+       SIMPAN NAMA PEMAIN YANG DIPILIH
+       SESSION + LOCAL STORAGE
+    ================================================= */
+
+    sessionStorage.setItem(
+        "sudokuSelectedPlayer",
+        name
+    );
+
+    localStorage.setItem(
+        "sudokuSelectedPlayer",
+        name
+    );
+
+
+    /* =================================================
+       SIMPAN UID AKAUN
+    ================================================= */
+
+    sessionStorage.setItem(
+        "sudokuSelectedPlayerUid",
+        user.uid
+    );
+
+    localStorage.setItem(
+        "sudokuSelectedPlayerUid",
+        user.uid
+    );
+
+
+    /* =================================================
+       REFRESH PAPARAN
+    ================================================= */
+
+    await renderPlayerList();
+}
+
+
+/* =====================================================
+   ADD NEW PLAYER
+   1 ACCOUNT = MAXIMUM 4 PLAYERS
+===================================================== */
+
+async function addNewPlayer() {
+
+    const input =
+        document.getElementById(
+            "newPlayerName"
+        );
+
+
+    if (!input) {
+
+        alert(
+            "Player name input not found."
+        );
+
+        return;
+    }
+
+
+    const name =
+        input.value.trim();
+
+
+    /* =================================================
+       NAMA KOSONG
+    ================================================= */
+
+    if (!name) {
+
+        alert(
+            "Please enter a player name."
+        );
+
+        return;
+    }
+
+
+    /* =================================================
+       MAXIMUM 20 CHARACTERS
+    ================================================= */
+
+    if (name.length > 20) {
+
+        alert(
+            "Player name can have a maximum of 20 characters."
+        );
+
+        return;
+    }
+
+
     try {
-        
+
+        /* =============================================
+           WAIT FOR LOGIN
+        ============================================= */
+
+        const user =
+            await window.sudokuAuthReady;
+
+
+        if (!user) {
+
+            alert(
+                "Please login first."
+            );
+
+            return;
+        }
+
+
+        /* =============================================
+           FIRESTORE REFERENCE
+        ============================================= */
+
         const playerRef =
             window.sudokuDoc(
                 window.sudokuDB,
-                "sudokuPlayers",
+                "sudokuPlayerNames",
                 user.uid
             );
-        
-        
+
+
         const playerSnap =
-            await window.sudokuGetDoc(playerRef);
-        
-        
-        // =========================
-        // SUDAH ADA PLAYER NAME
-        // =========================
-        
-        if (playerSnap.exists()) {
-            
-            const savedName =
-                playerSnap.data().name;
-            
-            alert(
-                "Your Player Name is already set:\n\n" +
-                savedName +
-                "\n\nThis account can only use one Player Name."
+            await window.sudokuGetDoc(
+                playerRef
             );
-            
+
+
+        /* =============================================
+           GET EXISTING NAMES
+        ============================================= */
+
+        let names = [];
+
+
+        if (playerSnap.exists()) {
+
+            names =
+                playerSnap.data().names || [];
+
+        }
+
+
+        if (!Array.isArray(names)) {
+
+            names = [];
+
+        }
+
+
+        names =
+            names.filter(
+                name => name
+            );
+
+
+        /* =============================================
+           CHECK DUPLICATE
+        ============================================= */
+
+        const alreadyExists =
+            names.some(
+                existingName =>
+
+                String(existingName)
+                    .trim()
+                    .toLowerCase() ===
+                name.toLowerCase()
+            );
+
+
+        if (alreadyExists) {
+
+            alert(
+                "This player name already exists."
+            );
+
             return;
         }
-        
-        
-        // =========================
-        // BELUM ADA NAMA
-        // =========================
-        
-        if (box.style.display === "block") {
-            
-            box.style.display = "none";
-            
-        } else {
-            
-            box.style.display = "block";
-            
-            document
-                .getElementById("playerNameInput")
-                .value = "";
-            
-            document
-                .getElementById("playerNameInput")
-                .focus();
+
+
+        /* =============================================
+           MAXIMUM 4 PLAYERS
+        ============================================= */
+
+        if (names.length >= 4) {
+
+            alert(
+                "One account can have a maximum of 4 players."
+            );
+
+            return;
         }
-        
-        
+
+
+        /* =============================================
+           ADD NEW NAME
+        ============================================= */
+
+        names.push(name);
+
+
+        await window.sudokuSetDoc(
+            playerRef,
+            {
+                uid: user.uid,
+                names: names
+            }
+        );
+
+
+        /* =============================================
+           CLEAR INPUT
+        ============================================= */
+
+        input.value = "";
+
+
+        /* =============================================
+           REFRESH PLAYER LIST
+        ============================================= */
+
+        await renderPlayerList();
+
+
     } catch (error) {
-        
-        console.error(error);
-        
+
+        console.error(
+            "ADD PLAYER ERROR:",
+            error
+        );
+
+
         alert(
-            "Unable to check Player Name.\n\n" +
+            "Unable to add player.\n\n" +
             error.message
         );
-        
+
     }
 }
-async function savePlayerName() {
-    
-    const input =
-        document.getElementById("playerNameInput");
-    
-    if (!input) return;
-    
-    const name = input.value.trim();
-    
-    if (name === "") {
-        alert("Please enter your player name.");
-        return;
-    }
-    
-    // Tunggu Firebase kenal pasti account yang sedang login
-    const user = await window.sudokuAuthReady;
-    
-    if (!user) {
-        alert("Please login first.");
-        return;
-    }
-    
-    const uid = user.uid;
-    
-    try {
-        
-        // Semak sama ada account ini sudah mempunyai nama
-        const playerRef =
-    window.sudokuDoc(
-        window.sudokuDB,
-        "sudokuPlayers",
-        uid
+
+/* =====================================================
+   DELETE PLAYER
+===================================================== */
+
+async function deletePlayer(name){
+
+    const confirmDelete =
+        confirm(
+            'Delete player "' +
+            name +
+            '"?'
+        );
+
+
+    if (!confirmDelete) return;
+
+
+    const user =
+        await window.sudokuAuthReady;
+
+
+    if (!user) return;
+
+
+    const playerRef =
+        window.sudokuDoc(
+            window.sudokuDB,
+            "sudokuPlayerNames",
+            user.uid
+        );
+
+
+    const playerSnap =
+        await window.sudokuGetDoc(
+            playerRef
+        );
+
+
+    if (!playerSnap.exists()) return;
+
+
+    let names =
+        playerSnap.data().names || [];
+
+
+    names =
+        names.filter(
+            existingName =>
+                existingName !== name
+        );
+
+
+    await window.sudokuSetDoc(
+        playerRef,
+        {
+            uid: user.uid,
+            names: names
+        }
     );
 
-const playerSnap =
-    await window.sudokuGetDoc(playerRef);
-        
-        
-        // =========================
-        // ACCOUNT SUDAH ADA NAMA
-        // =========================
-        
-        if (playerSnap.exists()) {
-            
-            const savedName =
-                playerSnap.data().name;
-            
-            alert(
-                "This account already has a Player Name:\n\n" +
-                savedName
-            );
-            
-            input.value = "";
-            
-            return;
-        }
-        
-        
-        // =========================
-        // SIMPAN NAMA PERTAMA
-        // =========================
-        
-        await window.sudokuSetDoc(playerRef, {
-            
-            uid: uid,
-            
-            name: name,
-            
-            createdAt: new Date().toISOString()
-            
-        });
-        
-        
-        // Simpan juga untuk kegunaan Sudoku
-        localStorage.setItem(
-            "sudokuPlayerName",
-            name
+
+    const selected =
+        sessionStorage.getItem(
+            "sudokuSelectedPlayer"
         );
-        
-        
-        input.value = "";
-        
-        document
-            .getElementById("playerNameBox")
-            .style.display = "none";
-        
-        
-        alert(
-            "Player name saved!\n\n" +
-            "Your Player Name is: " +
-            name
+
+
+    if (
+        selected &&
+        selected.toLowerCase() ===
+        name.toLowerCase()
+    ){
+
+        sessionStorage.removeItem(
+            "sudokuSelectedPlayer"
         );
-        
-        
-    } catch (error) {
-        
-        console.error(error);
-        
-        alert(
-            "Unable to save Player Name.\n\n" +
-            error.message
+
+        sessionStorage.removeItem(
+            "sudokuSelectedPlayerUid"
         );
-        
     }
+
+
+    await renderPlayerList();
 }
+
 </script>
 
 </body>
