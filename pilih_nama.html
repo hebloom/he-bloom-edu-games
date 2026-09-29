@@ -380,7 +380,10 @@ right: 18px;
 ========================================= */
 @media (max-width: 760px) and (max-height: 750px) {
     
-    /* GAME CARD - NAIK SEDIKIT & TENGAH */
+    /* =================================
+       GAME CARD
+       NAIK SIKIT & KEKAL TENGAH
+    ================================= */
     #game-card {
         width: 94% !important;
         max-width: 94% !important;
@@ -388,7 +391,8 @@ right: 18px;
         min-height: auto !important;
         height: auto !important;
         
-        margin: -35px auto 0 !important;
+        /* NAIK 20px DARIPADA SEBELUM */
+        margin: -55px auto 0 !important;
         
         padding: 18px 10px 35px !important;
         
@@ -396,9 +400,10 @@ right: 18px;
         zoom: 1 !important;
     }
     
+    
     /* =================================
        SOALAN + MARKAH
-       PAKSA SEMUA SEBARIS
+       KECIL & SATU BARIS
     ================================= */
     #game-card>div.flex.items-center.justify-between {
         
@@ -407,7 +412,7 @@ right: 18px;
         
         margin: 0 auto 18px !important;
         
-        padding: 9px 12px !important;
+        padding: 10px 12px !important;
         
         box-sizing: border-box !important;
         
@@ -416,20 +421,24 @@ right: 18px;
         align-items: center !important;
         justify-content: space-between !important;
         
-        gap: 5px !important;
+        gap: 8px !important;
         
         transform: none !important;
         
         white-space: nowrap !important;
     }
     
-    /* KUMPULAN SOALAN & KUMPULAN MARKAH */
+    
+    /* =================================
+       KUMPULAN SOALAN & MARKAH
+    ================================= */
     #game-card>div.flex.items-center.justify-between>div {
+        
         display: flex !important;
         flex-direction: row !important;
         align-items: center !important;
         
-        gap: 3px !important;
+        gap: 4px !important;
         
         white-space: nowrap !important;
         flex-wrap: nowrap !important;
@@ -437,8 +446,19 @@ right: 18px;
         min-width: 0 !important;
     }
     
-    /* TULISAN SOALAN / MARKAH */
-    #game-card>div.flex.items-center.justify-between span {
+    
+    /* =================================
+       SOALAN + 1/40
+       PAKSA SEBARIS
+    ================================= */
+    #game-card>div.flex.items-center.justify-between>div:first-child>span {
+        
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        
+        gap: 3px !important;
+        
         font-size: 15px !important;
         line-height: 1 !important;
         
@@ -446,23 +466,60 @@ right: 18px;
         flex-wrap: nowrap !important;
     }
     
-    /* NOMBOR 1/40 & 0 */
-    #q-num,
-    #score-val {
-        font-size: 15px !important;
-        white-space: nowrap !important;
-    }
-    
-    /* ICON BUKU */
-    #game-card>div.flex.items-center.justify-between .text-3xl {
-        font-size: 18px !important;
-        line-height: 1 !important;
-    }
     
     /* =================================
-       GAMBAR - KEKAL KEMAS
+       MARKAH + 0
+       PAKSA SEBARIS
+    ================================= */
+    #game-card>div.flex.items-center.justify-between>div:last-child>span {
+        
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        
+        gap: 3px !important;
+        
+        font-size: 15px !important;
+        line-height: 1 !important;
+        
+        white-space: nowrap !important;
+        flex-wrap: nowrap !important;
+    }
+    
+    
+    /* =================================
+       NOMBOR 1/40 & 0
+    ================================= */
+    #q-num,
+    #score-val {
+        
+        font-size: 15px !important;
+        
+        white-space: nowrap !important;
+        
+        display: inline-block !important;
+    }
+    
+    
+    /* =================================
+       ICON BUKU
+    ================================= */
+    #game-card>div.flex.items-center.justify-between .text-3xl {
+        
+        font-size: 17px !important;
+        
+        line-height: 1 !important;
+        
+        flex-shrink: 0 !important;
+    }
+    
+    
+    /* =================================
+       GAMBAR
+       KEKAL KEMAS
     ================================= */
     #question-image {
+        
         width: 170px !important;
         height: 170px !important;
         
@@ -470,16 +527,22 @@ right: 18px;
         margin-right: auto !important;
     }
     
-    /* JARAK SOALAN KE GAMBAR */
+    
+    /* =================================
+       JARAK SOALAN KE GAMBAR
+    ================================= */
     #question-area {
+        
         margin-top: 25px !important;
         margin-bottom: 20px !important;
     }
+    
     
     /* =================================
        BUTANG JAWAPAN
     ================================= */
     #answers {
+        
         width: 100% !important;
         max-width: 100% !important;
         
@@ -488,7 +551,12 @@ right: 18px;
         margin-top: 15px !important;
     }
     
+    
+    /* =================================
+       SAIZ BUTANG JAWAPAN
+    ================================= */
     #answers .btn-answer {
+        
         width: 100% !important;
         
         height: 78px !important;
