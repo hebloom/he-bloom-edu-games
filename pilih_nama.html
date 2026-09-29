@@ -374,55 +374,131 @@ right: 18px;
     }
 
 /* =========================================
-   G1 - PHONE KECIL
-   NAIKKAN GAME CARD + KECILKAN SCORE BOX
+   PHONE KECIL - G1
+   0 - 760px + TINGGI MAKSIMUM 750px
+   TIDAK GANGGU PAD 768px
 ========================================= */
-
-@media (max-width: 767px) and (max-height: 750px) {
+@media (max-width: 760px) and (max-height: 750px) {
     
-    /* GAME CARD G1 - NAIK */
+    /* GAME CARD - NAIK SEDIKIT & TENGAH */
     #game-card {
-        position: relative !important;
-        top: -45px !important;
+        width: 94% !important;
+        max-width: 94% !important;
+        
+        min-height: auto !important;
+        height: auto !important;
+        
+        margin: -35px auto 0 !important;
+        
+        padding: 18px 10px 35px !important;
+        
         transform: none !important;
+        zoom: 1 !important;
     }
     
-    /* KOTAK SOALAN + MARKAH */
+    /* =================================
+       SOALAN + MARKAH
+       PAKSA SEMUA SEBARIS
+    ================================= */
     #game-card>div.flex.items-center.justify-between {
-        width: 120% !important;
+        
+        width: 100% !important;
+        max-width: 100% !important;
+        
+        margin: 0 auto 18px !important;
+        
+        padding: 9px 12px !important;
+        
+        box-sizing: border-box !important;
         
         display: flex !important;
-        flex-wrap: nowrap !important;
+        flex-direction: row !important;
         align-items: center !important;
         justify-content: space-between !important;
         
-        padding: 8px 12px !important;
-        margin-bottom: 10px !important;
+        gap: 5px !important;
+        
+        transform: none !important;
         
         white-space: nowrap !important;
-        box-sizing: border-box !important;
     }
     
-    /* SEMUA TEKS SCORE */
+    /* KUMPULAN SOALAN & KUMPULAN MARKAH */
+    #game-card>div.flex.items-center.justify-between>div {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        
+        gap: 3px !important;
+        
+        white-space: nowrap !important;
+        flex-wrap: nowrap !important;
+        
+        min-width: 0 !important;
+    }
+    
+    /* TULISAN SOALAN / MARKAH */
     #game-card>div.flex.items-center.justify-between span {
         font-size: 15px !important;
         line-height: 1 !important;
+        
+        white-space: nowrap !important;
+        flex-wrap: nowrap !important;
+    }
+    
+    /* NOMBOR 1/40 & 0 */
+    #q-num,
+    #score-val {
+        font-size: 15px !important;
         white-space: nowrap !important;
     }
     
     /* ICON BUKU */
-    #game-card>div.flex.items-center.justify-between span.text-3xl {
-        font-size: 20px !important;
-        flex-shrink: 0 !important;
+    #game-card>div.flex.items-center.justify-between .text-3xl {
+        font-size: 18px !important;
+        line-height: 1 !important;
     }
     
-    /* BAHAGIAN SOALAN & MARKAH */
-    #game-card>div.flex.items-center.justify-between>div {
-        display: flex !important;
-        align-items: center !important;
-        white-space: nowrap !important;
-        gap: 4px !important;
+    /* =================================
+       GAMBAR - KEKAL KEMAS
+    ================================= */
+    #question-image {
+        width: 170px !important;
+        height: 170px !important;
+        
+        margin-left: auto !important;
+        margin-right: auto !important;
     }
+    
+    /* JARAK SOALAN KE GAMBAR */
+    #question-area {
+        margin-top: 25px !important;
+        margin-bottom: 20px !important;
+    }
+    
+    /* =================================
+       BUTANG JAWAPAN
+    ================================= */
+    #answers {
+        width: 100% !important;
+        max-width: 100% !important;
+        
+        gap: 14px !important;
+        
+        margin-top: 15px !important;
+    }
+    
+    #answers .btn-answer {
+        width: 100% !important;
+        
+        height: 78px !important;
+        min-height: 78px !important;
+        
+        font-size: 24px !important;
+        
+        padding: 8px !important;
+    }
+    
 }
 </style>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js" type="text/javascript"></script>
