@@ -95,10 +95,17 @@ export async function saveSudokuResult(
   
   
   const existing =
-    players.find(
-      player =>
-      player.uid === uid
-    );
+  players.find(
+    player =>
+    player &&
+    player.uid === uid &&
+    String(player.name)
+    .trim()
+    .toLowerCase() ===
+    String(name)
+    .trim()
+    .toLowerCase()
+  );
   
   
   /* PEMAIN BARU */
