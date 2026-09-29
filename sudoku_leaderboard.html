@@ -1062,6 +1062,12 @@ function selectLevel(level){
    504 saat = 08:24
 */
 
+/* =========================
+   SIMPAN KEPUTUSAN SUDOKU
+   1 AKAUN = MAKSIMUM 4 PLAYER
+   SETIAP NAMA PLAYER = REKOD BERASINGAN
+========================= */
+
 async function saveSudokuResult(
     name,
     game,
@@ -1069,37 +1075,37 @@ async function saveSudokuResult(
     timeSeconds,
     uid
 ) {
-    
+
     if (!name || !uid) {
         return;
     }
-    
+
     if (
         !["numbers", "colours"].includes(game)
     ) {
         return;
     }
-    
+
     if (
         !["easy", "medium", "hard"].includes(level)
     ) {
         return;
     }
-    
+
     const seconds = Number(timeSeconds);
-    
+
     if (
         !Number.isFinite(seconds) ||
         seconds <= 0
     ) {
         return;
     }
-    
-    
+
+
     // =========================
     // FIREBASE
     // =========================
-    
+
     const {
         initializeApp,
         getApps,
@@ -1107,7 +1113,8 @@ async function saveSudokuResult(
     } = await import(
         "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js"
     );
-    
+
+
     const {
         getFirestore,
         doc,
@@ -1116,138 +1123,162 @@ async function saveSudokuResult(
     } = await import(
         "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js"
     );
-    
-    
+
+
     const firebaseConfig = {
-        apiKey: "AIzaSyB0crUiSYBTxye5nHDOYJ8I7dNAv-mLO7g",
-        authDomain: "he-bloom-edu-games.firebaseapp.com",
-        projectId: "he-bloom-edu-games",
-        storageBucket: "he-bloom-edu-games.firebasestorage.app",
-        messagingSenderId: "629319143905",
-        appId: "1:629319143905:web:2a989f47e473c4ad7302a0"
+
+        apiKey:
+            "AIzaSyB0crUiSYBTxye5nHDOYJ8I7dNAv-mLO7g",
+
+        authDomain:
+            "he-bloom-edu-games.firebaseapp.com",
+
+        projectId:
+            "he-bloom-edu-games",
+
+        storageBucket:
+            "he-bloom-edu-games.firebasestorage.app",
+
+        messagingSenderId:
+            "629319143905",
+
+        appId:
+            "1:629319143905:web:2a989f47e473c4ad7302a0"
+
     };
-    
-    
+
+
     const app =
-        getApps().length ?
-        getApp() :
-        initializeApp(firebaseConfig);
-    
-    
+        getApps().length
+            ? getApp()
+            : initializeApp(firebaseConfig);
+
+
     const db =
         getFirestore(app);
-    
-    
+
+
     const key =
         `${game}_${level}`;
-    
-    
+
+
     const leaderboardRef =
         doc(
             db,
             "sudokuLeaderboard",
             key
         );
-    
-    
+
+
     const leaderboardSnap =
         await getDoc(
             leaderboardRef
         );
-    
-    
+
+
     let players = [];
-    
-    
+
+
     if (leaderboardSnap.exists()) {
-        
+
         players =
             leaderboardSnap.data().players || [];
-        
+
     }
-    
-    
+
+
     // =========================
-    // CARI PEMAIN BERDASARKAN UID
+    // CARI PLAYER
+    // UID + NAMA PLAYER
     // =========================
-    
+
     const existing =
         players.find(
             player =>
-            player &&
-            player.uid === uid
+                player &&
+                player.uid === uid &&
+                String(player.name)
+                    .trim()
+                    .toLowerCase() ===
+                String(name)
+                    .trim()
+                    .toLowerCase()
         );
-    
-    
+
+
     // =========================
-    // PEMAIN BARU
+    // PLAYER BARU
     // =========================
-    
+
     if (!existing) {
-        
+
         players.push({
-            
+
             uid: uid,
+
             name: name,
+
             time: seconds
-            
+
         });
-        
+
     }
-    
-    
+
+
     // =========================
-    // PEMAIN LAMA
+    // PLAYER SAMA
+    // SIMPAN MASA TERPANTAS
     // =========================
-    
+
     else {
-        
+
         existing.name = name;
-        
+
+
         if (
             seconds <
             Number(existing.time)
         ) {
-            
+
             existing.time =
                 seconds;
-            
+
         }
-        
+
     }
-    
-    
+
+
     // =========================
     // SUSUN MASA TERPANTAS
     // =========================
-    
+
     players.sort(
         (a, b) =>
-        Number(a.time) -
-        Number(b.time)
+            Number(a.time) -
+            Number(b.time)
     );
-    
-    
+
+
     // =========================
-    // SIMPAN TOP 50 SAHAJA
+    // TOP 50
     // =========================
-    
+
     players =
         players.slice(0, 50);
-    
-    
+
+
     // =========================
     // SIMPAN KE FIRESTORE
     // =========================
-    
+
     await setDoc(
         leaderboardRef,
         {
             players: players
         }
     );
-    
-    
+
+
     console.log(
         "TOP 50 Firebase leaderboard disimpan:",
         name,
@@ -1255,7 +1286,8 @@ async function saveSudokuResult(
         level,
         seconds
     );
-    
+
+
     renderLeaderboard();
 
 }
