@@ -366,46 +366,56 @@ body {
   /* =================================
    SOALAN + MARKAH
    ================================= */
-  #game-card>div.flex.items-center.justify-between {
-    width: 100% !important;
-    max-width: none !important;
-    
-    padding: 20px 32px !important;
-    
-    font-size: 15px !important;
-    
-    position: relative !important;
-    top: -22px !important;
-    
-    
-    /* BETULKAN KEDUDUKAN */
-    left: auto !important;
-    right: auto !important;
-    transform: none !important;
-    
-    margin-left: auto !important;
-    margin-right: auto !important;
-    
-    box-sizing: border-box !important;
-  }
+#game-card>div.flex.items-center.justify-between {
+  width: calc(100% + 40px) !important;
+  max-width: none !important;
   
-  #game-card>div.flex.items-center.justify-between span {
-    font-size: 12px !important;
-  }
+  padding: 10px 12px !important;
   
-  /* PANJANGKAN KOTAK SOALAN KIRI + KANAN */
+  font-size: 15px !important;
+  
+  position: relative !important;
+  top: -26px !important;
+  
+  left: auto !important;
+  right: auto !important;
+  transform: none !important;
+  
+  margin-left: -20px !important;
+  margin-right: -20px !important;
+  
+  box-sizing: border-box !important;
+}
+
+#game-card>div.flex.items-center.justify-between span {
+  font-size: 12px !important;
+}
+
+/* =================================
+   KOTAK AYAT SOALAN
+   PANJANG KIRI + KANAN
+================================= */
+#game-card .question-box {
+  width: calc(100% + 40px) !important;
+  margin-left: -20px !important;
+  margin-right: -20px !important;
+  box-sizing: border-box !important;
+} 
+  
+/* PANJANGKAN KOTAK SOALAN KIRI + KANAN */
 #game-card>div.flex.items-center.justify-between {
   width: calc(100% + 40px) !important;
   margin-left: -20px !important;
   margin-right: -20px !important;
 }
+
 /* =================================
    4 BUTANG JAWAPAN
-   SUSUN 4 BARIS KE BAWAH
+   PANJANG KIRI + KANAN
 ================================= */
 #answers {
-  width: 100% !important;
-  max-width: 700px !important;
+  width: calc(100% + 40px) !important;
+  max-width: none !important;
   
   display: grid !important;
   grid-template-columns: 1fr !important;
@@ -413,8 +423,8 @@ body {
   gap: 8px !important;
   
   margin-top: 28px !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
+  margin-left: -20px !important;
+  margin-right: -20px !important;
 }
 
 #answers .btn-answer {
@@ -423,14 +433,13 @@ body {
   height: 50px !important;
   min-height: 50px !important;
   
-  padding: 12px 30px !important;
+  padding: 12px 20px !important;
   
   font-size: 16px !important;
   
   box-sizing: border-box !important;
-}
 }  
-  
+} 
 
     </style>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js" type="text/javascript"></script>
