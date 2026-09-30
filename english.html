@@ -285,12 +285,9 @@ h1 {
 
 /* =========================================
    HP KECIL G1
-   LEBAR MAKSIMUM 620px
-   TINGGI MAKSIMUM 750px
    ========================================= */
 @media (max-width: 620px) and (max-height: 750px) {
     
-    /* KECILKAN MENU G1 SUPAYA LEBIH MACAM G2 */
     .container {
         width: 94% !important;
         max-width: 360px !important;
@@ -301,9 +298,10 @@ h1 {
         transform-origin: top center !important;
     }
     
-    /* PANJANGKAN SEMUA BUTANG MENU SAHAJA */
-    .container>button:not(#back) {
+    /* PANJANGKAN BUTANG MENU */
+    .container button:not(#back) {
         width: calc(100% + 20px) !important;
+        margin-left: -10px !important;
     }
 
 
