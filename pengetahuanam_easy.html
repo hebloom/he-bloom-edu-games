@@ -370,12 +370,12 @@ body {
     width: 100% !important;
     max-width: none !important;
     
-    padding: 6px 26px !important;
+    padding: 24px 24px !important;
     
     font-size: 15px !important;
     
     position: relative !important;
-    top: -18px !important;
+    top: -22px !important;
     
     
     /* BETULKAN KEDUDUKAN */
@@ -392,6 +392,13 @@ body {
   #game-card>div.flex.items-center.justify-between span {
     font-size: 12px !important;
   }
+  
+  /* PANJANGKAN KOTAK SOALAN KIRI + KANAN */
+#game-card>div.flex.items-center.justify-between {
+  width: calc(100% + 40px) !important;
+  margin-left: -20px !important;
+  margin-right: -20px !important;
+}
 /* =================================
    4 BUTANG JAWAPAN
    SUSUN 4 BARIS KE BAWAH
@@ -403,7 +410,7 @@ body {
   display: grid !important;
   grid-template-columns: 1fr !important;
   
-  gap: 10px !important;
+  gap: 8px !important;
   
   margin-top: 28px !important;
   margin-left: auto !important;
@@ -413,12 +420,12 @@ body {
 #answers .btn-answer {
   width: 100% !important;
   
-  height: 40px !important;
-  min-height: 40px !important;
+  height: 50px !important;
+  min-height: 50px !important;
   
-  padding: 8px 10px !important;
+  padding: 12px 20px !important;
   
-  font-size: 10px !important;
+  font-size: 16px !important;
   
   box-sizing: border-box !important;
 }
