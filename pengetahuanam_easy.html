@@ -369,48 +369,41 @@ body {
    CUMA SAIZ 12px
    ================================================= */
     
-    #game-card>div.flex.items-center.justify-between {
-      width: 100% !important;
-      max-width: none !important;
-      
-      padding: 7px 23px !important;
-      
-      font-size: 15px !important;
-    }
+ #game-card>div.flex.items-center.justify-between {
+  width: calc(100% + 80px) !important;
+  max-width: none !important;
+  
+  margin-left: auto !important;
+margin-right: auto !important;
+  
+  padding: 7px 23px !important;
+  
+  font-size: 15px !important;
+}
+
+#game-card>div.flex.items-center.justify-between span {
+  font-size: 15px !important;
+}
     
-    #game-card>div.flex.items-center.justify-between span {
-      font-size: 15px !important;
-    }
+#sentenceBox {
+  width: calc(100% + 40px) !important;
+  max-width: 740px !important;
+  
+  height: 140px !important;
+  
+  margin-left: auto !important;
+margin-right: auto !important;
+  
+  font-size: 34px !important;
+  font-weight: 700 !important;
+  line-height: 1.1 !important;
+  
+  box-sizing: border-box !important;
+}
     
-        /* =========================================
-       KOTAK TEMPAT ISI AYAT
-       TEXT DIBESARKAN
-       ========================================= */
-    
-    #sentenceBox {
-      width: 100% !important;
-      max-width: 700px !important;
-      
-      height: 140px !important;
-      
-      margin-left: auto !important;
-      margin-right: auto !important;
-      
-      /* BESARKAN TULISAN */
-      font-size: 34px !important;
-      font-weight: 700 !important;
-      line-height: 1.3 !important;
-      
-      box-sizing: border-box !important;
-    }
-    
-    /* =================================
-   4 BUTANG JAWAPAN
-   SUSUN 4 BARIS KE BAWAH
-================================= */
 #answers {
-  width: 100% !important;
-  max-width: 650px !important;
+  width: calc(100% + 50px) !important;
+  max-width: 700px !important;
   
   display: grid !important;
   grid-template-columns: 1fr !important;
@@ -433,7 +426,6 @@ body {
   font-size: 18px !important;
   
   box-sizing: border-box !important;
-}
 }
 
     </style>
