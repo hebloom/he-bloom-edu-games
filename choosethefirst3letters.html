@@ -400,7 +400,105 @@ right: 18px;
         position: relative !important;
         top: 30px !important;
     }
+} 
 
+/* =========================================
+   PHONE KECIL - G1
+   MAKSIMUM 600px
+   TINGGI MAKSIMUM 750px
+   TIDAK GANGGU PAD
+========================================= */
+@media (max-width: 620px) and (max-height: 750px) {
+    
+    #game-card {
+        width: 94% !important;
+        max-width: 94% !important;
+        
+        min-height: auto !important;
+        height: 60% !important;
+        
+        margin: 18px auto 0 !important;
+        
+        padding: 18px 10px 35px !important;
+        
+        transform: translateY(-30px) !important;
+        zoom: 1 !important;
+    }
+    
+    
+    /* =================================================
+   SOALAN + MARKAH - HP KECIL
+   STYLE SAMA MACAM PAD
+   CUMA SAIZ 12px
+   ================================================= */
+    
+    #game-card>div.flex.items-center.justify-between {
+        width: 100% !important;
+        max-width: none !important;
+        
+        padding: 7px 23px !important;
+        
+        font-size: 15px !important;
+    }
+    
+    #game-card>div.flex.items-center.justify-between span {
+        font-size: 15px !important;
+    }
+    
+    
+    /* =================================
+       GAMBAR
+       KEKAL
+    ================================= */
+    #question-image {
+        
+        width: 170px !important;
+        height: 170px !important;
+        
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    
+    
+    /* =================================
+       JARAK SOALAN KE GAMBAR
+    ================================= */
+    #question-area {
+        
+        margin-top: 25px !important;
+        margin-bottom: 20px !important;
+    }
+    
+    
+    /* =================================
+       BUTANG JAWAPAN
+    ================================= */
+    #answers {
+        
+        width: 100% !important;
+        max-width: 100% !important;
+        
+        gap: 14px !important;
+        
+        margin-top: 15px !important;
+    }
+    
+    /* =================================
+       SAIZ BUTANG
+    ================================= */
+    #answers .btn-answer {
+        
+        width: 100% !important;
+        
+        height: 65px !important;
+        min-height: 65px !important;
+        
+        font-size: 20px !important;
+        
+        padding: 8px !important;
+    }
+    
+}
 
     </style>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js" type="text/javascript"></script>
