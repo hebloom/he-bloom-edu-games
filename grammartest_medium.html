@@ -468,9 +468,6 @@ body {
 
         white-space: nowrap !important;
     }
-
-    
-    
 /* ==============================
        BACK
        ============================== */
@@ -484,7 +481,131 @@ body {
     position: relative !important;
     top: 45px !important;
 }
+}
 
+/* =========================================
+   PHONE - G1
+   767px KE BAWAH
+   768px KE ATAS = PAD
+   TIDAK GANGGU PAD
+========================================= */
+
+@media (max-width: 767px) {
+    
+    #game-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        
+        min-height: auto !important;
+        height: auto !important;
+        
+        margin: 18px auto 0 !important;
+        
+        padding: 18px 10px 35px !important;
+        
+        transform: translateY(-30px) !important;
+        zoom: 1 !important;
+        
+        box-sizing: border-box !important;
+    }
+    
+    /* =========================
+   SOALAN + MARKAH
+   TURUN MASUK DALAM CARD
+========================= */
+    #game-card>div.flex.items-center.justify-between {
+        width: 100% !important;
+        max-width: none !important;
+        
+        padding: 7px 23px !important;
+        
+        position: relative !important;
+        left: 50% !important;
+        
+        transform: translate(-50%, 2px) !important;
+        
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        
+        box-sizing: border-box !important;
+        
+        font-size: 14px !important;
+        
+        z-index: 30 !important;
+    }
+    
+    #game-card>div.flex.items-center.justify-between span {
+        font-size: 14px !important;
+    }
+    
+    
+    #question-area>div {
+        width: 100% !important;
+        max-width: none !important;
+        
+        height: 130px !important;
+        min-height: 130px !important;
+        
+        padding: 28px 10px !important;
+        
+        position: relative !important;
+        left: 50% !important;
+        
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        
+        transform: translate(-50%, 16px) !important;
+        
+        font-size: 34px !important;
+        font-weight: 400 !important;
+        line-height: 1.1 !important;
+        
+        box-sizing: border-box !important;
+    }
+    
+    
+    /* =========================
+     4 KOTAK JAWAPAN
+     BETUL-BETUL TENGAH
+  ========================= */
+    #answers {
+        width: 94% !important;
+        max-width: 100% !important;
+        
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        
+        gap: 5px !important;
+        
+        position: relative !important;
+        left: 50% !important;
+        
+        transform: translate(-50%, 12px) !important;
+        
+        margin-top: 28px !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        
+        box-sizing: border-box !important;
+    }
+    
+    
+    #answers .btn-answer {
+        width: 100% !important;
+        
+        height: 60px !important;
+        min-height: 60px !important;
+        
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        
+        padding: 8px 14px !important;
+        
+        font-size: 18px !important;
+        
+        box-sizing: border-box !important;
+    }
+    
 }
 
     </style>
