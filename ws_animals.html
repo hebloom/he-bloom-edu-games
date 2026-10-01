@@ -650,22 +650,33 @@ body {
         line-height: 1.1 !important;
     }
     
-    /* ===== KOTAK 12 x 12 ===== */
-    #word-search-grid {
-        margin-top: 14px !important;
-        padding: 6px !important;
-    }
+/* ===== KOTAK 12 x 12 ===== */
+#word-search-grid {
+    margin-top: 14px !important;
+    padding: 6px !important;
+    gap: 0px !important;
+}
+
+/* ===== HURUF ===== */
+#word-search-grid button {
+    width: 20px !important;
+    height: 20px !important;
     
-    /* ===== HURUF ===== */
-    #word-search-grid button {
-        width: 20px !important;
-        height: 20px !important;
-        
-        min-width: 20px !important;
-        min-height: 20px !important;
-        
-        font-size: 13px !important;
-    }
+    min-width: 20px !important;
+    min-height: 20px !important;
+    
+    font-size: 13px !important;
+}
+}
+/* =========================================
+   ANTI AUTO-ZOOM PADA HURUF 12x12
+   PINCH ZOOM SCREEN MASIH BOLEH
+   ========================================= */
+
+#word-search-grid button {
+    touch-action: manipulation !important;
+    -webkit-user-select: none !important;
+    user-select: none !important;
 }
     </style>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js" type="text/javascript"></script>
