@@ -1052,7 +1052,7 @@ button:focus-visible,
     height: 646px !important;
     min-height: 646px !important;
     
-    margin: -26px auto 20px !important;
+    margin: -40px auto 20px !important;
     
     padding: 18px 10px 40px !important;
     
@@ -1080,25 +1080,26 @@ button:focus-visible,
     box-sizing: border-box !important;
   }
   
-  /* ===== GRID MATH ===== */
-  /*
-       JANGAN tetapkan height 350px di sini.
-       Grid Math sudah mempunyai saiz petak sendiri.
-    */
-  #crossword-grid {
-    max-width: 100% !important;
-    box-sizing: border-box !important;
-    
-    overflow: visible !important;
-    
-    transform: none !important;
-    scale: 1 !important;
-  }
+/* ===== GRID MATH — MASUK SIKIT KIRI KANAN ===== */
+#crossword-grid {
+  width: 96% !important;
+  max-width: 96% !important;
+  
+  margin-left: auto !important;
+  margin-right: auto !important;
+  
+  box-sizing: border-box !important;
+  
+  overflow: visible !important;
+  
+  transform: none !important;
+  scale: 1 !important;
+}
   
   /* ===== KEYBOARD ===== */
   #answers {
     margin-top: 4px !important;
-    gap: 3px !important;
+    gap: 2px !important;
   }
   
   #answers button {
