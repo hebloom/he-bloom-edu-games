@@ -1038,49 +1038,30 @@ button:focus-visible,
 }
 } 
 
-/* =====================================================
-   HP KECIL — 620px + TINGGI 750px KE BAWAH
-   MATH CROSSWORD
-   ===================================================== */
-@media (max-width: 620px) and (max-height: 750px) {
+/* ===== GAME CARD — NAIK LAGI ===== */
+#game-card {
+  width: 94% !important;
+  max-width: 94% !important;
   
-  /* ===== GAME CARD — TINGGI + NAIK SIKIT ===== */
-  #game-card {
-    width: 94% !important;
-    max-width: 94% !important;
-    
-    height: 646px !important;
-    min-height: 646px !important;
-    
-    margin: -40px auto 20px !important;
-    
-    padding: 18px 10px 40px !important;
-    
-    box-sizing: border-box !important;
-    overflow: visible !important;
-    
-    transform: none !important;
-    scale: 1 !important;
-  }
+  height: 646px !important;
+  min-height: 646px !important;
   
-  /* ===== TAJUK MATH CROSSWORD ===== */
-  #game-card>.text-center.mb-2.-mt-2 {
-    margin-top: -22px !important;
-    margin-bottom: 2px !important;
-    
-    position: relative !important;
-    z-index: 5 !important;
-  }
+  margin: 0 auto 20px !important;
   
-  /* ===== KOTAK TAJUK ===== */
-  #game-card>.text-center.mb-2.-mt-2 .inline-flex {
-    padding: 7px 12px !important;
-    
-    max-width: 100% !important;
-    box-sizing: border-box !important;
-  }
+  padding: 18px 10px 40px !important;
   
-/* ===== GRID MATH — MASUK SIKIT KIRI KANAN ===== */
+  box-sizing: border-box !important;
+  overflow: visible !important;
+  
+  position: relative !important;
+  top: -40px !important;
+  
+  transform: none !important;
+  scale: 1 !important;
+}
+
+
+/* ===== GRID MATH — KECILKAN SEDIKIT ===== */
 #crossword-grid {
   width: 96% !important;
   max-width: 96% !important;
@@ -1089,93 +1070,92 @@ button:focus-visible,
   margin-right: auto !important;
   
   box-sizing: border-box !important;
-  
   overflow: visible !important;
   
-  transform: none !important;
-  scale: 1 !important;
+  transform: scale(0.94) !important;
+  transform-origin: top center !important;
 }
+
+
+/* ===== KEYBOARD 0–9 — MASUK SIKIT ===== */
+#answers {
+  width: 94% !important;
+  max-width: 94% !important;
   
-  /* ===== KEYBOARD ===== */
-  #answers {
-    margin-top: 4px !important;
-    gap: 2px !important;
-  }
+  margin-left: auto !important;
+  margin-right: auto !important;
   
-  #answers button {
-    height: 34px !important;
-    min-height: 34px !important;
-    max-height: 34px !important;
-    
-    font-size: 14px !important;
-  }
- 
-  /* ===== DELETE + BACK ===== */
-  #bottom-buttons {
-    margin-top: 8px !important;
-    gap: 4px !important;
-  }
+  margin-top: 4px !important;
   
-  #bottom-buttons button {
-    width: 95px !important;
-    height: 42px !important;
-    
-    font-size: 13px !important;
-  }
-  
-  /* =================================================
-       END SCREEN — SAMA SEPERTI FAIL LAIN
-       ================================================= */
-  
-  #end-screen>div {
-    width: 88% !important;
-    max-width: 330px !important;
-    
-    padding: 18px 10px !important;
-    box-sizing: border-box !important;
-  }
-  
-  /* ===== KOTAK DALAM ===== */
-  #end-screen>div>div {
-    padding: 18px 8px !important;
-    box-sizing: border-box !important;
-  }
-  
-  /* ===== TEKS EXCELLENT ===== */
-  #end-screen #final-msg {
-    font-size: 14px !important;
-    line-height: 1.15 !important;
-    
-    white-space: nowrap !important;
-    letter-spacing: -0.3px !important;
-    
-    margin-bottom: 14px !important;
-  }
-  
-  /* ===== TEKS YOU COMPLETED ===== */
-  #end-screen #final-msg span {
-    display: block !important;
-    
-    font-size: 10px !important;
-    line-height: 1.15 !important;
-    
-    white-space: nowrap !important;
-    letter-spacing: -0.5px !important;
-    
-    max-width: 100% !important;
-  }
-  
-  /* ===== PLAY AGAIN ===== */
-  #end-screen button {
-    width: 175px !important;
-    min-width: 175px !important;
-    height: 50px !important;
-    
-    font-size: 17px !important;
-    padding: 0 !important;
-  }
-  
+  gap: 2px !important;
+  box-sizing: border-box !important;
 }
+
+
+/* ===== BUTANG NOMBOR ===== */
+#answers button {
+  width: 100% !important;
+  min-width: 0 !important;
+  
+  height: 34px !important;
+  min-height: 34px !important;
+  max-height: 34px !important;
+  
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  
+  font-size: 14px !important;
+  
+  box-sizing: border-box !important;
+}
+/* ===== END SCREEN — HP KECIL ===== */
+
+#end-screen>div {
+  width: 88% !important;
+  max-width: 330px !important;
+  
+  padding: 18px 10px !important;
+  box-sizing: border-box !important;
+}
+
+
+/* ===== KOTAK DALAM ===== */
+#end-screen>div>div {
+  padding: 18px 8px !important;
+}
+
+
+/* ===== TEKS EXCELLENT ===== */
+#end-screen #final-msg {
+  font-size: 14px !important;
+  line-height: 1.15 !important;
+  
+  white-space: nowrap !important;
+  letter-spacing: -0.3px !important;
+  
+  margin-bottom: 14px !important;
+}
+
+
+/* ===== TEKS YOU COMPLETED ===== */
+#end-screen #final-msg span {
+  font-size: 10px !important;
+  line-height: 1.15 !important;
+  white-space: nowrap !important;
+  letter-spacing: -0.5px !important;
+}
+
+/* ===== PLAY AGAIN ===== */
+#end-screen button {
+  width: 175px !important;
+  min-width: 175px !important;
+  height: 50px !important;
+  
+  font-size: 17px !important;
+  padding: 0 !important;
+}
+}
+
   </style>
 </head>
 
