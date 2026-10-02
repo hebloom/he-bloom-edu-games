@@ -394,7 +394,7 @@ body {
         overflow-x: hidden !important;
         overflow-y: auto !important;
         
-        touch-action: auto !important;
+        touch-action: manipulation !important;
         -webkit-overflow-scrolling: touch !important;
     }
     
@@ -596,7 +596,7 @@ body {
 
         -webkit-tap-highlight-color: transparent !important;
 
-        touch-action: auto !important;
+        touch-action: manipulation !important;
     }
 }
 
@@ -621,6 +621,189 @@ body {
         scale: 1 !important;
         
         z-index: 99999 !important;
+    }
+} 
+
+/* =====================================================
+   GOOD JOB — HP 767px KE BAWAH
+   ===================================================== */
+@media (max-width: 767px) {
+    
+    #feedback {
+        min-width: 0 !important;
+        width: 65% !important;
+        max-width: 240px !important;
+        
+        padding: 10px 16px !important;
+        
+        font-size: 22px !important;
+        line-height: 1.1 !important;
+        
+        border-width: 3px !important;
+        border-radius: 20px !important;
+    }
+}
+/* =====================================================
+   END SCREEN — SEMUA HP
+   767px KE BAWAH
+   ===================================================== */
+@media (max-width: 767px) {
+    
+    #end-screen>div {
+        width: 82% !important;
+        max-width: 340px !important;
+        
+        padding: 18px 14px !important;
+        
+        border-radius: 30px !important;
+        border-width: 5px !important;
+    }
+    
+    #end-screen>div>div {
+        padding: 18px 10px !important;
+        border-radius: 22px !important;
+    }
+    
+    #final-msg {
+        font-size: 24px !important;
+        line-height: 1.15 !important;
+        margin-bottom: 18px !important;
+    }
+    
+    #final-msg span {
+        display: block !important;
+        font-size: 8.5px !important;
+        line-height: 1.2 !important;
+        white-space: nowrap !important;
+        margin-top: 8px !important;
+        letter-spacing: -0.2px !important;
+    }
+    
+    #end-screen button {
+        font-size: 18px !important;
+        padding: 12px 28px !important;
+    }
+}    
+
+/* =========================================
+   HP KECIL — 620px x 750px
+   TAJUK TURUN + GRID HURUF DIKECILKAN
+   ========================================= */
+@media (max-width: 620px) 
+    
+    /* ===== GAME CARD ===== */
+    #game-card {
+        margin: -4px auto 20px !important;
+        padding: 22px 10px 30px !important;
+    }
+    
+    /* ===== TAJUK ANIMALS WORD SEARCH ===== */
+    #game-card>.text-center.mb-2.-mt-2 {
+        margin-top: -12px !important;
+        margin-bottom: 4px !important;
+    }
+    
+    #game-card>.text-center.mb-2.-mt-2 .inline-flex {
+        padding: 7px 12px !important;
+    }
+    
+    #game-card>.text-center.mb-2.-mt-2 .inline-flex>div {
+        font-size: 14px !important;
+        line-height: 1.1 !important;
+    }
+/* ===== KOTAK WORD SEARCH ===== */
+#word-search-grid {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    
+    margin-top: 14px !important;
+    padding: 6px !important;
+    
+    gap: 0 !important;
+    
+    overflow: hidden !important;
+    touch-action: manipulation !important;
+    grid-template-columns: repeat(12, minmax(0, 1fr)) !important;
+    grid-template-rows: repeat(12, minmax(0, 1fr)) !important;
+}
+
+/* ===== HURUF ===== */
+#word-search-grid button {
+    width: 100% !important;
+    height: 100% !important;
+    
+    min-width: 0 !important;
+    min-height: 0 !important;
+    
+    box-sizing: border-box !important;
+    
+    font-size: 13px !important;
+}
+} 
+/* =========================================
+   ANTI AUTO-ZOOM PADA HURUF 12x12
+   PINCH ZOOM SCREEN MASIH BOLEH
+   ========================================= */
+
+#word-search-grid button {
+    touch-action: manipulation !important;
+    -webkit-user-select: none !important;
+    user-select: none !important;
+}
+} 
+
+/* =====================================================
+   HP KECIL — 620px KE BAWAH
+   ===================================================== */
+@media (max-width: 620px) {
+
+    
+    #end-screen>div {
+        width: 82% !important;
+        max-width: 310px !important;
+        
+        padding: 12px 8px !important;
+        border-radius: 28px !important;
+    }
+    
+    #end-screen>div>div {
+        padding: 14px 6px !important;
+        border-radius: 20px !important;
+    }
+    
+    #final-msg {
+        font-size: 21px !important;
+        line-height: 1.15 !important;
+        margin-bottom: 14px !important;
+    }
+    
+    #final-msg span {
+        display: block !important;
+        font-size: 7.5px !important;
+        line-height: 1.15 !important;
+        white-space: nowrap !important;
+        margin-top: 6px !important;
+        letter-spacing: -0.2px !important;
+    }
+    
+    #end-screen button {
+        font-size: 16px !important;
+        padding: 9px 22px !important;
+    }
+}
+/* ===== GOOD JOB — HP KECIL ===== */
+@media (max-width: 620px) {
+
+    #feedback {
+        min-width: 0 !important;
+        width: 58% !important;
+        max-width: 210px !important;
+        padding: 8px 12px !important;
+        font-size: 18px !important;
+        line-height: 1.1 !important;
+        border-width: 3px !important;
+        border-radius: 18px !important;
     }
 }
 
