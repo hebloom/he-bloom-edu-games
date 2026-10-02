@@ -622,6 +622,68 @@ body {
         
         z-index: 99999 !important;
     }
+} 
+
+/* =====================================================
+   GOOD JOB — HP 767px KE BAWAH
+   ===================================================== */
+@media (max-width: 767px) {
+    
+    #feedback {
+        min-width: 0 !important;
+        width: 65% !important;
+        max-width: 240px !important;
+        
+        padding: 10px 16px !important;
+        
+        font-size: 22px !important;
+        line-height: 1.1 !important;
+        
+        border-width: 3px !important;
+        border-radius: 20px !important;
+    }
+}
+/* =====================================================
+   END SCREEN — SEMUA HP
+   767px KE BAWAH
+   ===================================================== */
+@media (max-width: 767px) {
+    
+    #end-screen>div {
+        width: 82% !important;
+        max-width: 340px !important;
+        
+        padding: 18px 14px !important;
+        
+        border-radius: 30px !important;
+        border-width: 5px !important;
+    }
+    
+    #end-screen>div>div {
+        padding: 18px 10px !important;
+        border-radius: 22px !important;
+    }
+    
+    #final-msg {
+        font-size: 24px !important;
+        line-height: 1.15 !important;
+        margin-bottom: 18px !important;
+    }
+    
+    #final-msg span {
+        display: block !important;
+        font-size: 8.5px !important;
+        line-height: 1.2 !important;
+        white-space: nowrap !important;
+        margin-top: 8px !important;
+        letter-spacing: -0.2px !important;
+    }
+    
+    #end-screen button {
+        font-size: 18px !important;
+        padding: 12px 28px !important;
+    }
+}    
 }
 /* =========================================
    HP KECIL — 620px x 750px
@@ -692,52 +754,10 @@ body {
 } 
 
 /* =====================================================
-   END SCREEN — SEMUA HP
-   767px KE BAWAH
-   ===================================================== */
-@media (max-width: 767px) {
-    
-    #end-screen>div {
-        width: 82% !important;
-        max-width: 340px !important;
-        
-        padding: 18px 14px !important;
-        
-        border-radius: 30px !important;
-        border-width: 5px !important;
-    }
-    
-    #end-screen>div>div {
-        padding: 18px 10px !important;
-        border-radius: 22px !important;
-    }
-    
-    #final-msg {
-        font-size: 24px !important;
-        line-height: 1.15 !important;
-        margin-bottom: 18px !important;
-    }
-    
-   #final-msg span {
-    display: block !important;
-    font-size: 8.5px !important;
-    line-height: 1.2 !important;
-    white-space: nowrap !important;
-    margin-top: 8px !important;
-    letter-spacing: -0.2px !important;
-}
-    
-    #end-screen button {
-        font-size: 18px !important;
-        padding: 12px 28px !important;
-    }
-}
-
-
-/* =====================================================
    HP KECIL — 620px KE BAWAH
    ===================================================== */
-@media (max-width: 620px) {
+@media (max-width: 620px) and (max-height: 750px) {
+
     
     #end-screen>div {
         width: 82% !important;
@@ -770,6 +790,20 @@ body {
     #end-screen button {
         font-size: 16px !important;
         padding: 9px 22px !important;
+    }
+}
+/* ===== GOOD JOB — HP KECIL ===== */
+@media (max-width: 620px) and (max-height: 750px) {
+
+    #feedback {
+        min-width: 0 !important;
+        width: 58% !important;
+        max-width: 210px !important;
+        padding: 8px 12px !important;
+        font-size: 18px !important;
+        line-height: 1.1 !important;
+        border-width: 3px !important;
+        border-radius: 18px !important;
     }
 }
     </style>
