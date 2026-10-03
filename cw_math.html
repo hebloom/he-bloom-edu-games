@@ -1042,97 +1042,127 @@ button:focus-visible,
    HP KECIL — 620px + TINGGI 750px KE BAWAH
    CROSSWORD
    ===================================================== */
-@media (max-width: 620px) and (max-height: 750px) {   
-/* ===== GAME CARD — PAKSA NAIK ===== */
-#game-card {
-  width: 94% !important;
-  max-width: 94% !important;
-  
-  height: 600px !important;
-  min-height: 600px !important;
-  
-  padding: 18px 10px 40px !important;
-  
-  box-sizing: border-box !important;
-  overflow: visible !important;
-  
-  margin: 0 auto 20px !important;
-  
-  position: relative !important;
-  
-  transform: translateY(-210px) !important;
-  scale: 1 !important;
-}
 
-/* ===== GRID MATH — KEMBALI BESAR ===== */
-#crossword-grid {
-  width: 100% !important;
-  max-width: 100% !important;
+@media (max-width: 620px) and (max-height: 750px) {
   
-  margin-left: auto !important;
-  margin-right: auto !important;
+  /* ===== GAME CARD — PAKSA NAIK ===== */
+  #game-card {
+    width: 94% !important;
+    max-width: 94% !important;
+    
+    height: auto !important;
+    min-height: 0 !important;
+    
+    padding: 18px 10px 40px !important;
+    
+    box-sizing: border-box !important;
+    overflow: visible !important;
+    
+    margin: 0 auto 20px !important;
+    
+    position: relative !important;
+    
+    transform: translateY(-210px) !important;
+    scale: 1 !important;
+  }
   
-  box-sizing: border-box !important;
-  overflow: visible !important;
   
-  transform: none !important;
-  scale: 1 !important;
-}
+  /* ===== GRID MATH — BENTUK KEKAL ===== */
+  #crossword-grid {
+    width: 100% !important;
+    max-width: 100% !important;
+    
+    margin-left: auto !important;
+    margin-right: auto !important;
+    
+    box-sizing: border-box !important;
+    overflow: visible !important;
+    
+    transform: none !important;
+    scale: 1 !important;
+  }
+  
+  
+  /* ===== KEYBOARD 0–9 ===== */
+  #answers {
+    width: 100% !important;
+    max-width: 100% !important;
+    
+    margin-left: auto !important;
+    margin-right: auto !important;
+    
+    margin-top: 4px !important;
+    
+    box-sizing: border-box !important;
+  }
+  
+  
+  /* ===== BARIS NOMBOR 0–9 ===== */
+  #answers .number-row {
+    width: 100% !important;
+    max-width: 100% !important;
+    
+    margin-left: auto !important;
+    margin-right: auto !important;
+    
+    display: grid !important;
+    grid-template-columns: repeat(10, minmax(0, 1fr)) !important;
+    
+    gap: 2px !important;
+    box-sizing: border-box !important;
+  }
+  
+  
+  /* ===== BUTANG NOMBOR ===== */
+  #answers .number-row button {
+    min-width: 0 !important;
+    width: 100% !important;
+    max-width: none !important;
+    
+    height: 34px !important;
+    min-height: 34px !important;
+    max-height: 34px !important;
+    
+    padding: 0 !important;
+    margin: 0 !important;
+    
+    font-size: 14px !important;
+    
+    box-sizing: border-box !important;
+  }
+  
+  
+  /* ===== BUTANG SIMBOL ===== */
+  #answers .symbol-row {
+    width: 100% !important;
+    
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    
+    gap: 4px !important;
+  }
+  
+  
+  /* ===== SIMBOL + − × ÷ = ===== */
+  #answers .symbol-row button {
+    width: 34px !important;
+    min-width: 34px !important;
+    max-width: 34px !important;
+    
+    height: 34px !important;
+    min-height: 34px !important;
+    max-height: 34px !important;
+    
+    padding: 0 !important;
+    margin: 0 !important;
+    
+    font-size: 14px !important;
+    
+    box-sizing: border-box !important;
+  }
+  
 
-
-/* ===== KEYBOARD 0–9 — RAPAT & MASUK ===== */
-#answers {
-  width: 90% !important;
-  max-width: 90% !important;
-  
-  margin-left: auto !important;
-  margin-right: auto !important;
-  
-  margin-top: 4px !important;
-  
-  box-sizing: border-box !important;
-}
-
-
-/* ===== BARIS NOMBOR 0–9 ===== */
-#answers .number-row {
-  width: 90% !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  
-  display: grid !important;
-  grid-template-columns: repeat(10, 1fr) !important;
-  
-  gap: 1px !important;
-  box-sizing: border-box !important;
-}
-
-
-/* ===== BUTANG NOMBOR ===== */
-#answers .number-row button {
-  min-width: 0 !important;
-  width: 100% !important;
-  
-  padding: 0 !important;
-  box-sizing: border-box !important;
-}
-
-/* ===== BUTANG NOMBOR ===== */
-#answers button {
-  width: 82% !important;
-  min-width: 82% !important;
-  
-  height: 34px !important;
-  min-height: 34px !important;
-  max-height: 34px !important;
-  
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-  
-  font-size: 14px !important;
-  
-  box-sizing: border-box !important;
-}
 /* ===== END SCREEN — HP KECIL ===== */
 
 #end-screen>div {
