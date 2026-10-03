@@ -1098,7 +1098,7 @@ button:focus-visible,
   
   /* ===== YOU COMPLETED ===== */
   #end-screen #final-msg span {
-    font-size: 10px !important;
+    font-size: 9px !important;
     
     line-height: 1.05 !important;
     
@@ -2341,26 +2341,37 @@ function checkCrosswordComplete() {
   // =========================
   
   if (wrongCells.length === 0) {
+  
+  /* ===== PAPAR GOOD JOB / TRUE ===== */
+  feedback.innerHTML = "✅ TRUE 🎉";
+  feedback.style.color = "#16a34a";
+  feedback.style.borderColor = "#22c55e";
+  
+  playCorrectSound();
+  
+  
+  /* ===== TUNGGU 8 SAAT ===== */
+  setTimeout(() => {
     
-    feedback.innerHTML = "✅ TRUE 🎉";
-    feedback.style.color = "#16a34a";
-    feedback.style.borderColor = "#22c55e";
+    /* Sembunyikan TRUE */
+    feedback.classList.add("hidden");
     
-    playCorrectSound();
     
-    setTimeout(() => {
-      
-      feedback.classList.add("hidden");
-      
-      document.getElementById("final-msg").innerHTML =
-  "🏆 EXCELLENT<br><span style='font-size:13px; white-space:nowrap;'>YOU COMPLETED THE CROSSWORD 🎉</span>";
-      
-      document.getElementById("end-screen")
-        .classList.remove("hidden");
-      
-    }, 2400);
+    /* Papar End Screen */
+    document.getElementById("final-msg").innerHTML =
+      "🏆 EXCELLENT<br>" +
+      "<span style='font-size:9px; line-height:1; white-space:nowrap;'>" +
+      "YOU COMPLETED THE CROSSWORD 🎉" +
+      "</span>";
     
-    return;
+    
+    document.getElementById("end-screen")
+      .classList.remove("hidden");
+    
+  }, 8000);
+  
+  
+  return;
     
   } else {
     
