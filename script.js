@@ -294,7 +294,7 @@ if (deviceIds.length < maxDevices) {
       return;
     }
   }
-
+} 
 
    console.log("USER UID:", user.uid);
 console.log("USER DATA:", userData);
