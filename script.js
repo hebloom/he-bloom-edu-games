@@ -158,42 +158,144 @@ loginBtn.addEventListener("click", async () => {
     const userData =
       userSnap.data();
    
-   // =========================
+// =========================
 // CHECK DEVICE LIMIT
+// MAX 4 DEVICE
+// DEVICE TIDAK AKTIF >24 JAM BOLEH DIGANTI
 // =========================
 
 let devices = userData.devices || {};
 
-if (!devices[deviceId]) {
+const maxDevices = userData.maxDevices || 4;
+
+const now = Date.now();
+const inactiveLimit = 24 * 60 * 60 * 1000; // 24 jam
+
+
+// =========================
+// DEVICE SUDAH BERDAFTAR
+// =========================
+
+if (devices[deviceId]) {
   
-  const deviceCount =
-    Object.keys(devices).length;
+  // Update login terakhir device ini
+  devices[deviceId].lastLogin = now;
   
-  const maxDevices =
-    userData.maxDevices || 4;
+  await updateDoc(userRef, {
+    devices: devices
+  });
   
-  if (deviceCount >= maxDevices) {
-    
-    await signOut(auth);
-    
-    message.style.color = "red";
-    
-    message.textContent =
-      "Maximum 4 devices reached.";
-    
-    return;
-  }
-  
-  devices[deviceId] = {
-    addedAt: Date.now()
-  };
-await updateDoc(userRef, {
-  devices: devices
-});  
 }
 
 
-   
+// =========================
+// DEVICE BARU
+// =========================
+
+else {
+  
+  const deviceIds = Object.keys(devices);
+  
+  
+// ---------------------------------
+// MASIH ADA SLOT
+// ---------------------------------
+
+if (deviceIds.length < maxDevices) {
+  
+  devices[deviceId] = {
+    addedAt: now,
+    lastLogin: now
+  };
+  
+  await updateDoc(userRef, {
+    devices: devices
+  });
+  
+}
+  
+  
+  // ---------------------------------
+  // SUDAH 4 DEVICE
+  // ---------------------------------
+  
+  else {
+    
+    // Cari device yang tidak login >24 jam
+    const oldDevices = deviceIds.filter(id => {
+      
+      const lastLogin =
+        devices[id].lastLogin ||
+        devices[id].addedAt ||
+        0;
+      
+      return (now - lastLogin) > inactiveLimit;
+      
+    });
+    
+    
+    // ---------------------------------
+    // ADA DEVICE LAMA >24 JAM
+    // ---------------------------------
+    
+    if (oldDevices.length > 0) {
+      
+      // Cari device yang paling lama tidak login
+      oldDevices.sort((a, b) => {
+        
+        const timeA =
+          devices[a].lastLogin ||
+          devices[a].addedAt ||
+          0;
+        
+        const timeB =
+          devices[b].lastLogin ||
+          devices[b].addedAt ||
+          0;
+        
+        return timeA - timeB;
+        
+      });
+      
+      
+      // Buang device paling lama
+      const deviceToRemove = oldDevices[0];
+      
+      delete devices[deviceToRemove];
+      
+      
+      // Masukkan device baru
+      devices[deviceId] = {
+        addedAt: now,
+        lastLogin: now
+      };
+      
+      
+      await updateDoc(userRef, {
+        devices: devices
+      });
+      
+    }
+    
+    
+    // ---------------------------------
+    // SEMUA 4 DEVICE MASIH AKTIF
+    // ---------------------------------
+    
+    else {
+      
+      await signOut(auth);
+      
+      message.style.color = "red";
+      
+      message.textContent =
+        "Maximum 4 devices reached. Please wait 24 hours.";
+      
+      return;
+    }
+  }
+
+
    console.log("USER UID:", user.uid);
 console.log("USER DATA:", userData);
 console.log("ACCESS:", userData.access);
